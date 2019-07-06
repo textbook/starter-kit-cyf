@@ -4,13 +4,8 @@
     "node": true
   },
   "extends": [
-    "eslint:recommended",
-    "plugin:jest/recommended"
+    "eslint:recommended"
   ],
-  "globals": {
-    "defer": false,
-    "tick": false
-  },
   "parser": "babel-eslint",
   "rules": {
     "arrow-parens": "error",
