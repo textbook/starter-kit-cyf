@@ -12,12 +12,11 @@ describe("App", () => {
   let wrapper;
 
   const message = "Foo bar!";
-  const messageClass = "my-cool-message";
 
   beforeEach(() => {
     deferred = defer();
     getMessage.mockReturnValue(deferred.promise);
-    wrapper = render(<App classes={{ message: messageClass }} />);
+    wrapper = render(<App />);
   });
 
   it("requests the message", () => {
@@ -37,13 +36,14 @@ describe("App", () => {
     it("says 'Hello, world!'", async () => {
       let element = wrapper.getByTestId("message");
       expect(element).toHaveTextContent(message);
-      expect(element).toHaveClass(messageClass);
+      expect(element).toHaveClass("message");
     });
 
     it("shows an image", async () => {
       let element = wrapper.getByTestId("logo");
       expect(element).toHaveAttribute("alt", "Just the React logo");
       expect(element).toHaveAttribute("src", fakeFile);
+      expect(element).toHaveClass("logo");
     });
   });
 });
