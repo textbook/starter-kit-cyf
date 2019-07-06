@@ -7,10 +7,12 @@ import { httpsOnly } from "./helpers";
 
 const app = express();
 
+app.use(express.json());
 app.use(helmet());
 app.use(morgan("dev"));
 
 if (app.get("env") === "production") {
+	// require HTTPS in production
 	app.enable("trust proxy");
 	app.use(httpsOnly());
 }
