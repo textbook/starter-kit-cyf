@@ -11,7 +11,6 @@ Starter Kit
  - [x] Production build (single deployment artifact, React loaded via CDN)
  - [x] [Travis] pipeline
  - [x] [Heroku] deployment
- - [x] [Docker] build
 
 Setup
 -----
@@ -70,7 +69,6 @@ the automation and it's not using `copy` (which caused cross-platform issues on 
   [Babel]: https://babeljs.io/
   [collaborators]: https://help.github.com/en/articles/inviting-collaborators-to-a-personal-repository
   [CRA]: https://facebook.github.io/create-react-app/
-  [Docker]: https://www.docker.com
   [ESLint]: https://eslint.org/
   [Express]: https://expressjs.com/
   [Heroku]: https://www.heroku.com/
