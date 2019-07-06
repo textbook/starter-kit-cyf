@@ -4,12 +4,7 @@
     "node": true
   },
   "extends": [
-    "@codeyourfuture/standard",
-    "plugin:jest/recommended"
+    "@codeyourfuture/standard"
   ],
-  "globals": {
-    "defer": false,
-    "tick": false
-  },
   "parser": "babel-eslint"
 }

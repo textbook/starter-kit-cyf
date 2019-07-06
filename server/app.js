@@ -16,36 +16,25 @@ app.use(morgan("dev"));
 
 // require HTTPS in production
 if (app.get("env") === "production") {
-<<<<<<< HEAD
-	// require HTTPS in production
 	app.enable("trust proxy");
-	app.use(httpsOnly());
-}
-
-app.get("/api", (_, res) => {
-	res.json({ message: "Hello, world!" });
-});
-=======
-  app.enable("trust proxy");
-  app.use((req, res, next) => {
-    if (!req.secure) {
-      return res.redirect(301, `https://${req.headers.host}${req.originalUrl}`);
-    }
-    next();
-  });
+	app.use((req, res, next) => {
+		if (!req.secure) {
+			return res.redirect(301, `https://${req.headers.host}${req.originalUrl}`);
+		}
+		next();
+	});
 }
 
 // Load API router
 app.use(apiRoot, apiRouter);
->>>>>>> Rearrange server and add READMEs
 
 // Serve the bundled client from the server
 app.use(express.static(staticDir));
 app.get("*", (req, res, next) => {
-  if (req.url.startsWith(apiRoot)) {
-    return next();
-  }
-  res.sendFile(path.join(staticDir, "index.html"));
+	if (req.url.startsWith(apiRoot)) {
+		return next();
+	}
+	res.sendFile(path.join(staticDir, "index.html"));
 });
 
 export default app;
