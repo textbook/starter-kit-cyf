@@ -3,8 +3,7 @@ Starter Kit
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
- - [ ] Full stack ES8+ with [Babel]
- - [x] [Node] LTS support (verified working on 6.x, 8.x and 10.x LTS releases)
+ - [x] Full stack ES8+ with [Babel]
  - [x] [Express] server
  - [x] [React] client with [Webpack]
  - [x] Linting with [ESLint]
@@ -13,6 +12,27 @@ Starter Kit
  - [x] [Travis] pipeline
  - [x] [Heroku] deployment
  - [x] [Docker] build
+
+Setup
+-----
+
+Pick one member of the team to own the repository and pipeline. That person should do the following:
+
+ 1. Create a fork of this repository for the team, and rename it something appropriate for your project.
+ 2. Create an account on [Heroku].
+ 3. Create a new application (New -> Create new app), enter an appropriate and available name and update the `app:` in
+    `.travis.yml` to match the name.
+ 4. Add a MongoDB add on (Resources -> Add-ons -> mLab MongoDB -> Sandbox).
+ 5. Note down your API token (Account settings -> API Key).
+ 6. Log in to [Travis] using your GitHub credentials.
+ 7. Go to the repo list (Settings -> Repositories) and "tick" your repo to enable builds
+ 8. Go to the settings for your fork (Repo name -> Settings) and set an environment variable named `HEROKU_API_KEY`
+    with the value from step 5. **Do not** tick "display value in build log"; this is a secret.
+ 9. Commit and push the change you made to `.travis.yml`.
+
+This push should trigger a Travis build, which will deploy to Heroku!
+
+You should now make sure all of the project team are [collaborators] on the repository.
 
 Scripts
 -------
@@ -48,6 +68,7 @@ the automation and it's not using `copy` (which caused cross-platform issues on 
  - TypeScript?
 
   [Babel]: https://babeljs.io/
+  [collaborators]: https://help.github.com/en/articles/inviting-collaborators-to-a-personal-repository
   [CRA]: https://facebook.github.io/create-react-app/
   [Docker]: https://www.docker.com
   [ESLint]: https://eslint.org/
