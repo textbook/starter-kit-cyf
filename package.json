@@ -67,6 +67,7 @@
     "@babel/runtime": "^7.4.5",
     "express": "^4.17.1",
     "helmet": "^3.18.0",
+    "mongodb": "^3.2.7",
     "morgan": "^1.9.1"
   }
 }
