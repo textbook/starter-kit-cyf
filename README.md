@@ -9,7 +9,6 @@ Starter Kit
  - [x] Linting with [ESLint]
  - [x] Dev mode (watch modes for client and server, proxy to avoid CORS issues)
  - [x] Production build (single deployment artifact, React loaded via CDN)
- - [x] [Travis] pipeline
  - [x] [Heroku] deployment
 
 Setup
@@ -18,18 +17,14 @@ Setup
 Pick one member of the team to own the repository and pipeline. That person should do the following:
 
  1. Create a fork of this repository for the team, and rename it something appropriate for your project.
- 2. Create an account on [Heroku].
- 3. Create a new application (New -> Create new app), enter an appropriate and available name and update the `app:` in
-    `.travis.yml` to match the name.
- 4. Add a MongoDB add on (Resources -> Add-ons -> mLab MongoDB -> Sandbox).
- 5. Note down your API token (Account settings -> API Key).
- 6. Log in to [Travis] using your GitHub credentials.
- 7. Go to the repo list (Settings -> Repositories) and "tick" your repo to enable builds
- 8. Go to the settings for your fork (Repo name -> Settings) and set an environment variable named `HEROKU_API_KEY`
-    with the value from step 5. **Do not** tick "display value in build log"; this is a secret.
- 9. Commit and push the change you made to `.travis.yml`.
+ 2. Click the "Deploy to Heroku" button and create a Heroku account when prompted.
+ 3. Fill in the name of the application, select Europe and then click "Deploy App". Note the MongoDB add-on; this will
+    create and link a database for you.
+ 4. Once it has deployed successfully, click the "Manage app" button to view the application details.
+ 5. Go to the "Deploy" tab, select "Connect to GitHub" and choose your repo.
+ 6. Click "Enable automatic deploys".
 
-This push should trigger a Travis build, which will deploy to Heroku!
+Whenever you commit to master (or e.g. merge a [pull request]) it will get automatically deployed!
 
 You should now make sure all of the project team are [collaborators] on the repository.
 
@@ -73,7 +68,7 @@ the automation and it's not using `copy` (which caused cross-platform issues on 
   [Express]: https://expressjs.com/
   [Heroku]: https://www.heroku.com/
   [Node]: https://nodejs.org/en/
+  [pull request]: https://help.github.com/en/articles/about-pull-requests
   [React]: https://reactjs.org/
   [starter kit]: https://github.com/textbook/cyf-app-starter
-  [Travis]: https://travis-ci.org/
   [Webpack]: https://webpack.js.org/
