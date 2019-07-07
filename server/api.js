@@ -11,7 +11,7 @@ api.get("/", (_, res, next) => {
     if (err) {
       return next(err);
     }
-    res.json({ message: "Hello, world!" });
+    res.json({ message: "Hello, Heroku!" });
     client.close();
   });
 });
