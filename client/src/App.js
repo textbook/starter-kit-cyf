@@ -18,17 +18,16 @@ export class App extends Component {
     const { message } = this.state;
     return (
       <div>
-        <img
+        {/* <img
           className="logo"
           data-qa="logo"
           src={logo}
           alt="Just the React logo"
-        />
+        /> */}
         <p className="message" data-qa="message">
           {message}
         </p>
-        <p>user list</p>
-        {/* <Test /> */}
+        <Test />
       </div>
     );
   }

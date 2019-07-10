@@ -6,15 +6,7 @@
     "email": "Sincere@april.biz",
     "password": "student",
     "status": "STUDENT",
-    "city": "London",
-    "attendance": [
-      {
-        "module": "JS-1",
-        "session": "1",
-        "date": "19/07/2019",
-        "timeOfArrival": "11:00"
-      }
-    ]
+    "city": "London"
   },
   {
     "id": 2,
@@ -23,15 +15,7 @@
     "email": "Shanna@melissa.tv",
     "password": "student",
     "status": "STUDENT",
-    "city": "London",
-    "attendance": [
-      {
-        "module": "JS-1",
-        "session": "1",
-        "date": "19/07/2019",
-        "timeOfArrival": null
-      }
-    ]
+    "city": "London"
   },
   {
     "id": 3,
@@ -40,15 +24,7 @@
     "email": "Nathan@yesenia.net",
     "password": "student",
     "status": "STUDENT",
-    "city": "London",
-    "attendance": [
-      {
-        "module": "JS-1",
-        "session": "1",
-        "date": "19/07/2019",
-        "timeOfArrival": "11:00"
-      }
-    ]
+    "city": "London"
   },
   {
     "id": 4,
@@ -57,15 +33,7 @@
     "email": "Julianne.OConner@kory.org",
     "password": "student",
     "status": "STUDENT",
-    "city": "London",
-    "attendance": [
-      {
-        "module": "JS-1",
-        "session": "1",
-        "date": "19/07/2019",
-        "timeOfArrival": "11:00"
-      }
-    ]
+    "city": "London"
   },
   {
     "id": 5,
@@ -74,15 +42,7 @@
     "email": "Lucio_Hettinger@annie.ca",
     "password": "student",
     "status": "STUDENT",
-    "city": "London",
-    "attendance": [
-      {
-        "module": "JS-1",
-        "session": "1",
-        "date": "19/07/2019",
-        "timeOfArrival": "11:00"
-      }
-    ]
+    "city": "London"
   },
   {
     "id": 6,
@@ -91,15 +51,7 @@
     "email": "Karley_Dach@jasper.info",
     "password": "student",
     "status": "STUDENT",
-    "city": "London",
-    "attendance": [
-      {
-        "module": "JS-1",
-        "session": "1",
-        "date": "19/07/2019",
-        "timeOfArrival": "11:00"
-      }
-    ]
+    "city": "London"
   },
   {
     "id": 7,
@@ -108,32 +60,16 @@
     "email": "Telly.Hoeger@billy.biz",
     "password": "student",
     "status": "STUDENT",
-    "city": "London",
-    "attendance": [
-      {
-        "module": "JS-1",
-        "session": "1",
-        "date": "19/07/2019",
-        "timeOfArrival": "11:00"
-      }
-    ]
+    "city": "London"
   },
   {
     "id": 8,
-    "name": "Nicholas Runolfsdottir V",
+    "name": "Nicholas Runolfsdottir",
     "username": "Maxime_Nienow",
     "email": "Sherwood@rosamond.me",
     "password": "student",
     "status": "STUDENT",
-    "city": "London",
-    "attendance": [
-      {
-        "module": "JS-1",
-        "session": "1",
-        "date": "19/07/2019",
-        "timeOfArrival": "11:00"
-      }
-    ]
+    "city": "London"
   },
   {
     "id": 9,
@@ -142,15 +78,7 @@
     "email": "Chaim_McDermott@dana.io",
     "password": "student",
     "status": "STUDENT",
-    "city": "London",
-    "attendance": [
-      {
-        "module": "JS-1",
-        "session": "1",
-        "date": "19/07/2019",
-        "timeOfArrival": "11:00"
-      }
-    ]
+    "city": "London"
   },
   {
     "id": 10,
