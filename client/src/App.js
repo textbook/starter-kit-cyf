@@ -3,23 +3,28 @@ import React, { Component } from "react";
 import { getMessage } from "./service";
 import logo from "./logo.svg";
 import "./App.css";
-
+import Test from "./components/Test";
 export class App extends Component {
-
   state = { message: "Loading..." };
 
   componentDidMount() {
-    getMessage().then((message) => this.setState({ message }));
+    getMessage().then(message => this.setState({ message }));
   }
 
   render() {
     const { message } = this.state;
     return (
       <div>
-        <img className="logo" data-qa="logo" src={logo} alt="Just the React logo" />
-        <p className="message" data-qa="message">{message}</p>
-        <p>Test</p>
-        <p>Register</p>
+        {/* <img
+          className="logo"
+          data-qa="logo"
+          src={logo}
+          alt="Just the React logo"
+        /> */}
+        <p className="message" data-qa="message">
+          {message}
+        </p>
+        <Test />
       </div>
     );
   }

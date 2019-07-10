@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "name": "JS-1",
+    "session": 1,
+    "date": "14/07/2019",
+    "city": "London",
+    "attendance": [
+      {
+        "id": 1,
+        "name": "Leanne Graham",
+        "status": "STUDENT",
+        "isAttended": true,
+        "timeOfArrival": "10:30"
+      },
+      {
+        "id": 2,
+        "name": "Ervin Howell",
+        "status": "STUDENT",
+        "isAttended": false,
+        "timeOfArrival": null
+      },
+      {
+        "id": 3,
+        "name": "Clementine Bauch",
+        "status": "STUDENT",
+        "isAttended": true,
+        "timeOfArrival": "11:00"
+      },
+      {
+        "id": 4,
+        "name": "Patricia Lebsack",
+        "status": "STUDENT",
+        "isAttended": true,
+        "timeOfArrival": "10:55"
+      },
+      {
+        "id": 5,
+        "name": "Chelsey Dietrich",
+        "status": "STUDENT",
+        "isAttended": true,
+        "timeOfArrival": "10:50"
+      },
+      {
+        "id": 6,
+        "name": "Mrs. Dennis Schulist",
+        "status": "STUDENT",
+        "isAttended": true,
+        "timeOfArrival": "10:55"
+      },
+      {
+        "id": 7,
+        "name": "Kurtis Weissnat",
+        "status": "STUDENT",
+        "isAttended": true,
+        "timeOfArrival": "11:05"
+      },
+      {
+        "id": 8,
+        "name": "Nicholas Runolfsdottir",
+        "status": "MENTOR",
+        "isAttended": true,
+        "timeOfArrival": "10:45"
+      },
+      {
+        "id": 9,
+        "name": "Glenna Reichert",
+        "status": "MENTOR",
+        "isAttended": false,
+        "timeOfArrival": null
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "ReactJS",
+    "session": 2,
+    "date": "06/09/2019",
+    "city": "London",
+    "attendance": [
+      {
+        "id": 1,
+        "name": "Leanne Graham",
+        "status": "STUDENT",
+        "isAttended": true,
+        "timeOfArrival": "10:45"
+      },
+      {
+        "id": 2,
+        "name": "Ervin Howell",
+        "status": "STUDENT",
+        "isAttended": true,
+        "timeOfArrival": "10:50"
+      },
+      {
+        "id": 3,
+        "name": "Clementine Bauch",
+        "status": "STUDENT",
+        "isAttended": false,
+        "timeOfArrival": null
+      },
+      {
+        "id": 4,
+        "name": "Patricia Lebsack",
+        "status": "STUDENT",
+        "isAttended": true,
+        "timeOfArrival": "10:50"
+      },
+      {
+        "id": 5,
+        "name": "Chelsey Dietrich",
+        "status": "STUDENT",
+        "isAttended": false,
+        "timeOfArrival": null
+      },
+      {
+        "id": 6,
+        "name": "Mrs. Dennis Schulist",
+        "status": "STUDENT",
+        "isAttended": true,
+        "timeOfArrival": "10:45"
+      },
+      {
+        "id": 7,
+        "name": "Kurtis Weissnat",
+        "status": "STUDENT",
+        "isAttended": true,
+        "timeOfArrival": "11:05"
+      },
+      {
+        "id": 8,
+        "name": "Nicholas Runolfsdottir",
+        "status": "MENTOR",
+        "isAttended": false,
+        "timeOfArrival": null
+      },
+      {
+        "id": 9,
+        "name": "Glenna Reichert",
+        "status": "MENTOR",
+        "isAttended": true,
+        "timeOfArrival": "10:25"
+      }
+    ]
+  }
+]
