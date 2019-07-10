@@ -18,6 +18,7 @@ export class App extends Component {
       <div>
         <img className="logo" data-qa="logo" src={logo} alt="Just the React logo" />
         <p className="message" data-qa="message">{message}</p>
+        <p>Test</p>
       </div>
     );
   }
