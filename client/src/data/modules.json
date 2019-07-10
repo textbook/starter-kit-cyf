@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "JS-1",
+    "session": 1,
+    "date": "19/07/2019",
+    "city": "London",
+    "attendance": [
+      {
+        "id": 1,
+        "name": "Leanne Graham",
+        "username": "Bret",
+        "email": "Sincere@april.biz",
+        "status": "STUDENT",
+        "city": "London",
+        "isAttended": true,
+        "timeOfArrival": "10:30"
+      },
+      {
+        "id": 2,
+        "name": "Ervin Howell",
+        "username": "Antonette",
+        "email": "Shanna@melissa.tv",
+        "status": "STUDENT",
+        "city": "London",
+        "isAttended": false,
+        "timeOfArrival": null
+      },
+      {
+        "id": 3,
+        "name": "Clementine Bauch",
+        "username": "Samantha",
+        "email": "Nathan@yesenia.net",
+        "status": "STUDENT",
+        "city": "London",
+        "isAttended": true,
+        "timeOfArrival": "11:00"
+      },
+      {
+        "id": 4,
+        "name": "Patricia Lebsack",
+        "username": "Karianne",
+        "email": "Julianne.OConner@kory.org",
+        "status": "STUDENT",
+        "city": "London",
+        "isAttended": true,
+        "timeOfArrival": "10:55"
+      },
+      {
+        "id": 5,
+        "name": "Chelsey Dietrich",
+        "username": "Kamren",
+        "email": "Lucio_Hettinger@annie.ca",
+        "status": "STUDENT",
+        "city": "London",
+        "isAttended": true,
+        "timeOfArrival": "10:50"
+      },
+      {
+        "id": 6,
+        "name": "Mrs. Dennis Schulist",
+        "username": "Leopoldo_Corkery",
+        "email": "Karley_Dach@jasper.info",
+        "status": "STUDENT",
+        "city": "London",
+        "isAttended": true,
+        "timeOfArrival": "10:55"
+      },
+      {
+        "id": 7,
+        "name": "Kurtis Weissnat",
+        "username": "Elwyn.Skiles",
+        "email": "Telly.Hoeger@billy.biz",
+        "status": "STUDENT",
+        "city": "London",
+        "isAttended": true,
+        "timeOfArrival": "11:05"
+      },
+      {
+        "id": 8,
+        "name": "Nicholas Runolfsdottir V",
+        "username": "Maxime_Nienow",
+        "email": "Sherwood@rosamond.me",
+        "status": "MENTOR",
+        "city": "London",
+        "isAttended": true,
+        "timeOfArrival": "10:45"
+      },
+      {
+        "id": 9,
+        "name": "Glenna Reichert",
+        "username": "Delphine",
+        "email": "Chaim_McDermott@dana.io",
+        "status": "MENTOR",
+        "city": "London",
+        "isAttended": false,
+        "timeOfArrival": null
+      }
+    ]
+  }
+]
