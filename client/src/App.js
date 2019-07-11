@@ -24,7 +24,7 @@ export class App extends Component {
         <p className="message" data-qa="message">
           {message}
         </p>
-        <Test />
+        { <Test /> }
       </div>
     );
   }
