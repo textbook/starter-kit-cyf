@@ -1,9 +1,14 @@
 import React, { Component } from "react";
-
+import LoginStudent from "./components/LoginStudent";
+import LoginMentors from "./components/LoginMentors";
+import LoginAdmin from "./components/LoginAdmin";
+import Navigation from "./components/Navigation";
+import NavigationBar from "./components/NavigationBar";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { getMessage } from "./service";
-import logo from "./logo.svg";
+
 import "./App.css";
-import Test from "./components/Test";
+//import Test from "./components/Test";
 export class App extends Component {
   state = { message: "Loading..." };
 
@@ -15,16 +20,24 @@ export class App extends Component {
     const { message } = this.state;
     return (
       <div>
-        {/* <img
-          className="logo"
-          data-qa="logo"
-          src={logo}
-          alt="Just the React logo"
-        /> */}
+        <div className="all-container">
+          <BrowserRouter>
+            <NavigationBar />
+
+            <Switch>
+
+              <Route path="/LoginAdmin" component={LoginAdmin} />
+              <Route path="/LoginMentors" component={LoginMentors} />
+              <Route path="/LoginStudent" component={LoginStudent} />
+            </Switch>
+
+            <Navigation />
+          </BrowserRouter>
+        </div>
         <p className="message" data-qa="message">
           {message}
         </p>
-        <Test />
+      
       </div>
     );
   }

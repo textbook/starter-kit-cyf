@@ -1,11 +1,5 @@
-.logo {
-  width: 100px;
+.image{
+  width:200px;
+  height:200px;
 }
 
-.message {
-  color: blue;
-}
-
-.message:hover {
-  background-color: yellow;
-}
