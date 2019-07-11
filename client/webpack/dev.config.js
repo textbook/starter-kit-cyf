@@ -1,13 +1,14 @@
-const merge = require("webpack-merge");
+const merge = require('webpack-merge');
 
-const common = require("./common.config");
+const common = require('./common.config');
 
 module.exports = merge(common, {
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   devServer: {
     port: 3000,
+    historyApiFallback: true,
     proxy: {
-      "/api": "http://localhost:3100",
-    },
-  },
+      '/api': 'http://localhost:3100'
+    }
+  }
 });
