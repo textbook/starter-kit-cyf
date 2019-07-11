@@ -1,25 +1,23 @@
-import React, { Component } from "react";
+import React, { Fragment,component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import MainPage from "./Components/MainPage";
+import MainMentor from "./Components/MainMentor";
 
-import { getMessage } from "./service";
-import logo from "./logo.svg";
+import Header from "./Components/Header";
+
 import "./App.css";
 
-export class App extends Component {
 
-  state = { message: "Loading..." };
+export default () => <Fragment>
+  <BrowserRouter>
+  <Fragment>
+    <Header />
+    <Route exact path="/" component={MainPage} />
+    <Route exact path="/mentor" component={MainMentor} />
 
-  componentDidMount() {
-    getMessage().then((message) => this.setState({ message }));
-  }
 
-  render() {
-    const { message } = this.state;
-    return (
-      <div>
-        <img className="logo" data-qa="logo" src={logo} alt="Just the React logo" />
-        <p className="message" data-qa="message">{message}</p>
-      </div>
-    );
-  }
-}
-export default App;
+
+    </Fragment>
+  </BrowserRouter>
+  </Fragment>
+
