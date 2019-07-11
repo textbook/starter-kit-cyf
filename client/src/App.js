@@ -1,24 +1,25 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 
-import { getMessage } from "./service";
-import logo from "./logo.svg";
-import "./App.css";
+import Home from './Components/Home';
+import CreateQuiz from './Components/CreateQuiz';
+import EnterPin from './Components/EnterPin';
+import TakeQuiz from './Components/TakeQuiz';
+import Results from './Components/Results';
 
-export class App extends Component {
+import './App.css';
+import './Grid.css';
 
-  state = { message: "Loading..." };
-
-  componentDidMount() {
-    getMessage().then((message) => this.setState({ message }));
-  }
-
+class App extends Component {
   render() {
-    const { message } = this.state;
     return (
-      <div>
-        <img className="logo" data-qa="logo" src={logo} alt="Just the React logo" />
-        <p className="message" data-qa="message">{message}</p>
-      </div>
+      <BrowserRouter>
+        <Route exact path="/" component={Home} />
+        <Route path="/CreateQuiz" component={CreateQuiz} />
+        <Route path="/EnterPin" component={EnterPin} />
+        <Route path="/TakeQuiz" component={TakeQuiz} />
+        <Route path="/Results" component={Results} />
+      </BrowserRouter>
     );
   }
 }
