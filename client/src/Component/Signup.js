@@ -3,7 +3,7 @@ import userIcon from "./image/user.png";
 
 
 
-class login extends Component {
+class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
