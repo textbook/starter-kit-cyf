@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import userIcon from "./image/user.png";
-import Joi from "joi";
+// import Joi from "joi";
 
 
 
@@ -14,12 +14,12 @@ class login extends Component {
   }
 
 
-  componentDidMount() {
-    this.setState({
-      email: "",
-      password: "",
-    });
-  }
+  // componentDidMount() {
+  //   this.setState({
+  //     email: "",
+  //     password: "",
+  //   });
+  // }
 
   handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,32 +31,34 @@ class login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if (e.target.dataset.key === "student") {
-      console.log("welcome student");
-    }
-    if (e.target.dataset.key === "mentor") {
-      console.log("welcome mentor");
-    }
+    console.log(e.currentTarget);
+    // if (e.target.dataset.key === "student") {
+    //   console.log("welcome student");
+    // }
+    // if (e.target.dataset.key === "mentor") {
+    //   console.log("welcome mentor");
+    // }
   }
 
-  validate = () => {
-    const schema = {
-      name: Joi.string().min(6).required(),
-      email: Joi.string().min(6).required().email(),
-      password: Joi.string().min(6).required(),
-    };
-  }
+  // validate = () => {
+  //   const schema = {
+  //     name: Joi.string().min(6).required(),
+  //     email: Joi.string().min(6).required().email(),
+  //     password: Joi.string().min(6).required(),
+  //   };
+  // }
 
   render() {
     const { email, password } = this.state;
     return (
-      <main className="main">
+
+      <Fragment>
         <h1>Welcome</h1>
         <div className="user">
           <img src={userIcon} alt="user icon" />
         </div>
         <div className="form">
-          <form onSubmit={(e) => this.handleSubmit(e)} action="/register">
+          <form onSubmit={(e) => this.handleSubmit(e)} action="/login">
             <input type="text" value={email} name="email" placeholder="Email" onChange={(e) => this.handleChange(e)} /> <br />
             <input type="text" value={password} name="password" placeholder="Password" onChange={(e) => this.handleChange(e)} /> <br />
             <section className="btnSection">
@@ -65,7 +67,8 @@ class login extends Component {
             </section>
           </form>
         </div>
-      </main>
+      </Fragment>
+
     );
   }
 }

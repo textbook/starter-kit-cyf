@@ -1,3 +1,5 @@
+
+
 *{
   padding: 0;
   margin: 0;
@@ -59,13 +61,15 @@ color: red;
 
 /* //sign up */
 .main{
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  align-items: center; */
+  text-align: center;
   min-height: 70vh;
   width: 800px;
   margin: auto;
+  border: 2px solid;
 }
 
 .main h1{
@@ -74,7 +78,8 @@ color: red;
 
 .user{
   width: 100px;
-   
+    border: 2px solid;
+    margin: 10px auto;
 }
 
 .user img{
@@ -92,6 +97,8 @@ width: 100%;
 .form {
   min-width: 300px;
   height: 300px;
+  border: 2px solid;
+  align-items: center;
 }
 
 .form input{
@@ -123,11 +130,10 @@ width: 100%;
   color: white;
 }
 
-
-@media screen and (max-width: 805px){
+@media screen and (max-width: 705px){
   .header {
     -webkit-background: red;
     -ms-background: row;
-  background: red;
+  background: white;
   }
 }

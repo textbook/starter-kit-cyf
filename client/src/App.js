@@ -17,14 +17,18 @@ class App extends Component {
 
     return (
       <Router>
-        <Header />
-        <Switch>
-          <Route path="/" exact component={Login} />
-          <Route path="/signUp" exact component={SignUp} />
-          <Route path="/api/student" component={StudentRegister} />
-          <Route path="/api/mentor" exact component={MentorHome} />
-          <Route path="/api/admin" exact component={AdminHome} />
-        </Switch>
+        <header className="header">
+          <Header />
+        </header>
+        <main className="main">
+          <Switch>
+            <Route path="/" exact component={Login} />
+            <Route path="/signUp" exact component={SignUp} />
+            <Route path="/api/student" component={StudentRegister} />
+            <Route path="/api/mentor" exact component={MentorHome} />
+            <Route path="/api/admin" exact component={AdminHome} />
+          </Switch>
+        </main>
         <footer className="footer">
           <p>Semi-colon, Copyright july 2019</p>
         </footer>

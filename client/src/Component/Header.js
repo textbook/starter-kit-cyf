@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import cyf from "./image/cyf_brand.png";
 
 function Header() {
 
   return (
-    <header className="header">
+    <Fragment>
       <section className="logo">
         <img src={cyf} alt="code your future logo" />
       </section>
@@ -16,7 +16,7 @@ function Header() {
           <Link to="/signUp" className="navLink"><li>Sign up</li></Link>
         </ul>
       </nav>
-    </header>
+    </Fragment >
 
 
   );

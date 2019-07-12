@@ -18,22 +18,27 @@ api.get("/", (_, res, next) => {
   });
 });
 
-// AUTHENTICATION
-api.post("/register", async (req, res, next) => {
+
+api.post("/register", (req, res, next) => {
   const client = getClient();
   client.connect((err) => {
+    if (err) {
+      return next(err);
+    }
+    const db = client.db("heroku_cs1q5qk5");
+    const collection = db.collection("users");
     const user = new User({
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
     });
 
-    user.save();
+    collection.insertOne(user, (err, result) => {
+      res.send(err || result.ops[0]);
+    });
     // res.json(savedUser);
-    if (err) {
-      return next(err);
-    }
-    res.send(user);
+
+    // res.send(user);
 
     client.close();
   });
