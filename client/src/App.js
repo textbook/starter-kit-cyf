@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Component/Header";
 import SignUp from "./Component/Signup";
@@ -13,9 +14,11 @@ import "./App.css";
 
 class App extends Component {
 
+
   render() {
 
     return (
+
       <Router>
         <header className="header">
           <Header />
@@ -33,6 +36,7 @@ class App extends Component {
           <p>Semi-colon, Copyright july 2019</p>
         </footer>
       </Router >
+
     );
   }
 }
