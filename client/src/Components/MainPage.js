@@ -16,54 +16,51 @@ export class MainPage extends Component {
     const { message } = this.state;
     return (
       <Pane
-      width="100%"
-      height={700}
-      display = "flex"
-      justifyContent="center"
-      alignItems="center"
+        width="100%"
+        height={700}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
       >
-<Pane
-      // key={index}
-      elevation={4}
-      height={250}
-      width={800}
-      padding={16}
-      display = "flex"
-      alignItems="center"
-      borderRadius={3}
-      border="default"
-      background="blueTint"
-      >
-      
-      <Pane width="100%" height="100%" display="flex" alignItems="center" justifyContent="center">
+        <Pane
+          // key={index}
+          elevation={4}
+          height={250}
+          width={800}
+          padding={16}
+          display="flex"
+          alignItems="center"
+          borderRadius={3}
+          border="default"
+          background="blueTint"
+        >
+          <Pane
+            width="100%"
+            height="100%"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Button
+              appearance="primary"
+              height={40}
+              margin={24}
+              onClick={() => handleStudent()}
+            >
+              Student{" "}
+            </Button>
 
-<Button
-appearance="primary"
-height={40}
-margin={24}
-onClick={() => handleStudent()}
->
-Student  </Button>
+            <Button appearance="primary" height={40} margin={24}>
+              <Link to="/floatingMentor">Floating Mentor</Link>
+            </Button>
 
-<Button
-appearance="primary"
-height={40}
-margin={24}
->
-Floating Mentor  </Button>
-
-<Button
-  appearance="primary"
-  height={40}
-  margin={24}
-  >
-  <Link to='/mentor'>CYF Mentor </Link>
- </Button>
-</Pane>
-</Pane>
-
-</Pane>
-   );
+            <Button appearance="primary" height={40} margin={24}>
+              <Link to="/mentor">CYF Mentor </Link>
+            </Button>
+          </Pane>
+        </Pane>
+      </Pane>
+    );
   }
 }
 export default MainPage;
