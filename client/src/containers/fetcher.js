@@ -6,7 +6,7 @@ export class Fetcher {
   get getURL() {
     return this.url;
   }
-  Method
+
   async fetchTermByPath(props) {
     const { match: { params } } = props;
     const url = `${this.url}/singleterm?term=${params.term}&topic=${params.topic}`
