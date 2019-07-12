@@ -4,7 +4,7 @@ import Joi from "joi";
 
 
 
-class login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
