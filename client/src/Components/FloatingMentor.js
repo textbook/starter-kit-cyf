@@ -1,16 +1,26 @@
 import React, { Component } from "react";
 import { getMessage } from "../service";
 
-import { Button, Pane, Combobox, TextInput } from "evergreen-ui";
+import { Button, Pane, Combobox, TextInput, Table } from "evergreen-ui";
 import "../App.css";
 import mockStudentsProfiles from "../mockStudentsProfiles.json";
 
 export class FloatingMentor extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      clickedStudent: null
+    };
+  }
 
-  state = { message: "Loading..." };
+  handyStudent = selected => {
+    console.log("handystudent working....")
+    this.setState({
+      clickedStudent: selected
+    });
+  };
 
   render() {
-    const { message } = this.state;
     return (
       <div>
         <Pane
@@ -36,7 +46,7 @@ export class FloatingMentor extends Component {
             <Combobox
               items={mockStudentsProfiles.map(s => s.name)}
               height={48}
-              onChange={selected => console.log(selected)}
+              onChange={selected => this.handyStudent(selected)}
               placeholder="Students"
               autocompleteProps={{
                 title: "Students"
@@ -55,6 +65,34 @@ export class FloatingMentor extends Component {
               </Button>
             </Pane>
           </Pane>
+        </Pane>
+
+        <Pane>
+          <TextInput
+            width="100%"
+            height={200}
+            marginTop={25}
+            width={500}
+            placeholder={this.state.clickedStudent}
+          />
+          <Table.Body>
+            <Table.Head>
+              <Table.TextCell flexBasis={200} flexShrink={0} flexGrow={0}>
+                Student Name:
+              </Table.TextCell>
+              <Table.TextCell >
+                {this.state.clickedStudent}
+              </Table.TextCell>
+            </Table.Head>
+            <Table.Body>
+              <Table.Row>
+                <Table.TextCell>Students Soft Skills:</Table.TextCell>
+              </Table.Row>
+              <Table.Row>
+                <Table.TextCell>Students Tech Skills:</Table.TextCell>
+              </Table.Row>
+            </Table.Body>
+          </Table.Body>
         </Pane>
       </div>
     );
