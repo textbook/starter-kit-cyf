@@ -1,7 +1,19 @@
+html,
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Avenir;
+  
+}
+body {
+  background-color: #d3d3d3;
+}
+
 .App-logo {
   width: 380px;
   height: 100px;
-  padding:25px 0px 50px 50px;
+  padding: 25px 0px 50px 0px;
+  margin-left: 20px;
 }
 
 .App-header {
@@ -11,7 +23,6 @@
   flex-direction: row;
   align-items: left;
   justify-content: space-between;
-
 }
 .App-header-two {
   background-color: #030303;
@@ -20,13 +31,118 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
 }
 
 .Title {
+  font-family: Avenir;
+  font-weight: 400;
   color: grey;
   font-size: 50px;
   align-items: right;
-  padding:0px 50px 0px 0px;
+  padding: 40px 50px 0px 0px;
+}
 
+.Timer {
+  color: white;
+  font-size: 30px;
+  padding: 60px 50px 0px 0px;
+}
+
+.Game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.Game_Enter {
+  padding: 30px;
+}
+
+.MuiButtonBase-root {
+  width: 200px;
+  height: 50px;
+}
+
+.Paper {
+  width: 50%;
+  padding: 25px;
+  margin: 50px;
+}
+
+.Paper-one {
+  width: 60%;
+  padding: 25px;
+  margin: 50px;
+}
+
+.Paper-two {
+  width: 80%;
+  height: 100px;
+  padding: 25px;
+  margin: 50px;
+  margin-top: 40px;
+}
+
+.Final-score {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 40px;
+  width: 20%;
+}
+
+.Table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.choices {
+  display: flex;
+  flex: wrap;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.Questions {
+  font-family: Avenir;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.Previous {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.Next {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: red;
 }
