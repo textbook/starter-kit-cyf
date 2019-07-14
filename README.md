@@ -1,68 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Starter Kit
 
-## Available Scripts
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-In the project directory, you can run:
+ - [x] Full stack ES8+ with [Babel]
+ - [x] [Express] server
+ - [x] [React] client with [Webpack]
+ - [x] Linting with [ESLint]
+ - [x] Dev mode (watch modes for client and server, proxy to avoid CORS issues)
+ - [x] Production build (single deployment artifact, React loaded via CDN)
+ - [x] [Heroku] deployment
 
-### `npm start`
+Setup
+-----
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Pick one member of the team to own the repository and pipeline. That person should do the following:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+ 1. Create a fork of this repository for the team, and rename it something appropriate for your project.
+ 2. Click the "Deploy to Heroku" button and create a Heroku account when prompted.
+ 3. Fill in the name of the application, select Europe and then click "Deploy App". Note the MongoDB add-on; this will
+    create and link a database for you.
+ 4. Once it has deployed successfully, click the "Manage app" button to view the application details.
+ 5. Go to the "Deploy" tab, select "Connect to GitHub" and choose your repo.
+ 6. Click "Enable automatic deploys".
 
-### `npm test`
+Whenever you commit to master (or e.g. merge a [pull request]) it will get automatically deployed!
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You should now make sure all of the project team are [collaborators] on the repository.
 
-### `npm run build`
+Scripts
+-------
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Various scripts are provided in the package file, but many are helpers for other scripts; here are the ones you'll
+commonly use:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+ - `npm run dev`: starts the frontend and backend in dev mode, with file watching and hot reloading.
+ - `npm run lint`: runs ESLint against all the JavaScript in the project.
+ - `npm run serve`: builds and starts the app in production mode.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When either `dev` or `serve` is running you can view your app at http://localhost:3000. There is a slight difference
+in what's happening in the background, but you don't need to worry about that.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+  [Babel]: https://babeljs.io/
+  [collaborators]: https://help.github.com/en/articles/inviting-collaborators-to-a-personal-repository
+  [ESLint]: https://eslint.org/
+  [Express]: https://expressjs.com/
+  [Heroku]: https://www.heroku.com/
+  [Node]: https://nodejs.org/en/
+  [pull request]: https://help.github.com/en/articles/about-pull-requests
+  [React]: https://reactjs.org/
+  [Webpack]: https://webpack.js.org/
