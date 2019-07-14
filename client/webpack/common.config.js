@@ -2,6 +2,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./client/src/index.js",
+  output:{
+    publicPath: '/'
+  },
   module: {
     rules: [
       {
@@ -19,6 +22,9 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+  historyApiFallback: true,
+},
   plugins: [
     new HtmlWebpackPlugin({
       favicon: "./client/src/favicon.ico",

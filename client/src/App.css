@@ -1,11 +1,37 @@
-.logo {
-  width: 100px;
+.App {
+  text-align: center;
 }
 
-.message {
-  color: blue;
+.App {
+  margin-top: 15px;
+  background-color: white
 }
 
-.message:hover {
-  background-color: yellow;
+.container-fluid{
+    border-width:0;
+    box-shadow:none;
+    background-color:white
+}
+.navbar {
+    
+    border: 0;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

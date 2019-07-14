@@ -1,0 +1,11 @@
+.field{
+    width:100%;
+    padding-top:20px
+}
+.field input{
+width :60%;
+height:  50px;
+margin-right: 5px;
+background-color: rgb(240, 241, 247);
+
+ }
