@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 import {
   Table,
@@ -8,21 +8,21 @@ import {
   TableRow,
   Paper,
   Typography
-} from '@material-ui/core';
-import logo from '../logo.png';
+} from "@material-ui/core";
+import logo from "../logo.png";
 
 function createData(name, pts) {
   return { name, pts };
 }
 
 const rows = [
-  createData('Bart', 89),
-  createData('Mohammad', 82),
-  createData('Joan', 78),
-  createData('Elamin', 73),
-  createData('Miles', 68),
-  createData('Kadir', 67),
-  createData('Ermi', 65)
+  createData("Bart", 89),
+  createData("Mohammad", 82),
+  createData("Joan", 78),
+  createData("Elamin", 73),
+  createData("Miles", 68),
+  createData("Kadir", 67),
+  createData("Ermi", 65)
 ];
 
 class Results extends Component {
@@ -31,10 +31,10 @@ class Results extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h3 className="Title">Assesment Quiz App</h3>
+          <h3 className="Title">Assessment Quiz App</h3>
         </header>
         <div className="Final-score">
-          <Paper className="score" >
+          <Paper className="score">
             <Typography variant="h4" component="h3" color="default">
               Final Score
             </Typography>
@@ -62,7 +62,6 @@ class Results extends Component {
             </Table>
           </Paper>
         </div>
-
       </div>
     );
   }

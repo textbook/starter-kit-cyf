@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { Paper, Typography, Button } from '@material-ui/core';
-import logo from '../logo.png';
+import React, { Component } from "react";
+import { Paper, Typography, Button } from "@material-ui/core";
+import logo from "../logo.png";
 class TakeQuiz extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h6 className="Timer">Time 00:14</h6>
+          <h3 className="Title">Assessment Quiz App</h3>
         </header>
         <div className="Final-score">
           {/* <a href="" className="Previous">
