@@ -25,30 +25,28 @@ async componentDidMount(){
 
 content = () => {
   if(this.state.term !== null){
-    return this.state.term.map((term, index) => {
       return(
-        <Fragment key={index}>
-        <h2>{term.term}</h2>
+        <Fragment>
+        <h2>{this.state.term.term}</h2>
         <hr className='term-hr'/>
-        <p>{term.definition}</p>
+        <p>{this.state.term.definition}</p>
         <h2>Code Example</h2>
         <hr className='term-hr'/>
-        <p>{term.code_example}</p>
+        <p>{this.state.term.code_example}</p>
         <h2>Additional Resources</h2>
           <hr className='term-hr'/>
           <ul>
-          {term.resources.map((link, index) => {
+          {this.state.term.resources.map((link, index) => {
             return(
-            <li key={index}>{link}</li>
+            <li key={index}><a href={link}>{link} </a></li>
             )
-          })
+          })}
 
-        }
         </ul>
         <h2>Related Terms</h2>
           <hr className='term-hr'/>
           <ul>
-          {term.related_terms.map((related, index) => {
+          {this.state.term.related_terms.map((related, index) => {
             return(
                 <li key={index}>{related}</li>
 
@@ -61,7 +59,6 @@ content = () => {
 
 
       )
-    })
   }
 }
 

@@ -16,19 +16,22 @@ api.get('/singleterm', function(request, response) {
         const db = client.db('glossary')
         const collection = db.collection('definitions')
 
+
         const searchObject = {}
 
         if (request.query.term) {
-            searchObject.term = request.query.term
+            searchObject.term_slug = request.query.term
         }
 
         if (request.query.topic) {
-            searchObject.topic = request.query.topic
+            searchObject.topic_slug = request.query.topic
         }
 
+        console.log(searchObject);
 
 
-        collection.find(searchObject).toArray(function(error, def) {
+
+        collection.findOne(searchObject, function(error, def) {
             response.send(error || def)
             client.close()
         })
@@ -46,7 +49,7 @@ api.post('/addterm', helper.isValidQuery(), function(request, response) {
     const client = getClient();
 
 
-    const query = Object.keys(request.query);
+    const query = Object.keys(request.body);
     const searchObject = helper.generateSearchObject(query, request);
     if (helper.isObjectEmpty(searchObject)) {
         return response.status(400).json(`Error: Invalid criteria`)

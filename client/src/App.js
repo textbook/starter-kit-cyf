@@ -10,6 +10,7 @@ import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 import Search from "./containers/Search";
 import SingleTerm from './containers/SingleTerm';
+import AddNewTerm from "./containers/AddNewTerm";
 
 class App extends Component {
 
@@ -25,6 +26,7 @@ class App extends Component {
     <Route path="/Signup" exact component={Signup} />
     <Route path="/Search" exact component={Search} />
     <Route path="/:topic/:term" component={SingleTerm}/>
+    <Route path="/new" component={AddNewTerm} />
     { /* Finally, catch all unmatched routes */}
     <Route component={NotFound} />
 

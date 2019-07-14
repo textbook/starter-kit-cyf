@@ -16,8 +16,16 @@ class Helper {
           check("resources.*").isURL().withMessage('Must be valid URL'),
           check('related_terms.*').isLength({
             min: 3
-          }).withMessage('Related terms must be atleast 3 characters long')]
+          }).withMessage('Related terms must be atleast 3 characters long'),
+          check('term_slug').isLength({
+            min: 2
+          }).withMessage('Slug is invalid'),
+          check('topic_slug').isLength({
+            min: 2
+          }).withMessage('Slug is invalid')
+        ]
     }
+
 
     isValidHex() {
         return [check('id').custom(id => {
@@ -40,7 +48,7 @@ class Helper {
         const searchObject = {};
 
         query.map(key => {
-            searchObject[key] = request.query[key];
+            searchObject[key] = request.body[key];
         })
         return searchObject
     }
