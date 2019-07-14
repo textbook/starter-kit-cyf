@@ -41,13 +41,16 @@ export class MainPage extends Component {
             alignItems="center"
             justifyContent="center"
           >
-            <Button
+            {/* <Button
               appearance="primary"
               height={40}
               margin={24}
               onClick={() => handleStudent()}
             >
               Student{" "}
+            </Button> */}
+            <Button appearance="primary" height={40} margin={24}>
+              <Link to="/studentPage">Student</Link>
             </Button>
 
             <Button appearance="primary" height={40} margin={24}>
