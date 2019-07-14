@@ -37,7 +37,7 @@ class login extends Component {
       return this.props.history.push("/api/studentRegistered");
     }
     if (status === "mentor") {
-      return this.props.history.push("/api/mentorHome");
+      return this.props.history.push("/mentorHome");
     }
     if (status === "admin") {
       return this.props.history.push("/api/adminHome");
