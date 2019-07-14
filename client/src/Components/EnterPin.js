@@ -1,15 +1,11 @@
-import React, { Component } from "react";
-import { Button, TextField } from "@material-ui/core";
-import logo from "../logo.png";
-import { blue } from "@material-ui/core/colors";
+import { Button, TextField } from "@material-ui/core"
+import React, { Component } from "react"
+import Header from "./Header"
 class EnterPin extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h3 className="Title">Assessment Quiz App</h3>
-        </header>
+        <Header />
         <div className="Game">
           <div className="Game_Enter">
             <TextField
@@ -34,8 +30,8 @@ class EnterPin extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default EnterPin;
+export default EnterPin

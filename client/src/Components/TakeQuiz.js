@@ -1,14 +1,11 @@
-import React, { Component } from "react";
-import { Paper, Typography, Button } from "@material-ui/core";
-import logo from "../logo.png";
+import { Button, Paper, Typography } from "@material-ui/core"
+import React, { Component } from "react"
+import Header from "./Header"
 class TakeQuiz extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h3 className="Title">Assessment Quiz App</h3>
-        </header>
+        <Header />
         <div className="Final-score">
           {/* <a href="" className="Previous">
             {' '}
@@ -56,8 +53,8 @@ class TakeQuiz extends Component {
           </a> */}
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default TakeQuiz;
+export default TakeQuiz

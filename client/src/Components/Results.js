@@ -1,18 +1,17 @@
-import React, { Component } from "react";
-
 import {
+  Paper,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableRow,
-  Paper,
   Typography
-} from "@material-ui/core";
-import logo from "../logo.png";
+} from "@material-ui/core"
+import React, { Component } from "react"
+import Header from "./Header"
 
 function createData(name, pts) {
-  return { name, pts };
+  return { name, pts }
 }
 
 const rows = [
@@ -23,16 +22,13 @@ const rows = [
   createData("Miles", 68),
   createData("Kadir", 67),
   createData("Ermi", 65)
-];
+]
 
 class Results extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h3 className="Title">Assessment Quiz App</h3>
-        </header>
+        <Header />
         <div className="Final-score">
           <Paper className="score">
             <Typography variant="h4" component="h3" color="default">
@@ -63,8 +59,8 @@ class Results extends Component {
           </Paper>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Results;
+export default Results
