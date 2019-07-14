@@ -1,6 +1,8 @@
-import { Button, TextField } from "@material-ui/core"
-import React, { Component } from "react"
-import Header from "./Header"
+import React, { Component } from 'react';
+import { Button, TextField } from '@material-ui/core';
+import logo from '../logo.png';
+import Header from './Header';
+
 class EnterPin extends Component {
   render() {
     return (
@@ -30,8 +32,8 @@ class EnterPin extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default EnterPin
+export default EnterPin;

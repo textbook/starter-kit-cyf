@@ -149,3 +149,7 @@ a {
 a:hover {
   color: red;
 }
+
+.MuiButton-root {
+  text-transform: none !important;
+}

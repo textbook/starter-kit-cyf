@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 import {
   Paper,
   Table,
@@ -6,32 +7,34 @@ import {
   TableHead,
   TableRow,
   Typography
-} from "@material-ui/core"
-import React, { Component } from "react"
-import Header from "./Header"
+} from '@material-ui/core';
+import logo from '../logo.png';
+import Header from './Header';
 
 function createData(name, pts) {
-  return { name, pts }
+  return { name, pts };
 }
 
 const rows = [
-  createData("Bart", 89),
-  createData("Mohammad", 82),
-  createData("Joan", 78),
-  createData("Elamin", 73),
-  createData("Miles", 68),
-  createData("Kadir", 67),
-  createData("Ermi", 65)
-]
+  createData('Bart', 89),
+  createData('Mohammad', 82),
+  createData('Joan', 78),
+  createData('Elamin', 73),
+  createData('Miles', 68),
+  createData('Kadir', 67),
+  createData('Ermi', 65)
+];
 
 class Results extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <header className="App">
+          <Header />
+        </header>
         <div className="Final-score">
           <Paper className="score">
-            <Typography variant="h4" component="h3" color="default">
+            <Typography variant="h4" component="h3" color="Primary">
               Final Score
             </Typography>
           </Paper>
@@ -59,8 +62,8 @@ class Results extends Component {
           </Paper>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Results
+export default Results;
