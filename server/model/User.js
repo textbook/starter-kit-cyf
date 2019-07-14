@@ -19,6 +19,9 @@ const userSchema = new mongoose.Schema({
     min: 6,
     max: 1024,
   },
+  status: {
+    type: String,
+  },
   date: {
     type: Date,
     default: Date.now,
