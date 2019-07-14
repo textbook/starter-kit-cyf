@@ -23,6 +23,10 @@ body {
   align-items: left;
   justify-content: space-between;
 }
+
+.App-header a{
+  color: white;
+}
 .App-header-two {
   background-color: #030303;
   height: 150px;
