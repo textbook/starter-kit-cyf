@@ -41,24 +41,34 @@ export class MainPage extends Component {
             alignItems="center"
             justifyContent="center"
           >
-            {/* <Button
-              appearance="primary"
-              height={40}
-              margin={24}
-              onClick={() => handleStudent()}
-            >
-              Student{" "}
-            </Button> */}
-            <Button appearance="primary" height={40} margin={24}>
-              <Link to="/studentPage">Student</Link>
+             <Button appearance="primary" height={40} margin={24}>
+              <Link 
+              to="/studentPage"
+              style={{
+                textDecoration: "none",
+                color: "white"
+              }}
+              >Student</Link>
             </Button>
 
             <Button appearance="primary" height={40} margin={24}>
-              <Link to="/floatingMentor">Floating Mentor</Link>
+              <Link 
+              to="/floatingMentor"
+              style={{
+                textDecoration: "none",
+                color: "white"
+              }}
+              >Floating Mentor</Link>
             </Button>
 
             <Button appearance="primary" height={40} margin={24}>
-              <Link to="/mentor">CYF Mentor </Link>
+              <Link 
+              to="/mentor"
+              style={{
+                textDecoration: "none",
+                color: "white"
+              }}
+              >CYF Mentor </Link>
             </Button>
           </Pane>
         </Pane>

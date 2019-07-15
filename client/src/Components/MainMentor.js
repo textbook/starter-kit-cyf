@@ -1,13 +1,25 @@
 import React, { Component } from "react";
 import { getMessage } from "../service";
+import mockStudentsProfiles from "../mockStudentsProfiles.json";
 
-import { Button, Pane } from 'evergreen-ui';
+import { Button, Pane ,Combobox } from 'evergreen-ui';
 import "../App.css";
 
 export class MainMentor extends Component {
 
-  state = { message: "Loading..." };
+  constructor(props) {
+    super(props);
+    this.state = {
+      clickedStudent: null
+    };
+  }
 
+  handyStudent = selected => {
+    console.log("handystudent working....")
+    this.setState({
+      clickedStudent: selected
+    });
+  };
   render() {
     const { message } = this.state;
     return (
@@ -27,26 +39,29 @@ export class MainMentor extends Component {
       
       <Pane width="100%" height="100%" display="flex" alignItems="center" justifyContent="center">
 
-<Button
-appearance="primary"
-height={40}
-margin={24}
-is="a" href="/mMentor">
-Student  </Button>
+      <Combobox
+              items={mockStudentsProfiles.map(s => s.name)}
+              height={48}
+              onChange={selected => this.handyStudent(selected)}
+              placeholder="Students"
+              autocompleteProps={{
+                title: "Students"
+              }}
+            />
 
 
 
-<Button
-  appearance="primary"
-  height={40}
-  margin={24}
-  is="a" href="/mMentor">
-  >
-CYF Mentor  </Button>
 </Pane>
 
 </Pane>
-   );
+
+
+
+
+
+
+
+   )
   }
 }
 export default MainMentor;
