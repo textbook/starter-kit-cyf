@@ -11,8 +11,7 @@ class login extends Component {
     super(props);
     this.state = {
       email: "",
-      password: "",
-      status: "",
+      password: ""
     };
   }
 
@@ -23,24 +22,21 @@ class login extends Component {
     });
   }
 
-
   handleSubmit = (e) => {
     e.preventDefault();
-    this.setState({
-      status: e.target.value,
-    });
-    const { email, password, status } = this.state;
+    const { email, password } = this.state;
+    const status = e.target.value;
     // fetch("http://localhost:3000/api/loginJoanTest", {
 
     // });
     if (status === "student") {
-      return this.props.history.push("/api/studentRegistered");
+      return this.props.history.push("/studentRegistered");
     }
     if (status === "mentor") {
       return this.props.history.push("/mentorHome");
     }
     if (status === "admin") {
-      return this.props.history.push("/api/adminHome");
+      return this.props.history.push("/adminHome");
     }
   }
 
