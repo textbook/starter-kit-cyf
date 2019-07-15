@@ -107,14 +107,21 @@ api.post("/register", (req, res, next) => {
     if (err) {
       return next(err);
     }
+    const { name, email, password, status } = req.body;
+
+    if (!name || !email || !password || !status) {
+      res.status(400).json({ msg: "fill out all the fields" });
+      return;
+    }
     const db = client.db("heroku_cs1q5qk5");
     const collection = db.collection("users");
-    //check if the amail is already in use
+    //check if the email is already in use
     const checkUser = await collection.findOne({
       email: req.body.email
     });
     if (checkUser) {
-      res.status(404).send("This email is already in use");
+      res.status(404).json({ msg: "This email is already in use" });
+      return;
     }
     //if the email is not in use
     const user = new User({
@@ -198,36 +205,44 @@ api.get("/attendance", (req, res, next) => {
     const db = client.db("heroku_cs1q5qk5");
     const collection = db.collection("sessions");
     collection.find().toArray((err, sessions) => {
-      const currentDate = dayjs().format("DD/MM/YYYY");
-      const currentSession = sessions
-        .filter(session => session.date === "14/07/2019") //it is hard coded for testing
-        // .filter(session => session.date === currentDate) //should be for real life
-        .reduce(session => session);
-      const { name, session, date } = currentSession;
-      const attendingStudents = currentSession.attendance.filter(
-        user => user.status === "STUDENT" && user.isAttended === true
-      );
-      const totalAttendingStudents = attendingStudents.length;
-      const absentStudents = currentSession.attendance.filter(
-        user => user.status === "STUDENT" && user.isAttended === false
-      );
-      const totalAbsentStudents = absentStudents.length;
-      const proportion = (
-        (totalAttendingStudents * 100) /
-        (totalAttendingStudents + totalAbsentStudents)
-      ).toFixed(2);
-      res.send(
-        err || {
-          name,
-          session,
-          date,
-          attendingStudents,
-          totalAttendingStudents,
-          absentStudents,
-          totalAbsentStudents,
-          proportion
-        }
-      );
+      const today = dayjs().format("DD/MM/YYYY");
+      const selectedDate = req.query.date === "today" ? today : req.query.date;
+      // console.log("******", req.query.date);
+      // console.log("******", selectedDate);
+      let currentSession = sessions
+        // .filter(session => session.date === "14/07/2019") //it is hard coded for testing
+        .filter(session => session.date === selectedDate); //should be for real life
+      if (currentSession.length > 0) {
+        currentSession = currentSession.reduce(session => session);
+        const { name, session, date } = currentSession;
+        const attendingStudents = currentSession.attendance.filter(
+          user => user.status === "STUDENT" && user.isAttended === true
+        );
+        const totalAttendingStudents = attendingStudents.length;
+        const absentStudents = currentSession.attendance.filter(
+          user => user.status === "STUDENT" && user.isAttended === false
+        );
+        const totalAbsentStudents = absentStudents.length;
+        const proportion = (
+          (totalAttendingStudents * 100) /
+          (totalAttendingStudents + totalAbsentStudents)
+        ).toFixed(2);
+        res.send(
+          err || {
+            sessions,
+            name,
+            session,
+            date,
+            attendingStudents,
+            totalAttendingStudents,
+            absentStudents,
+            totalAbsentStudents,
+            proportion
+          }
+        );
+      } else {
+        res.send(err || { sessions });
+      }
     });
   });
 });
