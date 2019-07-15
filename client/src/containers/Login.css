@@ -19,6 +19,29 @@
   background-color: #ffffff;
 }
 
+.add-new-heading{
+  margin-top: 50px;
+margin-bottom: 25px;
+}
+
+.plus{
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: right;
+}
+
+.add-new-wrapper {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  border-radius: 10px;
+  /* box-shadow: 0px 10px 50px #555; */
+  background-color: #ffffff;
+  margin: 0 auto;
+}
+
 form {
   width: 100%;
   display: flex;
@@ -120,3 +143,22 @@ input.error {
 .createAccount small {
   color: #999;
   font-weight: lighter;}
+
+  .submit-new{
+    background-color: #519e8a;
+    color: #fff;
+    border: 2px solid #fff;
+    width: 100%;
+    margin-top: 1em;
+    padding: 8px 0px;
+    font-size: 1em;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    margin-bottom: 0.25em;
+  }
+
+  .submit-new:hover {
+    color: #519e8a;
+    background-color: #fff;
+    border: 2px solid #519e8a;
+  }
