@@ -4,8 +4,6 @@ import userIcon from "../image/user.png";
 import "./index.css";
 // import Joi from "joi";
 
-
-
 class login extends Component {
   constructor(props) {
     super(props);
@@ -15,30 +13,50 @@ class login extends Component {
     };
   }
 
-  handleChange = (e) => {
+  handleChange = async e => {
     const { name, value } = e.target;
     this.setState({
-      [name]: value,
+      [name]: value
     });
-  }
+  };
 
-  handleSubmit = (e) => {
+  handleSubmit = async e => {
     e.preventDefault();
     const { email, password } = this.state;
-    const status = e.target.value;
+    const status = e.target.value
     // fetch("http://localhost:3000/api/loginJoanTest", {
-
     // });
-    if (status === "student") {
-      return this.props.history.push("/studentRegistered");
+    try {
+      const res = await fetch("api/login", {
+        method: "PUT",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+          status: status
+        })
+      });
+      const json = await res.json();
+      if (res.status !== 200) {
+        alert(json.msg);
+      } else {
+        if (status === "STUDENT") {
+          return this.props.history.push("/studentRegistered");
+        } else if (status === "MENTOR") {
+          return this.props.history.push("/mentorHome");
+        } else if (status === "ADMIN") {
+          return this.props.history.push("/adminHome");
+        }
+      } 
+    } catch (err) {
+      console.log(err);
     }
-    if (status === "mentor") {
-      return this.props.history.push("/mentorHome");
-    }
-    if (status === "admin") {
-      return this.props.history.push("/adminHome");
-    }
-  }
+  }; //func
+
+  //const status = e.target.value;
 
   // validate = () => {
   //   const schema = {
@@ -51,7 +69,6 @@ class login extends Component {
   render() {
     const { email, password } = this.state;
     return (
-
       <main className="main">
         <h1>Register Attendance</h1>
         <div className="user">
@@ -59,30 +76,53 @@ class login extends Component {
         </div>
         <div className="form">
           <form>
-            <input type="text" value={email} name="email" placeholder="Email" onChange={(e) => this.handleChange(e)} required />
-            <input type="password" value={password} name="password" placeholder="Password" onChange={(e) => this.handleChange(e)} required />
+            <input
+              type="text"
+              value={email}
+              name="email"
+              placeholder="Email"
+              onChange={e => this.handleChange(e)}
+              required
+            />
+            <input
+              type="password"
+              value={password}
+              name="password"
+              placeholder="Password"
+              onChange={e => this.handleChange(e)}
+              required
+            />
             <section className="btnSection">
               <button
-                onClick={(e) => this.handleSubmit(e)}
+                onClick={e => this.handleSubmit(e)}
                 type="submit"
                 className="btn student"
-                value="student" >Login as Student</button>
+                value="STUDENT"
+              >
+                Login as Student
+              </button>
 
               <button
-                onClick={(e) => this.handleSubmit(e)}
+                onClick={e => this.handleSubmit(e)}
                 type="submit"
                 className="btn mentor"
-                value="mentor" >Login as Mentor</button>
+                value="MENTOR"
+              >
+                Login as Mentor
+              </button>
 
-              <button onClick={(e) => this.handleSubmit(e)}
+              <button
+                onClick={e => this.handleSubmit(e)}
                 type="submit"
                 className="btn admin"
-                value="admin" >Login as Admin</button>
+                value="ADMIN"
+              >
+                Login as Admin
+              </button>
             </section>
           </form>
         </div>
       </main>
-
     );
   }
 }

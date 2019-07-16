@@ -95,7 +95,7 @@ class SignUp extends Component {
                 type="submit"
                 onClick={e => this.handleSubmit(e)}
                 className="btn mentor"
-                value="mentor"
+                value="MENTOR"
               >
                 Sign up as Mentor
               </button>

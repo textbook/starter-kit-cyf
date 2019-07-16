@@ -1,0 +1,141 @@
+{
+  _id: 5d2c9ee60b652c543e628fc5,
+  name: 'Node/JS',
+  session: '3',
+  date: '25/08/2019',
+  city: 'London',
+  attendance: [
+    {
+      _id: 5d27b8dd7c213e5998eaa502,
+      name: 'Leanne Graham',
+      username: 'Bret',
+      email: 'Sincere@april.biz',
+      password: 'student',
+      status: 'STUDENT',
+      city: 'London',
+      isAttended: true,
+      timeOfArrival: '11:25'
+    },
+    {
+      _id: 5d27b98c7c213e5998eaa55c,
+      name: 'Ervin Howell',
+      username: 'Antonette',
+      email: 'Shanna@melissa.tv',
+      password: 'student',
+      status: 'STUDENT',
+      city: 'London',
+      isAttended: true,
+      timeOfArrival: '17:30:46'
+    },
+    {
+      _id: 5d27b9ab7c213e5998eaa566,
+      name: 'Clementine Bauch',
+      username: 'Samantha',
+      email: 'Nathan@yesenia.net',
+      password: 'student',
+      status: 'STUDENT',
+      city: 'London',
+      isAttended: true,
+      timeOfArrival: '17:39:35'
+    },
+    {
+      _id: 5d27b9d57c213e5998eaa585,
+      name: 'Patricia Lebsack',
+      username: 'Karianne',
+      email: 'Julianne.OConner@kory.org',
+      password: 'student',
+      status: 'STUDENT',
+      city: 'London',
+      isAttended: true,
+      timeOfArrival: '17:32:59'
+    },
+    {
+      _id: 5d27b9e87c213e5998eaa587,
+      name: 'Chelsey Dietrich',
+      username: 'Kamren',
+      email: 'Lucio_Hettinger@annie.ca',
+      password: 'student',
+      status: 'STUDENT',
+      city: 'London',
+      isAttended: false,
+      timeOfArrival: null
+    },
+    {
+      _id: 5d27b9ff7c213e5998eaa58f,
+      name: 'Mrs. Dennis Schulist',
+      username: 'Leopoldo_Corkery',
+      email: 'Karley_Dach@jasper.info',
+      password: 'student',
+      status: 'STUDENT',
+      city: 'London',
+      isAttended: false,
+      timeOfArrival: null
+    },
+    {
+      _id: 5d27ba0f7c213e5998eaa593,
+      name: 'Kurtis Weissnat',
+      username: 'Elwyn.Skiles',
+      email: 'Telly.Hoeger@billy.biz',
+      password: 'student',
+      status: 'STUDENT',
+      city: 'London',
+      isAttended: false,
+      timeOfArrival: null
+    },
+    {
+      _id: 5d2a6cfd8a1345721986c267,
+      name: 'noname',
+      email: 'noname@yahoo.com',
+      password: 'student',
+      status: 'STUDENT',
+      date: 2019-07-13T23:45:01.761Z,
+      isAttended: false,
+      timeOfArrival: null
+    },
+    {
+      _id: 5d2ae7b748c23c0a90bc177e,
+      name: 'noname',
+      email: 'noname@april.biz',
+      password: 'test121',
+      status: 'STUDENT',
+      date: 2019-07-14T08:28:39.367Z,
+      isAttended: false,
+      timeOfArrival: null
+    },
+    {
+      _id: 5d2b0f2ca91c7d2a8cf0da50,
+      name: 'clements',
+      email: 'clments@april.biz',
+      password: 'clmnts',
+      status: 'STUDENT',
+      date: 2019-07-14T11:17:00.103Z,
+      isAttended: false,
+      timeOfArrival: null
+    },
+    {
+      _id: 5d2b113ce1cfb02dea51bc23,
+      name: 'noproblem',
+      email: 'notmail@april.biz',
+      password: 'blabla',
+      status: 'STUDENT',
+      date: 2019-07-14T11:25:48.916Z,
+      isAttended: false,
+      timeOfArrival: null
+    }
+  ],
+  sessionToUpdate: {
+    _id: 5d2c9ee60b652c543e628fc5,
+    name: 'Node/JS',
+    session: '3',
+    date: '25/08/2019',
+    city: 'London',
+    attendance: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object]
+    ]
+  }
+}
