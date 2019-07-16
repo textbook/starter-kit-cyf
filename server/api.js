@@ -137,64 +137,103 @@ api.post("/register", (req, res, next) => {
   });
 });
 
-//allow the user to be added to database after log-in from frontend with the `timeofArrival`. require email and password from frontend
-// api.put("/login", (req, res, next) => {
-//   const client = getClient();
-//   client.connect(async err => {
-//     if (err) {
-//       return next(err);
-//     }
-//     const db = client.db("heroku_cs1q5qk5");
-//     //check if the user email and password matches
-//     let collection = db.collection("users");
-//     const user = await collection.findOne({
-//       email: req.body.email
-//     });
-//TODO : check the satus of the user as well
-//     if (!user) {
-//       res.status(404).send("your password or email is wrong");
-//     }
-//     //if the pasword is correct
-//     //TODO: add one step for checking the location
-//     collection = db.collection("sessions");
-//     const sessionToUpdate = await collection.findOne({
-//       //date : currentDate //should be real life
-//       date: "21/07/2019" //hard coded for testing
-//     });
-//     if (!sessionToUpdate) {
-//       res.status(404).send("session is not created yet");
-//     }
-//     //if session is created on database
-//     //change the status of student as attended with the arrival time
-//     sessionToUpdate.attendance.forEach(student => {
-//       if (student.email === req.body.email) {
-//         const currentDate = dayjs().format("DD/MM/YYYY");
-//         const timeOfArrival = new Date().toLocaleTimeString();
-//         student["isAttended"] = true;
-//         student["timeOfArrival"] = timeOfArrival;
-//       }
-//     });
+//allow the user to be added to database after log-in from frontend with the `timeofArrival`. require email and password, status from frontend
+api.put("/login", (req, res, next) => {
+  const client = getClient();
+  client.connect(async err => {
+    if (err) {
+      return next(err);
+    }
+    const { email, password, status } = req.body;
+    if (!email || !password || !status) {
+      res.status(400).json({ msg: "fill out all the fields" });
+      return;
+    }
+    const db = client.db("heroku_cs1q5qk5");
+    //check if the user email and password matches
+    let collection = db.collection("users");
+    const user = await collection.findOne({
+      email: req.body.email
+    });
+    //if no matching with the provided email
+    if (!user) {
+      res.status(404).json({
+        msg: "your email is wrong"
+      });
+      return;
+    }
+    //checking the satus of the user
+    if (user.status != req.body.status) {
+      res.status(400).json({
+        msg: `You selected wrong status as ${
+          req.body.status
+        }, you should select ${user.status} status!`
+      });
+      return;
+    }
+    //checking the password
+    if (user.password != req.body.password) {
+      res.status(400).json({
+        msg: `Your password is wrong!`
+      });
+      return;
+    }
+    //if the pasword is correct
+    //TODO: add one step for checking the location
+    const today = dayjs().format("DD/MM/YYYY");
+    collection = db.collection("sessions");
+    const sessionToUpdate = await collection.findOne({
+      //date : today;
+      date: "20/07/2019" //hard coded for testing
+    });
+    if (!sessionToUpdate) {
+      res.status(404).send({
+        msg: "session is not created yet"
+      });
+      return;
+    }
+    //if session is created on database
+    //change the status of student as attended with the arrival time
+    sessionToUpdate.attendance.forEach(student => {
+      if (student.email === req.body.email) {
+        if (student.isAttended) {
+          res.status(404).json({
+            msg: "You have already registered to today's session!"
+          });
+          return;
+        } else {
+          const timeOfArrival = dayjs().format("HH:mm");
+          student["isAttended"] = true;
+          student["timeOfArrival"] = timeOfArrival;
+        }
+      }
+    });
+    //updating the session data on database
+    const options = {
+      returnOriginal: false
+    };
+    collection.findOneAndUpdate(
+      {
+        date: "20/07/2019"
+      }, // { date : today}
+      {
+        $set: {
+          attendance: sessionToUpdate.attendance
+        }
+      },
+      options,
+      (err, result) => {
+        if (result.value) {
+          res.send(err || result.value);
+        } else {
+          res.sendStatus(404);
+        }
+      }
+    );
+    client.close();
+  });
+});
 
-//     //updating the session data on database
-//     const options = {
-//       returnOriginal: false
-//     };
-//     collection.findOneAndUpdate(
-//       //{ date : currentDate}
-//       { date: "21/07/2019" },
-//       { sessionToUpdate },
-//       options,
-//       (err, result) => {
-//         if (result.value) {
-//           res.send(err || result.value);
-//         } else {
-//           res.sendStatus(404);
-//         }
-//       }
-//     );
-//     client.close();
-//   });
-// });
 //show the attendance of the the current date with, list of attending students, total numbers of atendants, list of missing students and total number of missing students. proportion of attending students to total students
 api.get("/attendance", (req, res, next) => {
   const client = getClient();
@@ -260,10 +299,17 @@ api.post("/createSession", (req, res) => {
     }
     const db = client.db("heroku_cs1q5qk5");
     let collection = db.collection("users");
-    const studentUsers = await collection.find({ status: "STUDENT" }).toArray();
-    studentUsers.forEach(user => {
-      user["isAttended"] = false;
-      user["timeOfArrival"] = null;
+    let studentUsers = await collection.find({ status: "STUDENT" }).toArray();
+    studentUsers = studentUsers.map(user => {
+      return {
+        studentId: user._id,
+        name: user.name,
+        email: user.email,
+        status: user.status,
+        city: user.city,
+        isAttended: false,
+        timeOfArrival: null
+      };
     });
     const newSession = { name, session, date, city, attendance: studentUsers };
     collection = db.collection("sessions");
