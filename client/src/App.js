@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  HashRouter,
+  Switch,
+  Route
+} from "react-router-dom";
 import Header from "./Component/Header/Header";
 import Footer from "./Component/Footer/Footer";
 import SignUp from "./Component/Register/Signup";
@@ -14,13 +19,9 @@ import AdminHome from "./Component/Admin/AdminHome";
 import "./App.css";
 
 class App extends Component {
-
-
   render() {
-
     return (
-
-      <Router>
+      <HashRouter>
         <Header />
         <Switch>
           <Route path="/" exact component={Login} />
@@ -31,9 +32,7 @@ class App extends Component {
           <Route path="/adminHome" exact component={AdminHome} />
         </Switch>
         <Footer />
-
-      </Router >
-
+      </HashRouter>
     );
   }
 }
