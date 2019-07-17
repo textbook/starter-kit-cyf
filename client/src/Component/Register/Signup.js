@@ -87,7 +87,7 @@ class SignUp extends Component {
                 type="submit"
                 onClick={e => this.handleSubmit(e)}
                 className="btn student"
-                value="student"
+                value="STUDENT"
               >
                 Sign up as Student
               </button>
