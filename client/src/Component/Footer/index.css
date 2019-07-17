@@ -7,13 +7,13 @@
    bottom: 0;
    width: 100%;
     /* background: #a8936b; */
-     background: #3e4140;
+     background: #34495e;
    color: white;
 }
 
 @media screen and (max-width: 600px){
   .footer {
-  background: #dfc492;
-  color: #3e4140;
+  background: #34495e;
+  color: white;
   }
 }

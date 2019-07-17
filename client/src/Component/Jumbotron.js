@@ -7,7 +7,7 @@ const Styles = styled.div`
   .jumbo {
      position: fixed;
   width: 100%;
-  height: 150px;
+  height: 100px;
   position: absolute;
   background-color: #34495e;
    margin-bottom:100px;
@@ -166,7 +166,33 @@ const Styles = styled.div`
 // You can define a value and calculate the other if you want change speed or the number of lines
   
 }
+@media (max-width: 480px) { 
+.content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  
+  transform: translate(-50%, -50%);
+  height: 130px;
+  overflow:hidden;
+   
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  line-height: 40px;
+  color: #ecf0f1;
+   
+ 
+}
+.jumbo{heigh:100px;{
+  width: 100%;
+  height: 100px;
+  
+  position: absolute;
+  background-color: #34495e;
 
+  }
+
+}
 
 `;
 
@@ -174,27 +200,27 @@ export class Jumbotron extends Component {
   render() {
     return (
       <Styles>
-        <div>
+     
         <Jumbo fluid className="jumbo">
           <div className="overlay" />
           <Container>
-            <div class="content">
-              <div class="content__container">
-                <p class="content__container__text">
+              <div className="content">
+                <div className="content__container">
+                  <p className="content__container__text">
                   Hello
     </p>
 
-                <ul class="content__container__list">
-                  <li class="content__container__list__item">world !</li>
-                  <li class="content__container__list__item">bob !</li>
-                  <li class="content__container__list__item">users !</li>
-                  <li class="content__container__list__item">everybody !</li>
+                <ul className="content__container__list">
+                  <li className="content__container__list__item">Student!</li>
+                    <li className="content__container__list__item">Mentors!</li>
+                    <li className="content__container__list__item">Admins!</li>
+                    <li className="content__container__list__item">Welcome to CYF!</li>
                 </ul>
               </div>
             </div>
           </Container>
         </Jumbo>
-        </div>
+    
       </Styles>
     );
   }

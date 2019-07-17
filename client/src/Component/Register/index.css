@@ -3,8 +3,10 @@
 .main{
   text-align: center;
   width: auto;
-  margin: auto;
-min-height: calc(100vh - 80rem);
+margin-top: 200px;
+min-height: calc(100vh - 20rem);
+
+
 }
 
 .main h1{
@@ -78,9 +80,15 @@ border-right: 1px solid  rgb(190, 15, 15);
 
 @media screen and (max-width: 600px){
 .main{
+  margin-top: 100px;
 width: 100%;
 padding-top: 1rem;
 
+
+}
+.main h1{
+  color: #3e4140;
+  font-size:20px;
 }
 .user{
   width: 80px;
@@ -109,5 +117,27 @@ flex-direction: column;
 .student:hover, .mentor:hover, .admin:hover{
   background: rgb(30, 156, 58);
 }
+.user{
+  width: 50px;
+  
+}
+
+.user img{
+ 
+  color: #6e7271;
+}
+
+.form input{
+  max-width: 100%;
+  display: block;
+  margin: auto;
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+   background: grey;
+
+}
+
 
 }
