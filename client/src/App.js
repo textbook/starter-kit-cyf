@@ -29,7 +29,7 @@ class App extends Component {
         <Layout>
           <HashRouter>
             <Switch>
-              <Route path="/Login" exact component={Login} />
+              <Route path="/" exact component={Login} />
               <Route path="/signUp" exact component={SignUp} />
               <Route path="/thankYou" exact component={ThankYou} />
               <Route path="/studentRegistered" component={StudentRegister} />

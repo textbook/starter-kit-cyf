@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
-
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Styles = styled.div`
@@ -20,7 +20,7 @@ const Styles = styled.div`
   .navbar-nav .nav-link {
     color: #414141;
     &:hoover {
-      color:black;
+      color: black;
     }
   }
 `;
@@ -37,12 +37,11 @@ export const Header = () => (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-        
           <Nav.Item>
-            <Nav.Link href="/Login">Sign In</Nav.Link>
+            <Nav.Link to="/Login">Sign In</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/SignUp">Sign Up</Nav.Link>
+            <Nav.Link to="/SignUp">Sign Up</Nav.Link>
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>

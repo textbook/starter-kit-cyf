@@ -23,7 +23,7 @@ class login extends Component {
   handleSubmit = async e => {
     e.preventDefault();
     const { email, password } = this.state;
-    const status = e.target.value
+    const status = e.target.value;
     // fetch("http://localhost:3000/api/loginJoanTest", {
     // });
     try {
@@ -50,7 +50,7 @@ class login extends Component {
         } else if (status === "ADMIN") {
           return this.props.history.push("/adminHome");
         }
-      } 
+      }
     } catch (err) {
       console.log(err);
     }
