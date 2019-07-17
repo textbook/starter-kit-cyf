@@ -145,6 +145,7 @@ api.put("/login", (req, res, next) => {
       return next(err);
     }
     const { email, password, status } = req.body;
+
     if (!email || !password || !status) {
       res.status(400).json({ msg: "fill out all the fields" });
       return;
