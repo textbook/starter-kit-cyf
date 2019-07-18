@@ -29,13 +29,16 @@ class login extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    const { email, password, position, isPositionConfirmed } = this.state;
     const status = e.target.value;
+    // this.getLocation();
+    const { email, password, position, isPositionConfirmed } = this.state;
+    console.log("before try position confirmation", position);
+
     this.confirmLocation(position.latitude, position.longitude);
     console.log("before try position confirmation", isPositionConfirmed);
-    if (isPositionConfirmed !== "confirmed" ) {
+    if (isPositionConfirmed !== "confirmed") {
       return this.props.history.push("/");
-    } else if (isPositionConfirmed==="confirmed"){
+    } else if (isPositionConfirmed === "confirmed") {
       // fetch("http://localhost:3000/api/loginJoanTest", {
       // });
       try {
@@ -59,9 +62,7 @@ class login extends Component {
             if (this.state.isPositionConfirmed === "confirmed") {
               return this.props.history.push("/studentRegistered");
             } else {
-              return this.props.history.push(
-                "/"
-              );
+              return this.props.history.push("/");
             }
           } else if (status === "MENTOR") {
             return this.props.history.push("/mentorHome");
@@ -98,13 +99,14 @@ class login extends Component {
     console.log(poslat, poslong);
     const positionOfCYFOffice = { lat: 51.53, lon: -0.05 };
     const positionOfticketMaster = { lat: 51.53, lon: -0.1 };
-    const radius = 1000; // meters
+    const myHome = { lat: 51.56, lon: -0.45 };
+    const radius = 5000; // meters
     const chechkResult = insideCircle(
       { lat: poslat, lon: poslong },
-      positionOfticketMaster,
+      myHome,
       radius
     );
-    console.log('confirmlocation', chechkResult);
+    console.log("confirmlocation", chechkResult);
     this.setState({
       isPositionConfirmed: chechkResult === true ? "confirmed" : "notConfirmed"
     });
