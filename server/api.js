@@ -182,7 +182,7 @@ api.put("/login", (req, res, next) => {
     const today = dayjs().format("DD/MM/YYYY");
     collection = db.collection("sessions");
     const sessionToUpdate = await collection.findOne({
-      date: "20/07/2019" //hard coded for testing reality date : today
+      date: "21/07/2019" //hard coded for testing reality date : today
     });
     if (!sessionToUpdate) {
       res.status(404).send({
@@ -202,11 +202,11 @@ api.put("/login", (req, res, next) => {
       timeOfArrival: dayjs().format("HH:mm")
     };
     sessionToUpdate.attendance.push(user);
-    console.log("updated--------------------", sessionToUpdate.attendance);
+    // console.log("updated--------------------", sessionToUpdate.attendance);
     const options = { returnOriginal: false };
     //updating the session data on database
     collection.findOneAndUpdate(
-      { date: "20/07/2019" }, // { date : today}
+      { date: "21/07/2019" }, // { date : today}
       {
         $set: {
           attendance: sessionToUpdate.attendance
@@ -234,7 +234,10 @@ api.get("/attendance", (req, res, next) => {
     }
     const db = client.db("heroku_cs1q5qk5");
     let collection = db.collection("users");
-    const students = await collection.find({ status: "STUDENT" }).toArray();
+    let students = await collection.find().toArray();
+    students = students.filter(
+      student => student.status.toLowerCase() == "student"
+    );
     // console.log("-----------------------", students);
     collection = db.collection("sessions");
     collection.find().toArray((err, sessions) => {
@@ -249,7 +252,8 @@ api.get("/attendance", (req, res, next) => {
         currentSession = currentSession.reduce(session => session);
         const { name, session, date } = currentSession;
         const attendingStudents = currentSession.attendance.filter(
-          user => user.status === "STUDENT" && user.isAttended === true
+          user =>
+            user.status.toLowerCase() === "student" && user.isAttended === true
         );
         const totalAttendingStudents = attendingStudents.length;
         // console.log("attendanece---------------------", currentSession.attendance.map(attendant=>attendant.email))
@@ -304,18 +308,22 @@ api.post("/createSession", (req, res) => {
     }
     const db = client.db("heroku_cs1q5qk5");
     let collection = db.collection("users");
-    let studentUsers = await collection.find({ status: "STUDENT" }).toArray();
-    studentUsers = studentUsers.map(user => {
-      return {
-        studentId: user._id,
-        name: user.name,
-        email: user.email,
-        status: user.status,
-        city: user.city,
-        isAttended: false,
-        timeOfArrival: null
-      };
-    });
+    // let studentUsers = await collection.find().toArray();
+    // studentUsers = studentUsers.filter(
+    //   student => student.status.toLowerCase() == "student"
+    // );
+    // studentUsers = studentUsers.map(user => {
+    //   return {
+    //     studentId: user._id,
+    //     name: user.name,
+    //     email: user.email,
+    //     status: user.status,
+    //     city: user.city,
+    //     isAttended: false,
+    //     timeOfArrival: null
+    //   };
+    // });
+    let studentUsers = [];
     const newSession = { name, session, date, city, attendance: studentUsers };
     collection = db.collection("sessions");
     collection.insertOne(newSession, (err, result) => {

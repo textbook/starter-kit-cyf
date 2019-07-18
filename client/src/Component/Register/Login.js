@@ -11,6 +11,7 @@ class login extends Component {
     this.state = {
       email: "",
       password: "",
+      status: "",
       position: "",
       isPositionConfirmed: "notChecked"
     };
@@ -29,16 +30,16 @@ class login extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
+    const { email, password, position} = this.state;
+    let isPositionConfirmed = this.confirmLocation(position.latitude, position.longitude);
     const status = e.target.value;
-    // this.getLocation();
-    const { email, password, position, isPositionConfirmed } = this.state;
-    console.log("before try position confirmation", position);
-
-    this.confirmLocation(position.latitude, position.longitude);
-    console.log("before try position confirmation", isPositionConfirmed);
-    if (isPositionConfirmed !== "confirmed") {
+    this.setState({ status: status });
+    if (
+      !isPositionConfirmed &&
+      status.toLowerCase() == "student"
+    ) {
       return this.props.history.push("/");
-    } else if (isPositionConfirmed === "confirmed") {
+    } else {
       // fetch("http://localhost:3000/api/loginJoanTest", {
       // });
       try {
@@ -58,15 +59,11 @@ class login extends Component {
         if (res.status !== 200) {
           alert(json.msg);
         } else {
-          if (status === "STUDENT") {
-            if (this.state.isPositionConfirmed === "confirmed") {
-              return this.props.history.push("/studentRegistered");
-            } else {
-              return this.props.history.push("/");
-            }
-          } else if (status === "MENTOR") {
+          if (status.toUpperCase() === "STUDENT") {
+            return this.props.history.push("/studentRegistered");
+          } else if (status.toUpperCase() === "MENTOR") {
             return this.props.history.push("/mentorHome");
-          } else if (status === "ADMIN") {
+          } else if (status.toUpperCase() === "ADMIN") {
             return this.props.history.push("/adminHome");
           }
         }
@@ -75,8 +72,6 @@ class login extends Component {
       }
     }
   };
-
-  //const status = e.target.value;
 
   // validate = () => {
   //   const schema = {
@@ -99,21 +94,26 @@ class login extends Component {
     console.log(poslat, poslong);
     const positionOfCYFOffice = { lat: 51.53, lon: -0.05 };
     const positionOfticketMaster = { lat: 51.53, lon: -0.1 };
-    const myHome = { lat: 51.56, lon: -0.45 };
+    const myHome = { lat: 51.52, lon: -0.36 };
     const radius = 5000; // meters
-    const chechkResult = insideCircle(
+    const result = insideCircle(
       { lat: poslat, lon: poslong },
-      myHome,
+      positionOfCYFOffice,
+      // myHome,
       radius
     );
-    console.log("confirmlocation", chechkResult);
-    this.setState({
-      isPositionConfirmed: chechkResult === true ? "confirmed" : "notConfirmed"
-    });
+    this.setState({ isPositionConfirmed : result});
+    return result;
   };
 
   render() {
-    const { email, password, position, isPositionConfirmed } = this.state;
+    const {
+      email,
+      password,
+      status,
+      position,
+      isPositionConfirmed
+    } = this.state;
 
     return (
       <main className="main">
@@ -170,14 +170,15 @@ class login extends Component {
             <p>Your Position : </p>
             <p>Lat : {position.latitude}</p>
             <p>Long : {position.longitude}</p>
-            {isPositionConfirmed != "notChecked" &&
-              (isPositionConfirmed === "notConfirmed" ? (
+            {status.toLocaleLowerCase() == "student" &&
+              isPositionConfirmed != "notChecked" &&
+              !isPositionConfirmed ? (
                 <p>
                   Check your location , you are not at the class yet, hurry up!
                 </p>
               ) : isPositionConfirmed === "confirmed" ? (
                 <p>Your position is confirmed, enjoy the class!</p>
-              ) : null)}
+              ) : null}
           </form>
         </div>
       </main>
