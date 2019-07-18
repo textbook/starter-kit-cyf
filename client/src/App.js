@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 
-import {
-  
-  HashRouter,
-  Switch,
-  Route
-} from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import Header from "./Component/Header/Header";
 import Footer from "./Component/Footer/Footer";
 import SignUp from "./Component/Register/Signup";

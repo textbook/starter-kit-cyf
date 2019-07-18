@@ -152,7 +152,6 @@ api.put("/login", (req, res, next) => {
       return next(err);
     }
     const { email, password, status } = req.body;
-
     if (!email || !password || !status) {
       res.status(400).json({ msg: "fill out all the fields" });
       return;
@@ -160,8 +159,8 @@ api.put("/login", (req, res, next) => {
     const db = client.db("heroku_cs1q5qk5");
     //check if the user email and password matches
     let collection = db.collection("users");
-    const user = await collection.findOne({
-      email: req.body.email,
+    let user = await collection.findOne({
+      email: req.body.email
     });
     //if no matching with the provided email
     if (!user) {
@@ -171,7 +170,7 @@ api.put("/login", (req, res, next) => {
       return;
     }
     //checking the satus of the user
-    if (user.status !== req.body.status) {
+    if (user.status.toLowerCase() != req.body.status.toLowerCase()) {
       res.status(400).json({
         msg: `You selected wrong status as ${
           req.body.status
@@ -187,43 +186,34 @@ api.put("/login", (req, res, next) => {
       return;
     }
     //if the pasword is correct
-    //TODO: add one step for checking the location
     const today = dayjs().format("DD/MM/YYYY");
     collection = db.collection("sessions");
     const sessionToUpdate = await collection.findOne({
-      //date : today;
-      date: "20/07/2019", //hard coded for testing
+      date: "21/07/2019" //hard coded for testing reality date : today
     });
     if (!sessionToUpdate) {
       res.status(404).send({
-        msg: "session is not created yet",
+        msg: "The ession is not created yet! "
       });
       return;
     }
-    //if session is created on database
-    //change the status of student as attended with the arrival time
-    sessionToUpdate.attendance.forEach((student) => {
-      if (student.email === req.body.email) {
-        if (student.isAttended) {
-          res.status(404).json({
-            msg: "You have already registered to today's session!",
-          });
-          return;
-        } else {
-          const timeOfArrival = dayjs().format("HH:mm");
-          student["isAttended"] = true;
-          student["timeOfArrival"] = timeOfArrival;
-        }
-      }
-    });
-    //updating the session data on database
-    const options = {
-      returnOriginal: false,
+    //if user is check if he is already regsitered or not by email
+
+    user = {
+      userId: user._id,
+      name: user.name,
+      email: user.email,
+      status: user.status,
+      city: user.city,
+      isAttended: true,
+      timeOfArrival: dayjs().format("HH:mm")
     };
+    sessionToUpdate.attendance.push(user);
+    // console.log("updated--------------------", sessionToUpdate.attendance);
+    const options = { returnOriginal: false };
+    //updating the session data on database
     collection.findOneAndUpdate(
-      {
-        date: "20/07/2019",
-      }, // { date : today}
+      { date: "21/07/2019" }, // { date : today}
       {
         $set: {
           attendance: sessionToUpdate.attendance,
@@ -239,18 +229,24 @@ api.put("/login", (req, res, next) => {
       }
     );
     client.close();
-  });
-});
+  }); //client connect
+}); //out
 
 //show the attendance of the the current date with, list of attending students, total numbers of atendants, list of missing students and total number of missing students. proportion of attending students to total students
 api.get("/attendance", (req, res, next) => {
   const client = getClient();
-  client.connect((err) => {
+  client.connect(async err => {
     if (err) {
       return next(err);
     }
     const db = client.db("heroku_cs1q5qk5");
-    const collection = db.collection("sessions");
+    let collection = db.collection("users");
+    let students = await collection.find().toArray();
+    students = students.filter(
+      student => student.status.toLowerCase() == "student"
+    );
+    // console.log("-----------------------", students);
+    collection = db.collection("sessions");
     collection.find().toArray((err, sessions) => {
       const today = dayjs().format("DD/MM/YYYY");
       const selectedDate = req.query.date === "today" ? today : req.query.date;
@@ -263,12 +259,24 @@ api.get("/attendance", (req, res, next) => {
         currentSession = currentSession.reduce((session) => session);
         const { name, session, date } = currentSession;
         const attendingStudents = currentSession.attendance.filter(
-          (user) => user.status === "STUDENT" && user.isAttended === true
+          user =>
+            user.status.toLowerCase() === "student" && user.isAttended === true
         );
         const totalAttendingStudents = attendingStudents.length;
-        const absentStudents = currentSession.attendance.filter(
-          (user) => user.status === "STUDENT" && user.isAttended === false
+        // console.log("attendanece---------------------", currentSession.attendance.map(attendant=>attendant.email))
+        const attendantStudentsEmails = attendingStudents.map(
+          attendant => attendant.email
         );
+        let absentStudents = [];
+        students.forEach(student => {
+          if (!attendantStudentsEmails.includes(student.email)) {
+            absentStudents.push(student);
+          }
+        });
+        // console.log('absenttttttttttttttttttttt', absentStudents)
+        // absentStudents = currentSession.attendance.filter(
+        //   user => user.status === "STUDENT" && user.isAttended === false
+        // );
         const totalAbsentStudents = absentStudents.length;
         const proportion = (
           (totalAttendingStudents * 100) /
@@ -307,18 +315,22 @@ api.post("/createSession", (req, res) => {
     }
     const db = client.db("heroku_cs1q5qk5");
     let collection = db.collection("users");
-    let studentUsers = await collection.find({ status: "STUDENT" }).toArray();
-    studentUsers = studentUsers.map((user) => {
-      return {
-        studentId: user._id,
-        name: user.name,
-        email: user.email,
-        status: user.status,
-        city: user.city,
-        isAttended: false,
-        timeOfArrival: null,
-      };
-    });
+    // let studentUsers = await collection.find().toArray();
+    // studentUsers = studentUsers.filter(
+    //   student => student.status.toLowerCase() == "student"
+    // );
+    // studentUsers = studentUsers.map(user => {
+    //   return {
+    //     studentId: user._id,
+    //     name: user.name,
+    //     email: user.email,
+    //     status: user.status,
+    //     city: user.city,
+    //     isAttended: false,
+    //     timeOfArrival: null
+    //   };
+    // });
+    let studentUsers = [];
     const newSession = { name, session, date, city, attendance: studentUsers };
     collection = db.collection("sessions");
     collection.insertOne(newSession, (err, result) => {
