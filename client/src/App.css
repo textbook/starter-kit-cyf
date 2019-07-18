@@ -1,18 +1,95 @@
 html,
 * {
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
   font-family: Avenir;
 }
 body {
-  background-color: #d3d3d3;
+  background-color: white;
+}
+.App-logo {
+  width: 360px;
+  height: 90px;
+  padding: 25px 0px 50px 10px;
+  margin-left: 20px;
 }
 
-.App-logo {
-  width: 380px;
-  height: 100px;
-  padding: 25px 0px 50px 0px;
-  margin-left: 20px;
+.Background-design {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ce322f;
+
+  -webkit-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+
+  -webkit-transform: rotate(-50deg);
+  -ms-transform: rotate(-50deg);
+  transform: rotate(-50deg);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.Background-design-two {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 15%;
+  background-color: #030303;
+  margin: 5px;
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+
+  -webkit-transform: rotate(-50deg);
+  -ms-transform: rotate(-50deg);
+  transform: rotate(-50deg);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.Background-design-three {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 20%;
+  background-color: #ce322f;
+  margin: 5px;
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+
+  -webkit-transform: rotate(-50deg);
+  -ms-transform: rotate(-50deg);
+  transform: rotate(-50deg);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.image-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0px 20px 0px 0px;
+}
+.image {
+  width: 500px;
+  border-radius: 15px;
+  /* border: 1px solid red; */
+}
+
+.codEmpire {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0px 20px 0px 0px;
 }
 
 .App-header {
@@ -21,28 +98,33 @@ body {
   display: flex;
   flex-direction: row;
   align-items: left;
-  justify-content: space-between;
+  justify-content: left;
+  border-radius: 20px;
 }
 
-.App-header a{
+.App-header a {
   color: white;
 }
 .App-header-two {
-  background-color: #030303;
-  height: 150px;
+  margin-right: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  padding: 0px 10px 0px 250px;
+}
+
+.Menu {
+  padding: 20px;
 }
 
 .Title {
   font-family: Avenir;
   font-weight: 400;
   color: grey;
-  font-size: 50px;
-  align-items: right;
-  padding: 40px 50px 0px 0px;
+  font-size: 2.5rem;
+  align-items: center;
+  padding: 15px 0px 0px 0px;
 }
 
 .Timer {
@@ -64,6 +146,20 @@ body {
   padding: 30px;
 }
 
+.Enter {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.Quiz-title {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
 .MuiButtonBase-root {
   width: 200px;
   height: 50px;
@@ -71,39 +167,45 @@ body {
 
 .Paper {
   width: 50%;
+  height: auto;
   padding: 25px;
   margin: 50px;
 }
 
 .Paper-one {
-  width: 60%;
+  width: auto;
+  height: auto;
   padding: 25px;
   margin: 50px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .Paper-two {
-  width: 80%;
-  height: 100px;
-  padding: 25px;
-  margin: 50px;
-  margin-top: 40px;
+  width: auto;
+  height: auto;
+  padding: 0px 0px 0px 0px;
+  margin: 10px 50px 10px 50px;
 }
 
 .Final-score {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .score {
   display: flex;
   justify-content: center;
   padding: 10px;
-  margin-top: 40px;
+  margin-top: 15px;
   width: 20%;
 }
 
-.Table {
+.table {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,14 +220,15 @@ body {
   flex-direction: row;
   align-items: center;
   align-content: center;
-  justify-content: space-around;
-  margin-top: 50px;
-  margin-bottom: 40px;
+  justify-content: space-evenly;
+  margin: 5px 0px 5px 0px;
 }
 
 .Questions {
+  width: 70%;
+  height: auto;
   font-family: Avenir;
-  font-size: 1.5rem;
+  font-size: 1em;
   text-align: center;
 }
 
@@ -152,4 +255,39 @@ a:hover {
 
 .MuiButton-root {
   text-transform: none !important;
+}
+
+.Add {
+  padding: 5px;
+
+}
+
+.Add-cancel {
+  padding: 10px;
+  ;display: flex;
+  flex-direction: column;
+  align-items: right;
+  align-content: right;
+  justify-content: flex-end;
+}
+
+.Create-play-result {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  align-content: left;
+  justify-content: left;
+}
+
+.Create {
+  padding: 20px 0px 10px 30px;
+}
+
+.Play {
+  padding: 10px 0px 10px 80px;
+}
+
+.Result {
+  padding: 10px 0px 10px 30px;
 }

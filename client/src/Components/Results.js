@@ -32,25 +32,29 @@ class Results extends Component {
         <header className="App">
           <Header />
         </header>
+        <div className="Background-design" />
         <div className="Final-score">
           <Paper className="score">
-            <Typography variant="h4" component="h3" color="Primary">
+            <Typography variant="h5" component="h4" color="primary">
               Final Score
             </Typography>
           </Paper>
         </div>
-        <div className="Table">
+        <div className="table">
           <Paper className="Paper">
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Name</TableCell>
-                  <TableCell align="right">Points</TableCell>
-                </TableRow>
-              </TableHead>
+            <Typography variant="btitle1" component="h4" color="primary">
+              <Table>
+              
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Name</TableCell>
+                    <TableCell align="right">Points</TableCell>
+                  </TableRow>
+                </TableHead>
+             
               <TableBody>
                 {rows.map(row => (
-                  <TableRow key="">
+                  <TableRow key={row.name}>
                     <TableCell component="th" scope="row">
                       {row.name}
                     </TableCell>
@@ -58,9 +62,13 @@ class Results extends Component {
                   </TableRow>
                 ))}
               </TableBody>
+              
             </Table>
+            </Typography>
           </Paper>
         </div>
+        <div className="Background-design-two" />
+        <div className="Background-design-three" />
       </div>
     );
   }

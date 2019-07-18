@@ -6,11 +6,13 @@ class TakeQuiz extends Component {
     return (
       <div className="App">
         <Header />
+        <div className="Background-design" />
         <div className="Final-score">
-          {/* <a href="" className="Previous">
+          <a href="" className="Previous">
             {' '}
-            &laquo; Previous
-          </a> */}
+            {/* &laquo;  */}
+            Previous
+          </a>
 
           <Paper className="Paper-one">
             <Typography variant="h6" component="h6">
@@ -25,21 +27,21 @@ class TakeQuiz extends Component {
               <div>
                 <div className="choices">
                   <p>A</p>
-                  <Button variant="contained" className="">
+                  <Button variant="contained" color="primary">
                     <p>charAt()</p>
                   </Button>
                   <p>B</p>
-                  <Button variant="contained" className="">
+                  <Button variant="contained" color="primary">
                     <p>charCodeAt()</p>
                   </Button>
                 </div>
                 <div className="choices">
                   <p>C</p>
-                  <Button variant="contained" className="">
+                  <Button variant="contained" color="primary">
                     <p>concat()</p>
                   </Button>
                   <p>D</p>
-                  <Button variant="contained" className="">
+                  <Button variant="contained" color="primary">
                     <p>indexOf()</p>
                   </Button>
                 </div>
@@ -47,11 +49,14 @@ class TakeQuiz extends Component {
             </Typography>
           </Paper>
 
-          {/* <a href="" className="Next">
+          <a href="" className="Next">
             {' '}
-            Next &raquo;
-          </a> */}
+            Next
+             {/* &raquo; */}
+          </a>
         </div>
+        <div className="Background-design-two" />
+        <div className="Background-design-three" />
       </div>
     )
   }
