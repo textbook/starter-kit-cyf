@@ -64,6 +64,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.4.5",
+    "bcryptjs": "^2.4.3",
     "bootstrap": "4.3.1",
     "dayjs": "^1.8.15",
     "express": "^4.17.1",

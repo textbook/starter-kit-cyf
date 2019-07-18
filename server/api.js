@@ -1,6 +1,8 @@
 import { Router } from "express";
 import User from "./model/User";
 const dayjs = require("dayjs");
+// const bcrypt = require("bcryptjs");
+import bcrypt from "bcryptjs";
 
 import { getClient } from "./db";
 
@@ -9,7 +11,7 @@ const api = new Router();
 api.get("/", (_, res, next) => {
   const client = getClient();
 
-  client.connect(err => {
+  client.connect((err) => {
     if (err) {
       return next(err);
     }
@@ -20,7 +22,7 @@ api.get("/", (_, res, next) => {
 
 api.post("/registerJoanTest", (req, res, next) => {
   const client = getClient();
-  client.connect(err => {
+  client.connect((err) => {
     if (err) {
       return next(err);
     }
@@ -30,7 +32,7 @@ api.post("/registerJoanTest", (req, res, next) => {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
-      status: req.body.status
+      status: req.body.status,
     });
 
     collection.insertOne(user, (err, result) => {
@@ -45,7 +47,7 @@ api.post("/registerJoanTest", (req, res, next) => {
 });
 api.get("/loginJoanTest", (req, res, next) => {
   const client = getClient();
-  client.connect(err => {
+  client.connect((err) => {
     if (err) {
       return next(err);
     }
@@ -54,7 +56,7 @@ api.get("/loginJoanTest", (req, res, next) => {
     const user = new User({
       email: req.body.email,
       password: req.body.password,
-      status: req.body.status
+      status: req.body.status,
     });
 
     collection.findOne(user, (err, result) => {
@@ -71,7 +73,7 @@ api.get("/loginJoanTest", (req, res, next) => {
 //listing all users (student, mentor and admin)
 api.get("/users", (req, res, next) => {
   const client = getClient();
-  client.connect(err => {
+  client.connect((err) => {
     if (err) {
       return next(err);
     }
@@ -87,7 +89,7 @@ api.get("/users", (req, res, next) => {
 //listing all sessions with attendence list
 api.get("/sessions", (req, res, next) => {
   const client = getClient();
-  client.connect(err => {
+  client.connect((err) => {
     if (err) {
       return next(err);
     }
@@ -103,7 +105,7 @@ api.get("/sessions", (req, res, next) => {
 //sign up for all users(student and mentor), require name, email, password and status from frontend
 api.post("/register", (req, res, next) => {
   const client = getClient();
-  client.connect(async err => {
+  client.connect(async (err) => {
     if (err) {
       return next(err);
     }
@@ -117,18 +119,23 @@ api.post("/register", (req, res, next) => {
     const collection = db.collection("users");
     //check if the email is already in use
     const checkUser = await collection.findOne({
-      email: req.body.email
+      email: req.body.email,
     });
     if (checkUser) {
       res.status(404).json({ msg: "This email is already in use" });
       return;
     }
+
+    //Hashed password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPwd = await bcrypt.hash(req.body.password, salt);
+
     //if the email is not in use
     const user = new User({
       name: req.body.name,
       email: req.body.email,
-      password: req.body.password,
-      status: req.body.status
+      password: hashedPwd,
+      status: req.body.status,
     });
     collection.insertOne(user, (err, result) => {
       res.send(err || result.ops[0]);
@@ -140,7 +147,7 @@ api.post("/register", (req, res, next) => {
 //allow the user to be added to database after log-in from frontend with the `timeofArrival`. require email and password, status from frontend
 api.put("/login", (req, res, next) => {
   const client = getClient();
-  client.connect(async err => {
+  client.connect(async (err) => {
     if (err) {
       return next(err);
     }
@@ -154,28 +161,28 @@ api.put("/login", (req, res, next) => {
     //check if the user email and password matches
     let collection = db.collection("users");
     const user = await collection.findOne({
-      email: req.body.email
+      email: req.body.email,
     });
     //if no matching with the provided email
     if (!user) {
       res.status(404).json({
-        msg: "your email is wrong"
+        msg: "your email is wrong",
       });
       return;
     }
     //checking the satus of the user
-    if (user.status != req.body.status) {
+    if (user.status !== req.body.status) {
       res.status(400).json({
         msg: `You selected wrong status as ${
           req.body.status
-        }, you should select ${user.status} status!`
+          }, you should select ${user.status} status!`,
       });
       return;
     }
     //checking the password
     if (user.password != req.body.password) {
       res.status(400).json({
-        msg: `Your password is wrong!`
+        msg: `Your password is wrong!`,
       });
       return;
     }
@@ -185,21 +192,21 @@ api.put("/login", (req, res, next) => {
     collection = db.collection("sessions");
     const sessionToUpdate = await collection.findOne({
       //date : today;
-      date: "20/07/2019" //hard coded for testing
+      date: "20/07/2019", //hard coded for testing
     });
     if (!sessionToUpdate) {
       res.status(404).send({
-        msg: "session is not created yet"
+        msg: "session is not created yet",
       });
       return;
     }
     //if session is created on database
     //change the status of student as attended with the arrival time
-    sessionToUpdate.attendance.forEach(student => {
+    sessionToUpdate.attendance.forEach((student) => {
       if (student.email === req.body.email) {
         if (student.isAttended) {
           res.status(404).json({
-            msg: "You have already registered to today's session!"
+            msg: "You have already registered to today's session!",
           });
           return;
         } else {
@@ -211,16 +218,16 @@ api.put("/login", (req, res, next) => {
     });
     //updating the session data on database
     const options = {
-      returnOriginal: false
+      returnOriginal: false,
     };
     collection.findOneAndUpdate(
       {
-        date: "20/07/2019"
+        date: "20/07/2019",
       }, // { date : today}
       {
         $set: {
-          attendance: sessionToUpdate.attendance
-        }
+          attendance: sessionToUpdate.attendance,
+        },
       },
       options,
       (err, result) => {
@@ -238,7 +245,7 @@ api.put("/login", (req, res, next) => {
 //show the attendance of the the current date with, list of attending students, total numbers of atendants, list of missing students and total number of missing students. proportion of attending students to total students
 api.get("/attendance", (req, res, next) => {
   const client = getClient();
-  client.connect(err => {
+  client.connect((err) => {
     if (err) {
       return next(err);
     }
@@ -251,16 +258,16 @@ api.get("/attendance", (req, res, next) => {
       // console.log("******", selectedDate);
       let currentSession = sessions
         // .filter(session => session.date === "14/07/2019") //it is hard coded for testing
-        .filter(session => session.date === selectedDate); //should be for real life
+        .filter((session) => session.date === selectedDate); //should be for real life
       if (currentSession.length > 0) {
-        currentSession = currentSession.reduce(session => session);
+        currentSession = currentSession.reduce((session) => session);
         const { name, session, date } = currentSession;
         const attendingStudents = currentSession.attendance.filter(
-          user => user.status === "STUDENT" && user.isAttended === true
+          (user) => user.status === "STUDENT" && user.isAttended === true
         );
         const totalAttendingStudents = attendingStudents.length;
         const absentStudents = currentSession.attendance.filter(
-          user => user.status === "STUDENT" && user.isAttended === false
+          (user) => user.status === "STUDENT" && user.isAttended === false
         );
         const totalAbsentStudents = absentStudents.length;
         const proportion = (
@@ -277,7 +284,7 @@ api.get("/attendance", (req, res, next) => {
             totalAttendingStudents,
             absentStudents,
             totalAbsentStudents,
-            proportion
+            proportion,
           }
         );
       } else {
@@ -289,7 +296,7 @@ api.get("/attendance", (req, res, next) => {
 //creating sessions by admin, require name of session, session number, date and city as request.body from frontend
 api.post("/createSession", (req, res) => {
   const client = getClient();
-  client.connect(async err => {
+  client.connect(async (err) => {
     if (err) {
       return next(err);
     }
@@ -301,7 +308,7 @@ api.post("/createSession", (req, res) => {
     const db = client.db("heroku_cs1q5qk5");
     let collection = db.collection("users");
     let studentUsers = await collection.find({ status: "STUDENT" }).toArray();
-    studentUsers = studentUsers.map(user => {
+    studentUsers = studentUsers.map((user) => {
       return {
         studentId: user._id,
         name: user.name,
@@ -309,7 +316,7 @@ api.post("/createSession", (req, res) => {
         status: user.status,
         city: user.city,
         isAttended: false,
-        timeOfArrival: null
+        timeOfArrival: null,
       };
     });
     const newSession = { name, session, date, city, attendance: studentUsers };

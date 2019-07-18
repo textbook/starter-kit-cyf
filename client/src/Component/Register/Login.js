@@ -20,22 +20,22 @@ class login extends Component {
     this.getLocation();
   }
 
-  handleChange = async e => {
+  handleChange = async (e) => {
     const { name, value } = e.target;
     this.setState({
       [name]: value
     });
   };
 
-  handleSubmit = async e => {
+  handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password, position, isPositionConfirmed } = this.state;
     const status = e.target.value;
     this.confirmLocation(position.latitude, position.longitude);
     console.log("before try position confirmation", isPositionConfirmed);
-    if (isPositionConfirmed !== "confirmed" ) {
+    if (isPositionConfirmed !== "confirmed") {
       return this.props.history.push("/");
-    } else if (isPositionConfirmed==="confirmed"){
+    } else if (isPositionConfirmed === "confirmed") {
       // fetch("http://localhost:3000/api/loginJoanTest", {
       // });
       try {
@@ -86,7 +86,7 @@ class login extends Component {
   // }
   getLocation = () => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
+      navigator.geolocation.getCurrentPosition((position) => {
         this.setState({
           position: position.coords
         });
@@ -126,7 +126,7 @@ class login extends Component {
               value={email}
               name="email"
               placeholder="Email"
-              onChange={e => this.handleChange(e)}
+              onChange={(e) => this.handleChange(e)}
               required
             />
             <input
@@ -134,12 +134,12 @@ class login extends Component {
               value={password}
               name="password"
               placeholder="Password"
-              onChange={e => this.handleChange(e)}
+              onChange={(e) => this.handleChange(e)}
               required
             />
             <section className="btnSection">
               <button
-                onClick={e => this.handleSubmit(e)}
+                onClick={(e) => this.handleSubmit(e)}
                 type="submit"
                 className="btn student"
                 value="STUDENT"
@@ -148,7 +148,7 @@ class login extends Component {
               </button>
 
               <button
-                onClick={e => this.handleSubmit(e)}
+                onClick={(e) => this.handleSubmit(e)}
                 type="submit"
                 className="btn mentor"
                 value="MENTOR"
@@ -157,7 +157,7 @@ class login extends Component {
               </button>
 
               <button
-                onClick={e => this.handleSubmit(e)}
+                onClick={(e) => this.handleSubmit(e)}
                 type="submit"
                 className="btn admin"
                 value="ADMIN"
