@@ -100,7 +100,7 @@ class login extends Component {
       const positionOfCYFOffice = { lat: 51.53, lon: -0.05 };
       const positionOfticketMaster = { lat: 51.53, lon: -0.1 };
       const myHome = { lat: 51.52, lon: -0.36 };
-      const radius = 5000; // meters
+      const radius = 100000; // meters
       const result = insideCircle(
         { lat: poslat, lon: poslong },
         positionOfCYFOffice,
@@ -174,11 +174,11 @@ class login extends Component {
                 <Button  onClick={(e) => this.handleSubmit(e)}
                 type="submit"
                 className="btn mentor"
-                value="STUDENT">Login as Mentor</Button>
+                value="MENTOR">Login as Mentor</Button>
                 <Button  onClick={(e) => this.handleSubmit(e)}
                 type="submit"
                 className="btn admin"
-                value="STUDENT">Login as Student</Button></div>
+                value="ADMIN">Login as Agitdmin</Button></div>
                  <h5 className='position'>Your Position : <br></br>
             <span >Lat : {position.latitude}</span><br/>
             <span >Long : {position.longitude}</span></h5>
