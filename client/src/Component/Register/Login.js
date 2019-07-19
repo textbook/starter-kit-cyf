@@ -100,7 +100,7 @@ class login extends Component {
       const positionOfCYFOffice = { lat: 51.53, lon: -0.05 };
       const positionOfticketMaster = { lat: 51.53, lon: -0.1 };
       const myHome = { lat: 51.52, lon: -0.36 };
-      const radius = 100000; // meters
+      const radius = 1000; // meters
       const result = insideCircle(
         { lat: poslat, lon: poslong },
         positionOfCYFOffice,
