@@ -178,7 +178,7 @@ class login extends Component {
                 <Button  onClick={(e) => this.handleSubmit(e)}
                 type="submit"
                 className="btn admin"
-                value="ADMIN">Login as Agitdmin</Button></div>
+                value="ADMIN">Login as Admin</Button></div>
                  <h5 className='position'>Your Position : <br></br>
             <span >Lat : {position.latitude}</span><br/>
             <span >Long : {position.longitude}</span></h5>
