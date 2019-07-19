@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Button, Pane, Combobox, TextInput, Table, Avatar, Heading } from "evergreen-ui";
+import { getMessage } from "../service";
+import { Button, Pane, Combobox, TextInput, Table, Avatar, Heading, theme } from "evergreen-ui";
 import "../App.css";
 import mockStudentsProfiles from "../mockStudentsProfiles.json";
 
@@ -10,26 +11,31 @@ export class FloatingMentor extends Component {
       clickedStudent: null,
       selectedStudentProfile: null,
       FloatingMentorComments: null,
-      commentSubmitted: null
+      commentSubmitted: null,
+      errormessage: null
     };
   }
 
   handyStudent = selected => {
     console.log("handystudent working....")
     this.setState({
-      clickedStudent: selected
+      clickedStudent: selected,
+      errormessage: null
     });
   };
 
 handyComments = (e) => {
   console.log("handyComments working");
-  this.setState({
-    FloatingMentorComments: this.state.commentSubmitted,
-      commentSubmitted: null
+ {this.state.clickedStudent === null ? this.handleError() : this.setState({FloatingMentorComments: this.state.commentSubmitted})
+}}
 
-  })
-}
-  
+handleError = () => {
+  console.log("handleError working");
+    this.setState({
+      errormessage: "Please Choose Student by using left dropdown menu"
+    });
+} 
+
   render() {
      console.log("render working");
      var selectedStudentProfile = mockStudentsProfiles.filter(s => {
@@ -87,6 +93,7 @@ handyComments = (e) => {
               >
                 Submit
               </Button>
+              <h3> {this.state.errormessage}</h3>
             </Pane>
           </Pane>
         </Pane>
@@ -133,6 +140,15 @@ handyComments = (e) => {
                     selectedStudentProfile[0].techinalSkills}
                 </Table.TextCell>
               </Table.Row>
+              <Table.Row>
+                <Table.TextCell flexBasis={200} flexShrink={0} flexGrow={0}>
+                  Syllabus:
+                </Table.TextCell>
+                <Table.TextCell>
+                  {selectedStudentProfile.length > 0 &&
+                    selectedStudentProfile[0].techinalSkills}
+                </Table.TextCell>
+              </Table.Row>
             </Table.Body>
           </Table.Body>
         </Pane>
@@ -148,7 +164,7 @@ handyComments = (e) => {
           border="default"
           background="blueTint"
         >
-          <Heading size={100}>COMMENTS:</Heading>
+          <Heading size={700}>COMMENTS:</Heading>
 
           <Table.Row>
             <Table.TextCell size={100} width={300} height={100}>
