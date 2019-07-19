@@ -1,110 +1,179 @@
-import React, { Component } from "react";
-import { withRouter, history } from "react-router-dom";
-import userIcon from "../image/user.png";
-import "./index.css";
+import React, { Component } from 'react';
+import { validateAll } from 'indicative/validator'
+
+import {
+  Container, Col, Form,
+  FormGroup, Label, Input,
+  Button, FormText, FormFeedback
+} from 'reactstrap';
+import './index.css';
+
+import { withRouter, Browserhistory as history } from "react-router-dom";
+
+
+
+// import Joi from "joi";
 
 class SignUp extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: "",
-      email: "",
-      password: ""
-    };
-  }
-
-  handleChange = e => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value
-    });
-  };
-  handleSubmit = async e => {
-    e.preventDefault();
-    const { name, email, password } = this.state;
-    // fetch("http://localhost:3000/api/registerJoanTest", {
-    try {
-      const res = await fetch("api/register", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          password: password,
-          status: e.target.value
-        })
-      });
-      const json = await res.json();
-      if (res.status !== 200) {
-        alert(json.msg);
-      } else {
-        this.props.history.push("/thankYou");
+      this.state = {
+      name:'',
+      email: '',
+      password: '',
+     
+      status:'',
+      validate: {
+        emailState: ''
       }
-    } catch (err) {
-      console.log(err);
+    }}
+ 
+   handleInputChange =  (e) => {
+      const { name, value } = e.target;
+      this.setState({
+        [name]: value
+      });
+    };
+    handleSubmit = async (e) => {
+      e.preventDefault();
+      const { name,email, password,} = this.state;
+     console.log(this.state);
+     const data=this.state;
+    
+  
+        try {
+          const res = await fetch("api/register", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              name:name,
+              email: email,
+              password: password,
+              confirmPassword,
+              status: e.target.value
+            })
+          });
+          const json = await res.json();
+          if (res.status !== 200) {
+            alert(json.msg);
+          } else {
+            this.props.history.push("/thankYou");
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      };
+   
+  
+    // validate = () => {
+    //   const schema = {
+    //     name: Joi.string().min(6).required(),
+    //     email: Joi.string().min(6).required().email(),
+    //     password: Joi.string().min(6).required(),
+    //   };
+    // }
+ 
+  
+
+  validateEmail(e) {
+    const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const { validate } = this.state
+      if (emailRex.test(e.target.value)) {
+        validate.emailState = 'has-success'
+      } else {
+        validate.emailState = 'has-danger'
+      }
+      this.setState({ validate })
     }
-  };
+
 
   render() {
-    const { name, email, password } = this.state;
+    const { name,email, password } = this.state;
     return (
-      <main className="main">
-        <h1>Register Attendance</h1>
-        <div className="user">
-          <img src={userIcon} alt="user icon" />
-        </div>
-        <div className="form">
-          <form>
-            <input
-              type="text"
-              value={name}
-              name="name"
-              placeholder="name"
-              onChange={e => this.handleChange(e)}
-              required
+      <Container className="App">
+        <h2>SignUp</h2>
+        <Form className="form" >
+          <Col>
+          <FormGroup>
+              <Label>Name</Label>
+              <Input
+                type="text"
+                name="name"
+              
+                placeholder="name"
+                value={ name }
+               
+                onChange={ (e) => {this.handleInputChange(e)
+                    required      
+                          } }
+              />
+              <FormFeedback valid>
+                That's a tasty looking name you've got there.
+              </FormFeedback>
+              
+             
+            </FormGroup>
+            <FormGroup>
+              <Label>email</Label>
+              <Input
+                type="email"
+                name="email"
+                id="exampleEmail"
+                placeholder="myemail@email.com"
+                value={ email }
+                valid={ this.state.validate.emailState === 'has-success' }
+                invalid={ this.state.validate.emailState === 'has-danger' }
+                onChange={ (e) => {this.handleInputChange(e)
+                            this.validateEmail(e)
+                            this.handleInputChange(e)
+                          } }
+              />
+              <FormFeedback valid>
+                That's a tasty looking email you've got there.
+              </FormFeedback>
+              <FormFeedback>
+                Uh oh! Looks like there is an issue with your email. Please input a correct email.
+              </FormFeedback>
+              <FormText>Your username is most likely your email.</FormText>
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup>
+              <Label for="Password">Password</Label>
+              <Input
+                type="password"
+                name="password"
+                id="Password"
+                placeholder="********"
+                value={ password }
+                onChange={ (e) => this.handleInputChange(e) }
             />
-            <input
-              type="text"
-              value={email}
-              name="email"
-              placeholder="Email"
-              onChange={e => this.handleChange(e)}
-              required
-            />
-            <input
-              type="password"
-              value={password}
-              name="password"
-              placeholder="Password"
-              onChange={e => this.handleChange(e)}
-              required
-            />
-            <section className="btnSection">
-              <button
+            </FormGroup>
+                    
+         
+          </Col>
+          <div className='button-group'>
+          <Button  onClick={(e) => this.handleSubmit(e)}
                 type="submit"
-                onClick={e => this.handleSubmit(e)}
                 className="btn student"
-                value="STUDENT"
-              >
-                Sign up as Student
-              </button>
-              <button
+                value="STUDENT">Sign Up as Student</Button>
+
+                <Button  onClick={(e) => this.handleSubmit(e)}
                 type="submit"
-                onClick={e => this.handleSubmit(e)}
                 className="btn mentor"
-                value="MENTOR"
-              >
-                Sign up as Mentor
-              </button>
-            </section>
-          </form>
-        </div>
-      </main>
+                value="STUDENT">Sign Up as Mentor</Button>
+</div>
+               
+      </Form>
+
+
+      </Container>
     );
-  }
+  
 }
+  }
 
 export default withRouter(SignUp);

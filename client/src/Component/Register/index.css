@@ -1,143 +1,154 @@
 
-/* //sign up */
-.main{
-  text-align: center;
-  width: auto;
-margin-top: 200px;
-min-height: calc(100vh - 20rem);
+* {
+  box-sizing: border-box;
+}
+.App {
+  text-align: left;
 
-
-}
-
-.main h1{
-  color: #3e4140;
-}
-
-.user{
-  width: 100px;
-    margin: 10px auto;
-}
-
-.user img{
-  max-width: 100%;
-  color: #6e7271;
-}
-
-.btnSection{
-  margin-top: 3rem;
-display: flex;
- justify-content: space-around;
-width: 100%;
-
-}
-
-.form {
-width: 600px;
-margin: auto;
-  padding: 0;
-  align-items: center;
-  justify-content: center;
-border-left: 1px solid  rgb(190, 15, 15);
-border-right: 1px solid  rgb(190, 15, 15);
-}
-
-.form input{
-  max-width: 100%;
-  display: block;
-  margin: auto;
-  margin-top: 1rem;
-  padding: 1rem;
-  border-radius: 10px;
-  border: none;
-   background: #dfc492;
-}
-
-.btn{
-  display: block;
-  /* width: 100px; */
-  padding: 1rem;
-  border-radius: 10px;
-   border: none;
-   cursor: pointer;
-     background: #dfc492;
-   /* background:  #a8936b; */
-   color: #2c2e2d;
-   font-size: 13px;
-}
-.student, .mentor{
-  background: #3e4140;
-   color: white;
-}
-
-.admin{
-  background: #D62C2A;
-  color: white;
-}
-
-.student:hover, .mentor:hover, .admin:hover{
-  background: rgb(30, 156, 58);
-}
-
-@media screen and (max-width: 600px){
-.main{
-  margin-top: 100px;
-width: 100%;
-padding-top: 1rem;
-
-
-}
-.main h1{
-  color: #3e4140;
-  font-size:20px;
-}
-.user{
-  width: 80px;
-    margin: 10px auto;
-}
-.btn{
-  background: #3e4140;
- color: white;
- margin-bottom: 1rem;
- width: 40%;
-}
-
-.btnSection{
-flex-direction: column;
- align-items: center;
-}
-.form{
-  width: auto;
-  border: none;
-}
-
-.admin{
-  background: #D62C2A;
-}
-
-.student:hover, .mentor:hover, .admin:hover{
-  background: rgb(30, 156, 58);
-}
-.user{
-  width: 50px;
-  
-}
-
-.user img{
+  border: 2px solid #d3d3d3;
+  border-radius: .5em;
  
-  color: #6e7271;
-}
-
-.form input{
-  max-width: 100%;
-  display: block;
-  margin: auto;
-  margin-top: 5px;
-  padding: 5px;
-  border-radius: 10px;
-  border: none;
-   background: grey;
-
+  margin-left: auto;
+  margin-right: auto;
+  
+  margin-top: 50px;
 }
 
 
+
+
+.button-group {
+  display: flex;
+  justify-content:space-around;
+ 
+
+
+}
+
+
+
+
+
+
+
+h5 {
+  padding-top:10px;
+  position: relative;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 20s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(15, 14, 14, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+/* 
+    ##Device = Desktops
+    ##Screen = 1281px to higher resolution desktops
+  */
+  
+  @media (min-width: 1281px) {
+    
+  
+    
+  }
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1024px) and (max-width: 1280px) {
+ 
+  Form{
+    width:100%;
+   height:500px ;
+  font-size:45px;
+ margin-top:50px;
+  }  
+    Form ::placeholder{
+      font-size: 30px;
+      
+    }
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+  Form{
+    width:100%;
+   height:500px ;
+  font-size:45px;
+ margin-top:50px;
+  }  
+    Form ::placeholder{
+      font-size: 25px;
+      
+    }
+  }
+    
+    
+  
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+   
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+   
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    
+  .jumbo{
+    margin-bottom:0;
+   
+  }
+   
+.button-group {
+  display: flex;
+  flex-direction:column;
+  justify-content:space-between;
+ 
+
+
+}
+  
+ 
 }
