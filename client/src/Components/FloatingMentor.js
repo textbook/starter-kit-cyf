@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { getMessage } from "../service";
-
 import { Button, Pane, Combobox, TextInput, Table, Avatar, Heading, theme } from "evergreen-ui";
 import "../App.css";
 import mockStudentsProfiles from "../mockStudentsProfiles.json";
