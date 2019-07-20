@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import logo_CYF_square from '../images/logo-CYF-square.png'
-import { Pane } from 'evergreen-ui'; 
+
+import { Pane, Heading, Text } from 'evergreen-ui'; 
 
 export default () => (
 
@@ -20,10 +21,38 @@ export default () => (
             textDecoration: "none",
             color: "black"
           }}
-        >
-          
+        >          
           <h2>
             Welcome to CYF Feedback </h2>
         </Link>
+        <Pane
+         width="10%" 
+         display="flex"
+        justifyContent="space-around"
+
+        >
+          
+        <Link
+          to={`/`}
+          style={{
+            textDecoration: "none",
+            color: "black"
+          }}
+        >          
+          <Heading is="h3">
+            Login </Heading>
+        </Link> <Text> | </Text>
+        <Link
+          to={`/`}
+          style={{
+            textDecoration: "none",
+            color: "black"
+          }}
+        >          
+<Heading is="h3">        
+     Register </Heading>
+        </Link>
+        
+        </Pane>
         </Pane>
 )
