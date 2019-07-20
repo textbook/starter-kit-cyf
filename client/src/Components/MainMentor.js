@@ -13,40 +13,40 @@ import {
   Strong,
   Textarea,
   
-  Paragraph } from "evergreen-ui";
-
+  Paragraph } from "evergreen-ui"
 
 export class FloatingMentor extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      clickedStudent: null,
+      studentSelected: null,
       selectedStudentProfile: null,
-      mentorComments: 'Mentor Comments',
+      mentorComments: ' ',
       commentSubmitted: null
     };
   }
 
-  handyStudent = selected => {
-    console.log("handystudent working....")
+  handleStudentSelection = selected => {
+    console.log("handleStudentSelection working....")
     this.setState({
-      clickedStudent: selected
+      studentSelected: selected,
+      mentorComments: null
     });
   };
 
-handyComments = (e) => {
-  console.log("handyComments working");
+handleComments = (e) => {
+  console.log("handleComments working");
   this.setState({
     mentorComments: this.state.commentSubmitted,
-      commentSubmitted: null
+    commentSubmitted: null
 
   })
 }
   
   render() {
      var selectedStudentProfile = mockStudentsProfiles.find(s => {
-       return s.name === this.state.clickedStudent;
-     } );
+       return s.name === this.state.studentSelected;
+     });
      console.log(this.state.mentorComments);
      
     return (
@@ -73,46 +73,24 @@ handyComments = (e) => {
             justifyContent="center"
           >
             <Combobox
-             felx={1}
+             
               items={mockStudentsProfiles.map(s => s.name)}
               height={48}
-              onChange={selected => this.handyStudent(selected)}
+              onChange={selected => this.handleStudentSelection(selected)}
               placeholder="Students"
               autocompleteProps={{
                 title: "Students"
               }}
             />
 
-              {/* <TextInput
-                width="100%"
-                height={48}
-                width={800}
-                placeholder="Mentor Summary"
-                onChange={e =>
-                  this.setState({ commentSubmitted: e.target.value })
-                }
-              /> */}
-
-
-    <Textarea
-      height={100}
-      width={500}
-      onChange={e => setState({ mentorComments: e.target.value })}
-      value={this.state.mentorComments}
-    />
-              <Button
-                height={48}
-                appearance="primary"
-                marginTop={20}
-                onClick={this.handyComments}
-              >
-                Submit
-              </Button>
           </Pane>
 
         {(selectedStudentProfile) &&   (
-         <Pane> 
-        <Pane height={200} width={500} float="left">
+         <Pane
+         display="flex"
+        alignItems="center"
+         > 
+        <Pane height="auto" width={500} float="left">
         <Avatar
           src={
             selectedStudentProfile
@@ -124,7 +102,7 @@ handyComments = (e) => {
               ? selectedStudentProfile.name
               : null
           }
-          size={70}
+          size={80}
         />
         <Table.Body>
           <Table.Head>
@@ -155,8 +133,22 @@ handyComments = (e) => {
                   selectedStudentProfile.techinalSkills}
               </Table.TextCell>
             </Table.Row>
-          </Table.Body>
-        </Table.Body>
+            
+            
+            <Table.Row intent="success">
+              <Table.TextCell flexBasis={200} flexShrink={1} flexGrow={0}>
+              Evaluation Summary:
+              </Table.TextCell >
+              </Table.Row>
+              <Table.Row height="auto" paddingY={12}>
+              <Paragraph>
+                {selectedStudentProfile &&
+                  this.state.mentorComments}
+                  </Paragraph>
+            </Table.Row>
+            </Table.Body>
+            </Table.Body>
+
       </Pane>       
       
       <Pane
@@ -191,19 +183,26 @@ handyComments = (e) => {
 
                        )} ))}
 
-          
-                      
-            
-
-
-
-
-        </Pane>
+         </Pane>
       
-      
+         <Textarea
+      height={200}
+      width={400}
+      placeholder="Mentor evaluation summary"
+      onChange={e => this.setState({ commentSubmitted: e.target.value })}
+      // value={this.state.mentorComments}
+    />
+              <Button
+                height={38}
+                appearance="primary"
+                marginLeft={10}
+                onClick={this.handleComments}
+              >
+                Submit
+              </Button>
+    
       
       </Pane> )}                                   
-
       </Pane>
 
                           
