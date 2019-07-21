@@ -27,7 +27,7 @@ class MentorHome extends Component {
   };
   selectSession = e => {
     this.setState({ selectedSession: e.target.value }, () =>
-      setInterval(this.fetchData, 5000)
+      setInterval(this.fetchData, 1000)
     );
   };
 
@@ -106,7 +106,7 @@ class MentorHome extends Component {
               />
             </section>
             <br />
-            <p>Proportion : % {proportion}</p>
+            <p>Attendance Percentage : % {proportion}</p>
           </div>
         ) : (
           <p>There is no results for today!, please select another date</p>

@@ -1,5 +1,15 @@
 import { Router } from "express";
-import { registerTest, loginTest, getUsers, getSessions, getAttendance, createSession, register, login } from "./controllers.js"
+import {
+  registerTest,
+  loginTest,
+  getUsers,
+  getSessions,
+  getAttendance,
+  createSession,
+  updateSession,
+  register,
+  login
+} from "./controllers.js";
 import { getClient } from "./db";
 
 const api = new Router();
@@ -7,7 +17,7 @@ const api = new Router();
 api.get("/", (_, res, next) => {
   const client = getClient();
 
-  client.connect((err) => {
+  client.connect(err => {
     if (err) {
       return next(err);
     }
@@ -37,5 +47,43 @@ api.get("/attendance", getAttendance);
 
 //creating sessions by admin, require name of session, session number, date and city as request.body from frontend
 api.post("/createSession", createSession);
+
+//updating session with date
+api.put("/updateSession", (req, res) => {
+  const client = getClient();
+  const selectedSessionDate = req.query.date;
+  client.connect(async err => {
+    if (err) {
+      return next(err);
+    }
+    let { name, session, date, city, latitude, longitude } = req.body;
+    const updateObject = {};
+    name ? (updateObject.name = name) : null;
+    city ? (updateObject.city = city) : null;
+    session ? (updateObject.session = session) : null;
+    date ? (updateObject.date = date) : null;
+    latitude ? (updateObject.latitude = latitude) : null;
+    longitude ? (updateObject.longitude = longitude) : null;
+
+    const db = client.db("heroku_cs1q5qk5");
+
+    let collection = db.collection("sessions");
+    const options = { returnOriginal: false };
+    collection.findOneAndUpdate(
+      { date: selectedSessionDate }, // { date : selectedSessionDate}
+      { $set: updateObject },
+      options,
+      function(error, result) {
+        if (result.value) {
+          res.send(error || result.value);
+        } else {
+          console.log("no result");
+          res.sendStatus(404);
+        }
+      }
+    );
+    client.close();
+  });
+});
 
 export default api;
