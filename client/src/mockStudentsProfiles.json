@@ -3,31 +3,31 @@
     "id": 0,
     "name": "Ahmet",
     "studentPhoto": "https://avatars2.githubusercontent.com/u/45479018?s=460&v=4",
-    "softSkills": "test, test, test",
-    "techinalSkills": "React",
+    "softSkills": "Participating in my class, Supporting my class",
+    "techinalSkills": "HTML5, CSS3, React, JS",
     "floatingMentorcomments": [
       {
         "id": 1,
-        "comment": "lovely coding done. keep parctising and you will get perfect. Remember to google every time you get stuck.",
-        "floatingMentorName": "maria",
+        "comment": "Lovely coding done. keep parctising and you will get perfect. Remember to google every time you get stuck.",
+        "floatingMentorName": "Maria",
         "date": "12/07/2019"
       },
       {
         "id": 2,
         "comment": "well done",
-        "floatingMentorName": "charles",
+        "floatingMentorName": "Charles",
         "date": "14/07/2019"
       },
       {
-        "id": 1,
+        "id": 3,
         "comment": "superb coding",
-        "floatingMentorName": "josh",
-        "date": "12/07/2019"
+        "floatingMentorName": "Maria",
+        "date": "15/07/2019"
       },
       {
-        "id": 2,
+        "id": 4,
         "comment": "done",
-        "floatingMentorName": "charlotte",
+        "floatingMentorName": "Charlotte",
         "date": "14/07/2019"
       }
     ],
