@@ -1,8 +1,17 @@
-import { Button, Paper, Typography, TextField } from '@material-ui/core';
-import React, { Component } from 'react';
-import Header from './Header';
+import { Button, Paper, TextField, Typography } from "@material-ui/core"
+import React, { Component } from "react"
+import Header from "./Header"
 
 class CreateQuiz extends Component {
+  state = {
+    questions: {
+      1: [""]
+    },
+    answers: {
+      1: [""]
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -19,46 +28,46 @@ class CreateQuiz extends Component {
         </div>
         <div className="Paper-two">
           <Paper>
-          <Typography variant="h6" component="h6">
-            <div>
-              <p className="Quiz-title">Question 1:</p>
-              <Paper className="Paper-two">
-                <p className="Questions">Please enter question here:</p>
-              </Paper>
-            </div>
-            <div>
-              <div className="choices">
-                <p>A</p>
-                <Button variant="contained" color="secondary">
-                  <p>Answer 1</p>
-                </Button>
-                <p>B</p>
-                  <Button variant="contained" color="secondary">
-                  <p>Answer 2</p>
-                </Button>
+            <Typography variant="h6" component="h6">
+              <div>
+                <p className="Quiz-title">Question 1:</p>
+                <Paper className="Paper-two">
+                  <p className="Questions">Please enter question here:</p>
+                </Paper>
               </div>
-              <div className="choices">
-                <p>C</p>
+              <div>
+                <div className="choices">
+                  <p>A</p>
                   <Button variant="contained" color="secondary">
-                  <p>Answer 3</p>
-                </Button>
-                <p>D</p>
+                    <p>Answer 1</p>
+                  </Button>
+                  <p>B</p>
                   <Button variant="contained" color="secondary">
-                  <p>Answer 4</p>
-                </Button>
-              </div>
+                    <p>Answer 2</p>
+                  </Button>
+                </div>
+                <div className="choices">
+                  <p>C</p>
+                  <Button variant="contained" color="secondary">
+                    <p>Answer 3</p>
+                  </Button>
+                  <p>D</p>
+                  <Button variant="contained" color="secondary">
+                    <p>Answer 4</p>
+                  </Button>
+                </div>
 
-              <div className="Enter">
-                <TextField
-                  id="outlined-dense"
-                  label="Correct Answer"
-                  margin="dense"
-                  variant="outlined"
-                  color="secondary"
-                />
+                <div className="Enter">
+                  <TextField
+                    id="outlined-dense"
+                    label="Correct Answer"
+                    margin="dense"
+                    variant="outlined"
+                    color="secondary"
+                  />
+                </div>
               </div>
-            </div>
-          </Typography>
+            </Typography>
           </Paper>
         </div>
 
@@ -82,8 +91,8 @@ class CreateQuiz extends Component {
         <div className="Background-design-two" />
         <div className="Background-design-three" />
       </div>
-    );
+    )
   }
 }
 
-export default CreateQuiz;
+export default CreateQuiz
