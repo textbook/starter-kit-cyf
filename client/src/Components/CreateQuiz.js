@@ -1,4 +1,4 @@
-import { Button, Paper, Typography, TextField } from '@material-ui/core';
+import { Button, Paper, Typography, TextField, Grid } from '@material-ui/core';
 import React, { Component } from 'react';
 import Header from './Header';
 
@@ -15,6 +15,7 @@ class CreateQuiz extends Component {
             label="Quiz Title"
             margin="dense"
             variant="outlined"
+            color="default"
           />
         </div>
         <div className="Paper-two">
@@ -64,17 +65,17 @@ class CreateQuiz extends Component {
 
         <div className="Add-cancel">
           <div className="Add">
-            <Button variant="outlined" color="primary">
+            <Button variant="outlined" color="default">
               Add Question
             </Button>
           </div>
           <div className="Add">
-            <Button variant="outlined" color="primary">
+            <Button variant="outlined" color="default">
               Create Quiz
             </Button>
           </div>
           <div className="Add">
-            <Button variant="outlined" color="primary">
+            <Button variant="outlined" color="default">
               Cancel and Return
             </Button>
           </div>

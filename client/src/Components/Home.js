@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Button } from '@material-ui/core';
-import image from '../Image.png';
+
+import image from '../image.png';
 import Header from './Header';
 
 class Home extends Component {
   render() {
     return (
+      // <Grid container justify={"center"} spacing={0} >
       <div className="App">
         <Header />
         <div>
@@ -32,9 +34,10 @@ class Home extends Component {
           </div>
           <div className="Background-design-two" />
           <div className="Background-design-three" />
-          <div className="codEmpire">©CodEmpire July 2019</div>
+          <div className="codEmpire">©CodeEmpire July 2019</div>
         </div>
       </div>
+      // </Grid>
     );
   }
 }

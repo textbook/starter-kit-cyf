@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../logo.png';
+// import Grid from '@material-ui/core/Grid';
 
 export default function Header() {
   return (
     <header className="App-header">
+      {/* <Grid container justify={"center"}  > */}
+      
       <img src={logo} className="App-logo" alt="logo" />
       <h4 className="Title">Quiz App</h4>
 
@@ -25,6 +28,7 @@ export default function Header() {
           Results
         </Link>
       </div>
+    {/* </Grid> */}
     </header>
   );
 }

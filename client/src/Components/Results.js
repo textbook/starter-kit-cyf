@@ -6,7 +6,8 @@ import {
   TableCell,
   TableHead,
   TableRow,
-  Typography
+  Typography,
+  Grid
 } from '@material-ui/core';
 import logo from '../logo.png';
 import Header from './Header';
