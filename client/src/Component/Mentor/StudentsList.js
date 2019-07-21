@@ -35,4 +35,6 @@ function StudentsList(props) {
   );
 }
 
+const divStyle = { "width" : "400px" }
+
 export default StudentsList;

@@ -1,0 +1,19 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* margin-right: -15px; */
+  /* margin-left: -15px; */
+}
+
+@media (min-width: 320px) { 
+   .xs-col-12 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+   .md-col-6 {
+    width: 50%;
+  }
+}

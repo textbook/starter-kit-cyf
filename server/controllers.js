@@ -1,5 +1,6 @@
 import User from "./model/User";
 const dayjs = require("dayjs");
+
 // const bcrypt = require("bcryptjs");
 import bcrypt from "bcryptjs";
 
@@ -83,19 +84,53 @@ export const createSession = (req, res) => {
     if (err) {
       return next(err);
     }
-    let { name, session, date, city } = req.body;
-    if (!name || !session || !date || !city) {
+    let { name, session, date, city, latitude, longitude } = req.body;
+    if (!name || !session || !date || !city || !latitude || !longitude) {
       res.sendStatus(400);
       return;
     }
     const db = client.db("heroku_cs1q5qk5");
     let collection = db.collection("users");
     let studentUsers = [];
-    const newSession = { name, session, date, city, attendance: studentUsers };
+    const newSession = { name, session, date, city, latitude, longitude, attendance: studentUsers };
     collection = db.collection("sessions");
     collection.insertOne(newSession, (err, result) => {
       res.send(err || result.ops[0]);
     });
+    client.close();
+  });
+};
+
+(req, res) => {
+  const client = getClient();
+  const selectedSessionDate = req.query.date;
+  client.connect(async err => {
+    if (err) {
+      return next(err);
+    }
+    let { name, session, date, city } = req.body;
+    const updateObject = {};
+    name ? (updateObject.name = name) : null;
+    city ? (updateObject.city = city) : null;
+    session ? (updateObject.session = session) : null;
+    date ? (updateObject.date = date) : null;
+    console.log(updateObject);
+    const db = client.db("heroku_cs1q5qk5");
+    let collection = db.collection("sessions");
+    const options = { returnOriginal: false };
+    collection.findOneAndUpdate(
+      { date: selectedSessionDate }, // { date : selectedSessionDate}
+      { $set: updateObject },
+      options,
+      function(error, result) {
+        if (result.value) {
+          res.send(error || result.value);
+        } else {
+          console.log("no result");
+          res.sendStatus(404);
+        }
+      }
+    );
     client.close();
   });
 };
@@ -184,14 +219,15 @@ export const register = (req, res, next) => {
     }
 
     //Hashed password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPwd = await bcrypt.hash(req.body.password, salt);
+    // const salt = await bcrypt.genSalt(10);
+    // const hashedPwd = await bcrypt.hash(req.body.password, salt);
 
     //if the email is not in use
     const user = new User({
       name: req.body.name,
       email: req.body.email,
-      password: hashedPwd,
+      // password: hashedPwd,
+      password: password,
       status: req.body.status
     });
     collection.insertOne(user, (err, result) => {
@@ -218,6 +254,7 @@ export const login = (req, res, next) => {
     let user = await collection.findOne({
       email: req.body.email
     });
+    console.log({user})
     //if no matching with the provided email
     if (!user) {
       res.status(404).json({
@@ -235,6 +272,7 @@ export const login = (req, res, next) => {
       return;
     }
     //checking the password
+    console.log("passwordd", user.password, req.body.password)
     if (user.password != req.body.password) {
       res.status(400).json({
         msg: `Your password is wrong!`
