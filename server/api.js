@@ -1,5 +1,4 @@
 import { Router } from "express";
-
 import { getClient } from "./db";
 
 const api = new Router();
