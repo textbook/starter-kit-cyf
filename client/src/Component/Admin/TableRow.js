@@ -41,7 +41,7 @@ export class TableRow extends Component {
         <tr>
           {" "}
           <div className="row">
-            {this.state.isViewDisplayed && (
+            {this.state.isViewDisplayed && totalAttendingStudents && (
               <div className="xs-col-12" style={divStyle}>
                 <div className="row">
                   <section className="md-col-6">
