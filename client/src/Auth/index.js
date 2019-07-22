@@ -1,5 +1,10 @@
 // import decode from 'jwt-decode'
-
+export const checkRole = () => {
+  const role = localStorage.getItem('role');
+  if (role) {
+    return role
+  }
+};
 export const setToken = idToken => {
   localStorage.setItem('id_token', idToken);
   window.location.reload(true);
@@ -12,6 +17,7 @@ export const getToken = () => {
 
 export const logout = () => {
   localStorage.removeItem('id_token');
+  localStorage.removeItem('role');
   window.location.reload(true);
 };
 
