@@ -17,25 +17,26 @@
         "id": 2,
         "comment": "well done",
         "floatingMentorName": "Charles",
-        "date": "14/07/2019"
+        "date": "14/07/2019",
+        "module": "React"
       },
       {
         "id": 3,
-        "comment": "superb coding",
+        "comment": "Superb coding",
         "floatingMentorName": "Maria",
         "date": "15/07/2019",
         "module":"HTML - CSS"
       },
       {
         "id": 4,
-        "comment": "done",
+        "comment": "Done",
         "floatingMentorName": "Charlotte",
         "date": "14/07/2019",
         "module": "JS-Core2"
       },
       {
         "id": 5,
-        "comment": "good job",
+        "comment": "Good job",
         "floatingMentorName": "lucy",
         "date": "12/07/2019",
         "module":"React"
@@ -68,13 +69,15 @@
         "id": 1,
         "comment": "superb coding",
         "floatingMentorName": "josh",
-        "date": "12/07/2019"
+        "date": "12/07/2019",
+        "module": "HTML - CSS"
       },
       {
         "id": 2,
         "comment": "done",
         "floatingMentorName": "charlotte",
-        "date": "14/07/2019"
+        "date": "14/07/2019",
+        "module": "JS-Core2"
       }
     ],
     "leadMentorcomments": [
@@ -97,13 +100,15 @@
         "id": 1,
         "comment": "good job",
         "floatingMentorName": "lucy",
-        "date": "12/07/2019"
+        "date": "12/07/2019",
+        "module": "HTML - CSS"
       },
       {
         "id": 2,
         "comment": "well done",
         "floatingMentorName": "mao",
-        "date": "14/07/2019"
+        "date": "14/07/2019",
+        "module": "JavaScript"
       }
     ],
     "leadMentorcomments": [
