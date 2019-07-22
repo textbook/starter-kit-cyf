@@ -1,4 +1,4 @@
-import { Button, Paper, Typography } from "@material-ui/core"
+import { Button, Paper, Typography, Grid } from "@material-ui/core"
 import React, { Component } from "react"
 import Header from "./Header"
 class TakeQuiz extends Component {

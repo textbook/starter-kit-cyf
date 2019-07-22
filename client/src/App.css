@@ -5,9 +5,11 @@ html,
   font-family: Avenir;
 }
 body {
+  box-sizing: border-box;
   background-color: white;
 }
 .App-logo {
+  
   width: 360px;
   height: 90px;
   padding: 25px 0px 50px 10px;
@@ -94,7 +96,7 @@ body {
 
 .App-header {
   background-color: #030303;
-  height: 150px;
+  height: 140px;
   display: flex;
   flex-direction: row;
   align-items: left;
@@ -111,7 +113,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  padding: 0px 10px 0px 250px;
+  padding: 0px 10px 25px 250px;
 }
 
 .Menu {
@@ -250,7 +252,7 @@ a {
 }
 
 a:hover {
-  color: red;
+  color: #c0b1b0;
 }
 
 .MuiButton-root {
@@ -259,12 +261,11 @@ a:hover {
 
 .Add {
   padding: 5px;
-
 }
 
 .Add-cancel {
   padding: 10px;
-  ;display: flex;
+  display: flex;
   flex-direction: column;
   align-items: right;
   align-content: right;
