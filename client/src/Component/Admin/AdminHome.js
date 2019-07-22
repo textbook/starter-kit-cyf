@@ -63,10 +63,6 @@ class AdminHome extends Component {
     });
   };
 
-  handleView = id => {
-    console.log("view", id);
-  };
-
   render() {
     // const { name, date, city, session } = this.state;
     // console.log(name, session, city, date);
