@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 const dayjs = require("dayjs");
 import bcrypt from "bcryptjs";
-import { setToken } from '../../Auth/index'
+import { setToken, checkRole } from '../../Auth/index'
 import {
   Container,
   Col,
@@ -53,6 +53,13 @@ class login extends Component {
         console.log(session.longitude)
         this.setState({ currentSession: session });
       });
+    if (checkRole() === "STUDENT") {
+      this.props.history.push("/studentRegistered");
+    } if (checkRole() === "MENTOR") {
+      this.props.history.push("/mentorHome");
+    } if (checkRole() === "ADMIN") {
+      this.props.history.push("/adminHome");
+    }
   }
   handleChange = async e => {
     const { name, value } = e.target;
@@ -95,15 +102,15 @@ class login extends Component {
         } else {
           if (status.toUpperCase() === "STUDENT") {
             setToken('eyJfaWQiOiJsamhpcmZnaXloNGl2dWkzazRndW9nYmRvdWhyIiwibGFzdE5hbWUiOiJNb3JhZGkiLCJlbWFpbCI6Im1vaHNlbkBjb2RleW91cmZ1dHVyZS5pbyIsImNpdHkiOiJMb25kb24iLCJhdmF0YXIiOiJodHRwczovL2F2YXRhcnMzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzMwMzg5ODk2P3Y9NCIsImlhdCI6MTU2MzgwNjgxNn0')
-
+            localStorage.setItem('role', 'STUDENT');
             return this.props.history.push("/studentRegistered");
           } else if (status.toUpperCase() === "MENTOR") {
             setToken('eyJfaWQiOiJsamhpcmZnaXloNGl2dWkzazRndW9nYmRvdWhyIiwibGFzdE5hbWUiOiJNb3JhZGkiLCJlbWFpbCI6Im1vaHNlbkBjb2RleW91cmZ1dHVyZS5pbyIsImNpdHkiOiJMb25kb24iLCJhdmF0YXIiOiJodHRwczovL2F2YXRhcnMzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzMwMzg5ODk2P3Y9NCIsImlhdCI6MTU2MzgwNjgxNn0')
-
+            localStorage.setItem('role', 'MENTOR');
             return this.props.history.push("/mentorHome");
           } else if (status.toUpperCase() === "ADMIN") {
             setToken('eyJfaWQiOiJsamhpcmZnaXloNGl2dWkzazRndW9nYmRvdWhyIiwibGFzdE5hbWUiOiJNb3JhZGkiLCJlbWFpbCI6Im1vaHNlbkBjb2RleW91cmZ1dHVyZS5pbyIsImNpdHkiOiJMb25kb24iLCJhdmF0YXIiOiJodHRwczovL2F2YXRhcnMzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzMwMzg5ODk2P3Y9NCIsImlhdCI6MTU2MzgwNjgxNn0')
-
+            localStorage.setItem('role', 'ADMIN');
             return this.props.history.push("/adminHome");
           }
         }
