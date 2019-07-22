@@ -1,9 +1,19 @@
+
 import { Button, Paper, Typography, TextField } from '@material-ui/core';
 import { Link, withRouter } from 'react-router-dom';
 import React, { Component } from 'react';
 import Header from './Header';
 
 class CreateQuiz extends Component {
+  state = {
+    questions: {
+      1: [""]
+    },
+    answers: {
+      1: [""]
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -22,6 +32,7 @@ class CreateQuiz extends Component {
         <div className="Paper-two">
           <Paper>
             <Typography variant="h6" component="h6">
+
               <div className="Questions">
                 <p>Question 1:</p>
                 <TextField
@@ -105,8 +116,9 @@ class CreateQuiz extends Component {
         <div className="Background-design-two" />
         <div className="Background-design-three" />
       </div>
-    );
+    )
   }
 }
+
 
 export default withRouter(CreateQuiz);

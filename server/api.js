@@ -1,5 +1,4 @@
 import { Router } from "express";
-
 import { getClient } from "./db";
 
 const api = new Router();
@@ -16,41 +15,50 @@ api.get("/", (_, res, next) => {
   });
 });
 
-api.get("/takequiz", (req, res) => {
+api.get("/quiz/:pin?", (req, res) => {
   const client = getClient();
   client.connect(function() {
-    const db = client.db("cyf");
-    const collection = db.collection("quizzes");
+    const db = client.db("heroku_shn7149c")
+    const collection = db.collection("quiz");
 
-    collection.find({}).toArray(function(error, result) {
+    const { pin } = req.params
+
+    collection.findOne({ pin }).toArray(function(error, result) {
       res.send(error || result);
       client.close();
     });
   });
 });
 
-api.post("/createquiz", (req, res) => {
+api.post("/quiz", (req, res) => {
+
+  const client = getClient();
+  client.connect(function () {
+    const db = client.db("heroku_shn7149c")
+    const collection = db.collection("quiz")
+    
+    if(req.body.length < 3) return res.sendStatus(400)
+
+    collection.insertOne(req.body, function (error, result) {
+      res.send(error || result.ops[0])
+      client.close()
+    })
+  })
+})
+
+  api.post("/answer", (req, res) => {
   const client = getClient();
   client.connect(function() {
-    const db = client.db("cyf");
-    const collection = db.collection("quizzes");
+    const db = client.db("heroku_shn7149c")
+    const collection = db.collection("quiz");
 
-    const { question, answers } = req.body;
+    if(req.body.length < 3) return res.sendStatus(400)
 
-    if (!question || !answers) {
-      res.sendStatus(400);
-    }
-
-    const quiz = {
-      question,
-      answers
-    };
-
-    collection.insertOne(quiz, function(error, result) {
+    collection.insertOne(req.body, function(error, result) {
       res.send(error || result.ops[0]);
       client.close();
     });
   });
-});
+})
 
 export default api;

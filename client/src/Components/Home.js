@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button } from '@material-ui/core';
 import { Link, withRouter } from 'react-router-dom';
 
-import image from '../image.png';
+import image from '../Image.png';
 import Header from './Header';
 
 class Home extends Component {
