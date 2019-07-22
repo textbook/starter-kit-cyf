@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from '@material-ui/core';
 
-import image from '../image.png';
+import image from '../Image.png';
 import Header from './Header';
 
 class Home extends Component {
