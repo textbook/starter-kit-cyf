@@ -1,6 +1,8 @@
+/* eslint-disable arrow-parens */
 import React, { Component } from "react";
 const dayjs = require("dayjs");
-
+import bcrypt from "bcryptjs";
+import { setToken } from '../../Auth/index'
 import {
   Container,
   Col,
@@ -12,11 +14,17 @@ import {
   FormText,
   FormFeedback
 } from "reactstrap";
+
 import { withRouter, Browserhistory as history } from "react-router-dom";
 
 import "./index.css";
 import { insideCircle, headingDistanceTo } from "geolocation-utils";
 // import Joi from "joi";
+
+
+// //Hashed password
+// const salt = await bcrypt.genSalt(10);
+// const hashedPwd = await bcrypt.hash(password, salt);
 
 class login extends Component {
   constructor(props) {
@@ -42,7 +50,7 @@ class login extends Component {
         const session = sessions
           .filter(session => session.date == "21/07/2019")
           .reduce(session => session);
-          console.log(session.longitude)
+        console.log(session.longitude)
         this.setState({ currentSession: session });
       });
   }
@@ -52,6 +60,7 @@ class login extends Component {
       [name]: value
     });
   };
+
   handleSubmit = async e => {
     e.preventDefault();
     const { email, password, position } = this.state;
@@ -63,7 +72,7 @@ class login extends Component {
     );
     console.log({ isPositionConfirmed });
     if (!isPositionConfirmed && status.toLowerCase() == "student") {
-      return this.props.history.push("/");
+      return this.props.history.replace("/studentRegistered");
     } else {
       // fetch("http://localhost:3000/api/loginJoanTest", {
       // });
@@ -85,10 +94,16 @@ class login extends Component {
           alert(json.msg);
         } else {
           if (status.toUpperCase() === "STUDENT") {
+            setToken('eyJfaWQiOiJsamhpcmZnaXloNGl2dWkzazRndW9nYmRvdWhyIiwibGFzdE5hbWUiOiJNb3JhZGkiLCJlbWFpbCI6Im1vaHNlbkBjb2RleW91cmZ1dHVyZS5pbyIsImNpdHkiOiJMb25kb24iLCJhdmF0YXIiOiJodHRwczovL2F2YXRhcnMzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzMwMzg5ODk2P3Y9NCIsImlhdCI6MTU2MzgwNjgxNn0')
+
             return this.props.history.push("/studentRegistered");
           } else if (status.toUpperCase() === "MENTOR") {
+            setToken('eyJfaWQiOiJsamhpcmZnaXloNGl2dWkzazRndW9nYmRvdWhyIiwibGFzdE5hbWUiOiJNb3JhZGkiLCJlbWFpbCI6Im1vaHNlbkBjb2RleW91cmZ1dHVyZS5pbyIsImNpdHkiOiJMb25kb24iLCJhdmF0YXIiOiJodHRwczovL2F2YXRhcnMzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzMwMzg5ODk2P3Y9NCIsImlhdCI6MTU2MzgwNjgxNn0')
+
             return this.props.history.push("/mentorHome");
           } else if (status.toUpperCase() === "ADMIN") {
+            setToken('eyJfaWQiOiJsamhpcmZnaXloNGl2dWkzazRndW9nYmRvdWhyIiwibGFzdE5hbWUiOiJNb3JhZGkiLCJlbWFpbCI6Im1vaHNlbkBjb2RleW91cmZ1dHVyZS5pbyIsImNpdHkiOiJMb25kb24iLCJhdmF0YXIiOiJodHRwczovL2F2YXRhcnMzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzMwMzg5ODk2P3Y9NCIsImlhdCI6MTU2MzgwNjgxNn0')
+
             return this.props.history.push("/adminHome");
           }
         }
@@ -133,7 +148,7 @@ class login extends Component {
       lat: Number(latitude),
       lon: Number(longitude)
     };
-    console.log({center})
+    console.log({ center })
     console.log("my location", poslat, poslong)
     // to calculate the distance to the target
     console.log(
@@ -197,12 +212,10 @@ class login extends Component {
                   this.handleChange(e);
                 }}
               />
-              <FormFeedback valid>
-                That's a tasty looking email you've got there.
-              </FormFeedback>
+
               <FormFeedback>
-                Uh oh! Looks like there is an issue with your email. Please
-                input a correct email.
+                Looks like there is an issue with your email. Please
+               input a correct email.
               </FormFeedback>
               <FormText>Your username is most likely your email.</FormText>
             </FormGroup>
@@ -253,12 +266,12 @@ class login extends Component {
             <span>Long : {position.longitude}</span>
           </h5>
           {status.toLocaleLowerCase() == "student" &&
-          isPositionConfirmed != "notChecked" &&
-          !isPositionConfirmed ? (
-            <p>Check your location , you are not at the class yet, hurry up!</p>
-          ) : isPositionConfirmed === "confirmed" ? (
-            <p>Your position is confirmed, enjoy the class!</p>
-          ) : null}
+            isPositionConfirmed != "notChecked" &&
+            !isPositionConfirmed ? (
+              <p>Check your location , you are not at the class yet, hurry up!</p>
+            ) : isPositionConfirmed === "confirmed" ? (
+              <p>Your position is confirmed, enjoy the class!</p>
+            ) : null}
         </Form>
       </Container>
     );
