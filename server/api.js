@@ -18,8 +18,8 @@ api.get("/", (_, res, next) => {
 api.get("/takequiz", (req, res) => {
   const client = getClient();
   client.connect(function() {
-    const db = client.db("cyf");
-    const collection = db.collection("quizzes");
+    const db = client.db("heroku_shn7149c")
+    const collection = db.collection("quiz");
 
     collection.find({}).toArray(function(error, result) {
       res.send(error || result);
@@ -31,8 +31,8 @@ api.get("/takequiz", (req, res) => {
 api.post("/createquiz", (req, res) => {
   const client = getClient();
   client.connect(function() {
-    const db = client.db("cyf");
-    const collection = db.collection("quizzes");
+    const db = client.db("heroku_shn7149c")
+    const collection = db.collection("quiz");
 
     const { question, answers } = req.body;
 
