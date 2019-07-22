@@ -17,12 +17,13 @@ export const logout = () => {
 
 export const isTokenExpired = token => {
   try {
-    const decoded = decode(token);
-    if (decoded && decoded.exp && decoded.exp < Date.now() / 1000) {
-      logout();
-      return true;
-    }
-    return false;
+    return false
+    // const decoded = decode(token);
+    // if (decoded && decoded.exp && decoded.exp < Date.now() / 1000) {
+    //   logout();
+    //   return true;
+    // }
+    // return false;
   } catch (err) {
     console.error(err);
   }
