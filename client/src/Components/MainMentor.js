@@ -5,7 +5,6 @@ import {
   Button, 
   Pane, 
   Combobox, 
-  TextInput, 
   Table, 
   Avatar, 
   Heading,
