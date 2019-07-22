@@ -1,4 +1,5 @@
 import { Button, Paper, Typography, Grid } from "@material-ui/core"
+import { Link, withRouter } from 'react-router-dom';
 import React, { Component } from "react"
 import Header from "./Header"
 class TakeQuiz extends Component {
@@ -55,6 +56,13 @@ class TakeQuiz extends Component {
              {/* &raquo; */}
           </a>
         </div>
+        <div className="Add-Enter">
+          <Link className="" to="/">
+            <Button variant="outlined" color="default">
+              Cancel and Return
+                </Button>
+          </Link>
+        </div>
         <div className="Background-design-two" />
         <div className="Background-design-three" />
       </div>
@@ -62,4 +70,4 @@ class TakeQuiz extends Component {
   }
 }
 
-export default TakeQuiz
+export default withRouter(TakeQuiz);
