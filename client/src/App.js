@@ -11,7 +11,7 @@ import { createMuiTheme } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
 
 import './App.css';
-import './grid.css';
+import './Grid.css';
 
 const theme = createMuiTheme({
   palette: {
