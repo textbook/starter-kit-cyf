@@ -1,4 +1,5 @@
-import { Button, Paper, Typography, TextField, Grid } from '@material-ui/core';
+import { Button, Paper, Typography, TextField } from '@material-ui/core';
+import { Link, withRouter } from 'react-router-dom';
 import React, { Component } from 'react';
 import Header from './Header';
 
@@ -15,69 +16,90 @@ class CreateQuiz extends Component {
             label="Quiz Title"
             margin="dense"
             variant="outlined"
-            color="default"
+            color="secondary"
           />
         </div>
         <div className="Paper-two">
           <Paper>
-          <Typography variant="h6" component="h6">
-            <div>
-              <p className="Quiz-title">Question 1:</p>
-              <Paper className="Paper-two">
-                <p className="Questions">Please enter question here:</p>
-              </Paper>
-            </div>
-            <div>
-              <div className="choices">
-                <p>A</p>
-                <Button variant="contained" color="secondary">
-                  <p>Answer 1</p>
-                </Button>
-                <p>B</p>
-                  <Button variant="contained" color="secondary">
-                  <p>Answer 2</p>
-                </Button>
-              </div>
-              <div className="choices">
-                <p>C</p>
-                  <Button variant="contained" color="secondary">
-                  <p>Answer 3</p>
-                </Button>
-                <p>D</p>
-                  <Button variant="contained" color="secondary">
-                  <p>Answer 4</p>
-                </Button>
-              </div>
-
-              <div className="Enter">
+            <Typography variant="h6" component="h6">
+              <div className="Questions">
+                <p>Question 1:</p>
                 <TextField
-                  id="outlined-dense"
-                  label="Correct Answer"
-                  margin="dense"
+                  id="outlined-full-width"
+                  fullWidth
+                  margin="normal"
                   variant="outlined"
-                  color="secondary"
                 />
               </div>
-            </div>
-          </Typography>
+              <div>
+                <div className="choices">
+                  <p>A</p>
+                  <TextField
+                    id="outlined-bare"
+                    defaultValue=""
+                    margin="normal"
+                    variant="outlined"
+                    color="primary"
+                  />
+                  <p>B</p>
+                  <TextField
+                    id="outlined-bare"
+                    defaultValue=""
+                    margin="normal"
+                    variant="outlined"
+                  />
+                </div>
+                <div className="choices">
+                  <p>C</p>
+                  <TextField
+                    id="outlined-bare"
+                    defaultValue=""
+                    margin="normal"
+                    variant="outlined"
+                    color="primary"
+                  />
+                  <p>D</p>
+                  <TextField
+                    id="outlined-bare"
+                    defaultValue=""
+                    margin="normal"
+                    variant="outlined"
+                    color="primary"
+                  />
+                </div>
+
+                <div className="Enter">
+                  <TextField
+                    id="outlined-dense"
+                    label="Correct Answer"
+                    margin="dense"
+                    variant="outlined"
+                    color="secondary"
+                  />
+                </div>
+              </div>
+            </Typography>
           </Paper>
         </div>
-
-        <div className="Add-cancel">
-          <div className="Add">
-            <Button variant="outlined" color="default">
-              Add Question
-            </Button>
-          </div>
-          <div className="Add">
-            <Button variant="outlined" color="default">
-              Create Quiz
-            </Button>
-          </div>
-          <div className="Add">
-            <Button variant="outlined" color="default">
-              Cancel and Return
-            </Button>
+        <div className="Add-cancel-plus">
+          <div className="Add-cancel">
+            <div className="Add">
+              <Button variant="outlined" color="default">
+                Add Question
+              </Button>
+            </div>
+            <div className="Add">
+              <Button variant="outlined" color="default">
+                Create Quiz
+              </Button>
+            </div>
+            <div className="Add">
+              <Link className="" to="/">
+                <Button variant="outlined" color="default">
+                  Cancel and Return
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
         <div className="Background-design-two" />
@@ -87,4 +109,4 @@ class CreateQuiz extends Component {
   }
 }
 
-export default CreateQuiz;
+export default withRouter(CreateQuiz);

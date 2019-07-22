@@ -9,10 +9,9 @@ body {
   background-color: white;
 }
 .App-logo {
-  
-  width: 360px;
-  height: 90px;
-  padding: 25px 0px 50px 10px;
+  width: 260px;
+  height: 80px;
+  padding: 20px 0px 40px 0px;
   margin-left: 20px;
 }
 
@@ -52,7 +51,7 @@ body {
   -webkit-transform: rotate(-50deg);
   -ms-transform: rotate(-50deg);
   transform: rotate(-50deg);
-  border-radius: 10px;
+  border-radius: 100px;
   z-index: -1;
 }
 
@@ -62,7 +61,7 @@ body {
   top: 0;
   left: 0;
   width: 70%;
-  height: 20%;
+  height: 10%;
   background-color: #ce322f;
   margin: 5px;
   -webkit-transform-origin: 100% 0;
@@ -72,7 +71,26 @@ body {
   -webkit-transform: rotate(-50deg);
   -ms-transform: rotate(-50deg);
   transform: rotate(-50deg);
-  border-radius: 10px;
+  border-radius: 100px;
+  z-index: -1;
+}
+.Background-design-four {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background-color: #030303;
+  margin: 5px;
+  -webkit-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+
+  -webkit-transform: rotate(-50deg);
+  -ms-transform: rotate(-50deg);
+  transform: rotate(-50deg);
+  border-radius: 100px;
   z-index: -1;
 }
 
@@ -80,52 +98,47 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin: 0px 20px 0px 0px;
+  margin: 0px 20px 0px 30px;
 }
 .image {
   width: 500px;
   border-radius: 15px;
-  /* border: 1px solid red; */
 }
 
 .codEmpire {
+  color: rgb(0, 0, 0);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
   display: flex;
   justify-content: flex-end;
   padding: 0px 20px 0px 0px;
+  z-index: -1;
 }
 
 .App-header {
-  background-color: #030303;
-  height: 140px;
+  background-color: #000000;
+  max-width: 450px;
+  height: 120px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: left;
   justify-content: left;
-  border-radius: 20px;
+  border-radius: 50px;
 }
 
 .App-header a {
   color: white;
 }
-.App-header-two {
-  margin-right: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0px 10px 25px 250px;
-}
-
-.Menu {
-  padding: 20px;
-}
 
 .Title {
   font-family: Avenir;
-  font-weight: 400;
-  color: grey;
-  font-size: 2.5rem;
-  align-items: center;
+  font-weight: 300;
+  color: #606060;
+  font-size: 2rem;
+  align-items: flex-start;
   padding: 15px 0px 0px 0px;
 }
 
@@ -159,7 +172,8 @@ body {
   display: flex;
   align-items: center;
   align-content: center;
-  justify-content: center;
+  justify-content: flex-end;
+  margin:0px 50px 0px 0px;
 }
 
 .MuiButtonBase-root {
@@ -170,7 +184,7 @@ body {
 .Paper {
   width: 50%;
   height: auto;
-  padding: 25px;
+  padding: 15px;
   margin: 50px;
 }
 
@@ -227,11 +241,15 @@ body {
 }
 
 .Questions {
-  width: 70%;
-  height: auto;
   font-family: Avenir;
-  font-size: 1em;
+  font-size: 1rem;
   text-align: center;
+  margin:20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
 }
 
 .Previous {
@@ -263,6 +281,23 @@ a:hover {
   padding: 5px;
 }
 
+.Add-Enter {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 0px 50px 20px 0px;
+}
+
+.Add-cancel-plus {
+  display: flex;
+  justify-content: left;
+  margin: 10px 0px 0px 50px;
+}
+
 .Add-cancel {
   padding: 10px;
   display: flex;
@@ -279,16 +314,17 @@ a:hover {
   align-items: left;
   align-content: left;
   justify-content: left;
+  border-radius: 10px;
 }
 
 .Create {
-  padding: 20px 0px 10px 30px;
+  padding: 50px 0px 10px 20px;
 }
 
 .Play {
-  padding: 10px 0px 10px 80px;
+  padding: 20px 0px 10px 60px;
 }
 
 .Result {
-  padding: 10px 0px 10px 30px;
+  padding: 20px 0px 10px 20px;
 }

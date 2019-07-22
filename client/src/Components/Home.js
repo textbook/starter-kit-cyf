@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from '@material-ui/core';
+import { Link, withRouter } from 'react-router-dom';
 
 import image from '../image.png';
 import Header from './Header';
@@ -7,26 +8,31 @@ import Header from './Header';
 class Home extends Component {
   render() {
     return (
-      // <Grid container justify={"center"} spacing={0} >
-      <div className="App">
+      <div className="App ">
         <Header />
         <div>
           <div className="Background-design " />
           <div className="Create-play-result">
             <div className="Create">
-              <Button variant="contained" color="default">
-                Create Quiz
-              </Button>
+              <Link to="/CreateQuiz">
+                <Button variant="contained" color="default">
+                  Create Quiz
+                </Button>
+              </Link>
             </div>
             <div className="Play">
-              <Button variant="contained" color="default">
-                Play
-              </Button>
+              <Link className="Menu" to="/EnterPin">
+                <Button variant="contained" color="default">
+                  Play
+                </Button>
+              </Link>
             </div>
             <div className="Result">
-              <Button variant="contained" color="default">
-                Results
-              </Button>
+              <Link className="Menu" to="/Results">
+                <Button variant="contained" color="default" >
+                  Results
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="image-container">
@@ -34,12 +40,13 @@ class Home extends Component {
           </div>
           <div className="Background-design-two" />
           <div className="Background-design-three" />
+          <div className="Background-design-four" />
+          
           <div className="codEmpire">©CodeEmpire July 2019</div>
         </div>
       </div>
-      // </Grid>
     );
   }
 }
 
-export default Home;
+export default withRouter(Home);
