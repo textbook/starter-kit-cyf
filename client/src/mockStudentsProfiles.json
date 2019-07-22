@@ -10,7 +10,8 @@
         "id": 1,
         "comment": "Lovely coding done. keep parctising and you will get perfect. Remember to google every time you get stuck.",
         "floatingMentorName": "Maria",
-        "date": "12/07/2019"
+        "date": "12/07/2019",
+        "module": "HTML - CSS"
       },
       {
         "id": 2,
@@ -22,25 +23,29 @@
         "id": 3,
         "comment": "superb coding",
         "floatingMentorName": "Maria",
-        "date": "15/07/2019"
+        "date": "15/07/2019",
+        "module":"HTML - CSS"
       },
       {
         "id": 4,
         "comment": "done",
         "floatingMentorName": "Charlotte",
-        "date": "14/07/2019"
+        "date": "14/07/2019",
+        "module": "JS-Core2"
       },
       {
         "id": 5,
         "comment": "good job",
         "floatingMentorName": "lucy",
-        "date": "12/07/2019"
+        "date": "12/07/2019",
+        "module":"React"
       },
       {
         "id": 6,
         "comment": "well done",
         "floatingMentorName": "mao",
-        "date": "14/07/2019"
+        "date": "14/07/2019",
+        "module": "JS-Core3"
       }
     ],
     "leadMentorcomments": [

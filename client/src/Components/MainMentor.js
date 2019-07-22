@@ -19,11 +19,19 @@ export class FloatingMentor extends Component {
     super(props);
     this.state = {
       studentSelected: null,
+      moduleSelected: null,
       selectedStudentProfile: null,
       mentorComments: ' ',
       commentSubmitted: null
     };
   }
+  handleModuleSelection= selected => {
+    console.log("handle Module working....",selected)
+    this.setState({
+      moduleSelected: selected,
+      mentorComments: null
+    });
+  };
 
   handleStudentSelection = selected => {
     console.log("handleStudentSelection working....")
@@ -74,7 +82,7 @@ handleComments = (e) => {
             <Combobox
              
               items={mockStudentsProfiles.map(s => s.name)}
-              height={48}
+              height={38}
               onChange={selected => this.handleStudentSelection(selected)}
               placeholder="Students"
               autocompleteProps={{
@@ -87,7 +95,8 @@ handleComments = (e) => {
         {(selectedStudentProfile) &&   (
          <Pane
          display="flex"
-        alignItems="center"
+         alignItems = "flex-start"
+         marginTop = {5}
          > 
         <Pane height="auto" width={500} float="left">
         <Avatar
@@ -153,7 +162,7 @@ handleComments = (e) => {
       <Pane
           width="auto"
           height="auto"
-          marginLeft={40}
+          marginLeft={20}
           padding={10}
           display="flex"
           flexDirection= "column"
@@ -162,28 +171,55 @@ handleComments = (e) => {
           background="blueTint"
         >
           <Heading is="h2">Mentors Comments: </Heading>
-          {(selectedStudentProfile) &&                                      
-                      (selectedStudentProfile.floatingMentorcomments.map(floatingMentor=>{
+              {console.log(this.state.moduleSelected)}
+          {(this.state.moduleSelected) &&                                      
+                      (selectedStudentProfile.floatingMentorcomments
+                        .filter(mentorComments=>mentorComments.module===this.state.moduleSelected).map(floatingMentor=>{
                         return(
                           <Pane 
                           elevation={3}                            
-                          marginLeft={36}
+                          marginLeft={2}
                           marginBottom = {10}
                           height="auto" 
                           padding={10}
-                           width= {400}
-                           background="tint2" borderRadius={3}>
+                          width= {400}
+                          background="tint2" 
+                          borderRadius={3}
+                          display="flex"
+                          flexDirection="column">
                               <Paragraph  marginTop="default">
 
                             {floatingMentor.comment}
                             </Paragraph>
-                            <Text padding={100}> <Strong>Feedback by </Strong> {floatingMentor.floatingMentorName} on {floatingMentor.date}</Text>
+                            <Text padding={10} alignSelf= "flex-end"> 
+                              <Strong> By </Strong> {floatingMentor.floatingMentorName} <Strong>on</Strong> {floatingMentor.date}</Text>
                             </Pane>
 
                        )} ))}
 
          </Pane>
-      
+         <Pane
+          display="flex"
+          height= {320}
+          flexDirection= "column"
+          marginLeft={20}
+          justifyContent = "space-between"
+
+
+
+    >
+        <Heading is="h2">Student Evaluation Summary</Heading>
+
+        <Combobox
+             
+              items={['HTML - CSS', 'JS-Core', 'JS-Core2', 'JS-Core3','React','Node DB']}
+              height={38}
+              onChange={selected => this.handleModuleSelection(selected)}
+              placeholder="Select Module"
+              autocompleteProps={{
+              title: "Select Module"
+              }}
+            />
          <Textarea
       height={200}
       width={400}
@@ -191,14 +227,18 @@ handleComments = (e) => {
       onChange={e => this.setState({ commentSubmitted: e.target.value })}
       // value={this.state.mentorComments}
     />
+    
               <Button
                 height={38}
+                width={80}
                 appearance="primary"
-                marginLeft={10}
+                marginTop={10}
+                alignSelf= "flex-end"
                 onClick={this.handleComments}
               >
                 Submit
               </Button>
+              </Pane>
     
       
       </Pane> )}                                   
