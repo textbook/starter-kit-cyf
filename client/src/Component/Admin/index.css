@@ -1,19 +1,108 @@
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  /* margin-right: -15px; */
-  /* margin-left: -15px; */
-}
+/* .row {
+display: flex;
+flex-flow: row;
+/* justify-content: space-around; */
+/* margin-right: -15px; */
+/* margin-left: -15px; */
+/* } */ 
 
 @media (min-width: 320px) { 
-   .xs-col-12 {
-    width: 100%;
+  .xs-col-12 {
+  width: 100%; 
   }
-}
+  }
+  
+  @media (min-width: 768px) {
+  .md-col-6 {
+  width: 50%; 
+  }
+  }
+  .main{
+  display: flex;
+  flex-flow:row;
+  }
+  .container {
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .md-col-6{
+  margin-left: 10px;
+  }
+  .createSession{
+  width: 100%;
+  }
+  .input{
+  width: 95%;
+  }
+  .form-group {
+  font-size: 18px;
+  }
+  .newsession{
+  flex: 1;
+  margin-right: 15px;
+  }
+  .ml-3{
+  width: 95%;
+  }
+  .row{
+  display: flex;
+  flex-flow: row;
+  }
+  tr td{
+  width:25%;
+  }
+  .tableRow_wrapper{
+  width:100%;
+  }
+  .wrapper{
+  width:100%;
+  }
+  
+  .view{
+  width:50%;
+  }
+  .table_container{
+  display: flex;
+  }
+  .xs-col-12{
+  display: flex;
+  }
+  tbody{
+  display: flex;
+  flex-flow: column;
+  }
+  .thead{
+  display: flex;
+  flex-flow: row;
+  }
 
-@media (min-width: 768px) {
-   .md-col-6 {
-    width: 50%;
+  
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
   }
-}
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+  
+  
+  
