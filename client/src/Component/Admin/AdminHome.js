@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import CreateSession from "./CreateSession";
 import "./index.css";
 import TableRow from "./TableRow";
-
+const dayjs = require("dayjs");
+const moment = require("moment");
 class AdminHome extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +13,7 @@ class AdminHome extends Component {
       date: "",
       city: "",
       latitude: "",
-      longitude:"",
+      longitude: "",
       session: ""
     };
   }
@@ -26,16 +27,15 @@ class AdminHome extends Component {
   };
 
   componentWillMount() {
-    this.setState(
-      { selectedSession: "today" },
-      () => (setInterval(this.fetchData(), 1000))
+    this.setState({ selectedSession: "today" }, () =>
+      setInterval(this.fetchData(), 1000)
     );
   }
   selectSession = date => {
     // this.setState({ selectedSession: e.target.value }, () =>
     //   setInterval(this.fetchData, 2000)
     // );
-    console.log(date)
+    console.log(date);
     this.setState({ selectedSession: date }, () => this.fetchData());
   };
 
@@ -78,7 +78,11 @@ class AdminHome extends Component {
       proportion,
       sessions
     } = this.state.data;
-    console.log(this.state.data);
+      sessions &&
+      sessions.forEach(session =>
+        session.date= moment(session.date, "DD/MM/YYYY").format("YYYY-MM-DD")
+      );
+// console.log(sessions);
     return (
       <main className="row">
         <div className="md-col-6">
@@ -105,21 +109,25 @@ class AdminHome extends Component {
                   <th scope="col">Actions</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody>               
                 {sessions &&
-                  sessions.map(session => {
-                    return (
-                      <TableRow
-                        session={session}
-                        attendingStudents={attendingStudents}
-                        totalAttendingStudents={totalAttendingStudents}
-                        absentStudents={absentStudents}
-                        totalAbsentStudents={totalAbsentStudents}
-                        proportion={proportion}
-                        handleView={this.selectSession}
-                      />
-                    );
-                  })}
+                  sessions
+                    .sort((a, b) => {
+                      return new Date(a.date) > new Date(b.date) ? -1 : 1;
+                    })
+                    .map(session => {
+                      return (
+                        <TableRow
+                          session={session}
+                          attendingStudents={attendingStudents}
+                          totalAttendingStudents={totalAttendingStudents}
+                          absentStudents={absentStudents}
+                          totalAbsentStudents={totalAbsentStudents}
+                          proportion={proportion}
+                          handleView={this.selectSession}
+                        />
+                      );
+                    })}
               </tbody>
             </table>
           </section>

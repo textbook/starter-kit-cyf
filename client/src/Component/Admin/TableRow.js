@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import StudentsList from "../Mentor/StudentsList";
 import StudentsAbsents from "../Mentor/StudentsAbsents";
 import "../Mentor/index.css";
+const moment = require("moment");
 
 export class TableRow extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export class TableRow extends Component {
   }
   displayView = e => {
     this.setState({ isViewDisplayed: !this.state.isViewDisplayed });
-    this.props.handleView(this.props.session.date);
+    this.props.handleView(moment(this.props.session.date, "YYYY-MM-DD").format("DD/MM/YYYY"));
   };
 
   render() {
@@ -27,7 +28,7 @@ export class TableRow extends Component {
     return (
       <Fragment>
         <tr key={_id}>
-          <td>{date}</td>
+          <td>{moment(date, "YYYY-MM-DD").format("DD/MM/YYYY")}</td>
           <td>
             {name} - {session}
           </td>
