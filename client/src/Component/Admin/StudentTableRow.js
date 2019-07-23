@@ -20,7 +20,7 @@ export default class StudentTableRow extends Component {
       <Fragment>
         <li
           key={student._id}
-          className="nav-btn-help"
+          className="student-name"
           onClick={this.displayView}
         >
           {student.name}
