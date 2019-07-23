@@ -182,7 +182,6 @@ class login extends Component {
         <Form className="form">
           <Col>
             <FormGroup>
-              <Label>Username</Label>
               <Input
                 type="email"
                 name="email"
