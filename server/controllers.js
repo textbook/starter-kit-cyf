@@ -65,6 +65,54 @@ export const getUsers = (req, res, next) => {
   });
 };
 
+export const getPersonalAttendance = (req, res, next) => {
+  const client = getClient();
+  client.connect(async err => {
+    if (err) {
+      return next(err);
+    }
+    const db = client.db("heroku_cs1q5qk5");
+    let collection = db.collection("users");
+    let students = await collection.find().toArray();
+    students = students.filter(
+      student => student.status.toLowerCase() == "student"
+    );
+    collection = db.collection("sessions");
+    collection.find().toArray((err, sessions) => {
+      students.forEach(student => {
+        student["attendance"] = [];
+        student["absence"] = [];
+        sessions.forEach(session => {
+          if (
+            session.attendance
+              .map(student => student.email)
+              .includes(student.email)
+          ) {
+            student.attendance.push({
+              id : session._id,
+              name: session.name,
+              session: session.session,
+              date: session.date
+            });
+          } else {
+            student.absence.push({
+              id: session._id,
+              name: session.name,
+              session: session.session,
+              date: session.date
+            });
+          }
+        });
+        student["attendanceRate"] = (
+          (100 * student.attendance.length) /
+          (student.attendance.length + student.absence.length)
+        ).toFixed(2);
+      });
+      res.send(err || students);
+    });
+  });
+};
+
 export const getSessions = (req, res, next) => {
   const client = getClient();
   client.connect(err => {
