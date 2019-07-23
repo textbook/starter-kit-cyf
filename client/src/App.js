@@ -3,8 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Home from './Components/Home';
 import CreateQuiz from './Components/CreateQuiz';
-import EnterPin from './Components/EnterPin';
-import TakeQuiz from './Components/TakeQuiz';
+import Play from './Components/Play';
 import Results from './Components/Results';
 
 import { createMuiTheme } from '@material-ui/core';
@@ -61,8 +60,7 @@ class App extends Component {
         <BrowserRouter>
           <Route exact path="/" component={Home} />
           <Route path="/CreateQuiz" component={CreateQuiz} />
-          <Route path="/EnterPin" component={EnterPin} />
-          <Route path="/TakeQuiz" component={TakeQuiz} />
+          <Route path="/play" component={Play} />
           <Route path="/Results" component={Results} />
         </BrowserRouter>
       </ThemeProvider>

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Button, TextField, Grid } from '@material-ui/core';
-import { Link, withRouter } from 'react-router-dom';
-import logo from '../logo.png';
-import Header from './Header';
+
+import { Button, TextField } from "@material-ui/core"
+import React, { Component } from "react"
+import { Link, withRouter } from "react-router-dom"
+import Header from "./Header"
 
 class EnterPin extends Component {
   render() {
@@ -26,29 +26,35 @@ class EnterPin extends Component {
               variant="outlined"
               id="custom-css-outlined-input"
               color="secondary"
+              onChange={this.props.handleChange}
+              value={this.props.pin}
             />
-            <inputComponent />
           </div>
           <div className="Game_Enter">
-            <Link className="" to="/TakeQuiz">
-              <Button variant="contained" color="secondary">
-                Enter
-              </Button>
-            </Link>
+
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={this.props.handleClick}
+            >
+              Enter
+            </Button>
+
           </div>
         </div>
         <div className="Add-Enter">
           <Link className="" to="/">
-            <Button variant="outlined" color="default">
-              Cancel and Return
-            </Button>
+            Cancel and Return
+
           </Link>
         </div>
         <div className="Background-design-two" />
         <div className="Background-design-three" />
       </div>
-    );
+    )
   }
 }
 
-export default withRouter(EnterPin);
+
+export default withRouter(EnterPin)
+
