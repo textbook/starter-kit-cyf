@@ -1,7 +1,9 @@
+
 import { Router } from "express"
 import { getClient } from "./db"
 
 const api = new Router()
+
 
 api.get("/", (_, res, next) => {
   const client = getClient()
@@ -16,12 +18,15 @@ api.get("/", (_, res, next) => {
 })
 
 api.get("/quiz/:pin?", (req, res) => {
+
   const client = getClient()
+
   client.connect(function() {
     const db = client.db("heroku_shn7149c")
     const collection = db.collection("quiz")
 
     const { pin } = req.params
+
 
     collection.find({ pin }).toArray(function(error, result) {
       res.send(error || result)
@@ -73,6 +78,7 @@ api.post("/result", (req, res) => {
       client.close()
     })
   })
+
 })
 
 export default api

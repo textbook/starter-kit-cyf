@@ -1,8 +1,10 @@
+
 import { Button } from "@material-ui/core"
 import React, { Component } from "react"
 import { Link, withRouter } from "react-router-dom"
 import image from "../Image.png"
 import Header from "./Header"
+
 
 class Home extends Component {
   render() {
@@ -20,7 +22,9 @@ class Home extends Component {
               </Link>
             </div>
             <div className="Play">
+
               <Link className="Menu" to="/play">
+
                 <Button variant="contained" color="default">
                   Play
                 </Button>
@@ -28,7 +32,9 @@ class Home extends Component {
             </div>
             <div className="Result">
               <Link className="Menu" to="/Results">
+
                 <Button variant="contained" color="default">
+
                   Results
                 </Button>
               </Link>
@@ -41,6 +47,7 @@ class Home extends Component {
           <div className="Background-design-three" />
           <div className="Background-design-four" />
 
+
           <div className="codEmpire">©CodeEmpire July 2019</div>
         </div>
       </div>
@@ -49,3 +56,4 @@ class Home extends Component {
 }
 
 export default withRouter(Home)
+
