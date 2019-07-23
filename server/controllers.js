@@ -1,5 +1,7 @@
+/* eslint-disable arrow-parens */
 import User from "./model/User";
 const dayjs = require("dayjs");
+const Joi = require("joi");
 
 // const bcrypt = require("bcryptjs");
 import bcrypt from "bcryptjs";
@@ -50,7 +52,7 @@ export const loginTest = (req, res, next) => {
 
 export const getUsers = (req, res, next) => {
   const client = getClient();
-  client.connect((err) => {
+  client.connect(err => {
     if (err) {
       return next(err);
     }
@@ -61,11 +63,11 @@ export const getUsers = (req, res, next) => {
     });
     client.close();
   });
-}
+};
 
 export const getSessions = (req, res, next) => {
   const client = getClient();
-  client.connect((err) => {
+  client.connect(err => {
     if (err) {
       return next(err);
     }
@@ -76,7 +78,7 @@ export const getSessions = (req, res, next) => {
     });
     client.close();
   });
-}
+};
 
 export const createSession = (req, res) => {
   const client = getClient();
@@ -92,7 +94,15 @@ export const createSession = (req, res) => {
     const db = client.db("heroku_cs1q5qk5");
     let collection = db.collection("users");
     let studentUsers = [];
-    const newSession = { name, session, date, city, latitude, longitude, attendance: studentUsers };
+    const newSession = {
+      name,
+      session,
+      date,
+      city,
+      latitude,
+      longitude,
+      attendance: studentUsers
+    };
     collection = db.collection("sessions");
     collection.insertOne(newSession, (err, result) => {
       res.send(err || result.ops[0]);
@@ -207,6 +217,34 @@ export const register = (req, res, next) => {
       res.status(400).json({ msg: "fill out all the fields" });
       return;
     }
+
+    if (name || email || password) {
+      const schema = Joi.object().keys({
+        name: Joi.string()
+          .min(6)
+          .required(),
+        email: Joi.string()
+          .min(6)
+          .required()
+          .email(),
+        password: Joi.string()
+          .min(6)
+          .required(),
+        status: Joi.string()
+      });
+      Joi.validate(req.body, schema, (err, value) => {
+        if (err) {
+          // send a 422 error response if validation fails
+          res.status(422).json({
+            status: "error",
+            msg:
+              "Looks like there is an issue with your email. Please input a correct email."
+          });
+        }
+      });
+      return;
+    }
+
     const db = client.db("heroku_cs1q5qk5");
     const collection = db.collection("users");
     //check if the email is already in use
@@ -218,15 +256,15 @@ export const register = (req, res, next) => {
       return;
     }
 
-    //Hashed password
+    // //Hashed password
     // const salt = await bcrypt.genSalt(10);
-    // const hashedPwd = await bcrypt.hash(req.body.password, salt);
+    // const hashedPwd = await bcrypt.hash(password, salt);
 
     //if the email is not in use
     const user = new User({
       name: req.body.name,
       email: req.body.email,
-      // password: hashedPwd,
+      //password: hashedPwd,
       password: password,
       status: req.body.status
     });
@@ -254,7 +292,7 @@ export const login = (req, res, next) => {
     let user = await collection.findOne({
       email: req.body.email
     });
-    console.log({user})
+    console.log({ user });
     //if no matching with the provided email
     if (!user) {
       res.status(404).json({
@@ -272,7 +310,7 @@ export const login = (req, res, next) => {
       return;
     }
     //checking the password
-    console.log("passwordd", user.password, req.body.password)
+    console.log("password", user.password, req.body.password);
     if (user.password != req.body.password) {
       res.status(400).json({
         msg: `Your password is wrong!`
@@ -287,7 +325,7 @@ export const login = (req, res, next) => {
     });
     if (!sessionToUpdate) {
       res.status(404).send({
-        msg: "The ession is not created yet! "
+        msg: "The session is not created yet! "
       });
       return;
     }
@@ -315,6 +353,8 @@ export const login = (req, res, next) => {
       options,
       (err, result) => {
         if (result.value) {
+          // jwt token
+
           res.send(err || result.value);
         } else {
           res.sendStatus(404);
