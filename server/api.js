@@ -23,7 +23,7 @@ api.get("/quiz/:pin?", (req, res) => {
 
     const { pin } = req.params
 
-    collection.findOne({ pin }).toArray(function(error, result) {
+    collection.find({ pin }).toArray(function(error, result) {
       res.send(error || result)
       client.close()
     })
@@ -49,7 +49,7 @@ api.post("/answer", (req, res) => {
   const client = getClient()
   client.connect(function() {
     const db = client.db("heroku_shn7149c")
-    const collection = db.collection("quiz")
+    const collection = db.collection("student_answers")
 
     if (req.body.length < 3) return res.sendStatus(400)
 
@@ -64,7 +64,7 @@ api.post("/result", (req, res) => {
   const client = getClient()
   client.connect(function() {
     const db = client.db("heroku_shn7149c")
-    const collection = db.collection("quiz")
+    const collection = db.collection("results")
 
     const { pin } = req.params
 
