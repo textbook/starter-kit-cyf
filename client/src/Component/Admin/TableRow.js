@@ -44,27 +44,24 @@ export class TableRow extends Component {
         <br />{" "}
         {this.state.isViewDisplayed && totalAttendingStudents && (
           <tr>
-            <td colspan="4">
-              <section className="">
-                <h4>Students in Class</h4>
-                <p>Total : {totalAttendingStudents}</p>
-                <ul>
-                  {attendingStudents.map(student => (
-                    <li key={student._id}>{student.name}</li>
-                  ))}
-                </ul>
-              </section>
-              <section className="">
-                <h4>Students Absents</h4>
-                <p>Total : {totalAbsentStudents}</p>
-                <ul>
-                  {absentStudents.map(student => (
-                    <li key={student._id}>{student.name}</li>
-                  ))}
-                </ul>
-              </section>
-              <br />
-              <p>Attendance Percentage : % {proportion}</p>
+            <td colspan="2">
+              <h4>Students in Class</h4>
+              <p>Total : {totalAttendingStudents}</p>
+              <p>Percentage : % {proportion}</p>
+              <ul>
+                {attendingStudents.map(student => (
+                  <li key={student._id}>{student.name}</li>
+                ))}
+              </ul>
+            </td>
+            <td colspan="2">
+              <h4>Students Absents</h4>
+              <p>Total : {totalAbsentStudents}</p>
+              <ul>
+                {absentStudents.map(student => (
+                  <li key={student._id}>{student.name}</li>
+                ))}
+              </ul>
             </td>
           </tr>
         )}

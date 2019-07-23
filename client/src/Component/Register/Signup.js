@@ -133,7 +133,7 @@ class SignUp extends Component {
                 That's a tasty looking email you've got there.
               </FormFeedback>
               <FormFeedback>
-                Uh oh! Looks like there is an issue with your email. Please
+                Looks like there is an issue with your email. Please
                 input a correct email.
               </FormFeedback>
               <FormText>Your username is most likely your email.</FormText>

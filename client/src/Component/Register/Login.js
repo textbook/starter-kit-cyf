@@ -204,7 +204,7 @@ class login extends Component {
         <Form className="form">
           <Col>
             <FormGroup>
-              <Label>Username</Label>
+              <Label>email</Label>
               <Input
                 type="email"
                 name="email"
@@ -224,7 +224,7 @@ class login extends Component {
                 Looks like there is an issue with your email. Please
                input a correct email.
               </FormFeedback>
-              <FormText>Your username is most likely your email.</FormText>
+              {/* <FormText>Your username is most likely your email.</FormText> */}
             </FormGroup>
           </Col>
           <Col>
