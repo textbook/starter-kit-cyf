@@ -13,7 +13,9 @@ export class TableRow extends Component {
   }
   displayView = e => {
     this.setState({ isViewDisplayed: !this.state.isViewDisplayed });
-    this.props.handleView(moment(this.props.session.date, "YYYY-MM-DD").format("DD/MM/YYYY"));
+    this.props.handleView(
+      moment(this.props.session.date, "YYYY-MM-DD").format("DD/MM/YYYY")
+    );
   };
 
   render() {
@@ -39,37 +41,33 @@ export class TableRow extends Component {
             </button>
           </td>
         </tr>
-        <tr>
-          {" "}
-          <div className="row">
-            {this.state.isViewDisplayed && totalAttendingStudents && (
-              <div className="xs-col-12" style={divStyle}>
-                <div className="row">
-                  <section className="md-col-6">
-                    <h4>Students in Class</h4>
-                    <p>Total : {totalAttendingStudents}</p>
-                    <ul>
-                      {attendingStudents.map(student => (
-                        <li key={student._id}>{student.name}</li>
-                      ))}
-                    </ul>
-                  </section>
-                  <section className="md-col-6">
-                    <h4>Students Absents</h4>
-                    <p>Total : {totalAbsentStudents}</p>
-                    <ul>
-                      {absentStudents.map(student => (
-                        <li key={student._id}>{student.name}</li>
-                      ))}
-                    </ul>
-                  </section>
-                </div>
-                <br />
-                <p>Attendance Percentage : % {proportion}</p>
-              </div>
-            )}
-          </div>
-        </tr>
+        <br />{" "}
+        {this.state.isViewDisplayed && totalAttendingStudents && (
+          <tr>
+            <td colspan="4">
+              <section className="">
+                <h4>Students in Class</h4>
+                <p>Total : {totalAttendingStudents}</p>
+                <ul>
+                  {attendingStudents.map(student => (
+                    <li key={student._id}>{student.name}</li>
+                  ))}
+                </ul>
+              </section>
+              <section className="">
+                <h4>Students Absents</h4>
+                <p>Total : {totalAbsentStudents}</p>
+                <ul>
+                  {absentStudents.map(student => (
+                    <li key={student._id}>{student.name}</li>
+                  ))}
+                </ul>
+              </section>
+              <br />
+              <p>Attendance Percentage : % {proportion}</p>
+            </td>
+          </tr>
+        )}
       </Fragment>
     );
   }

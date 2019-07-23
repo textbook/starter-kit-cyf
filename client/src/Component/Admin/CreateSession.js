@@ -18,7 +18,7 @@ export default function CreateSession(props) {
           />
         </div>
         <div className="form-group row">
-          <label for="eFormControlInput1">Name</label>
+          <label for="eFormControlInput1">Module</label>
           <input
             type="text"
             value={name}
