@@ -14,8 +14,10 @@ export default class StudentTableRow extends Component {
     });
     this.props.handleStudentView(this.props.student.email);
   };
+
   render() {
     const { student } = this.props;
+    console.log(student);
     return (
       <Fragment>
         <li
@@ -27,9 +29,15 @@ export default class StudentTableRow extends Component {
         </li>
         {this.state.isViewDisplayed && (
           <Fragment>
+            <h6>
+              Missed Module :{" "}
+              {student.missedAnyModule
+                ? student.missedAnyModule.join(", ")
+                : "none"}
+            </h6>
+            <h6>Attendance Rate : % {student.attendanceRate}</h6>
             <h6>Attendance : </h6>
             <h6>Total : {student.attendance.length}</h6>
-            <h6>Attendance Rate : {student.attendanceRate}</h6>
             <ul>
               {student.attendance.map(session => {
                 return (

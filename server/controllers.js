@@ -79,6 +79,8 @@ export const getPersonalAttendance = (req, res, next) => {
     );
     collection = db.collection("sessions");
     collection.find().toArray((err, sessions) => {
+      let allModules = sessions.map(session => session.name);
+      allModules = [...new Set(allModules)];
       students.forEach(student => {
         student["attendance"] = [];
         student["absence"] = [];
@@ -89,7 +91,7 @@ export const getPersonalAttendance = (req, res, next) => {
               .includes(student.email)
           ) {
             student.attendance.push({
-              id : session._id,
+              id: session._id,
               name: session.name,
               session: session.session,
               date: session.date
@@ -103,6 +105,13 @@ export const getPersonalAttendance = (req, res, next) => {
             });
           }
         });
+        student["missedAnyModule"]=[];
+        allModules.forEach(module=>{
+
+      // console.log(student, session, allModules.includes(session.name));
+
+          if (student.attendance.map(session=>session.name).includes(module)){return} else{student.missedAnyModule.push(module)}
+        })
         student["attendanceRate"] = (
           (100 * student.attendance.length) /
           (student.attendance.length + student.absence.length)

@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 const dayjs = require("dayjs");
 import bcrypt from "bcryptjs";
-import { setToken, checkRole } from '../../Auth/index'
+import { setToken, checkRole } from "../../Auth/index";
 import {
   Container,
   Col,
@@ -20,7 +20,6 @@ import { withRouter, Browserhistory as history } from "react-router-dom";
 import "./index.css";
 import { insideCircle, headingDistanceTo } from "geolocation-utils";
 // import Joi from "joi";
-
 
 // //Hashed password
 // const salt = await bcrypt.genSalt(10);
@@ -50,14 +49,16 @@ class login extends Component {
         const session = sessions
           .filter(session => session.date == "21/07/2019")
           .reduce(session => session);
-        console.log(session.longitude)
+        console.log(session.longitude);
         this.setState({ currentSession: session });
       });
     if (checkRole() === "STUDENT") {
       this.props.history.push("/studentRegistered");
-    } if (checkRole() === "MENTOR") {
+    }
+    if (checkRole() === "MENTOR") {
       this.props.history.push("/mentorHome");
-    } if (checkRole() === "ADMIN") {
+    }
+    if (checkRole() === "ADMIN") {
       this.props.history.push("/adminHome");
     }
   }
@@ -101,16 +102,22 @@ class login extends Component {
           alert(json.msg);
         } else {
           if (status.toUpperCase() === "STUDENT") {
-            setToken('eyJfaWQiOiJsamhpcmZnaXloNGl2dWkzazRndW9nYmRvdWhyIiwibGFzdE5hbWUiOiJNb3JhZGkiLCJlbWFpbCI6Im1vaHNlbkBjb2RleW91cmZ1dHVyZS5pbyIsImNpdHkiOiJMb25kb24iLCJhdmF0YXIiOiJodHRwczovL2F2YXRhcnMzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzMwMzg5ODk2P3Y9NCIsImlhdCI6MTU2MzgwNjgxNn0')
-            localStorage.setItem('role', 'STUDENT');
+            setToken(
+              "eyJfaWQiOiJsamhpcmZnaXloNGl2dWkzazRndW9nYmRvdWhyIiwibGFzdE5hbWUiOiJNb3JhZGkiLCJlbWFpbCI6Im1vaHNlbkBjb2RleW91cmZ1dHVyZS5pbyIsImNpdHkiOiJMb25kb24iLCJhdmF0YXIiOiJodHRwczovL2F2YXRhcnMzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzMwMzg5ODk2P3Y9NCIsImlhdCI6MTU2MzgwNjgxNn0"
+            );
+            localStorage.setItem("role", "STUDENT");
             return this.props.history.push("/studentRegistered");
           } else if (status.toUpperCase() === "MENTOR") {
-            setToken('eyJfaWQiOiJsamhpcmZnaXloNGl2dWkzazRndW9nYmRvdWhyIiwibGFzdE5hbWUiOiJNb3JhZGkiLCJlbWFpbCI6Im1vaHNlbkBjb2RleW91cmZ1dHVyZS5pbyIsImNpdHkiOiJMb25kb24iLCJhdmF0YXIiOiJodHRwczovL2F2YXRhcnMzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzMwMzg5ODk2P3Y9NCIsImlhdCI6MTU2MzgwNjgxNn0')
-            localStorage.setItem('role', 'MENTOR');
+            setToken(
+              "eyJfaWQiOiJsamhpcmZnaXloNGl2dWkzazRndW9nYmRvdWhyIiwibGFzdE5hbWUiOiJNb3JhZGkiLCJlbWFpbCI6Im1vaHNlbkBjb2RleW91cmZ1dHVyZS5pbyIsImNpdHkiOiJMb25kb24iLCJhdmF0YXIiOiJodHRwczovL2F2YXRhcnMzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzMwMzg5ODk2P3Y9NCIsImlhdCI6MTU2MzgwNjgxNn0"
+            );
+            localStorage.setItem("role", "MENTOR");
             return this.props.history.push("/mentorHome");
           } else if (status.toUpperCase() === "ADMIN") {
-            setToken('eyJfaWQiOiJsamhpcmZnaXloNGl2dWkzazRndW9nYmRvdWhyIiwibGFzdE5hbWUiOiJNb3JhZGkiLCJlbWFpbCI6Im1vaHNlbkBjb2RleW91cmZ1dHVyZS5pbyIsImNpdHkiOiJMb25kb24iLCJhdmF0YXIiOiJodHRwczovL2F2YXRhcnMzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzMwMzg5ODk2P3Y9NCIsImlhdCI6MTU2MzgwNjgxNn0')
-            localStorage.setItem('role', 'ADMIN');
+            setToken(
+              "eyJfaWQiOiJsamhpcmZnaXloNGl2dWkzazRndW9nYmRvdWhyIiwibGFzdE5hbWUiOiJNb3JhZGkiLCJlbWFpbCI6Im1vaHNlbkBjb2RleW91cmZ1dHVyZS5pbyIsImNpdHkiOiJMb25kb24iLCJhdmF0YXIiOiJodHRwczovL2F2YXRhcnMzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzMwMzg5ODk2P3Y9NCIsImlhdCI6MTU2MzgwNjgxNn0"
+            );
+            localStorage.setItem("role", "ADMIN");
             return this.props.history.push("/adminHome");
           }
         }
@@ -129,11 +136,29 @@ class login extends Component {
   // }
   getLocation = () => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-        this.setState({
-          position: position.coords
-        });
-      });
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          this.setState({ position: position.coords });
+        },
+        error => {
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              alert(
+                "You denied the request for Geolocation, allow me to access you location in order to login to the class."
+              );
+              break;
+            case error.POSITION_UNAVAILABLE:
+              alert("Location information is unavailable.");
+              break;
+            case error.TIMEOUT:
+              alert("The request to get user location timed out.");
+              break;
+            case error.UNKNOWN_ERROR:
+              alert("An unknown error occurred.");
+              break;
+          }
+        }
+      );
     }
   };
 
@@ -155,8 +180,8 @@ class login extends Component {
       lat: Number(latitude),
       lon: Number(longitude)
     };
-    console.log({ center })
-    console.log("my location", poslat, poslong)
+    console.log({ center });
+    console.log("my location", poslat, poslong);
     // to calculate the distance to the target
     console.log(
       headingDistanceTo(center, {
@@ -221,8 +246,8 @@ class login extends Component {
               />
 
               <FormFeedback>
-                Looks like there is an issue with your email. Please
-               input a correct email.
+                Looks like there is an issue with your email. Please input a
+                correct email.
               </FormFeedback>
               {/* <FormText>Your username is most likely your email.</FormText> */}
             </FormGroup>
@@ -273,12 +298,12 @@ class login extends Component {
             <span>Long : {position.longitude}</span>
           </h5>
           {status.toLocaleLowerCase() == "student" &&
-            isPositionConfirmed != "notChecked" &&
-            !isPositionConfirmed ? (
-              <p>Check your location , you are not at the class yet, hurry up!</p>
-            ) : isPositionConfirmed === "confirmed" ? (
-              <p>Your position is confirmed, enjoy the class!</p>
-            ) : null}
+          isPositionConfirmed != "notChecked" &&
+          !isPositionConfirmed ? (
+            <p>Check your location , you are not at the class yet, hurry up!</p>
+          ) : isPositionConfirmed === "confirmed" ? (
+            <p>Your position is confirmed, enjoy the class!</p>
+          ) : null}
         </Form>
       </Container>
     );

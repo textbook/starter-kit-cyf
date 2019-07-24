@@ -6,29 +6,41 @@ import "./index.css";
 import dayjs from "dayjs";
 
 class MentorHome extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  state = {
       students: "",
       selectedSession: "today"
     };
-  }
 
-  componentWillMount() {
-    this.setState({ selectedSession: "today" }, () => this.fetchData());
+  componentWillMount = async () => {
+    await this.fetchData(this.state.selectedSession);
+    if (this.state.students && this.students.session) {
+      this.startTimer(session)
+    }
+     
   }
-
-  fetchData = () => {
-    fetch(`api/attendance?date=${this.state.selectedSession}`)
-      // fetch("https://jsonplaceholder.typicode.com/users")
-      // fetch("api/attendance")
+  startTimer = (selectedSession) => {
+    this.autoUpdate = setInterval(
+          this.fetchData(selectedSession),
+          1000
+        );
+  }
+  fetchData = async selectedSession => {
+    return fetch(`api/attendance?date=${selectedSession}`)
       .then(data => data.json())
       .then(data => this.setState({ students: data }));
   };
   selectSession = e => {
-    this.setState({ selectedSession: e.target.value }, () =>
-      setInterval(this.fetchData, 1000)
-    );
+    if (e.target && e.target.value) {
+      // console.log("form function", e.target.value, this.state.selectedSession);
+      const today = dayjs().format("DD/MM/YYYY");
+      const selectedSession = e.target.value;
+      if (selectedSession === today) {
+        this.startTimer(selectedSession)
+      } else {
+        this.fetchData(selectedSession);
+      }
+      this.setState({ selectedSession });
+    }
   };
 
   render() {
@@ -56,7 +68,7 @@ class MentorHome extends Component {
         totalAbsentStudents,
         proportion
       );
-      console.log("selected", this.state.selectedSession);
+      // console.log("selected", this.state.selectedSession);
     }
     return (
       <main className="main">
