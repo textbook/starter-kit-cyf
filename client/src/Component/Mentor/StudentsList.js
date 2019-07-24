@@ -27,7 +27,7 @@ function StudentsList(props) {
           ))} */}
           <tr>
             <td>Total :</td>
-            {props.total}
+           <td> {props.total} </td>
           </tr>
         </tbody>
       </table>
