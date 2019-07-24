@@ -30,7 +30,7 @@ export class TableRow extends Component {
     return (
       <Fragment>
         <tr key={_id}>
-          <td>{moment(date, "YYYY-MM-DD").format("DD/MM/YYYY")}</td>
+            <td>{moment(date, "YYYY-MM-DD").format("DD/MM/YYYY")}</td>
           <td>
             {name} - {session}
           </td>

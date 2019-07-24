@@ -6,6 +6,7 @@ import {
   getSessions,
   getAttendance,
   createSession,
+  getPersonalAttendance,
   updateSession,
   register,
   login
@@ -32,6 +33,9 @@ api.get("/loginJoanTest", loginTest);
 
 //listing all users (student, mentor and admin)
 api.get("/users", getUsers);
+
+//listing all users (student, mentor and admin)
+api.get("/personalAttendance", getPersonalAttendance);
 
 //listing all sessions with attendence list
 api.get("/sessions", getSessions);

@@ -65,6 +65,63 @@ export const getUsers = (req, res, next) => {
   });
 };
 
+export const getPersonalAttendance = (req, res, next) => {
+  const client = getClient();
+  client.connect(async err => {
+    if (err) {
+      return next(err);
+    }
+    const db = client.db("heroku_cs1q5qk5");
+    let collection = db.collection("users");
+    let students = await collection.find().toArray();
+    students = students.filter(
+      student => student.status.toLowerCase() == "student"
+    );
+    collection = db.collection("sessions");
+    collection.find().toArray((err, sessions) => {
+      let allModules = sessions.map(session => session.name);
+      allModules = [...new Set(allModules)];
+      students.forEach(student => {
+        student["attendance"] = [];
+        student["absence"] = [];
+        sessions.forEach(session => {
+          if (
+            session.attendance
+              .map(student => student.email)
+              .includes(student.email)
+          ) {
+            student.attendance.push({
+              id: session._id,
+              name: session.name,
+              session: session.session,
+              date: session.date
+            });
+          } else {
+            student.absence.push({
+              id: session._id,
+              name: session.name,
+              session: session.session,
+              date: session.date
+            });
+          }
+        });
+        student["missedAnyModule"]=[];
+        allModules.forEach(module=>{
+
+      // console.log(student, session, allModules.includes(session.name));
+
+          if (student.attendance.map(session=>session.name).includes(module)){return} else{student.missedAnyModule.push(module)}
+        })
+        student["attendanceRate"] = (
+          (100 * student.attendance.length) /
+          (student.attendance.length + student.absence.length)
+        ).toFixed(2);
+      });
+      res.send(err || students);
+    });
+  });
+};
+
 export const getSessions = (req, res, next) => {
   const client = getClient();
   client.connect(err => {

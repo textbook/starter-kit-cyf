@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CreateSession from "./CreateSession";
 import "./index.css";
 import TableRow from "./TableRow";
+import StudentTableRow from "./StudentTableRow";
 const dayjs = require("dayjs");
 const moment = require("moment");
 class AdminHome extends Component {
@@ -14,7 +15,9 @@ class AdminHome extends Component {
       city: "",
       latitude: "",
       longitude: "",
-      session: ""
+      session: "",
+      students: "",
+      isStudentViewDisplayed: false
     };
   }
 
@@ -27,6 +30,12 @@ class AdminHome extends Component {
   };
 
   componentWillMount() {
+    fetch(`api/personalAttendance`)
+      // fetch("https://jsonplaceholder.typicode.com/users")
+      // fetch("api/attendance")
+      .then(data => data.json())
+      .then(data => this.setState({ students: data }));
+
     this.setState({ selectedSession: "today" }, () =>
       setInterval(this.fetchData(), 1000)
     );
@@ -62,6 +71,9 @@ class AdminHome extends Component {
       }
     });
   };
+  selectStudent = email => {
+    console.log("display studeny details", email);
+  };
 
   render() {
     // const { name, date, city, session } = this.state;
@@ -78,25 +90,32 @@ class AdminHome extends Component {
       proportion,
       sessions
     } = this.state.data;
-      sessions &&
-      sessions.forEach(session =>
-        session.date= moment(session.date, "DD/MM/YYYY").format("YYYY-MM-DD")
+    const { students } = this.state;
+    sessions &&
+      sessions.forEach(
+        session =>
+          (session.date = moment(session.date, "DD/MM/YYYY").format(
+            "YYYY-MM-DD"
+          ))
       );
-// console.log(sessions);
+    // console.log(sessions);
     return (
       <main className="row">
         <div className="md-col-6">
-          <CreateSession
-            name={this.state.name}
-            city={this.state.city}
-            date={this.state.date}
-            session={this.state.session}
-            latitude={this.state.latitude}
-            longitude={this.state.longitude}
-            handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit}
-          />
+          <h3>Students</h3>
+          <ul>
+            {students &&
+              students.map(student => {
+                return (
+                  <StudentTableRow
+                    student={student}
+                    handleStudentView={this.selectStudent}
+                  />
+                );
+              })}
+          </ul>
         </div>
+
         <div className="md-col-6">
           <section style={{ marginLeft: "50px" }}>
             <h3 className="text-center mb-1">Sessions</h3>
@@ -109,7 +128,7 @@ class AdminHome extends Component {
                   <th scope="col">Actions</th>
                 </tr>
               </thead>
-              <tbody>               
+              <tbody>
                 {sessions &&
                   sessions
                     .sort((a, b) => {
@@ -131,6 +150,18 @@ class AdminHome extends Component {
               </tbody>
             </table>
           </section>
+        </div>
+        <div className="md-col-6">
+          <CreateSession
+            name={this.state.name}
+            city={this.state.city}
+            date={this.state.date}
+            session={this.state.session}
+            latitude={this.state.latitude}
+            longitude={this.state.longitude}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
         </div>
       </main>
     );
