@@ -3,7 +3,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 
-import apiRouter from "./api";
+import {api} from "./api";
 
 const apiRoot = "/api";
 const app = express();
@@ -35,7 +35,7 @@ if (app.get("env") === "production") {
 }
 
 // Load API router
-app.use(apiRoot, apiRouter);
+app.use(apiRoot, api);
 
 // Serve the bundled client from the server
 app.use(express.static(staticDir));

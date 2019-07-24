@@ -5,8 +5,8 @@ import { Link, withRouter } from "react-router-dom"
 import image from "../Image.png"
 import Header from "./Header"
 import Menu from "./Menu"
-import Animate from './Animation'
-
+import Login from './Login'
+import { loggedIn } from '../Auth/index'
 
 class Home extends Component {
   render() {
@@ -15,13 +15,13 @@ class Home extends Component {
         <Header />
         <div>
           <div className="Background-design " />
+          {loggedIn() ? <Menu /> : <Login /> }
 
-<Menu />
+
 
           
           <div className="image-container">
-            {/* <img src={image} className="image" alt="image" /> */}
-<Animate />
+            <img src={image} className="image" alt="image" />
           </div>
           <div className="Background-design-two" />
           <div className="Background-design-three" />

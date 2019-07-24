@@ -1,8 +1,9 @@
 
 import { Router } from "express"
 import { getClient } from "./db"
+import {jwttokencreator} from './helper'
 
-const api = new Router()
+export const api = new Router()
 
 
 api.get("/", (_, res, next) => {
@@ -50,6 +51,33 @@ api.post("/quiz", (req, res) => {
   })
 })
 
+api.post('/login', function(req, res) {
+  const {email, password}=req.body
+    const client = getClient()
+  client.connect(function() {
+    const db = client.db("heroku_shn7149c")
+    const collection = db.collection("users")
+
+    collection.find({email}).toArray((error, result) => {
+      const User = result[0]
+if(User.password === password){
+   const options={
+        role: User.role,
+        email: User.email
+      }
+      const token = jwttokencreator(options)
+      res.status(200).send(token)
+}else{
+  return res.status(400).send({msg:"Wrong email or password."})
+}
+
+      res.send(error || User)
+      client.close()
+    })
+  })
+})
+  
+
 api.post("/answer", (req, res) => {
   const client = getClient()
   client.connect(function() {
@@ -78,7 +106,4 @@ api.post("/result", (req, res) => {
       client.close()
     })
   })
-
 })
-
-export default api
