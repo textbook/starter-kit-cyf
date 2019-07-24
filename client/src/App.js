@@ -56,6 +56,7 @@ const theme = createMuiTheme({
 class App extends Component {
   render() {
     return (
+      <div className="container">
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Route exact path="/" component={Home} />
@@ -64,6 +65,7 @@ class App extends Component {
           <Route path="/Results" component={Results} />
         </BrowserRouter>
       </ThemeProvider>
+      </div>
     );
   }
 }
