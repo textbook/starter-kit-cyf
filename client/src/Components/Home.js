@@ -4,6 +4,8 @@ import React, { Component } from "react"
 import { Link, withRouter } from "react-router-dom"
 import image from "../Image.png"
 import Header from "./Header"
+import Menu from "./Menu"
+import Animate from './Animation'
 
 
 class Home extends Component {
@@ -13,35 +15,13 @@ class Home extends Component {
         <Header />
         <div>
           <div className="Background-design " />
-          <div className="Create-play-result">
-            <div className="Create">
-              <Link to="/CreateQuiz">
-                <Button variant="contained" color="default">
-                  Create Quiz
-                </Button>
-              </Link>
-            </div>
-            <div className="Play">
 
-              <Link className="Menu" to="/play">
+<Menu />
 
-                <Button variant="contained" color="default">
-                  Play
-                </Button>
-              </Link>
-            </div>
-            <div className="Result">
-              <Link className="Menu" to="/Results">
-
-                <Button variant="contained" color="default">
-
-                  Results
-                </Button>
-              </Link>
-            </div>
-          </div>
+          
           <div className="image-container">
-            <img src={image} className="image" alt="image" />
+            {/* <img src={image} className="image" alt="image" /> */}
+<Animate />
           </div>
           <div className="Background-design-two" />
           <div className="Background-design-three" />
