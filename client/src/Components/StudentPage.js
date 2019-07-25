@@ -69,22 +69,23 @@ export default class StudentPage extends Component {
    
        }
 
-       handleSubmit = () => {
-         const { name, photo, allTechSkills,allSoftSkills } = this.state
-         const res = await fetch("/student", {
-         method: 'POST',
-         headers:{
-         Accept: "application/json",
-         "Content-Type":"application/json"
-  },
-        body:JSON.stringify({
-        name: name,
-        photo: photo,
-        allSoftSkills: allSoftSkills,
-        allTechSkills: allTechSkills
-  })
-})
-       }
+//        handleSubmit = () => {
+  // e.preventDefault();
+//          const { name, photo, allTechSkills,allSoftSkills } = this.state
+//          const res = fetch("/student", {
+//          method: 'POST',
+//          headers:{
+//          Accept: "application/json",
+//          "Content-Type":"application/json"
+//   },
+//         body:JSON.stringify({
+//         name: name,
+//         photo: photo,
+//         allSoftSkills: allSoftSkills,
+//         allTechSkills: allTechSkills
+//   })
+// })
+//        }
 
 
   render() {
@@ -151,13 +152,18 @@ export default class StudentPage extends Component {
                     title: 'None'
                   }}
                 />
-                <Button  onClick={this.handleClickSoft} appearance="primary">Add</Button>
+                <Button  
+                // onClick={this.handleClickSoft} 
+                appearance="primary">Add</Button>
                 </div>
 
                </Pane>
             </Pane>
           </Pane>
-          <Button type="submit" onSubmit={handleSubmit} appearance="primary" height={majorScale(5)} 
+          <Button 
+          // type="submit" 
+          // onSubmit={handleSubmit} 
+          appearance="primary" height={majorScale(5)} 
           marginTop={16}> SUBMIT PROFILE</Button>
         </Pane>
       </div>
