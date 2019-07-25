@@ -1,25 +1,38 @@
-
 import { Button } from "@material-ui/core"
-
 import React, { Component } from "react"
 import { Link, withRouter } from "react-router-dom"
 import Header from "./Header"
 import Question from "./Question"
+
 class TakeQuiz extends Component {
   state = {
-    count: 0
+    count: 0,
+    answers: []
   }
 
-  handNext = (length) => {
+  handNext = length => {
     const { count } = this.state
-    count < length && this.setState({
-      count: count + 1
-    })
+    if (count < length) {
+      this.setState({
+        count: count + 1
+      })
+    } else {
+      console.log(this.state.answers)
+      // axios.post()
+    }
   }
   handPrevious = () => {
     const { count } = this.state
-    count > 0 && this.setState({
-      count: count - 1
+    count > 0 &&
+      this.setState({
+        count: count - 1
+      })
+  }
+
+  handleAnswers = (answer, question) => {
+    console.log(this.state.answers)
+    this.setState(pre => {
+      answers: pre.answers.push([answer, question])
     })
   }
 
@@ -40,8 +53,9 @@ class TakeQuiz extends Component {
                 <Question
                   key={i}
                   question={question}
-                  count={this.state.count+1}
+                  count={this.state.count + 1}
                   length={this.props.quiz.questions.length}
+                  answer={this.handleAnswers}
                 />
               )
             }
@@ -52,22 +66,17 @@ class TakeQuiz extends Component {
             className="Next"
           >
             {" "}
-            Next
+            {this.state.count === this.props.quiz.questions.length - 1
+              ? "Submit"
+              : "Next"}
             {/* &raquo; */}
           </span>
         </div>
         <div className="Add-Enter">
-          <Link className="" to="/">
+          <Link className="" to="/results">
             <Button variant="outlined" color="default">
-              Cancel and Return
+              Cancel and check results
             </Button>
-          </Link>
-        </div>
-        <div className="Add-Enter">
-          <Link className="" to="/">
-            <Button variant="outlined" color="default">
-              Cancel and Return
-                </Button>
           </Link>
         </div>
         <div className="Background-design-two" />
@@ -77,6 +86,4 @@ class TakeQuiz extends Component {
   }
 }
 
-
 export default withRouter(TakeQuiz)
-

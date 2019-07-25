@@ -58,7 +58,7 @@ api.post('/login', function(req, res) {
     const db = client.db("heroku_shn7149c")
     const collection = db.collection("users")
 
-    collection.find({email}).toArray((error, result) => {
+    collection.find({ email }).toArray((error, result) => {
       const User = result[0]
 if(User.password === password){
    const options={
@@ -66,7 +66,7 @@ if(User.password === password){
         email: User.email
       }
       const token = jwttokencreator(options)
-      res.status(200).send(token)
+     return res.status(200).send(token)
 }else{
   return res.status(400).send({msg:"Wrong email or password."})
 }

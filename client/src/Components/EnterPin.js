@@ -1,4 +1,3 @@
-
 import { Button, TextField } from "@material-ui/core"
 import React, { Component } from "react"
 import { Link, withRouter } from "react-router-dom"
@@ -31,7 +30,6 @@ class EnterPin extends Component {
             />
           </div>
           <div className="Game_Enter">
-
             <Button
               variant="contained"
               color="secondary"
@@ -39,13 +37,11 @@ class EnterPin extends Component {
             >
               Enter
             </Button>
-
           </div>
         </div>
         <div className="Add-Enter">
-          <Link className="" to="/">
-            Cancel and Return
-
+          <Link className="" to="/results">
+            Cancel and see results
           </Link>
         </div>
         <div className="Background-design-two" />
@@ -55,6 +51,4 @@ class EnterPin extends Component {
   }
 }
 
-
 export default withRouter(EnterPin)
-

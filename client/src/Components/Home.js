@@ -1,12 +1,9 @@
-
-import { Button } from "@material-ui/core"
 import React, { Component } from "react"
-import { Link, withRouter } from "react-router-dom"
+import { withRouter } from "react-router-dom"
+import { loggedIn } from "../Auth/index"
 import image from "../Image.png"
 import Header from "./Header"
-import Menu from "./Menu"
-import Login from './Login'
-import { loggedIn } from '../Auth/index'
+import Login from "./Login"
 
 class Home extends Component {
   render() {
@@ -15,18 +12,14 @@ class Home extends Component {
         <Header />
         <div>
           <div className="Background-design " />
-          {loggedIn() ? <Menu /> : <Login /> }
+          {!loggedIn() && <Login {...this.props} />}
 
-
-
-          
           <div className="image-container">
             <img src={image} className="image" alt="image" />
           </div>
           <div className="Background-design-two" />
           <div className="Background-design-three" />
           <div className="Background-design-four" />
-
 
           <div className="codEmpire">©CodeEmpire July 2019</div>
         </div>
@@ -36,4 +29,3 @@ class Home extends Component {
 }
 
 export default withRouter(Home)
-

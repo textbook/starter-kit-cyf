@@ -1,37 +1,36 @@
-import decode from 'jwt-decode'
+import decode from "jwt-decode"
 
 export const setToken = idToken => {
-  localStorage.setItem('id_token', idToken);
-  window.location.reload(true);
-};
+  localStorage.setItem("id_token", idToken)
+}
 
 export const getToken = () => {
-  const token = localStorage.getItem('id_token');
-  return token;
-};
+  const token = localStorage.getItem("id_token")
+  return token
+}
 
 export const logout = () => {
-  localStorage.removeItem('id_token');
-  window.location.reload(true);
-};
+  localStorage.removeItem("id_token")
+  window.location.reload(true)
+}
 
 export const isTokenExpired = token => {
   try {
-    const decoded = decode(token);
+    const decoded = decode(token)
     if (decoded && decoded.exp && decoded.exp < Date.now() / 1000) {
-      logout();
-      return true;
+      logout()
+      return true
     }
-    return false;
+    return false
   } catch (err) {
-    console.error(err);
+    console.error(err)
   }
-};
+}
 
 export const loggedIn = () => {
-  const token = getToken();
-  return !!token && !isTokenExpired(token);
-};
+  const token = getToken()
+  return !!token && !isTokenExpired(token)
+}
 export const getProfile = () => {
   const token = getToken()
   if (token) return decode(token)
@@ -39,6 +38,8 @@ export const getProfile = () => {
 
 export const getRole = () => {
   const profile = getProfile()
-  const { role } = profile
-  if(role) return role
+  if (profile) {
+    const { role } = profile
+    if (role) return role
+  }
 }
