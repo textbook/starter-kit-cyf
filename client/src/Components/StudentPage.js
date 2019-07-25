@@ -69,32 +69,29 @@ export default class StudentPage extends Component {
    
        }
 
-//        handleSubmit = () =>{
-//          const { name, photo, allTechSkills,allSoftSkills } = this.state
-// const res = await fetch("back end address here", {
-//   method: 'POST',
-//   headers:{
-//     Accept: "application/json",
-//     "Content-Type":"application/json"
-//   },
-//   body:JSON.stringify({
-//     name: name,
-//     photo: photo,
-//     allSoftSkills: allSoftSkills,
-//     allTechSkills: allTechSkills
-//   })
-// })
-//        }
+       handleSubmit = () => {
+         const { name, photo, allTechSkills,allSoftSkills } = this.state
+         const res = await fetch("/student", {
+         method: 'POST',
+         headers:{
+         Accept: "application/json",
+         "Content-Type":"application/json"
+  },
+        body:JSON.stringify({
+        name: name,
+        photo: photo,
+        allSoftSkills: allSoftSkills,
+        allTechSkills: allTechSkills
+  })
+})
+       }
 
 
   render() {
-   //console.log(state.allTechSkills)
-   //console.log(this.state.softSkill)
+
     return (
 
       <div>
-        
-
         <h3>STUDENT PROFILE</h3>
         <Pane
          // key={index}
@@ -131,7 +128,7 @@ export default class StudentPage extends Component {
                 items={['Arrays', 'Functions', 'Array Methods', 'Objects', 'None']}
                 onChange={selected => this.handleTech(selected)}
                 placeholder="Tech Skills"
-                label="Technical skills"
+                label="Tech Skills"
                 autocompleteProps={{
                   // Used for the title in the autocomplete.
                   title: 'None'
@@ -156,19 +153,15 @@ export default class StudentPage extends Component {
                 />
                 <Button  onClick={this.handleClickSoft} appearance="primary">Add</Button>
                 </div>
-               
+
                </Pane>
             </Pane>
           </Pane>
-          <Button 
-          // type="submit" onSubmit={handleSubmit} 
-          
-          appearance="primary" height={majorScale(5)} marginTop={16}> SUBMIT PROFILE</Button>
+          <Button type="submit" onSubmit={handleSubmit} appearance="primary" height={majorScale(5)} 
+          marginTop={16}> SUBMIT PROFILE</Button>
         </Pane>
       </div>
     );
   }
 }
-
-
 // export default StudentPage;
