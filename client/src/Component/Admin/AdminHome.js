@@ -3,6 +3,7 @@ import CreateSession from "./CreateSession";
 import "./index.css";
 import TableRow from "./TableRow";
 import StudentTableRow from "./StudentTableRow";
+import ModuleTableRow from "./ModuleTableRow";
 const dayjs = require("dayjs");
 const moment = require("moment");
 class AdminHome extends Component {
@@ -16,37 +17,17 @@ class AdminHome extends Component {
       latitude: "",
       longitude: "",
       session: "",
-      students: "",
       isStudentViewDisplayed: false
     };
   }
-
-  fetchData = () => {
-    fetch(`api/attendance?date=${this.state.selectedSession}`)
-      // fetch("https://jsonplaceholder.typicode.com/users")
-      // fetch("api/attendance")
-      .then(data => data.json())
-      .then(data => this.setState({ data: data }));
-  };
 
   componentWillMount() {
     fetch(`api/personalAttendance`)
       // fetch("https://jsonplaceholder.typicode.com/users")
       // fetch("api/attendance")
       .then(data => data.json())
-      .then(data => this.setState({ students: data }));
-
-    this.setState({ selectedSession: "today" }, () =>
-      setInterval(this.fetchData(), 1000)
-    );
+      .then(data => this.setState({ data: data }));
   }
-  selectSession = date => {
-    // this.setState({ selectedSession: e.target.value }, () =>
-    //   setInterval(this.fetchData, 2000)
-    // );
-    console.log(date);
-    this.setState({ selectedSession: date }, () => this.fetchData());
-  };
 
   handleChange = e => {
     const { name, value } = e.target;
@@ -54,6 +35,7 @@ class AdminHome extends Component {
       [name]: value
     });
   };
+
   handleSubmit = e => {
     e.preventDefault();
     const { name, date, city, session, latitude, longitude } = this.state;
@@ -71,26 +53,12 @@ class AdminHome extends Component {
       }
     });
   };
-  selectStudent = email => {
-    console.log("display studeny details", email);
-  };
 
   render() {
     // const { name, date, city, session } = this.state;
-    // console.log(name, session, city, date);
-    const {
-      name,
-      city,
-      date,
-      session,
-      attendingStudents,
-      totalAttendingStudents,
-      absentStudents,
-      totalAbsentStudents,
-      proportion,
-      sessions
-    } = this.state.data;
-    const { students } = this.state;
+    // console.log(this.state.data.sessions);
+    const { students, sessions, modules } = this.state.data;
+
     sessions &&
       sessions.forEach(
         session =>
@@ -135,18 +103,31 @@ class AdminHome extends Component {
                       return new Date(a.date) > new Date(b.date) ? -1 : 1;
                     })
                     .map(session => {
-                      return (
-                        <TableRow
-                          session={session}
-                          attendingStudents={attendingStudents}
-                          totalAttendingStudents={totalAttendingStudents}
-                          absentStudents={absentStudents}
-                          totalAbsentStudents={totalAbsentStudents}
-                          proportion={proportion}
-                          handleView={this.selectSession}
-                        />
-                      );
+                      // console.log(session)
+                      return <TableRow session={session} />;
                     })}
+              </tbody>
+            </table>
+          </section>
+        </div>
+        <div className="md-col-6">
+          <section style={{ marginLeft: "50px" }}>
+            <h3 className="text-center mb-1">Modules</h3>
+                        <table className="table">
+              <thead className="thead-dark">
+                <tr>
+                  <th scope="col">Module</th>
+                  <th scope="col">Attendance</th>
+                  <th scope="col">Attendance Rate</th>
+                  <th scope="col">Absence</th>
+                </tr>
+              </thead>
+              <tbody>
+                {modules &&
+                  modules.map((modul,id) => {
+                    console.log(modul)
+                    return <ModuleTableRow modul={modul} id={id}/>;
+                  })}
               </tbody>
             </table>
           </section>

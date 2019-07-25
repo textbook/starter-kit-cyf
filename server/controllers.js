@@ -79,9 +79,17 @@ export const getPersonalAttendance = (req, res, next) => {
     );
     collection = db.collection("sessions");
     collection.find().toArray((err, sessions) => {
-      let allModules = sessions.map(session => session.name);
-      allModules = [...new Set(allModules)];
+      let modules = sessions.map(session => session.name);
+      modules = [...new Set(modules)];
+      modules = modules.map(modul => {
+        return { name: modul, absence: [], attendance: [] };
+      });
+
+      sessions.forEach(session => {
+        session["absentStudents"] = [];
+      });
       students.forEach(student => {
+        //students attendance
         student["attendance"] = [];
         student["absence"] = [];
         sessions.forEach(session => {
@@ -97,6 +105,7 @@ export const getPersonalAttendance = (req, res, next) => {
               date: session.date
             });
           } else {
+            session.absentStudents.push(student);
             student.absence.push({
               id: session._id,
               name: session.name,
@@ -104,20 +113,41 @@ export const getPersonalAttendance = (req, res, next) => {
               date: session.date
             });
           }
+          //session attendance
+          session["attendingStudents"] = session.attendance.filter(
+            user => user.status.toLowerCase() == "student"
+          );
+          session["totalAttendingStudents"] = session.attendingStudents.length;
+          session["totalAbsentStudents"] = session.absentStudents.length;
+          session["attendanceRate"] = (
+            (100 * session.totalAttendingStudents) /
+            (session.totalAttendingStudents + session.totalAbsentStudents)
+          ).toFixed(2);
+        }); //sessions
+
+        //modules attendance
+        student["missedAnyModule"] = [];
+        modules.forEach(modul => {
+          if (
+            student.attendance.map(event => event.name).includes(modul.name)
+          ) {
+            modul.attendance.push(student)
+            return;
+          } else {
+            student.missedAnyModule.push(modul.name);
+            modul.absence.push(student);
+          }
+        modul["attendanceRate"]=((students.length-modul.absence.length)*100/students.length).toFixed();
+        
         });
-        student["missedAnyModule"]=[];
-        allModules.forEach(module=>{
 
-      // console.log(student, session, allModules.includes(session.name));
-
-          if (student.attendance.map(session=>session.name).includes(module)){return} else{student.missedAnyModule.push(module)}
-        })
         student["attendanceRate"] = (
           (100 * student.attendance.length) /
           (student.attendance.length + student.absence.length)
         ).toFixed(2);
       });
-      res.send(err || students);
+
+      res.send(err || { students, sessions, modules });
     });
   });
 };
@@ -181,7 +211,7 @@ export const createSession = (req, res) => {
     city ? (updateObject.city = city) : null;
     session ? (updateObject.session = session) : null;
     date ? (updateObject.date = date) : null;
-    console.log(updateObject);
+    // console.log(updateObject);
     const db = client.db("heroku_cs1q5qk5");
     let collection = db.collection("sessions");
     const options = { returnOriginal: false };
@@ -218,9 +248,9 @@ export const getAttendance = (req, res, next) => {
     collection.find().toArray((err, sessions) => {
       const today = dayjs().format("DD/MM/YYYY");
       const selectedDate = req.query.date === "today" ? today : req.query.date;
-      let currentSession = sessions
-        // .filter(session => session.date === "14/07/2019") //it is hard coded for testing
-        .filter(session => session.date === selectedDate); //should be for real life
+      let currentSession = sessions.filter(
+        session => session.date === selectedDate
+      ); //should be for real life
       if (currentSession.length > 0) {
         currentSession = currentSession.reduce(session => session);
         const { name, session, date } = currentSession;
@@ -349,7 +379,7 @@ export const login = (req, res, next) => {
     let user = await collection.findOne({
       email: req.body.email
     });
-    console.log({ user });
+    // console.log({ user });
     //if no matching with the provided email
     if (!user) {
       res.status(404).json({
@@ -367,7 +397,7 @@ export const login = (req, res, next) => {
       return;
     }
     //checking the password
-    console.log("password", user.password, req.body.password);
+    // console.log("password", user.password, req.body.password);
     if (user.password != req.body.password) {
       res.status(400).json({
         msg: `Your password is wrong!`
@@ -376,11 +406,12 @@ export const login = (req, res, next) => {
     }
     //if the pasword is correct
     const today = dayjs().format("DD/MM/YYYY");
+    const selectedDate = req.query.date ? req.query.date : today;
     collection = db.collection("sessions");
     const sessionToUpdate = await collection.findOne({
-      date: "21/07/2019" //hard coded for testing reality date : today
+      date: "28/07/2019" //hard coded for testing reality date : selectedDate
     });
-    if (!sessionToUpdate) {
+    if (!sessionToUpdate && status.toLowerCase() == "student") {
       res.status(404).send({
         msg: "The session is not created yet! "
       });
@@ -401,7 +432,7 @@ export const login = (req, res, next) => {
     const options = { returnOriginal: false };
     //updating the session data on database
     collection.findOneAndUpdate(
-      { date: "21/07/2019" }, // { date : today}
+      { date: "28/07/2019" }, // { date : selectedDate}
       {
         $set: {
           attendance: sessionToUpdate.attendance

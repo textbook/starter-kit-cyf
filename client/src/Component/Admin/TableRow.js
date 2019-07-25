@@ -13,24 +13,25 @@ export class TableRow extends Component {
   }
   displayView = e => {
     this.setState({ isViewDisplayed: !this.state.isViewDisplayed });
-    this.props.handleView(
-      moment(this.props.session.date, "YYYY-MM-DD").format("DD/MM/YYYY")
-    );
   };
 
   render() {
     const {
+      _id,
+      date,
+      city,
+      name,
+      session,
       attendingStudents,
       totalAttendingStudents,
       absentStudents,
       totalAbsentStudents,
-      proportion
-    } = this.props;
-    const { _id, date, city, name, session } = this.props.session;
+      attendanceRate
+    } = this.props.session;
     return (
       <Fragment>
         <tr key={_id}>
-            <td>{moment(date, "YYYY-MM-DD").format("DD/MM/YYYY")}</td>
+          <td>{moment(date, "YYYY-MM-DD").format("DD/MM/YYYY")}</td>
           <td>
             {name} - {session}
           </td>
@@ -41,13 +42,12 @@ export class TableRow extends Component {
             </button>
           </td>
         </tr>
-        <br />{" "}
         {this.state.isViewDisplayed && totalAttendingStudents && (
           <tr>
             <td colspan="2">
               <h4>Students in Class</h4>
               <p>Total : {totalAttendingStudents}</p>
-              <p>Percentage : % {proportion}</p>
+              <p>Percentage : % {attendanceRate}</p>
               <ul>
                 {attendingStudents.map(student => (
                   <li key={student._id}>{student.name}</li>

@@ -2,7 +2,7 @@
 import React from "react";
 
 function StudentsList(props) {
-  console.log(props.students);
+  // console.log(props.students);
   return (
     <div>
       <table className="blueTable">
