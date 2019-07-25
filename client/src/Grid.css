@@ -10,8 +10,14 @@ body {
   max-width: 100%; /* default from breakpoint 0, until another breakpoint overrides it */
   padding-right: 0px;
   padding-left: 0px;
-  /* margin-right: auto;
-  margin-left: auto; */
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 320px) {
+  .container {
+    max-width: 480px;
+  }
 }
 
 @media (min-width: 576px) {
@@ -34,7 +40,7 @@ body {
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1140px;
+    max-width: 1920px;
   }
 }
 

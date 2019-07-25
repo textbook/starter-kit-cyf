@@ -1,9 +1,14 @@
 
 import { Router } from "express"
 import { getClient } from "./db"
+<<<<<<< HEAD
 import {jwttokencreator} from './helper'
 
 export const api = new Router()
+=======
+
+const api = new Router()
+>>>>>>> origin
 
 
 api.get("/", (_, res, next) => {
@@ -51,6 +56,7 @@ api.post("/quiz", (req, res) => {
   })
 })
 
+<<<<<<< HEAD
 api.post('/login', function(req, res) {
   const {email, password}=req.body
     const client = getClient()
@@ -78,6 +84,8 @@ if(User.password === password){
 })
   
 
+=======
+>>>>>>> origin
 api.post("/answer", (req, res) => {
   const client = getClient()
   client.connect(function() {
@@ -91,6 +99,7 @@ api.post("/answer", (req, res) => {
       client.close()
     })
   })
+<<<<<<< HEAD
 })
 
 api.post("/result", (req, res) => {
@@ -107,3 +116,24 @@ api.post("/result", (req, res) => {
     })
   })
 })
+=======
+})
+
+api.post("/result", (req, res) => {
+  const client = getClient()
+  client.connect(function() {
+    const db = client.db("heroku_shn7149c")
+    const collection = db.collection("results")
+
+    const { pin } = req.params
+
+    collection.find({ pin }, function(error, result) {
+      res.send(error || result.ops[0])
+      client.close()
+    })
+  })
+
+})
+
+export default api
+>>>>>>> origin

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { createMuiTheme } from "@material-ui/core"
 import { ThemeProvider } from "@material-ui/styles"
 import React, { Component } from "react"
@@ -11,6 +12,21 @@ import Home from "./Components/Home"
 import Play from "./Components/Play"
 import Results from "./Components/Results"
 import "./Grid.css"
+=======
+import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import Home from './Components/Home';
+import CreateQuiz from './Components/CreateQuiz';
+import Play from './Components/Play';
+import Results from './Components/Results';
+
+import { createMuiTheme } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/styles';
+
+import './App.css';
+import './Grid.css';
+>>>>>>> origin
 
 const theme = createMuiTheme({
   palette: {
@@ -56,15 +72,26 @@ const theme = createMuiTheme({
 class App extends Component {
   render() {
     return (
+      <div className="container">
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Route exact path="/" component={Home} />
+<<<<<<< HEAD
           <PrivateRoute exact path="/results" component={Results} />
           <LeadMentor exact path="/createquiz" component={CreateQuiz} />
           <Student exact path="/play" component={Play} />
         </BrowserRouter>
       </ThemeProvider>
     )
+=======
+          <Route path="/CreateQuiz" component={CreateQuiz} />
+          <Route path="/play" component={Play} />
+          <Route path="/Results" component={Results} />
+        </BrowserRouter>
+      </ThemeProvider>
+      </div>
+    );
+>>>>>>> origin
   }
 }
 export default App
