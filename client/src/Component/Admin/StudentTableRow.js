@@ -17,7 +17,7 @@ export default class StudentTableRow extends Component {
 
   render() {
     const { student } = this.props;
-    console.log(student);
+    // console.log(student);
     return (
       <Fragment>
         <li
@@ -31,7 +31,7 @@ export default class StudentTableRow extends Component {
           <Fragment>
             <h6>
               Missed Module :{" "}
-              {student.missedAnyModule
+              {student.missedAnyModule.length > 0
                 ? student.missedAnyModule.join(", ")
                 : "none"}
             </h6>

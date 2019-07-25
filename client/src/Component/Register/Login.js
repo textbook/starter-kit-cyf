@@ -47,7 +47,7 @@ class login extends Component {
       .then(sessions => {
         // const session = sessions.filter(session=>session.date=dayjs().format("DD/MM/YYYY")).reduce(session=>session)
         const session = sessions
-          .filter(session => session.date == "21/07/2019")
+          .filter(session => session.date == "28/07/2019")
           .reduce(session => session);
         console.log(session.longitude);
         this.setState({ currentSession: session });
@@ -78,7 +78,7 @@ class login extends Component {
       position.latitude,
       position.longitude
     );
-    console.log({ isPositionConfirmed });
+    console.log(!isPositionConfirmed && status.toLowerCase() == "student");
     if (!isPositionConfirmed && status.toLowerCase() == "student") {
       return this.props.history.replace("/studentRegistered");
     } else {

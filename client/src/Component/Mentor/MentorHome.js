@@ -6,40 +6,38 @@ import "./index.css";
 import dayjs from "dayjs";
 
 class MentorHome extends Component {
-  state = {
-      students: "",
-      selectedSession: "today"
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: "",
+      sessions: "",
+      selectedSession:"",
+      selectedSessionDate: "today",
+      
     };
+  }
 
-  componentWillMount = async () => {
-    await this.fetchData(this.state.selectedSession);
-    if (this.state.students && this.students.session) {
-      this.startTimer(session)
-    }
-     
+  componentWillMount() {
+    //TODO : if there is no result do not start timer
+    this.startTimer = setInterval(this.fetchData, 1000);
   }
-  startTimer = (selectedSession) => {
-    this.autoUpdate = setInterval(
-          this.fetchData(selectedSession),
-          1000
-        );
-  }
-  fetchData = async selectedSession => {
-    return fetch(`api/attendance?date=${selectedSession}`)
+
+  fetchData = async () => {
+    fetch(`api/attendance?date=${this.state.selectedSessionDate}`)
       .then(data => data.json())
-      .then(data => this.setState({ students: data }));
+      .then(data => this.setState({ data: data }));
   };
   selectSession = e => {
-    if (e.target && e.target.value) {
-      // console.log("form function", e.target.value, this.state.selectedSession);
-      const today = dayjs().format("DD/MM/YYYY");
-      const selectedSession = e.target.value;
-      if (selectedSession === today) {
-        this.startTimer(selectedSession)
-      } else {
-        this.fetchData(selectedSession);
-      }
-      this.setState({ selectedSession });
+    //if it is not today clear interval and fetch for selected date
+    //if it is today start timer with today
+    const selectedSessionDate = e.target.value;
+    if (selectedSessionDate !== this.state.today) {
+      clearInterval(this.startTimer);
+      this.setState({ selectedSessionDate }, () =>
+        this.fetchData(this.state.selectedSessionDate)
+      );
+    } else {
+      this.setState({ selectedSessionDate }, () => this.startTimer);
     }
   };
 
@@ -54,23 +52,9 @@ class MentorHome extends Component {
       absentStudents,
       totalAbsentStudents,
       proportion
-    } = this.state.students;
-    const today = dayjs().format("DD/MM/YYYY");
-    {
-      console.log(
-        sessions,
-        name,
-        session,
-        date,
-        attendingStudents,
-        totalAttendingStudents,
-        absentStudents,
-        totalAbsentStudents,
-        proportion
-      );
-      // console.log("selected", this.state.selectedSession);
-    }
-    return (
+    } = this.state.data;
+    const today = dayjs().format("DD/MM/YYYY")
+        return (
       <main className="main">
         <h1>Attendance Register</h1>
         <br />
@@ -85,7 +69,7 @@ class MentorHome extends Component {
           Choose a session date :
           <select
             onChange={this.selectSession}
-            value={this.state.selectedSession}
+            value={this.state.selectedSessionDate}
             name="session"
           >
             <option value={today}>Today</option>}
