@@ -1,15 +1,8 @@
-<<<<<<< HEAD
 import { Button } from "@material-ui/core"
-=======
-
-import { Button } from "@material-ui/core"
-
->>>>>>> origin
 import React, { Component } from "react"
 import { Link, withRouter } from "react-router-dom"
 import Header from "./Header"
 import Question from "./Question"
-<<<<<<< HEAD
 
 class TakeQuiz extends Component {
   state = {
@@ -40,23 +33,6 @@ class TakeQuiz extends Component {
     console.log(this.state.answers)
     this.setState(pre => {
       answers: pre.answers.push([answer, question])
-=======
-class TakeQuiz extends Component {
-  state = {
-    count: 0
-  }
-
-  handNext = (length) => {
-    const { count } = this.state
-    count < length && this.setState({
-      count: count + 1
-    })
-  }
-  handPrevious = () => {
-    const { count } = this.state
-    count > 0 && this.setState({
-      count: count - 1
->>>>>>> origin
     })
   }
 
@@ -77,14 +53,9 @@ class TakeQuiz extends Component {
                 <Question
                   key={i}
                   question={question}
-<<<<<<< HEAD
                   count={this.state.count + 1}
                   length={this.props.quiz.questions.length}
                   answer={this.handleAnswers}
-=======
-                  count={this.state.count+1}
-                  length={this.props.quiz.questions.length}
->>>>>>> origin
                 />
               )
             }
@@ -95,24 +66,11 @@ class TakeQuiz extends Component {
             className="Next"
           >
             {" "}
-<<<<<<< HEAD
             {this.state.count === this.props.quiz.questions.length - 1
               ? "Submit"
               : "Next"}
             {/* &raquo; */}
           </span>
-=======
-            Next
-            {/* &raquo; */}
-          </span>
-        </div>
-        <div className="Add-Enter">
-          <Link className="" to="/">
-            <Button variant="outlined" color="default">
-              Cancel and Return
-            </Button>
-          </Link>
->>>>>>> origin
         </div>
         <div className="Add-Enter">
           <Link className="" to="/results">
@@ -128,10 +86,4 @@ class TakeQuiz extends Component {
   }
 }
 
-<<<<<<< HEAD
 export default withRouter(TakeQuiz)
-=======
-
-export default withRouter(TakeQuiz)
-
->>>>>>> origin

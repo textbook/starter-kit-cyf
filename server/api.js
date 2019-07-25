@@ -1,15 +1,8 @@
-
 import { Router } from "express"
 import { getClient } from "./db"
-<<<<<<< HEAD
-import {jwttokencreator} from './helper'
+import { jwttokencreator } from "./helper"
 
 export const api = new Router()
-=======
-
-const api = new Router()
->>>>>>> origin
-
 
 api.get("/", (_, res, next) => {
   const client = getClient()
@@ -24,7 +17,6 @@ api.get("/", (_, res, next) => {
 })
 
 api.get("/quiz/:pin?", (req, res) => {
-
   const client = getClient()
 
   client.connect(function() {
@@ -32,7 +24,6 @@ api.get("/quiz/:pin?", (req, res) => {
     const collection = db.collection("quiz")
 
     const { pin } = req.params
-
 
     collection.find({ pin }).toArray(function(error, result) {
       res.send(error || result)
@@ -56,36 +47,32 @@ api.post("/quiz", (req, res) => {
   })
 })
 
-<<<<<<< HEAD
-api.post('/login', function(req, res) {
-  const {email, password}=req.body
-    const client = getClient()
+api.post("/login", function(req, res) {
+  const { email, password } = req.body
+  const client = getClient()
   client.connect(function() {
     const db = client.db("heroku_shn7149c")
     const collection = db.collection("users")
 
     collection.find({ email }).toArray((error, result) => {
       const User = result[0]
-if(User.password === password){
-   const options={
-        role: User.role,
-        email: User.email
+      if (User.password === password) {
+        const options = {
+          role: User.role,
+          email: User.email
+        }
+        const token = jwttokencreator(options)
+        return res.status(200).send(token)
+      } else {
+        return res.status(400).send({ msg: "Wrong email or password." })
       }
-      const token = jwttokencreator(options)
-     return res.status(200).send(token)
-}else{
-  return res.status(400).send({msg:"Wrong email or password."})
-}
 
       res.send(error || User)
       client.close()
     })
   })
 })
-  
 
-=======
->>>>>>> origin
 api.post("/answer", (req, res) => {
   const client = getClient()
   client.connect(function() {
@@ -99,7 +86,6 @@ api.post("/answer", (req, res) => {
       client.close()
     })
   })
-<<<<<<< HEAD
 })
 
 api.post("/result", (req, res) => {
@@ -116,24 +102,3 @@ api.post("/result", (req, res) => {
     })
   })
 })
-=======
-})
-
-api.post("/result", (req, res) => {
-  const client = getClient()
-  client.connect(function() {
-    const db = client.db("heroku_shn7149c")
-    const collection = db.collection("results")
-
-    const { pin } = req.params
-
-    collection.find({ pin }, function(error, result) {
-      res.send(error || result.ops[0])
-      client.close()
-    })
-  })
-
-})
-
-export default api
->>>>>>> origin
