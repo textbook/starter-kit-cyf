@@ -17,7 +17,7 @@ class Login extends Component {
     e.preventDefault()
     const { email, password } = this.state
     try {
-      const response = await axios.post("http://localhost:3100/api/login", {
+      const response = await axios.post("/api/login", {
         email,
         password
       })
