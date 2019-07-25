@@ -1,10 +1,10 @@
-import { Button, Paper, Typography } from "@material-ui/core"
-import React, { Component, Fragment } from "react"
+import { Button, Paper, Typography } from "@material-ui/core";
+import React, { Component, Fragment } from "react";
 
 export default class Question extends Component {
   render() {
     const { id, question, answers } = this.props.question
-
+const alphabet = "ABCDEFGH"
     return (
       <Paper className="Paper-one">
         <Typography variant="h6" component="h6">
@@ -14,11 +14,11 @@ export default class Question extends Component {
           </Paper>
 
           <div className="choices">
-            {answers.map(answer => {
+            {answers.map((answer, i) => {
               return (
-                <Fragment key={answer.id} >
-                  <p>{answer.id}</p>
-                  <Button variant="contained" color="primary">
+                <Fragment key={i} >
+                  <p>{alphabet.charAt(i)}</p>
+                  <Button variant="contained" color="primary" onClick={() => this.props.answer(i, this.props.count - 1)}>
                     {answer.name}
                   </Button>
                 </Fragment>

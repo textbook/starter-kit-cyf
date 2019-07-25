@@ -1,32 +1,33 @@
-import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
 import {
-  Paper,
   Button,
+  Paper,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableRow,
   Typography
-} from '@material-ui/core';
-import logo from '../logo.png';
-import Header from './Header';
+} from "@material-ui/core"
+import React, { Component } from "react"
+import { Link, withRouter } from "react-router-dom"
+import { getRole, logout } from "../Auth/index"
+import Header from "./Header"
 
 function createData(name, pts) {
-  return { name, pts };
+  return { name, pts }
 }
 
 const rows = [
-  createData('Bart', 89),
-  createData('Mohammad', 82),
-  createData('Joan', 78),
-  createData('Elamin', 73),
-  createData('Miles', 68)
-];
+  createData("Bart", 89),
+  createData("Mohammad", 82),
+  createData("Joan", 78),
+  createData("Elamin", 73),
+  createData("Miles", 68)
+]
 
 class Results extends Component {
   render() {
+    const role = getRole()
     return (
       <div className="App">
         <header className="App">
@@ -67,22 +68,31 @@ class Results extends Component {
         </div>
 
         <div className="Add-Enter">
-            <Link className="Add" to="/EnterPin">
+          {(role === "student" || role === "leadmentor") && (
+            <Link
+              className="Add"
+              to={
+                role === "student"
+                  ? "/play"
+                  : role === "leadmentor"
+                  ? "/createquiz"
+                  : null
+              }
+            >
               <Button variant="outlined" color="default">
-                Play New Game
+                {role === "student" ? "Play Quiz" : "Create Quiz"}
               </Button>
             </Link>
-          <Link className="Add" to="/">
-            <Button variant="outlined" color="default">
-              Cancel and Return
-            </Button>
-          </Link>
+          )}
+          <Button variant="outlined" color="default" onClick={() => logout()}>
+            Log out
+          </Button>
         </div>
         <div className="Background-design-two" />
         <div className="Background-design-three" />
       </div>
-    );
+    )
   }
 }
 
-export default withRouter(Results);
+export default withRouter(Results)

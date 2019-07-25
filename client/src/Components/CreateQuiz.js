@@ -1,8 +1,7 @@
-
-import { Button, Paper, Typography, TextField } from '@material-ui/core';
-import { Link, withRouter } from 'react-router-dom';
-import React, { Component } from 'react';
-import Header from './Header';
+import { Button, Paper, TextField, Typography } from "@material-ui/core"
+import React, { Component } from "react"
+import { Link, withRouter } from "react-router-dom"
+import Header from "./Header"
 
 class CreateQuiz extends Component {
   state = {
@@ -32,7 +31,6 @@ class CreateQuiz extends Component {
         <div className="Paper-two">
           <Paper>
             <Typography variant="h6" component="h6">
-
               <div className="Questions">
                 <p>Question 1:</p>
                 <TextField
@@ -105,9 +103,9 @@ class CreateQuiz extends Component {
               </Button>
             </div>
             <div className="Add">
-              <Link className="" to="/">
+              <Link className="" to="/results">
                 <Button variant="outlined" color="default">
-                  Cancel and Return
+                  Results
                 </Button>
               </Link>
             </div>
@@ -120,5 +118,4 @@ class CreateQuiz extends Component {
   }
 }
 
-
-export default withRouter(CreateQuiz);
+export default withRouter(CreateQuiz)
