@@ -17,7 +17,6 @@ class Login extends Component {
     e.preventDefault()
     const { email, password } = this.state
     try {
-
       const response = await axios.post("/api/login", {
         email,
         password
@@ -56,13 +55,13 @@ class Login extends Component {
         <form onSubmit={this.handleLogin} className="row">
           <div className="form-group">
             <input
-              type="email"
+              type="text"
               name="email"
               value={email}
               className="form-control login-input"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              placeholder="Email"
+              placeholder="Username"
               onChange={this.onChange}
             />
           </div>
