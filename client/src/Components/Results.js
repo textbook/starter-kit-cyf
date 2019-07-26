@@ -31,12 +31,17 @@ class Results extends Component {
     return (
       <div className="App">
         <header className="App">
-          <Header />
+          <Header title="Results" />
         </header>
         <div className="Background-design" />
         <div className="Final-score">
           <Paper className="score">
-            <Typography variant="h5" component="h4" color="primary">
+            <Typography
+              type="input"
+              variant="h5"
+              component="h4"
+              color="primary"
+            >
               Final Score Board
             </Typography>
           </Paper>
