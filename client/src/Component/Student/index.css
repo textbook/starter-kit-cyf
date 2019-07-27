@@ -1,17 +1,37 @@
-
-.attendance{
-display: flex;
-justify-content: center;
-align-items: center;
-width: 400px;
-height: 380px;
-}
-.attendance h2{
-font-size: 25px;
-padding: 10px;
- background: rgb(30, 156, 58);
+.mainAttendance{
+  text-align: center;
+   display: flex;
+   flex-direction: column;
+  justify-content: space-between;
 }
 
-.attendance img{
-  max-width: 100%;
+
+/* Extra small devices (phones, 768px and down) */
+@media only screen and (max-width: 768px) {
+  .mainAttendance{
+  padding: 10vh 0;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  min-height: 85vh;
 }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px){
+  .mainAttendance{
+  padding: 15vh 0;
+  min-height: 85vh;
+}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .mainAttendance{
+  padding: 20vh 0;
+  min-height: 80vh;
+}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

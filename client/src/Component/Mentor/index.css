@@ -1,8 +1,58 @@
 .studentsList{
-  width: 60%;
-
+  width: 80%;
   margin: 1rem auto;
 }
+
+.main{
+  border: 2px solid;
+  text-align: center;
+}
+
+.register_Info{
+  border-bottom: 2px solid;
+  text-align: center;
+  padding: 2vh;
+}
+
+.register_Info h1{
+  margin-bottom: 2vh;
+}
+
+.attPercentage{
+  text-align: center;
+  padding: 3vh;
+  border: 2px solid;
+}
+
+.absent{
+  color: red;
+}
+
+table.absentTable{
+text-align: center;
+ border: 1px solid red;
+ width: 100%;
+ border-collapse: collapse;
+}
+table.absentTable td, table.absentTable td{
+   border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.absentTable thead{
+  background: rgb(167, 26, 13);
+    border-bottom: 2px solid #444444;
+}
+table.absentTable .total td{
+  background: rgb(245, 208, 208);
+  font-size: 20px;
+}
+
+table.blueTable tbody .total td{
+   background: rgb(199, 251, 154);
+   font-size: 20px;
+   text-align: center;
+}
+
 
 table.blueTable {
   border: 1px solid #1C6EA4;
@@ -15,7 +65,7 @@ table.blueTable td, table.blueTable th {
   border: 1px solid #AAAAAA;
   padding: 3px 2px;
 }
-table.blueTable tbody td {
+table.blueTable tbody td, table.absentTable tbody td {
   font-size: 13px;
 }
 table.blueTable tr:nth-child(even) {
@@ -28,7 +78,7 @@ table.blueTable thead {
   background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
   border-bottom: 2px solid #444444;
 }
-table.blueTable thead th {
+table.blueTable thead th, table.absentTable thead th {
   font-size: 15px;
   font-weight: bold;
   color: #FFFFFF;
@@ -37,3 +87,44 @@ table.blueTable thead th {
 table.blueTable thead th:first-child {
   border-left: none;
 }
+
+.nav-btn-help{
+  padding: 0 .5rem;
+  background: green;
+   border: none;
+   border-radius: 10px;
+   color: white;
+}
+
+.nav-btn-danger{
+   padding: 0 .5rem;
+   border: none;
+   background: red;
+   color: white;
+     border-radius: 10px;
+}
+
+
+
+/* Extra small devices (phones, 768px and down) */
+@media only screen and (max-width: 768px) {
+ 
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px){
+.table-Results{
+  display: flex;
+}
+.studentsList{
+  width: 45%;
+}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

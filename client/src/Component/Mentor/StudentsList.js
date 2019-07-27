@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import "./index.css"
 
 function StudentsList(props) {
   // console.log(props.students);
@@ -25,9 +26,8 @@ function StudentsList(props) {
               <td> 11: 10mn </td>
             </tr>
           ))} */}
-          <tr>
-            <td>Total :</td>
-           <td> {props.total} </td>
+          <tr className="total">
+            <td colspan="2">Total :  {props.total} </td>
           </tr>
         </tbody>
       </table>
@@ -35,6 +35,6 @@ function StudentsList(props) {
   );
 }
 
-const divStyle = { "width" : "400px" }
+const divStyle = { "width": "400px" }
 
 export default StudentsList;

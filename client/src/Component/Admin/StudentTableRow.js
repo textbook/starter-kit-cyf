@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import "./index.css"
 
 export default class StudentTableRow extends Component {
   constructor(props) {
@@ -20,44 +21,47 @@ export default class StudentTableRow extends Component {
     // console.log(student);
     return (
       <Fragment>
-        <li
+        <tr
           key={student._id}
           className="student-name"
           onClick={this.displayView}
         >
-          {student.name}
-        </li>
+          <th scope="row">{student.name}</th>
+          <td>{student.attendanceRate} %</td>
+          <td>{student.missedAnyModule.length > 0 ? student.missedAnyModule.join(", ") : "none"}</td>
+        </tr>
+
         {this.state.isViewDisplayed && (
           <Fragment>
-            <h6>
-              Missed Module :{" "}
-              {student.missedAnyModule.length > 0
-                ? student.missedAnyModule.join(", ")
-                : "none"}
-            </h6>
-            <h6>Attendance Rate : % {student.attendanceRate}</h6>
-            <h6>Attendance : </h6>
-            <h6>Total : {student.attendance.length}</h6>
-            <ul>
-              {student.attendance.map(session => {
-                return (
-                  <li key={session.id}>
-                    {session.name} - {session.session} ({session.date})
-                  </li>
-                );
-              })}
-            </ul>
-            <h6>Absence : </h6>
-            <h6>Total : {student.absence.length}</h6>
-            <ul>
-              {student.absence.map(session => {
-                return (
-                  <li key={session.id}>
-                    {session.name} - {session.session} ({session.date})
-                  </li>
-                );
-              })}
-            </ul>
+            <tr className="studentAttendance">
+              <td colspan="2">
+                <h4 className="attendance">Attendance : </h4>
+                {/* <h4>Total : {student.attendance.length}</h4> */}
+                <div>
+                  {student.attendance.map(session => {
+                    return (
+                      <p key={session.id}>
+                        {session.name} - {session.session} ({session.date})
+                  </p>
+                    );
+                  })}
+                </div>
+              </td>
+
+              <td colspan="2" className="absenceCell">
+                <h4 className="absence">Absence : </h4>
+                {/* <h4>Total : {student.absence.length}</h4> */}
+                <div>
+                  {student.absence.map(session => {
+                    return (
+                      <p key={session.id}>
+                        {session.name} - {session.session} ({session.date})
+                  </p>
+                    );
+                  })}
+                </div>
+              </td>
+            </tr>
           </Fragment>
         )}
       </Fragment>

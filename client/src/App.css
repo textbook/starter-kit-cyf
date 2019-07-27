@@ -5,21 +5,6 @@
   box-align: border-box;
 }
 
-body{
-  background: #ffffff;
-  /* min-height: 100vh; */
-  
+main{
+  min-height: 100vh;
 }
-
-
-
-
-/* @media screen and (max-width: 705px){
-  .header {
-    -webkit-background: red;
-    -ms-background: row;
-  background: white;
-  }
-
-} */
-

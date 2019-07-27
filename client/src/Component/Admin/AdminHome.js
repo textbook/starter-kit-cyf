@@ -3,9 +3,12 @@ import CreateSession from "./CreateSession";
 import "./index.css";
 import TableRow from "./TableRow";
 import StudentTableRow from "./StudentTableRow";
+import { TabContent, Table, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from "reactstrap";
+import classnames from 'classnames';
 import ModuleTableRow from "./ModuleTableRow";
 const dayjs = require("dayjs");
 const moment = require("moment");
+
 class AdminHome extends Component {
   constructor(props) {
     super(props);
@@ -17,14 +20,13 @@ class AdminHome extends Component {
       latitude: "",
       longitude: "",
       session: "",
-      isStudentViewDisplayed: false
+      isStudentViewDisplayed: false,
+      activeTab: "1",
     };
   }
 
   componentWillMount() {
     fetch(`api/personalAttendance`)
-      // fetch("https://jsonplaceholder.typicode.com/users")
-      // fetch("api/attendance")
       .then(data => data.json())
       .then(data => this.setState({ data: data }));
   }
@@ -54,9 +56,17 @@ class AdminHome extends Component {
     });
   };
 
+  //For the tabs
+  toggle = el => {
+    if (this.state.activeTab !== el) {
+      this.setState({
+        activeTab: el
+      });
+    }
+  }
+
   render() {
-    // const { name, date, city, session } = this.state;
-    // console.log(this.state.data.sessions);
+
     const { students, sessions, modules } = this.state.data;
 
     sessions &&
@@ -66,83 +76,145 @@ class AdminHome extends Component {
             "YYYY-MM-DD"
           ))
       );
-    // console.log(sessions);
+
     return (
-      <main className="row">
-        <div className="md-col-6">
-          <h3>Students</h3>
-          <ul>
-            {students &&
-              students.map(student => {
-                return (
-                  <StudentTableRow
-                    student={student}
-                    handleStudentView={this.selectStudent}
-                  />
-                );
-              })}
-          </ul>
+      <main className="mainAdmin">
+        <div className="mainAdmin-row">
+          <h3>CodeYourFuture's Students</h3>
+          <Table hover striped responsive>
+            <thead className="thead-dark">
+              <tr>
+                <th>Name</th>
+                <th>Attendance Rate</th>
+                <th>Missed Module</th>
+              </tr>
+            </thead>
+            <tbody>
+              {students &&
+                students.map(student => {
+                  return (
+                    <StudentTableRow
+                      student={student}
+                      handleStudentView={this.selectStudent}
+                    />
+                  );
+                })}
+            </tbody>
+          </Table>
         </div>
 
-        <div className="md-col-6">
-          <section style={{ marginLeft: "50px" }}>
-            <h3 className="text-center mb-1">Sessions</h3>
-            <table className="table">
-              <thead className="thead-dark">
-                <tr>
-                  <th scope="col">Date</th>
-                  <th scope="col">Module-Session</th>
-                  <th scope="col">City</th>
-                  <th scope="col">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {sessions &&
-                  sessions
-                    .sort((a, b) => {
-                      return new Date(a.date) > new Date(b.date) ? -1 : 1;
-                    })
-                    .map(session => {
-                      // console.log(session)
-                      return <TableRow session={session} />;
-                    })}
-              </tbody>
-            </table>
-          </section>
-        </div>
-        <div className="md-col-6">
-          <section style={{ marginLeft: "50px" }}>
-            <h3 className="text-center mb-1">Modules</h3>
-                        <table className="table">
-              <thead className="thead-dark">
-                <tr>
-                  <th scope="col">Module</th>
-                  <th scope="col">Attendance</th>
-                  <th scope="col">Attendance Rate</th>
-                  <th scope="col">Absence</th>
-                </tr>
-              </thead>
-              <tbody>
-                {modules &&
-                  modules.map((modul,id) => {
-                    console.log(modul)
-                    return <ModuleTableRow modul={modul} id={id}/>;
-                  })}
-              </tbody>
-            </table>
-          </section>
-        </div>
-        <div className="md-col-6">
-          <CreateSession
-            name={this.state.name}
-            city={this.state.city}
-            date={this.state.date}
-            session={this.state.session}
-            latitude={this.state.latitude}
-            longitude={this.state.longitude}
-            handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit}
-          />
+        <div className="mainAdmin-row sessionBox">
+          <Nav tabs className="navBox">
+            <NavItem className="navItem">
+              <NavLink
+                className={classnames({ active: this.state.activeTab === '1' })}
+                id="navLink"
+                onClick={() => { this.toggle('1'); }}
+              >
+                Sessions
+            </NavLink>
+            </NavItem>
+
+            <NavItem className="navItem">
+              <NavLink
+                className={classnames({ active: this.state.activeTab === '2' })}
+                id="navLink"
+                onClick={() => { this.toggle('2'); }}
+              >
+                New Session
+              </NavLink>
+            </NavItem>
+            <NavItem className="navItem">
+              <NavLink
+                className={classnames({ active: this.state.activeTab === '3' })}
+                id="navLink"
+                onClick={() => { this.toggle('3'); }}
+              >
+                Modules
+              </NavLink>
+            </NavItem>
+          </Nav>
+
+          <TabContent activeTab={this.state.activeTab}>
+            <TabPane tabId="1" className="tabPane">
+              <Row>
+                <Col sm="12">
+                  <Table striped hover>
+                    <thead className="thead-dark">
+                      <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Module-Session</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {sessions &&
+                        sessions
+                          .sort((a, b) => {
+                            return new Date(a.date) > new Date(b.date) ? -1 : 1;
+                          })
+                          .map(session => {
+                            // console.log(session)
+                            return <TableRow session={session} />;
+                          })}
+                    </tbody>
+                  </Table>
+                </Col>
+              </Row>
+            </TabPane>
+
+            <TabPane tabId="2" className="tabPane">
+              <Row>
+                <Col sm="12">
+                  <Table >
+                    <thead className="thead-dark">
+                      <tr>
+                        <th scope="col">Create New Session</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <CreateSession
+                        name={this.state.name}
+                        city={this.state.city}
+                        date={this.state.date}
+                        session={this.state.session}
+                        latitude={this.state.latitude}
+                        longitude={this.state.longitude}
+                        handleChange={this.handleChange}
+                        handleSubmit={this.handleSubmit}
+                      />
+                    </tbody>
+                  </Table>
+                </Col>
+              </Row>
+            </TabPane>
+
+            <TabPane tabId="3" className="tabPane">
+              <Row>
+                <Col sm="12">
+                  <Table striped hover>
+                    <thead className="thead-dark">
+                      <tr className="tr">
+                        <th scope="col">Module</th>
+                        <th scope="col">Attendance</th>
+                        <th scope="col">Attendance Rate</th>
+                        <th scope="col">Absence</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {modules &&
+                        modules.map((modul, id) => {
+                          console.log(modul)
+                          return <ModuleTableRow modul={modul} id={id} />;
+                        })}
+                    </tbody>
+                  </Table>
+                </Col>
+              </Row>
+            </TabPane>
+          </TabContent>
         </div>
       </main>
     );

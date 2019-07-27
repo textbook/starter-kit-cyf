@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import "./index.css"
 
 function StudentsList(props) {
   // console.log(props.students);
   return (
     <div>
-      <table className="blueTable">
+      <table className="absentTable">
         <thead>
           <tr>
             <th>Name</th>
@@ -18,10 +19,10 @@ function StudentsList(props) {
                 <td> {student.name} </td>
               </tr>
             ))}
-          <tr>
+          <tr className="total">
             <td>Total :
             {props.total}</td>
-            </tr>
+          </tr>
         </tbody>
       </table>
     </div>

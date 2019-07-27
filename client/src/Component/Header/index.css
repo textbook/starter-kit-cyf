@@ -1,127 +1,47 @@
 .navbar {
   background-color: white;
-  width:100%;
-}
-.navbar-brand {
-  margin: 0;
-  padding: 0;
-}
-.logo {
-  height: 50px;
-  padding-left: 5px;
-  padding-right: 15px;
-}
-.navbar-brand
-.navbar-nav .nav-link {
-  color: #414141;
-  &&:hoover {
-    color: black;
-  }
 }
 
- 
-  /* 
-    ##Device = Desktops
-    ##Screen = 1281px to higher resolution desktops
-  */
+.logo {
+  width: 25vw;
+}
+
+.separateBar{
+  color: red;
+}
+
   
-  @media (min-width: 1281px) {
-    
-  
-    
-  }
-  
-  /* 
-    ##Device = Laptops, Desktops
-    ##Screen = B/w 1025px to 1280px
-  */
-  
-  @media (min-width: 1024px) and (max-width: 1280px) {
-    .navbar {
-      background-color: white;
-      width:100%;
-      height:200px;
-    }
+@media only screen and (max-width: 768px){
+  .logo {
+  width: 30vw;
+}
  .nav-link{
    font-size:35px;
    margin-right:50px;
  }
     
   }
+
   
-  /* 
-    ##Device = Tablets, Ipads (portrait)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
+ @media only screen and (min-width: 768px) and (max-width: 992px) {
     .navbar {
-      background-color: white;
       width:100%;
       height:100px;
     }
-        
-  .content {
-    position: fixed;
-  background-color: #34495e;
-    top: 100px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 90px;
-    overflow: hidden;
-    font-family: 'Lato', sans-serif;
-    font-size: 12px;
-    line-height: 40px;
-    color:white;
-  }
+
+   .logo {
+  width: 30vw;
+}
+
     
   }
   
-  /* 
-    ##Device = Tablets, Ipads (landscape)
-    ##Screen = B/w 768px to 1024px
-  */
+ 
   
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    
-   
-    
-  }
-  
-  /* 
-    ##Device = Low Resolution Tablets, Mobiles (Landscape)
-    ##Screen = B/w 481px to 767px
-  */
-  
-  @media (min-width: 481px) and (max-width: 767px) {
-    
-   
-    
-  }
-  
-  /* 
-    ##Device = Most of the Smartphones Mobiles (Portrait)
-    ##Screen = B/w 320px to 479px
-  */
-  
-  @media (min-width: 320px) and (max-width: 480px) {
-    
-  .jumbo{
-    margin-bottom:0;
-   
-  }
+@media only screen and (min-width: 992px) {
      
-  .content {
-    position: absolute;
-    background-color:#34495e; 
-    top: 100px;
-    left: 60%;
-    transform: translate(-50%, -50%);
-    height: 50px;
-    overflow: hidden;
-    font-family: 'Lato', sans-serif;
-    font-size: 20px;
-    line-height: 40px;
-    color:white;
-  }
+   .logo {
+  width: 290px;
+}
+
   }

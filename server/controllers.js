@@ -137,8 +137,8 @@ export const getPersonalAttendance = (req, res, next) => {
             student.missedAnyModule.push(modul.name);
             modul.absence.push(student);
           }
-        modul["attendanceRate"]=((students.length-modul.absence.length)*100/students.length).toFixed();
-        
+          modul["attendanceRate"] = ((students.length - modul.absence.length) * 100 / students.length).toFixed();
+
         });
 
         student["attendanceRate"] = (
@@ -219,7 +219,7 @@ export const createSession = (req, res) => {
       { date: selectedSessionDate }, // { date : selectedSessionDate}
       { $set: updateObject },
       options,
-      function(error, result) {
+      function (error, result) {
         if (result.value) {
           res.send(error || result.value);
         } else {
@@ -387,12 +387,12 @@ export const login = (req, res, next) => {
       });
       return;
     }
-    //checking the satus of the user
+    //checking the status of the user
     if (user.status.toLowerCase() != req.body.status.toLowerCase()) {
       res.status(400).json({
         msg: `You selected wrong status as ${
           req.body.status
-        }, you should select ${user.status} status!`
+          }, you should select ${user.status} status!`
       });
       return;
     }
@@ -404,7 +404,7 @@ export const login = (req, res, next) => {
       });
       return;
     }
-    //if the pasword is correct
+    //if the password is correct
     const today = dayjs().format("DD/MM/YYYY");
     const selectedDate = req.query.date ? req.query.date : today;
     collection = db.collection("sessions");
@@ -417,7 +417,7 @@ export const login = (req, res, next) => {
       });
       return;
     }
-    //if user is check if he is already regsitered or not by email
+    //if user is check if he is already registered or not by email
 
     user = {
       userId: user._id,

@@ -11,9 +11,8 @@ class MentorHome extends Component {
     this.state = {
       data: "",
       sessions: "",
-      selectedSession:"",
+      selectedSession: "",
       selectedSessionDate: "today",
-      
     };
   }
 
@@ -27,6 +26,7 @@ class MentorHome extends Component {
       .then(data => data.json())
       .then(data => this.setState({ data: data }));
   };
+
   selectSession = e => {
     //if it is not today clear interval and fetch for selected date
     //if it is today start timer with today
@@ -53,60 +53,61 @@ class MentorHome extends Component {
       totalAbsentStudents,
       proportion
     } = this.state.data;
+
     const today = dayjs().format("DD/MM/YYYY")
-        return (
+    return (
       <main className="main">
-        <h1>Attendance Register</h1>
-        <br />
-        <p>Today : {today}</p>
-        {session ? (
+
+        <section className="register_Info">
+          <h1>Attendance Register</h1>
+          <p>Today : {today}</p>
+          {session ? (
+            <p>
+              {name} - {session}
+            </p>
+          ) : null}
+          <p>Selected Date : {date ? date : today}</p>
           <p>
-            {name} - {session}
-          </p>
-        ) : null}
-        <p>Selected Date : {date ? date : today}</p>
-        <div>
-          Choose a session date :
-          <select
-            onChange={this.selectSession}
-            value={this.state.selectedSessionDate}
-            name="session"
-          >
-            <option value={today}>Today</option>}
+            Choose a session date    <select
+              onChange={this.selectSession}
+              value={this.state.selectedSessionDate}
+              name="session"
+            >
+              <option value={today}>Today</option>}
             {sessions &&
-              sessions.map(session => {
-                return (
-                  <option value={session.date}>
-                    {session.date} : {session.name} - {session.session}
-                  </option>
-                );
-              })}
-          </select>
-        </div>
+                sessions.map(session => {
+                  return (
+                    <option value={session.date}>
+                      {session.date} : {session.name} - {session.session}
+                    </option>
+                  );
+                })}
+            </select>
+          </p>
+        </section>
         {session ? (
           <div>
-            <section className="studentsList">
-              <h2>Students in Class</h2>
-              <StudentsList
-                // students={FakeUsers}
-                students={attendingStudents}
-                total={totalAttendingStudents}
-              />
-            </section>
-            <section className="studentsList">
-              <h2>Students Absents</h2>
-              <StudentsAbsents
-                // students={FakeUsers}
-                students={absentStudents}
-                total={totalAbsentStudents}
-              />
-            </section>
-            <br />
-            <p>Attendance Percentage : % {proportion}</p>
+            <div className="table-Results">
+              <section className="studentsList">
+                <h2>Students in Class</h2>
+                <StudentsList
+                  students={attendingStudents}
+                  total={totalAttendingStudents}
+                />
+              </section>
+              <section className="studentsList">
+                <h2 className="absent">Students Absents</h2>
+                <StudentsAbsents
+                  students={absentStudents}
+                  total={totalAbsentStudents}
+                />
+              </section>
+            </div>
+            <p className="attPercentage">Attendance Percentage :  {proportion} %</p>
           </div>
         ) : (
-          <p>There is no results for today!, please select another date</p>
-        )}
+            <p>There is no results for today!, please select another date</p>
+          )}
       </main>
     );
   }

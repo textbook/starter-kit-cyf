@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 const moment = require("moment");
+import "./index.css"
 
 export class ModuleTableRow extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export class ModuleTableRow extends Component {
   };
 
   render() {
-    console.log(this.props.module);
+    // console.log(this.props.module);
     const { name, attendance, absence, attendanceRate } = this.props.modul;
     const { id } = this.props;
     return (
@@ -21,27 +22,27 @@ export class ModuleTableRow extends Component {
         <tr key={id} onClick={this.displayView} className="student-name">
           <td>{name}</td>
           <td>{attendance.length}</td>
-          <td>% {attendanceRate}</td>
+          <td> {attendanceRate}%</td>
           <td>{absence.length}</td>
         </tr>
         {this.state.isViewDisplayed && attendance && (
-          <tr>
+          <tr className="studentAttendance">
             <td colspan="2">
-              <h4>Attendance</h4>
+              <h4 className="attendance">Attendance</h4>
 
-              <ul>
+              <div>
                 {attendance.map(student => (
-                  <li key={id + 1}>{student.name}</li>
+                  <p key={id + 1}>{student.name}</p>
                 ))}
-              </ul>
+              </div>
             </td>
-            <td colspan="2">
-              <h4>Absence</h4>
-              <ul>
+            <td colspan="2" className="absenceCell">
+              <h4 className="absence">Absence</h4>
+              <div>
                 {absence.map(student => (
-                  <li key={id + 10001}>{student.name}</li>
+                  <p key={id + 10001}>{student.name}</p>
                 ))}
-              </ul>
+              </div>
             </td>
           </tr>
         )}

@@ -1,20 +1,21 @@
 
 .footer{
-
-  text-align: center;
-   position: fixed;
-   
-   left: 0;
-   bottom: 0;
-   width: 100%;
+   display: flex;
+   width: auto;
     /* background: #a8936b; */
      background: #34495e;
    color: white;
 }
 
+.footer p{
+margin: auto;
+padding: 10px 0;
+font-size: 13px;
+}
+/* 
 @media screen and (max-width: 600px){
   .footer {
   background: #34495e;
   color: white;
   }
-}
+} */

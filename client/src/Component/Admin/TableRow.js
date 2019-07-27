@@ -30,38 +30,39 @@ export class TableRow extends Component {
     } = this.props.session;
     return (
       <Fragment>
-        <tr key={_id}>
+        <tr key={_id} className="nav-tr-info">
           <td>{moment(date, "YYYY-MM-DD").format("DD/MM/YYYY")}</td>
           <td>
             {name} - {session}
           </td>
           <td>{city}</td>
           <td>
-            <button onClick={this.displayView} className="nav-btn-help">
-              {this.state.isViewDisplayed ? " X " : " View "}
+            <button onClick={this.displayView} className={this.state.isViewDisplayed ? "nav-btn-danger" : "nav-btn-help"}>
+              {this.state.isViewDisplayed ? " Close " : " View "}
             </button>
           </td>
         </tr>
         {this.state.isViewDisplayed && totalAttendingStudents && (
-          <tr>
+          <tr className="studentAttendance">
             <td colspan="2">
-              <h4>Students in Class</h4>
+              <h4 className="attendance">Students in Class</h4>
               <p>Total : {totalAttendingStudents}</p>
-              <p>Percentage : % {attendanceRate}</p>
-              <ul>
+              <p>Percentage :  {attendanceRate}%</p>
+              <p>
                 {attendingStudents.map(student => (
-                  <li key={student._id}>{student.name}</li>
+                  <p key={student._id}>{student.name}</p>
                 ))}
-              </ul>
+              </p>
             </td>
-            <td colspan="2">
-              <h4>Students Absents</h4>
+            <td colspan="2" className="absenceCell">
+              <h4 className="absence">Students Absents</h4>
               <p>Total : {totalAbsentStudents}</p>
-              <ul>
+              <p>Percentage : %</p>
+              <p>
                 {absentStudents.map(student => (
-                  <li key={student._id}>{student.name}</li>
+                  <p key={student._id}>{student.name}</p>
                 ))}
-              </ul>
+              </p>
             </td>
           </tr>
         )}

@@ -1,5 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { validateAll } from "indicative/validator";
+import { withRouter, Browserhistory as history } from "react-router-dom";
+import "./index.css";
 
 import {
   Container,
@@ -12,9 +14,7 @@ import {
   FormText,
   FormFeedback
 } from "reactstrap";
-import "./index.css";
 
-import { withRouter, Browserhistory as history } from "react-router-dom";
 
 // import Joi from "joi";
 
@@ -25,7 +25,6 @@ class SignUp extends Component {
       name: "",
       email: "",
       password: "",
-
       status: "",
       validate: {
         emailState: ""
@@ -39,6 +38,7 @@ class SignUp extends Component {
       [name]: value
     });
   };
+
   handleSubmit = async e => {
     e.preventDefault();
     const { name, email, password } = this.state;
@@ -60,6 +60,7 @@ class SignUp extends Component {
           status: e.target.value
         })
       });
+
       const json = await res.json();
       if (res.status !== 200) {
         alert(json.msg);
@@ -93,12 +94,15 @@ class SignUp extends Component {
   render() {
     const { name, email, password } = this.state;
     return (
-      <Container className="App">
-        <h2>SignUp</h2>
+      // <Container className="App">
+      <Fragment>
+
         <Form className="form">
-          <Col>
-            <FormGroup>
-              <Label>Name</Label>
+          <h2 className="registerTitle">SignUp</h2>
+
+          <div className="formGroupBlock">
+            <FormGroup className="formGroup">
+              <Label for="name" className="labelTag">Name</Label>
               <Input
                 type="text"
                 name="name"
@@ -113,8 +117,9 @@ class SignUp extends Component {
                 That's a tasty looking name you've got there.
               </FormFeedback>
             </FormGroup>
-            <FormGroup>
-              <Label>email</Label>
+
+            <FormGroup className="formGroup">
+              <Label for="email" className="labelTag">email</Label>
               <Input
                 type="email"
                 name="email"
@@ -129,19 +134,17 @@ class SignUp extends Component {
                   this.handleInputChange(e);
                 }}
               />
-              <FormFeedback valid>
-                That's a tasty looking email you've got there.
-              </FormFeedback>
+
               <FormFeedback>
                 Looks like there is an issue with your email. Please
                 input a correct email.
               </FormFeedback>
-              <FormText>Your username is most likely your email.</FormText>
+              {/* <FormText>Your username is most likely your email.</FormText> */}
             </FormGroup>
-          </Col>
-          <Col>
-            <FormGroup>
-              <Label for="Password">Password</Label>
+
+
+            <FormGroup className="formGroup">
+              <Label for="Password" className="labelTag">Password</Label>
               <Input
                 type="password"
                 name="password"
@@ -151,7 +154,7 @@ class SignUp extends Component {
                 onChange={e => this.handleInputChange(e)}
               />
             </FormGroup>
-          </Col>
+          </div>
           <div className="button-group">
             <Button
               onClick={e => this.handleSubmit(e)}
@@ -159,7 +162,7 @@ class SignUp extends Component {
               className="btn student"
               value="STUDENT"
             >
-              Sign Up as Student
+              Student
             </Button>
 
             <Button
@@ -168,11 +171,12 @@ class SignUp extends Component {
               className="btn mentor"
               value="MENTOR"
             >
-              Sign Up as Mentor
+              Mentor
             </Button>
           </div>
         </Form>
-      </Container>
+      </Fragment>
+
     );
   }
 }

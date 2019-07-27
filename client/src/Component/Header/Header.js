@@ -2,9 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import { logout, loggedIn } from '../../Auth';
 
-
 import './index.css'
-
 
 class Header extends Component {
   onLogOut = () => {
@@ -30,6 +28,7 @@ class Header extends Component {
                 <NavItem>
                   <Nav.Link href="/#">Login</Nav.Link>
                 </NavItem>
+
                 <NavItem>
                   <Nav.Link href="/#/signUp" >Sign Up</Nav.Link>
                 </NavItem>
@@ -40,8 +39,6 @@ class Header extends Component {
               <NavItem>
                 <Nav.Link href="/#" onClick={this.onLogOut}>Logout</Nav.Link>
               </NavItem>
-
-
             )}
 
           </Nav>

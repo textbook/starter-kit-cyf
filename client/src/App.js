@@ -5,7 +5,7 @@ import Header from "./Component/Header/Header";
 import Footer from "./Component/Footer/Footer";
 import Routes from "./Routes";
 import Layout from "./Component/Layout";
-import Jumbotron from "./Component/Jumbotron";
+// import Jumbotron from "./Component/Jumbotron";
 
 // import { getMessage } from "./service";
 import "./App.css";
@@ -17,16 +17,16 @@ class App extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <main>
         <Header />
-        <Jumbotron />
+        {/* <Jumbotron /> */}
         <Layout>
           <HashRouter>
             <Routes />
-            <Footer />
           </HashRouter>
         </Layout>
-      </React.Fragment>
+        <Footer />
+      </main>
     );
   }
 }

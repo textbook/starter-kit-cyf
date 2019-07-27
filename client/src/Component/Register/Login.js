@@ -1,5 +1,5 @@
 /* eslint-disable arrow-parens */
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 const dayjs = require("dayjs");
 import bcrypt from "bcryptjs";
 import { setToken, checkRole } from "../../Auth/index";
@@ -78,7 +78,7 @@ class login extends Component {
       position.latitude,
       position.longitude
     );
-    console.log(!isPositionConfirmed && status.toLowerCase() == "student");
+    // console.log(!isPositionConfirmed && status.toLowerCase() == "student");
     if (!isPositionConfirmed && status.toLowerCase() == "student") {
       return this.props.history.replace("/studentRegistered");
     } else {
@@ -122,7 +122,7 @@ class login extends Component {
           }
         }
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     }
   };
@@ -223,13 +223,17 @@ class login extends Component {
       position,
       isPositionConfirmed
     } = this.state;
+
     return (
-      <Container className="App">
-        <h2>Sign In</h2>
+      // <Container className="App">
+      <Fragment>
+
         <Form className="form">
-          <Col>
-            <FormGroup>
-              <Label>email</Label>
+          <h2 className="registerTitle">Sign In</h2>
+
+          <div className="formGroupBlock">
+            <FormGroup className="formGroup">
+              <Label for="exampleEmail" className="labelTag">Email</Label>
               <Input
                 type="email"
                 name="email"
@@ -241,20 +245,17 @@ class login extends Component {
                 onChange={e => {
                   this.handleChange(e);
                   this.validateEmail(e);
-                  this.handleChange(e);
+                  // this.handleChange(e);
                 }}
               />
-
               <FormFeedback>
                 Looks like there is an issue with your email. Please input a
                 correct email.
               </FormFeedback>
-              {/* <FormText>Your username is most likely your email.</FormText> */}
             </FormGroup>
-          </Col>
-          <Col>
-            <FormGroup>
-              <Label for="examplePassword">Password</Label>
+
+            <FormGroup className="formGroup">
+              <Label for="examplePassword" className="labelTag">Password</Label>
               <Input
                 type="password"
                 name="password"
@@ -264,7 +265,7 @@ class login extends Component {
                 onChange={e => this.handleChange(e)}
               />
             </FormGroup>
-          </Col>
+          </div>
           <div className="button-group">
             <Button
               onClick={e => this.handleSubmit(e)}
@@ -272,40 +273,45 @@ class login extends Component {
               className="btn student"
               value="STUDENT"
             >
-              Login as Student
+              Student
             </Button>
+
             <Button
               onClick={e => this.handleSubmit(e)}
               type="submit"
               className="btn mentor"
               value="MENTOR"
             >
-              Login as Mentor
+              Mentor
             </Button>
+
             <Button
               onClick={e => this.handleSubmit(e)}
               type="submit"
               className="btn admin"
               value="ADMIN"
             >
-              Login as Admin
+              Admin
             </Button>
+
           </div>
-          <h5 className="position">
+          {/* <h5 className="position">
             Your Position : <br />
             <span>Lat : {position.latitude}</span>
             <br />
             <span>Long : {position.longitude}</span>
-          </h5>
+          </h5> */}
+
           {status.toLocaleLowerCase() == "student" &&
-          isPositionConfirmed != "notChecked" &&
-          !isPositionConfirmed ? (
-            <p>Check your location , you are not at the class yet, hurry up!</p>
-          ) : isPositionConfirmed === "confirmed" ? (
-            <p>Your position is confirmed, enjoy the class!</p>
-          ) : null}
+            isPositionConfirmed != "notChecked" &&
+            !isPositionConfirmed ? (
+              <p>Check your location , you are not at the class yet, hurry up!</p>
+            ) : isPositionConfirmed === "confirmed" ? (
+              <p>Your position is confirmed, enjoy the class!</p>
+            ) : null}
         </Form>
-      </Container>
+        {/* </Container> */}
+      </Fragment>
     );
   }
 }

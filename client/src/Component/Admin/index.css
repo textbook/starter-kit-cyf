@@ -1,23 +1,100 @@
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  /* margin-right: -15px; */
-  /* margin-left: -15px; */
+.mainAdmin-row{
+  margin-bottom: 5vh;
+}
+h3{
+ text-align: center;
+ padding: 3vh 0;
 }
 
-@media (min-width: 320px) { 
-   .xs-col-12 {
-    width: 100%;
-  }
+.tableBox{
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-@media (min-width: 768px) {
-   .md-col-6 {
-    width: 50%;
-  }
+.studentAttendance{
+  background: rgb(171, 171, 173); 
 }
-
 .student-name:hover{
   cursor : pointer;
 }
+.mainAdmin-row .navBox .navItem #navLink:hover{
+  cursor: pointer;
+  background: rgb(236, 232, 232);
+}
+
+.absence {
+  color: red;
+}
+.attendance{
+  color: green;
+}
+
+.absenceCell{
+  border-left: 2px solid gray;
+}
+.submitBtn{
+  background: green;
+  margin: auto;
+}
+.submitBtn:hover{
+  background: red;
+}
+
+/* Extra small devices (phones, 768px and down) */
+@media only screen and (max-width: 768px) {
+.mainAdmin-row .navBox .navItem{
+  width: 33%;
+}
+.mainAdmin-row .navBox .navItem #navLink{
+  font-size: 20px;
+  width: 100%;
+}
+.sessionBox{
+  margin-top: 5vh;
+  min-height: 50vh;
+}
+.tabPane{
+  border: 2px solid;
+}
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px){
+
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+.mainAdmin{
+  display: flex;
+  justify-content: space-between;
+ 
+}
+.mainAdmin-row{
+  width: 47%;
+
+}
+.mainAdmin-row .navBox .navItem{
+ 
+  width: 33%;
+  text-align: center;
+}
+.mainAdmin-row .navBox .navItem #navLink{
+  font-size: 20px;
+  width: 100%;
+  padding: 3.5vh 0;
+}
+.tabPane{
+  width: 100%;
+ 
+}
+
+.tabPane .thead-dark .tr{
+  width: 100%;
+  color: red;
+}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
