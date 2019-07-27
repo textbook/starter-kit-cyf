@@ -131,14 +131,16 @@ export const getPersonalAttendance = (req, res, next) => {
           if (
             student.attendance.map(event => event.name).includes(modul.name)
           ) {
-            modul.attendance.push(student)
-            return;
+            modul.attendance.push(student);
+            // return;
           } else {
             student.missedAnyModule.push(modul.name);
             modul.absence.push(student);
           }
-          modul["attendanceRate"] = ((students.length - modul.absence.length) * 100 / students.length).toFixed();
-
+          modul["attendanceRate"] = (
+            (modul.attendance.length * 100) /
+            students.length
+          ).toFixed(2);
         });
 
         student["attendanceRate"] = (
@@ -146,7 +148,6 @@ export const getPersonalAttendance = (req, res, next) => {
           (student.attendance.length + student.absence.length)
         ).toFixed(2);
       });
-
       res.send(err || { students, sessions, modules });
     });
   });
@@ -173,8 +174,9 @@ export const createSession = (req, res) => {
     if (err) {
       return next(err);
     }
-    let { name, session, date, city, latitude, longitude } = req.body;
-    if (!name || !session || !date || !city || !latitude || !longitude) {
+    let { latitude, longitude } = req.query;
+    let { name, session, date, city } = req.body;
+    if (!name || !session || !date || !city) {
       res.sendStatus(400);
       return;
     }
@@ -186,8 +188,8 @@ export const createSession = (req, res) => {
       session,
       date,
       city,
-      latitude,
-      longitude,
+      latitude: latitude ? latitude : "51.53",
+      longitude: longitude ? longitude : "-0.107",
       attendance: studentUsers
     };
     collection = db.collection("sessions");
@@ -219,7 +221,7 @@ export const createSession = (req, res) => {
       { date: selectedSessionDate }, // { date : selectedSessionDate}
       { $set: updateObject },
       options,
-      function (error, result) {
+      function(error, result) {
         if (result.value) {
           res.send(error || result.value);
         } else {
@@ -305,32 +307,32 @@ export const register = (req, res, next) => {
       return;
     }
 
-    if (name || email || password) {
-      const schema = Joi.object().keys({
-        name: Joi.string()
-          .min(6)
-          .required(),
-        email: Joi.string()
-          .min(6)
-          .required()
-          .email(),
-        password: Joi.string()
-          .min(6)
-          .required(),
-        status: Joi.string()
-      });
-      Joi.validate(req.body, schema, (err, value) => {
-        if (err) {
-          // send a 422 error response if validation fails
-          res.status(422).json({
-            status: "error",
-            msg:
-              "Looks like there is an issue with your email. Please input a correct email."
-          });
-        }
-      });
-      return;
-    }
+    // if (name || email || password) {
+    //   const schema = Joi.object().keys({
+    //     name: Joi.string()
+    //       .min(6)
+    //       .required(),
+    //     email: Joi.string()
+    //       .min(6)
+    //       .required()
+    //       .email(),
+    //     password: Joi.string()
+    //       .min(6)
+    //       .required(),
+    //     status: Joi.string()
+    //   });
+    //   Joi.validate(req.body, schema, (err, value) => {
+    //     if (err) {
+    //       // send a 422 error response if validation fails
+    //       res.status(422).json({
+    //         status: "error",
+    //         msg:
+    //           "Looks like there is an issue with your email. Please input a correct email."
+    //       });
+    //     }
+    //   });
+    //   return;
+    // }
 
     const db = client.db("heroku_cs1q5qk5");
     const collection = db.collection("users");
@@ -370,7 +372,7 @@ export const login = (req, res, next) => {
     }
     const { email, password, status } = req.body;
     if (!email || !password || !status) {
-      res.status(400).json({ msg: "fill out all the fields" });
+      res.status(400).json({ msg: "Fill out all the fields" });
       return;
     }
     const db = client.db("heroku_cs1q5qk5");
@@ -392,7 +394,7 @@ export const login = (req, res, next) => {
       res.status(400).json({
         msg: `You selected wrong status as ${
           req.body.status
-          }, you should select ${user.status} status!`
+        }, you should select ${user.status} status!`
       });
       return;
     }
@@ -418,6 +420,19 @@ export const login = (req, res, next) => {
       return;
     }
     //if user is check if he is already registered or not by email
+    if (
+      user.status.toLowerCase() == "student" &&
+      sessionToUpdate.attendance
+        .map(student => {
+          return student.email;
+        })
+        .includes(user.email)
+    ) {
+      res.status(404).send({
+        msg: "You are alredy logged in to the class! "
+      });
+      return;
+    }
 
     user = {
       userId: user._id,

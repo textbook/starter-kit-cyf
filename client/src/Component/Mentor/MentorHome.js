@@ -4,6 +4,7 @@ import StudentsAbsents from "./StudentsAbsents";
 import FakeUsers from "../../fakeData.json";
 import "./index.css";
 import dayjs from "dayjs";
+import moment from "moment";
 
 class MentorHome extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class MentorHome extends Component {
       data: "",
       sessions: "",
       selectedSession: "",
-      selectedSessionDate: "today",
+      selectedSessionDate: "today"
     };
   }
 
@@ -30,7 +31,9 @@ class MentorHome extends Component {
   selectSession = e => {
     //if it is not today clear interval and fetch for selected date
     //if it is today start timer with today
-    const selectedSessionDate = e.target.value;
+    const selectedSessionDate = moment(e.target.value, "YYYY-MM-DD").format(
+      "DD/MM/YYYY"
+    );
     if (selectedSessionDate !== this.state.today) {
       clearInterval(this.startTimer);
       this.setState({ selectedSessionDate }, () =>
@@ -53,11 +56,16 @@ class MentorHome extends Component {
       totalAbsentStudents,
       proportion
     } = this.state.data;
-
-    const today = dayjs().format("DD/MM/YYYY")
+    const today = moment().format("DD/MM/YYYY");
+    sessions &&
+      sessions.forEach(
+        session =>
+          (session.date = moment(session.date, "DD/MM/YYYY").format(
+            "YYYY-MM-DD"
+          ))
+      );
     return (
       <main className="main">
-
         <section className="register_Info">
           <h1>Attendance Register</h1>
           <p>Today : {today}</p>
@@ -68,20 +76,28 @@ class MentorHome extends Component {
           ) : null}
           <p>Selected Date : {date ? date : today}</p>
           <p>
-            Choose a session date    <select
+            Choose a session date{" "}
+            <select
               onChange={this.selectSession}
-              value={this.state.selectedSessionDate}
+              value={moment(
+                this.state.selectedSessionDate,
+                "DD/MM/YYYY"
+              ).format("YYYY-MM-DD")}
               name="session"
             >
               <option value={today}>Today</option>}
-            {sessions &&
-                sessions.map(session => {
-                  return (
-                    <option value={session.date}>
-                      {session.date} : {session.name} - {session.session}
-                    </option>
-                  );
-                })}
+              {sessions &&
+                sessions
+                  .sort((a, b) => {
+                    return new Date(a.date) > new Date(b.date) ? -1 : 1;
+                  })
+                  .map(session => {
+                    return (
+                      <option value={session.date}>
+                        {session.date} : {session.name} - {session.session}
+                      </option>
+                    );
+                  })}
             </select>
           </p>
         </section>
@@ -103,11 +119,13 @@ class MentorHome extends Component {
                 />
               </section>
             </div>
-            <p className="attPercentage">Attendance Percentage :  {proportion} %</p>
+            <p className="attPercentage">
+              Attendance Percentage : {proportion} %
+            </p>
           </div>
         ) : (
-            <p>There is no results for today!, please select another date</p>
-          )}
+          <p>There is no results for today!, please select another date</p>
+        )}
       </main>
     );
   }

@@ -37,7 +37,12 @@ export class TableRow extends Component {
           </td>
           <td>{city}</td>
           <td>
-            <button onClick={this.displayView} className={this.state.isViewDisplayed ? "nav-btn-danger" : "nav-btn-help"}>
+            <button
+              onClick={this.displayView}
+              className={
+                this.state.isViewDisplayed ? "nav-btn-danger" : "nav-btn-help"
+              }
+            >
               {this.state.isViewDisplayed ? " Close " : " View "}
             </button>
           </td>
@@ -47,7 +52,7 @@ export class TableRow extends Component {
             <td colspan="2">
               <h4 className="attendance">Students in Class</h4>
               <p>Total : {totalAttendingStudents}</p>
-              <p>Percentage :  {attendanceRate}%</p>
+              <p>Percentage : {attendanceRate} %</p>
               <p>
                 {attendingStudents.map(student => (
                   <p key={student._id}>{student.name}</p>
@@ -57,7 +62,7 @@ export class TableRow extends Component {
             <td colspan="2" className="absenceCell">
               <h4 className="absence">Students Absents</h4>
               <p>Total : {totalAbsentStudents}</p>
-              <p>Percentage : %</p>
+              <p>Percentage : {(100 - attendanceRate).toFixed(2)} %</p>
               <p>
                 {absentStudents.map(student => (
                   <p key={student._id}>{student.name}</p>

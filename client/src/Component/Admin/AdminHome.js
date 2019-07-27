@@ -155,7 +155,7 @@ class AdminHome extends Component {
                             return new Date(a.date) > new Date(b.date) ? -1 : 1;
                           })
                           .map(session => {
-                            // console.log(session)
+                            //console.log(session)
                             return <TableRow session={session} />;
                           })}
                     </tbody>
@@ -206,7 +206,7 @@ class AdminHome extends Component {
                     <tbody>
                       {modules &&
                         modules.map((modul, id) => {
-                          console.log(modul)
+                          console.log({modul})
                           return <ModuleTableRow modul={modul} id={id} />;
                         })}
                     </tbody>
