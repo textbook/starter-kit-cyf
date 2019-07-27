@@ -42,16 +42,7 @@ class login extends Component {
   }
   componentWillMount() {
     this.getLocation();
-    fetch(`api/sessions`)
-      .then(res => res.json())
-      .then(sessions => {
-        // const session = sessions.filter(session=>session.date=dayjs().format("DD/MM/YYYY")).reduce(session=>session)
-        const session = sessions
-          .filter(session => session.date == "28/07/2019")
-          .reduce(session => session);
-        console.log(session.longitude);
-        this.setState({ currentSession: session });
-      });
+    this.getSessionLocation();
     if (checkRole() === "STUDENT") {
       this.props.history.push("/studentRegistered");
     }
@@ -62,6 +53,18 @@ class login extends Component {
       this.props.history.push("/adminHome");
     }
   }
+  getSessionLocation = () => {
+    fetch(`api/sessions`)
+      .then(res => res.json())
+      .then(sessions => {
+        // const session = sessions.filter(session=>session.date=dayjs().format("DD/MM/YYYY")).reduce(session=>session)
+        const session = sessions
+          .filter(session => session.date == "28/07/2019") //hard coded for testing
+          .reduce(session => session);
+        console.log(session.longitude);
+        this.setState({ currentSession: session });
+      });
+  };
   handleChange = async e => {
     const { name, value } = e.target;
     this.setState({
@@ -80,7 +83,7 @@ class login extends Component {
     );
     // console.log(!isPositionConfirmed && status.toLowerCase() == "student");
     if (!isPositionConfirmed && status.toLowerCase() == "student") {
-      return this.props.history.replace("/studentRegistered");
+      return this.props.history.replace("/");
     } else {
       // fetch("http://localhost:3000/api/loginJoanTest", {
       // });
@@ -122,7 +125,7 @@ class login extends Component {
           }
         }
       } catch (err) {
-        // console.log(err);
+        console.log(err);
       }
     }
   };
@@ -144,7 +147,7 @@ class login extends Component {
           switch (error.code) {
             case error.PERMISSION_DENIED:
               alert(
-                "You denied the request for Geolocation, allow me to access you location in order to login to the class."
+                "You denied the request for Geolocation, allow me to access your location in order to login to the class."
               );
               break;
             case error.POSITION_UNAVAILABLE:
@@ -223,17 +226,18 @@ class login extends Component {
       position,
       isPositionConfirmed
     } = this.state;
-
+    console.log({ isPositionConfirmed });
     return (
       // <Container className="App">
       <Fragment>
-
         <Form className="form">
           <h2 className="registerTitle">Sign In</h2>
 
           <div className="formGroupBlock">
             <FormGroup className="formGroup">
-              <Label for="exampleEmail" className="labelTag">Email</Label>
+              <Label for="exampleEmail" className="labelTag">
+                Email
+              </Label>
               <Input
                 type="email"
                 name="email"
@@ -255,7 +259,9 @@ class login extends Component {
             </FormGroup>
 
             <FormGroup className="formGroup">
-              <Label for="examplePassword" className="labelTag">Password</Label>
+              <Label for="examplePassword" className="labelTag">
+                Password
+              </Label>
               <Input
                 type="password"
                 name="password"
@@ -293,7 +299,6 @@ class login extends Component {
             >
               Admin
             </Button>
-
           </div>
           {/* <h5 className="position">
             Your Position : <br />
@@ -302,13 +307,13 @@ class login extends Component {
             <span>Long : {position.longitude}</span>
           </h5> */}
 
-          {status.toLocaleLowerCase() == "student" &&
-            isPositionConfirmed != "notChecked" &&
-            !isPositionConfirmed ? (
-              <p>Check your location , you are not at the class yet, hurry up!</p>
-            ) : isPositionConfirmed === "confirmed" ? (
-              <p>Your position is confirmed, enjoy the class!</p>
-            ) : null}
+          {status.toLowerCase() == "student" &&
+          isPositionConfirmed != "notChecked" &&
+          !isPositionConfirmed ? (
+            <p>Check your location , you are not at the class yet, hurry up!</p>
+          ) : isPositionConfirmed === "confirmed" ? (
+            <p>Your position is confirmed, enjoy the class!</p>
+          ) : null}
         </Form>
         {/* </Container> */}
       </Fragment>

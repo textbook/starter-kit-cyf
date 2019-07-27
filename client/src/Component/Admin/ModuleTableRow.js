@@ -22,7 +22,7 @@ export class ModuleTableRow extends Component {
         <tr key={id} onClick={this.displayView} className="student-name">
           <td>{name}</td>
           <td>{attendance.length}</td>
-          <td> {attendanceRate}%</td>
+          <td> {attendanceRate} %</td>
           <td>{absence.length}</td>
         </tr>
         {this.state.isViewDisplayed && attendance && (
