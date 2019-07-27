@@ -22,7 +22,7 @@ class Home extends Component {
   render() {
     return (
       <div className="App ">
-        <Header />
+        <Header title="Quiz App"/>
         <div>
           <div className="Background-design " />
 

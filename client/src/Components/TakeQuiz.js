@@ -39,7 +39,7 @@ class TakeQuiz extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header title="Answer Quiz"/>
         <div className="Background-design" />
         <div className="Final-score">
           <span onClick={this.handPrevious} className="Previous">

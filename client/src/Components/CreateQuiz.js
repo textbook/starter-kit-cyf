@@ -16,7 +16,7 @@ class CreateQuiz extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header title="Create Quiz"/>
         <div className="Background-design" />
 
         <div className="Quiz-title">

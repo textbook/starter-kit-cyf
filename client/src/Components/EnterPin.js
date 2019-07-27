@@ -7,7 +7,7 @@ class EnterPin extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header title="Play Quiz"/>
         <div className="Background-design" />
         <div className="Game">
           <div className="Game_Enter">
