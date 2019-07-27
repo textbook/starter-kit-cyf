@@ -26,7 +26,7 @@ class Header extends Component {
             {!loggedIn() && (
               <Fragment>
                 <NavItem>
-                  <Nav.Link href="/#">Login</Nav.Link>
+                  <Nav.Link href="/#" >Login</Nav.Link>
                 </NavItem>
 
                 <NavItem>
@@ -37,7 +37,7 @@ class Header extends Component {
             {loggedIn() && (
 
               <NavItem>
-                <Nav.Link href="/#" onClick={this.onLogOut}>Logout</Nav.Link>
+                <Nav.Link href="/#" onClick={this.onLogOut} >Logout</Nav.Link>
               </NavItem>
             )}
 

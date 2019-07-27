@@ -221,7 +221,7 @@ export const createSession = (req, res) => {
       { date: selectedSessionDate }, // { date : selectedSessionDate}
       { $set: updateObject },
       options,
-      function(error, result) {
+      function (error, result) {
         if (result.value) {
           res.send(error || result.value);
         } else {
@@ -302,66 +302,49 @@ export const register = (req, res, next) => {
       return next(err);
     }
     const { name, email, password, status } = req.body;
-    if (!name || !email || !password || !status) {
-      res.status(400).json({ msg: "fill out all the fields" });
+    const schema = Joi.object().keys({
+      name: Joi.string()
+        .min(3)
+        .required(),
+      email: Joi.string()
+        .trim()
+        .required()
+        .email(),
+      password: Joi.string()
+        .min(6)
+        .required(),
+      status: Joi.string().required()
+    });
+    Joi.validate(req.body, schema, (err, result) => {
+      if (err) {
+        return res.status(422).json({ msg: err.details[0].message });
+      }
       return;
-    }
-
-    // if (name || email || password) {
-    //   const schema = Joi.object().keys({
-    //     name: Joi.string()
-    //       .min(6)
-    //       .required(),
-    //     email: Joi.string()
-    //       .min(6)
-    //       .required()
-    //       .email(),
-    //     password: Joi.string()
-    //       .min(6)
-    //       .required(),
-    //     status: Joi.string()
-    //   });
-    //   Joi.validate(req.body, schema, (err, value) => {
-    //     if (err) {
-    //       // send a 422 error response if validation fails
-    //       res.status(422).json({
-    //         status: "error",
-    //         msg:
-    //           "Looks like there is an issue with your email. Please input a correct email."
-    //       });
-    //     }
-    //   });
-    //   return;
-    // }
-
+    })
     const db = client.db("heroku_cs1q5qk5");
     const collection = db.collection("users");
     //check if the email is already in use
     const checkUser = await collection.findOne({
-      email: req.body.email
+      email: email
     });
     if (checkUser) {
       res.status(404).json({ msg: "This email is already in use" });
       return;
     }
-
-    // //Hashed password
-    // const salt = await bcrypt.genSalt(10);
-    // const hashedPwd = await bcrypt.hash(password, salt);
-
     //if the email is not in use
     const user = new User({
-      name: req.body.name,
-      email: req.body.email,
+      name: name,
+      email: email,
       //password: hashedPwd,
       password: password,
-      status: req.body.status
+      status: status
     });
     collection.insertOne(user, (err, result) => {
       res.send(err || result.ops[0]);
     });
     client.close();
   });
+
 };
 
 export const login = (req, res, next) => {
@@ -371,15 +354,28 @@ export const login = (req, res, next) => {
       return next(err);
     }
     const { email, password, status } = req.body;
-    if (!email || !password || !status) {
-      res.status(400).json({ msg: "Fill out all the fields" });
+    const schema = Joi.object().keys({
+      email: Joi.string()
+        .trim()
+        .required()
+        .email(),
+      password: Joi.string()
+        .min(6)
+        .required(),
+      status: Joi.string().required()
+    });
+    Joi.validate(req.body, schema, (err, result) => {
+      if (err) {
+        return res.status(422).json({ msg: err.details[0].message });
+      }
       return;
-    }
+    })
+
     const db = client.db("heroku_cs1q5qk5");
     //check if the user email and password matches
     let collection = db.collection("users");
     let user = await collection.findOne({
-      email: req.body.email
+      email: email
     });
     // console.log({ user });
     //if no matching with the provided email
@@ -390,17 +386,17 @@ export const login = (req, res, next) => {
       return;
     }
     //checking the status of the user
-    if (user.status.toLowerCase() != req.body.status.toLowerCase()) {
+    if (user.status.toLowerCase() != status.toLowerCase()) {
       res.status(400).json({
         msg: `You selected wrong status as ${
-          req.body.status
-        }, you should select ${user.status} status!`
+          status
+          }, you should select ${user.status} status!`
       });
       return;
     }
     //checking the password
     // console.log("password", user.password, req.body.password);
-    if (user.password != req.body.password) {
+    if (user.password != password) {
       res.status(400).json({
         msg: `Your password is wrong!`
       });

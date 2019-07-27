@@ -16,6 +16,7 @@ const app = express();
 const staticDir = path.join(__dirname, "static");
 
 // General configuration
+app.use(express.urlencoded())
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("dev"));

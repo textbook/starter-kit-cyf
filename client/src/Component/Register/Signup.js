@@ -60,7 +60,6 @@ class SignUp extends Component {
           status: e.target.value
         })
       });
-
       const json = await res.json();
       if (res.status !== 200) {
         alert(json.msg);
@@ -70,6 +69,7 @@ class SignUp extends Component {
     } catch (err) {
       console.log(err);
     }
+
   };
 
   // validate = () => {
