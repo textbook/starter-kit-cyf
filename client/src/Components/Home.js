@@ -1,21 +1,21 @@
-import React, { Component } from "react"
-import { withRouter } from "react-router-dom"
-import { getRole, loggedIn } from "../Auth/index"
-import image from "../Image.png"
-import Header from "./Header"
-import Login from "./Login"
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { getRole, loggedIn } from '../Auth/index';
+import image from '../Image.png';
+import Header from './Header';
+import Login from './Login';
 
 class Home extends Component {
   UNSAFE_componentWillMount() {
-    const role = getRole()
-    if (role === "student") {
-      return this.props.history.replace("/play")
+    const role = getRole();
+    if (role === 'student') {
+      return this.props.history.replace('/play');
     }
-    if (role === "mentor") {
-      return this.props.history.replace("/results")
+    if (role === 'mentor') {
+      return this.props.history.replace('/results');
     }
-    if (role === "leadmentor") {
-      return this.props.history.replace("/createquiz")
+    if (role === 'leadmentor') {
+      return this.props.history.replace('/createquiz');
     }
   }
 
@@ -25,8 +25,10 @@ class Home extends Component {
         <Header title="Quiz App"/>
         <div>
           <div className="Background-design " />
-          {!loggedIn() && <Login {...this.props} />}
 
+          
+             {!loggedIn() && <Login {...this.props} />}
+          
           <div className="image-container">
             <img src={image} className="image" alt="image" />
           </div>
@@ -37,8 +39,8 @@ class Home extends Component {
           <div className="codEmpire">©CodeEmpire July 2019</div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default withRouter(Home)
+export default withRouter(Home);

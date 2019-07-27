@@ -1,3 +1,6 @@
+/*//////////////////////////////////////////////////////////////////
+[ Global ]*/
+
 html,
 * {
   font-family: Avenir;
@@ -6,113 +9,15 @@ body {
   box-sizing: border-box;
   background-color: white;
 }
+
+/*//////////////////////////////////////////////////////////////////
+[ Logo and Header]*/
+
 .App-logo {
   width: 260px;
   height: 80px;
   padding: 20px 0px 40px 0px;
   margin-left: 20px;
-}
-
-.Background-design {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ce322f;
-
-  -webkit-transform-origin: 0 100%;
-  -ms-transform-origin: 0 100%;
-  transform-origin: 0 100%;
-
-  -webkit-transform: rotate(-50deg);
-  -ms-transform: rotate(-50deg);
-  transform: rotate(-50deg);
-  border-radius: 10px;
-  z-index: -1;
-}
-
-.Background-design-two {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 15%;
-  background-color: #030303;
-  margin: 5px;
-  -webkit-transform-origin: 100% 0;
-  -ms-transform-origin: 100% 0;
-  transform-origin: 100% 0;
-
-  -webkit-transform: rotate(-50deg);
-  -ms-transform: rotate(-50deg);
-  transform: rotate(-50deg);
-  border-radius: 100px;
-  z-index: -1;
-}
-
-.Background-design-three {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 70%;
-  height: 10%;
-  background-color: #ce322f;
-  margin: 5px;
-  -webkit-transform-origin: 100% 0;
-  -ms-transform-origin: 100% 0;
-  transform-origin: 100% 0;
-
-  -webkit-transform: rotate(-50deg);
-  -ms-transform: rotate(-50deg);
-  transform: rotate(-50deg);
-  border-radius: 100px;
-  z-index: -1;
-}
-.Background-design-four {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90%;
-  background-color: #030303;
-  margin: 5px;
-  -webkit-transform-origin: 0 100%;
-  -ms-transform-origin: 0 100%;
-  transform-origin: 0 100%;
-
-  -webkit-transform: rotate(-50deg);
-  -ms-transform: rotate(-50deg);
-  transform: rotate(-50deg);
-  border-radius: 100px;
-  z-index: -1;
-}
-
-.image-container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin: 0px 20px 0px 30px;
-}
-.image {
-  width: 500px;
-  border-radius: 15px;
-}
-
-.codEmpire {
-  color: rgb(0, 0, 0);
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  justify-content: flex-end;
-  padding: 0px 20px 0px 0px;
-  z-index: -1;
 }
 
 .App-header {
@@ -140,11 +45,177 @@ body {
   padding: 15px 0px 0px 0px;
 }
 
-.Timer {
-  color: white;
-  font-size: 30px;
-  padding: 60px 50px 0px 0px;
+/*//////////////////////////////////////////////////////////////////
+[ Background Design ]*/
+
+.Background-design {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ce322f;
+
+  -webkit-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+
+  -webkit-transform: rotate(-50deg);
+  -ms-transform: rotate(-50deg);
+  transform: rotate(-50deg);
+  border-radius: 10px;
+  z-index: -1;
 }
+
+.Background-design-two {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 15%;
+  background-color: #030303;
+  margin: 5px;
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+
+  -webkit-transform: rotate(-50deg);
+  -ms-transform: rotate(-50deg);
+  transform: rotate(-50deg);
+  border-radius: 100px;
+  z-index: -1;
+}
+
+.Background-design-three {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 68%;
+  height: 10%;
+  background-color: #ce322f;
+  margin: 5px;
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+
+  -webkit-transform: rotate(-50deg);
+  -ms-transform: rotate(-50deg);
+  transform: rotate(-50deg);
+  border-radius: 100px;
+  z-index: -1;
+}
+.Background-design-four {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background-color: #030303;
+  margin: 5px;
+  -webkit-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+
+  -webkit-transform: rotate(-50deg);
+  -ms-transform: rotate(-50deg);
+  transform: rotate(-50deg);
+  border-radius: 100px;
+  z-index: -1;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ login ]*/
+
+.Login-container {
+  width: 220px;
+  height: 250px;
+  margin: 30px 20px 0px 30px;
+  display: flex;
+  justify-content: center;
+  border: 0.5px solid #ce322f;
+  border-radius: 20px;
+  background-color: #ce322f35;
+}
+
+::placeholder {
+  color: #606060;
+  text-align: center;
+}
+:focus {
+  outline: none;
+}
+
+.member {
+  color: #808080;
+  text-align: center;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.Login {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.User-pass {
+  width: 140px;
+  height: 30px;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 5px;
+  border: none;
+  background-color: #ffffffaa;
+}
+.login-btn {
+  color: #444;
+  width: 100px;
+  height: 30px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 15px 20px 0px 35px;
+  border: none;
+  background-color: #ffffffaa;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ Background Image ]*/
+
+.image-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0px 50px 0px 10px;
+}
+.image {
+  width: 480px;
+  border-radius: 15px;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ Footer ]*/
+
+.codEmpire {
+  color: rgb(0, 0, 0);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px 20px 10px 0px;
+  z-index: -1;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ Footer ]*/
 
 .Game {
   display: flex;
