@@ -7,27 +7,27 @@ import {
   TableHead,
   TableRow,
   Typography
-} from "@material-ui/core"
-import React, { Component } from "react"
-import { Link, withRouter } from "react-router-dom"
-import { getRole, logout } from "../Auth/index"
-import Header from "./Header"
+} from '@material-ui/core';
+import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import { getRole, logout } from '../Auth/index';
+import Header from './Header';
 
 function createData(name, pts) {
-  return { name, pts }
+  return { name, pts };
 }
 
 const rows = [
-  createData("Bart", 89),
-  createData("Mohammad", 82),
-  createData("Joan", 78),
-  createData("Elamin", 73),
-  createData("Miles", 68)
-]
+  createData('Bart', 89),
+  createData('Mohammad', 82),
+  createData('Joan', 78),
+  createData('Elamin', 73),
+  createData('Miles', 68)
+];
 
 class Results extends Component {
   render() {
-    const role = getRole()
+    const role = getRole();
     return (
       <div className="App">
         <header className="App">
@@ -35,16 +35,9 @@ class Results extends Component {
         </header>
         <div className="Background-design" />
         <div className="Final-score">
-          <Paper className="score">
-            <Typography
-              type="input"
-              variant="h5"
-              component="h4"
-              color="primary"
-            >
-              Final Score Board
-            </Typography>
-          </Paper>
+          <Typography type="input" variant="h5" component="h4" color="primary">
+            <input placeholder="Final score for" className="score" />
+          </Typography>
         </div>
         <div className="table">
           <Paper className="Paper">
@@ -73,19 +66,19 @@ class Results extends Component {
         </div>
 
         <div className="Add-Enter">
-          {(role === "student" || role === "leadmentor") && (
+          {(role === 'student' || role === 'leadmentor') && (
             <Link
               className="Add"
               to={
-                role === "student"
-                  ? "/play"
-                  : role === "leadmentor"
-                  ? "/createquiz"
+                role === 'student'
+                  ? '/play'
+                  : role === 'leadmentor'
+                  ? '/createquiz'
                   : null
               }
             >
               <Button variant="outlined" color="default">
-                {role === "student" ? "Play Quiz" : "Create Quiz"}
+                {role === 'student' ? 'Play Quiz' : 'Create Quiz'}
               </Button>
             </Link>
           )}
@@ -96,8 +89,8 @@ class Results extends Component {
         <div className="Background-design-two" />
         <div className="Background-design-three" />
       </div>
-    )
+    );
   }
 }
 
-export default withRouter(Results)
+export default withRouter(Results);

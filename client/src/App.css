@@ -40,9 +40,9 @@ body {
   font-family: Avenir;
   font-weight: 300;
   color: #606060;
-  font-size: 2rem;
-  align-items: flex-start;
-  padding: 15px 0px 0px 0px;
+  font-size: 1.8rem;
+  align-items: center;
+  padding: 0px 0px 0px 0px;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -275,6 +275,9 @@ body {
   margin: 10px 50px 10px 50px;
 }
 
+/*//////////////////////////////////////////////////////////////////
+[ Component: Result ]*/
+
 .Final-score {
   display: flex;
   justify-content: center;
@@ -284,9 +287,15 @@ body {
 .score {
   display: flex;
   justify-content: center;
-  padding: 10px;
-  margin-top: 15px;
-  width: 20%;
+  padding: 5px;
+  margin: 15px;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  border: 0.5px solid #808080;
+  font-family: Avenir;
+  font-size: 1.2rem;
+  background-color: #ffffffb8; 
 }
 
 .table {
@@ -298,6 +307,9 @@ body {
   justify-content: center;
   padding-top: 20px;
 }
+
+/*//////////////////////////////////////////////////////////////////
+[ Component: Question ]*/
 
 .choices {
   display: flex;
@@ -320,6 +332,9 @@ body {
   align-content: center;
   justify-content: space-around;
 }
+
+/*//////////////////////////////////////////////////////////////////
+[ Buttons ]*/
 
 .Previous {
   display: flex;
@@ -347,7 +362,7 @@ a:hover {
 }
 
 .Add {
-  padding: 5px;
+  padding: 0px 5px;
 }
 
 .Add-Enter {
