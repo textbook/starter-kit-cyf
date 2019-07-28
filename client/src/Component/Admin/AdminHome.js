@@ -3,8 +3,21 @@ import CreateSession from "./CreateSession";
 import "./index.css";
 import TableRow from "./TableRow";
 import StudentTableRow from "./StudentTableRow";
-import { TabContent, Table, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from "reactstrap";
-import classnames from 'classnames';
+import {
+  TabContent,
+  Table,
+  TabPane,
+  Nav,
+  NavItem,
+  NavLink,
+  Card,
+  Button,
+  CardTitle,
+  CardText,
+  Row,
+  Col
+} from "reactstrap";
+import classnames from "classnames";
 import ModuleTableRow from "./ModuleTableRow";
 const dayjs = require("dayjs");
 const moment = require("moment");
@@ -21,7 +34,7 @@ class AdminHome extends Component {
       longitude: "",
       session: "",
       isStudentViewDisplayed: false,
-      activeTab: "1",
+      activeTab: "1"
     };
   }
 
@@ -63,12 +76,10 @@ class AdminHome extends Component {
         activeTab: el
       });
     }
-  }
+  };
 
   render() {
-
     const { students, sessions, modules } = this.state.data;
-
     sessions &&
       sessions.forEach(
         session =>
@@ -76,7 +87,6 @@ class AdminHome extends Component {
             "YYYY-MM-DD"
           ))
       );
-
     return (
       <main className="mainAdmin">
         <div className="mainAdmin-row">
@@ -91,14 +101,18 @@ class AdminHome extends Component {
             </thead>
             <tbody>
               {students &&
-                students.map(student => {
-                  return (
-                    <StudentTableRow
-                      student={student}
-                      handleStudentView={this.selectStudent}
-                    />
-                  );
-                })}
+                students
+                  .sort((a, b) => {
+                    return b.attendanceRate - a.attendanceRate;
+                  })
+                  .map(student => {
+                    return (
+                      <StudentTableRow
+                        student={student}
+                        handleStudentView={this.selectStudent}
+                      />
+                    );
+                  })}
             </tbody>
           </Table>
         </div>
@@ -107,28 +121,34 @@ class AdminHome extends Component {
           <Nav tabs className="navBox">
             <NavItem className="navItem">
               <NavLink
-                className={classnames({ active: this.state.activeTab === '1' })}
+                className={classnames({ active: this.state.activeTab === "1" })}
                 id="navLink"
-                onClick={() => { this.toggle('1'); }}
+                onClick={() => {
+                  this.toggle("1");
+                }}
               >
                 Sessions
-            </NavLink>
+              </NavLink>
             </NavItem>
 
             <NavItem className="navItem">
               <NavLink
-                className={classnames({ active: this.state.activeTab === '2' })}
+                className={classnames({ active: this.state.activeTab === "2" })}
                 id="navLink"
-                onClick={() => { this.toggle('2'); }}
+                onClick={() => {
+                  this.toggle("2");
+                }}
               >
                 New Session
               </NavLink>
             </NavItem>
             <NavItem className="navItem">
               <NavLink
-                className={classnames({ active: this.state.activeTab === '3' })}
+                className={classnames({ active: this.state.activeTab === "3" })}
                 id="navLink"
-                onClick={() => { this.toggle('3'); }}
+                onClick={() => {
+                  this.toggle("3");
+                }}
               >
                 Modules
               </NavLink>
@@ -167,11 +187,10 @@ class AdminHome extends Component {
             <TabPane tabId="2" className="tabPane">
               <Row>
                 <Col sm="12">
-                  <Table >
+                  <Table>
                     <thead className="thead-dark">
                       <tr>
                         <th scope="col">Create New Session</th>
-
                       </tr>
                     </thead>
                     <tbody>
@@ -206,7 +225,6 @@ class AdminHome extends Component {
                     <tbody>
                       {modules &&
                         modules.map((modul, id) => {
-                          console.log({modul})
                           return <ModuleTableRow modul={modul} id={id} />;
                         })}
                     </tbody>
