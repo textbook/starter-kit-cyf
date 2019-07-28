@@ -132,7 +132,7 @@ body {
 
 .Login-container {
   width: 220px;
-  height: 250px;
+  height: 270px;
   margin: 30px 20px 0px 30px;
   display: flex;
   justify-content: center;
@@ -185,6 +185,15 @@ body {
   background-color: #ffffffaa;
 }
 
+.signup {
+  font-size: 0.75rem;
+  color: #ffffff;
+  margin-top: 15px;
+  display:flex;
+  justify-content: center;
+
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ Background Image ]*/
 
@@ -195,7 +204,7 @@ body {
   margin: 0px 50px 0px 10px;
 }
 .image {
-  width: 480px;
+  width: 450px;
   border-radius: 15px;
 }
 
@@ -330,13 +339,14 @@ body {
 
 .choices {
   display: flex;
-  flex: wrap;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   align-content: center;
-  justify-content: space-evenly;
-  margin: 5px 0px 5px 0px;
+  justify-content: space-around;
+  margin: 5px;
 }
+
 
 .Questions {
   font-family: Avenir;
