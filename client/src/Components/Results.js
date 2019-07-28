@@ -21,7 +21,7 @@ class Results extends Component {
   }
 
   handleClick = () => {
-    fetch(`http://localhost:3100/api/result/${this.state.value}`).then(res => res.json()).then(res => {
+    fetch(`/api/result/${this.state.value}`).then(res => res.json()).then(res => {
       if (res.length > 0) {
         const { results } = res[0]
         return this.setState({ results })
