@@ -59,7 +59,7 @@ class login extends Component {
       .then(sessions => {
         // const session = sessions.filter(session=>session.date=dayjs().format("DD/MM/YYYY")).reduce(session=>session)
         const session = sessions
-          .filter(session => session.date == "28/07/2019") //hard coded for testing
+          .filter(session => session.date == "31/07/2019") //hard coded for testing
           .reduce(session => session);
         console.log(session.longitude);
         this.setState({ currentSession: session });

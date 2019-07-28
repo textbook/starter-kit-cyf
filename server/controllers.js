@@ -407,7 +407,7 @@ export const login = (req, res, next) => {
     const selectedDate = req.query.date ? req.query.date : today;
     collection = db.collection("sessions");
     const sessionToUpdate = await collection.findOne({
-      date: "28/07/2019" //hard coded for testing reality date : selectedDate
+      date: "31/07/2019" //hard coded for testing reality date : selectedDate
     });
     if (!sessionToUpdate && status.toLowerCase() == "student") {
       res.status(404).send({
@@ -437,13 +437,13 @@ export const login = (req, res, next) => {
       status: user.status,
       city: user.city,
       isAttended: true,
-      timeOfArrival: dayjs().format("HH:mm")
+      timeOfArrival: new Date().toLocaleTimeString()
     };
     sessionToUpdate.attendance.push(user);
     const options = { returnOriginal: false };
     //updating the session data on database
     collection.findOneAndUpdate(
-      { date: "28/07/2019" }, // { date : selectedDate}
+      { date: "31/07/2019" }, // { date : selectedDate}
       {
         $set: {
           attendance: sessionToUpdate.attendance
