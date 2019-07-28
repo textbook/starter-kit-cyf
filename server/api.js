@@ -38,8 +38,6 @@ api.post("/quiz", (req, res) => {
     const db = client.db("heroku_shn7149c")
     const collection = db.collection("quiz")
 
-    if (req.body.length < 3) return res.sendStatus(400)
-
     collection.insertOne(req.body, function(error, result) {
       res.send(error || result.ops[0])
       client.close()
@@ -66,38 +64,38 @@ api.post("/login", function(req, res) {
       } else {
         return res.status(400).send({ msg: "Wrong email or password." })
       }
-
-      res.send(error || User)
+      
+      res.send(error || result)
       client.close()
     })
   })
 })
 
-api.post("/answer", (req, res) => {
-  const client = getClient()
-  client.connect(function() {
-    const db = client.db("heroku_shn7149c")
-    const collection = db.collection("student_answers")
 
-    if (req.body.length < 3) return res.sendStatus(400)
-
-    collection.insertOne(req.body, function(error, result) {
-      res.send(error || result.ops[0])
-      client.close()
-    })
-  })
-})
-
-api.post("/result", (req, res) => {
+api.post("/result/:pin?", (req, res) => {
   const client = getClient()
   client.connect(function() {
     const db = client.db("heroku_shn7149c")
     const collection = db.collection("results")
-
+    
     const { pin } = req.params
-
+    
     collection.find({ pin }, function(error, result) {
       res.send(error || result.ops[0])
+      client.close()
+    })
+  })
+})
+
+api.put("/answer", (req, res) => {
+  const client = getClient()
+  client.connect(function() {
+    const db = client.db("heroku_shn7149c")
+    const collection = db.collection("student_answers")
+    const { pin, user, answers } = req.body
+
+    collection.findOneAndUpdate({ pin }, {$set:{ [user]: answers}}, { returnOriginal: false }, function(error, result) {
+      res.send(error || result.value)
       client.close()
     })
   })

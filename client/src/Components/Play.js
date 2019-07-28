@@ -31,7 +31,7 @@ export default class Play extends Component {
             handleClick={this.handleClick}
           />
         ) : (
-          <TakeQuiz quiz={this.state.quiz} />
+          <TakeQuiz quiz={this.state.quiz} pin={this.state.pin} />
         )}
       </div>
     )

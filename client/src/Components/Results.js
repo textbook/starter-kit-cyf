@@ -35,12 +35,13 @@ class Results extends Component {
         </header>
         <div className="Background-design" />
         <div className="Final-score">
+
           
             <input placeholder="Final score for" className="score" />
             <button type="submit" className="score score-enter">
               Enter
             </button>
-          
+
         </div>
         <div className="table">
           <Paper className="Paper">

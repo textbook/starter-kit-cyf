@@ -1,6 +1,7 @@
 import { Button } from "@material-ui/core"
 import React, { Component } from "react"
 import { Link, withRouter } from "react-router-dom"
+import { getProfile } from "../Auth/index"
 import Header from "./Header"
 import Question from "./Question"
 
@@ -17,8 +18,13 @@ class TakeQuiz extends Component {
         count: count + 1
       })
     } else {
-      console.log(this.state.answers)
-      // axios.post()
+      const { email } = getProfile()
+      const answers = {
+        pin: this.props.pin,
+        user: email,
+        answers: this.state.answers
+      }
+      axios.put("/api/answer", answers).then(res => console.log(res))
     }
   }
   handPrevious = () => {
@@ -30,16 +36,15 @@ class TakeQuiz extends Component {
   }
 
   handleAnswers = (answer, question) => {
-    console.log(this.state.answers)
-    this.setState(pre => {
-      answers: pre.answers.push([answer, question])
-    })
+    this.setState(pre => pre.answers.push([answer, question]))
   }
 
   render() {
     return (
       <div className="App">
-        <Header title="Answer Quiz"/>
+
+        <Header title="Answer Quiz" />
+
         <div className="Background-design" />
         <div className="Final-score">
           <span onClick={this.handPrevious} className="Previous">

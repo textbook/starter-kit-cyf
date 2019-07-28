@@ -2,21 +2,34 @@ import { Button, Paper, TextField, Typography } from "@material-ui/core"
 import React, { Component } from "react"
 import { Link, withRouter } from "react-router-dom"
 import Header from "./Header"
+import axios from "axios";
 
 class CreateQuiz extends Component {
   state = {
-    questions: {
-      1: [""]
-    },
-    answers: {
-      1: [""]
-    }
+    title: "",
+    questions: [
+      {
+        question: "",
+        answers: [
+          {
+            name: ""
+          }
+        ],
+        index_correct: null
+      }
+    ]
+  }
+
+  handleClick = () => {
+    axios.post("/api/quiz", this.state).then(res => console.log(res))
   }
 
   render() {
     return (
       <div className="App">
-        <Header title="Create Quiz"/>
+
+        <Header title="Create Quiz" />
+
         <div className="Background-design" />
 
         <div className="Quiz-title">
@@ -98,7 +111,11 @@ class CreateQuiz extends Component {
               </Button>
             </div>
             <div className="Add">
-              <Button variant="outlined" color="default">
+              <Button
+                variant="outlined"
+                color="default"
+                onClick={() => this.handleClick}
+              >
                 Create Quiz
               </Button>
             </div>
