@@ -279,7 +279,10 @@ body {
 [ Component: Result ]*/
 
 .Final-score {
+  
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
   margin-top: 15px;
 }
@@ -295,7 +298,16 @@ body {
   border: 0.5px solid #808080;
   font-family: Avenir;
   font-size: 1.2rem;
-  background-color: #ffffffb8; 
+  background-color: #ffffffb8;
+}
+
+.score-enter {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px 0px 2px;
+  color: #ffffff;
+  background-color: #ce322f;
+  width: 100px;
 }
 
 .table {
@@ -306,6 +318,11 @@ body {
   align-content: center;
   justify-content: center;
   padding-top: 20px;
+}
+
+.Add-results {
+  padding: 0px 10px;
+  margin: 0px 0px 10px 0px;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -362,7 +379,7 @@ a:hover {
 }
 
 .Add {
-  padding: 0px 5px;
+  padding: 5px;
 }
 
 .Add-Enter {
