@@ -18,7 +18,7 @@ export default class StudentTableRow extends Component {
 
   render() {
     const { student } = this.props;
-    // console.log(student);
+        console.log({student});
     return (
       <Fragment>
         <tr

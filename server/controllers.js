@@ -146,10 +146,10 @@ export const getPersonalAttendance = (req, res, next) => {
           ).toFixed(2);
         });
 
-        student["attendanceRate"] = (
+        student["attendanceRate"] = Number((
           (100 * student.attendance.length) /
           (student.attendance.length + student.absence.length)
-        ).toFixed(2);
+        ).toFixed(2));
       });
       res.send(err || { students, sessions, modules });
     });
