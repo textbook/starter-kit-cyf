@@ -1,6 +1,9 @@
 /* eslint-disable arrow-parens */
 import User from "./model/User";
 const dayjs = require("dayjs");
+const timeZone = require("dayjs-ext/plugin/timeZone"); // load on demand
+dayjs.extend(timeZone); // use plugin
+
 const Joi = require("joi");
 
 // const bcrypt = require("bcryptjs");
@@ -221,7 +224,7 @@ export const createSession = (req, res) => {
       { date: selectedSessionDate }, // { date : selectedSessionDate}
       { $set: updateObject },
       options,
-      function (error, result) {
+      function(error, result) {
         if (result.value) {
           res.send(error || result.value);
         } else {
@@ -320,7 +323,7 @@ export const register = (req, res, next) => {
         return res.status(422).json({ msg: err.details[0].message });
       }
       return;
-    })
+    });
     const db = client.db("heroku_cs1q5qk5");
     const collection = db.collection("users");
     //check if the email is already in use
@@ -344,7 +347,6 @@ export const register = (req, res, next) => {
     });
     client.close();
   });
-
 };
 
 export const login = (req, res, next) => {
@@ -369,7 +371,7 @@ export const login = (req, res, next) => {
         return res.status(422).json({ msg: err.details[0].message });
       }
       return;
-    })
+    });
 
     const db = client.db("heroku_cs1q5qk5");
     //check if the user email and password matches
@@ -388,9 +390,9 @@ export const login = (req, res, next) => {
     //checking the status of the user
     if (user.status.toLowerCase() != status.toLowerCase()) {
       res.status(400).json({
-        msg: `You selected wrong status as ${
-          status
-          }, you should select ${user.status} status!`
+        msg: `You selected wrong status as ${status}, you should select ${
+          user.status
+        } status!`
       });
       return;
     }
@@ -437,7 +439,7 @@ export const login = (req, res, next) => {
       status: user.status,
       city: user.city,
       isAttended: true,
-      timeOfArrival: new Date().toLocaleTimeString()
+      timeOfArrival: dayjs().format("HH:mm", { timeZone: "Europe/London" }) // convert to CET before formatting
     };
     sessionToUpdate.attendance.push(user);
     const options = { returnOriginal: false };
