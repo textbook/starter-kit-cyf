@@ -35,9 +35,12 @@ class Results extends Component {
         </header>
         <div className="Background-design" />
         <div className="Final-score">
-          <Typography type="input" variant="h5" component="h4" color="primary">
+          
             <input placeholder="Final score for" className="score" />
-          </Typography>
+            <button type="submit" className="score score-enter">
+              Enter
+            </button>
+          
         </div>
         <div className="table">
           <Paper className="Paper">
@@ -68,7 +71,7 @@ class Results extends Component {
         <div className="Add-Enter">
           {(role === 'student' || role === 'leadmentor') && (
             <Link
-              className="Add"
+              className="Add-results"
               to={
                 role === 'student'
                   ? '/play'
