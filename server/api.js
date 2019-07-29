@@ -32,7 +32,6 @@ api.get("/quiz/:pin?", (req, res) => {
   })
 })
 
-
 api.get("/result/:pin?", (req, res) => {
   const client = getClient()
   client.connect(function() {
@@ -74,18 +73,16 @@ api.post("/login", function(req, res) {
           role: User.role,
           email: User.email
         }
+        client.close()
         const token = jwttokencreator(options)
         return res.status(200).send(token)
       } else {
+        client.close()
         return res.status(400).send({ msg: "Wrong email or password." })
       }
-      
-      res.send(error || result)
-      client.close()
     })
   })
 })
-
 
 api.put("/answer", (req, res) => {
   const client = getClient()
@@ -94,9 +91,14 @@ api.put("/answer", (req, res) => {
     const collection = db.collection("student_answers")
     const { pin, user, answers } = req.body
 
-    collection.findOneAndUpdate({ pin }, {$set:{ [user]: answers}}, { returnOriginal: false }, function(error, result) {
-      res.send(error || result.value)
-      client.close()
-    })
+    collection.findOneAndUpdate(
+      { pin },
+      { $set: { [user]: answers } },
+      { returnOriginal: false },
+      function(error, result) {
+        res.send(error || result.value)
+        client.close()
+      }
+    )
   })
 })

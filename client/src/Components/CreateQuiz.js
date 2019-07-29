@@ -1,33 +1,66 @@
 import { Button, Paper, TextField, Typography } from "@material-ui/core"
+import axios from "axios"
 import React, { Component } from "react"
 import { Link, withRouter } from "react-router-dom"
+import swal from "sweetalert"
 import Header from "./Header"
-import axios from "axios";
 
 class CreateQuiz extends Component {
   state = {
     title: "",
-    questions: [
-      {
+    questions: [],
+    count: -1
+  }
+
+  componentDidMount() {
+    this.addQuestion()
+  }
+  addQuestion = () => {
+    this.setState(pre => {
+      pre.questions.push({
         question: "",
-        answers: [
-          {
-            name: ""
-          }
-        ],
-        index_correct: null
-      }
-    ]
+        answers: [{ name: "" }, { name: "" }, { name: "" }, { name: "" }],
+        index_correct: ""
+      })
+      pre.count++
+    })
   }
 
   handleClick = () => {
     axios.post("/api/quiz", this.state).then(res => console.log(res))
+    return swal({
+      title: "Good job!",
+      text: "Quiz has been created.",
+      icon: "success"
+    })
+  }
+
+  updateAnswer = (e, i) => {
+    const newText = e.target.value
+    let questions = this.state.questions
+    questions[0].answers[i] = { name: newText }
+    this.setState({ questions })
+  }
+
+  updateTitle = e => {
+    this.setState({ title: e.target.value })
+  }
+
+  correctIndex = e => {
+    let questions = this.state.questions
+    questions[0].index_correct = "ABCD".indexOf(e.target.value.trim())
+    this.setState({ questions })
+  }
+
+  questionText = e => {
+    let questions = this.state.questions
+    questions[0].question = e.target.value
+    this.setState({ questions })
   }
 
   render() {
     return (
       <div className="App">
-
         <Header title="Create Quiz" />
 
         <div className="Background-design" />
@@ -39,6 +72,7 @@ class CreateQuiz extends Component {
             margin="dense"
             variant="outlined"
             color="secondary"
+            onChange={this.updateTitle}
           />
         </div>
         <div className="Paper-two">
@@ -62,6 +96,7 @@ class CreateQuiz extends Component {
                     margin="normal"
                     variant="outlined"
                     color="primary"
+                    onChange={e => this.updateAnswer(e, 0)}
                   />
                   <p>B</p>
                   <TextField
@@ -69,6 +104,7 @@ class CreateQuiz extends Component {
                     defaultValue=""
                     margin="normal"
                     variant="outlined"
+                    onChange={e => this.updateAnswer(e, 1)}
                   />
                 </div>
                 <div className="choices">
@@ -79,6 +115,7 @@ class CreateQuiz extends Component {
                     margin="normal"
                     variant="outlined"
                     color="primary"
+                    onChange={e => this.updateAnswer(e, 2)}
                   />
                   <p>D</p>
                   <TextField
@@ -87,16 +124,19 @@ class CreateQuiz extends Component {
                     margin="normal"
                     variant="outlined"
                     color="primary"
+                    onChange={e => this.updateAnswer(e, 3)}
                   />
                 </div>
 
                 <div className="Enter">
                   <TextField
+                    name="ali"
                     id="outlined-dense"
                     label="Correct Answer"
                     margin="dense"
                     variant="outlined"
                     color="secondary"
+                    onChange={this.correctIndex}
                   />
                 </div>
               </div>
@@ -106,7 +146,11 @@ class CreateQuiz extends Component {
         <div className="Add-cancel-plus">
           <div className="Add-cancel">
             <div className="Add">
-              <Button variant="outlined" color="default">
+              <Button
+                variant="outlined"
+                color="default"
+                onClick={this.addQuestion}
+              >
                 Add Question
               </Button>
             </div>
@@ -114,7 +158,7 @@ class CreateQuiz extends Component {
               <Button
                 variant="outlined"
                 color="default"
-                onClick={() => this.handleClick}
+                onClick={this.handleClick}
               >
                 Create Quiz
               </Button>
