@@ -15,12 +15,12 @@ import Header from "./Header"
 
 class Results extends Component {
   state = {
-    value: "",
     results: null
   }
 
-  handleClick = () => {
-    fetch(`/api/result/${this.state.value}`)
+  componentDidMount() {
+    const pin = parseInt(this.props.location.search.substr(1))
+    fetch(`/api/result/${pin}`)
       .then(res => res.json())
       .then(res => {
         if (res.length > 0) {

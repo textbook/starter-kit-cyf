@@ -1,14 +1,17 @@
-import { Button, Paper, Typography } from "@material-ui/core";
-import React, { Component, Fragment } from "react";
+import { Button, Paper, Typography } from "@material-ui/core"
+import React, { Component, Fragment } from "react"
+import { getCorrectQuestion } from "./Helper"
 
 export default class Question extends Component {
   render() {
-    const { id, question, answers } = this.props.question
-const alphabet = "ABCDEFGH"
+    const { id, question, answers, correctAnswer } = this.props.question
+    const { pin } = this.props
     return (
       <Paper className="Paper-one">
         <Typography variant="h6" component="h6">
-                <p className="Questions">Question {this.props.count}/{this.props.length}</p>
+          <p className="Questions">
+            Question {this.props.count}/{this.props.length}
+          </p>
           <Paper className="Paper-two">
             <p className="Questions">{question}</p>
           </Paper>
@@ -16,10 +19,20 @@ const alphabet = "ABCDEFGH"
           <div className="choices">
             {answers.map((answer, i) => {
               return (
-                <Fragment key={i} >
-                  <p>{alphabet.charAt(i)}</p>
-                  <Button variant="contained" color="primary" onClick={() => this.props.answer(i, this.props.count - 1)}>
-                    {answer.name}
+                <Fragment key={i}>
+                  <p>{answer.name}</p>
+                  <Button
+                    variant="contained"
+                    color={
+                      getCorrectQuestion(pin, id) === answer.name
+                        ? "default"
+                        : "primary"
+                    }
+                    onClick={() => {
+                      this.props.answer(answer.name, id, correctAnswer)
+                    }}
+                  >
+                    {answer.answer}
                   </Button>
                 </Fragment>
               )

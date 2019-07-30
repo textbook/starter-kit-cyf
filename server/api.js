@@ -1,6 +1,6 @@
 import { Router } from "express"
 import { getClient } from "./db"
-import { jwttokencreator } from "./helper"
+import { getResult, jwttokencreator } from "./helper"
 
 export const api = new Router()
 
@@ -16,6 +16,21 @@ api.get("/", (_, res, next) => {
   })
 })
 
+api.get("/get-pin", (req, res) => {
+  const client = getClient()
+
+  client.connect(function() {
+    const db = client.db("heroku_shn7149c")
+    const collection = db.collection("quiz")
+
+    collection.find().toArray(function(error, result) {
+      const pin = result[result.length - 1].pin + Math.floor(Math.random() * 10)
+      res.send(error || { pin })
+      client.close()
+    })
+  })
+})
+
 api.get("/quiz/:pin?", (req, res) => {
   const client = getClient()
 
@@ -23,8 +38,8 @@ api.get("/quiz/:pin?", (req, res) => {
     const db = client.db("heroku_shn7149c")
     const collection = db.collection("quiz")
 
-    const { pin } = req.params
-
+    let { pin } = req.params
+    pin = parseInt(pin, 10)
     collection.find({ pin }).toArray(function(error, result) {
       res.send(error || result)
       client.close()
@@ -32,12 +47,11 @@ api.get("/quiz/:pin?", (req, res) => {
   })
 })
 
-
 api.get("/result/:pin?", (req, res) => {
   const client = getClient()
   client.connect(function() {
     const db = client.db("heroku_shn7149c")
-    const collection = db.collection("results")
+    const collection = db.collection("student_answers")
 
     const { pin } = req.params
 
@@ -72,31 +86,47 @@ api.post("/login", function(req, res) {
       if (User.password === password) {
         const options = {
           role: User.role,
-          email: User.email
+          email: User.email,
+          _id: User._id
         }
+        client.close()
         const token = jwttokencreator(options)
         return res.status(200).send(token)
       } else {
+        client.close()
         return res.status(400).send({ msg: "Wrong email or password." })
       }
-      
-      res.send(error || result)
-      client.close()
     })
   })
 })
 
-
 api.put("/answer", (req, res) => {
   const client = getClient()
-  client.connect(function() {
+  client.connect(async function() {
     const db = client.db("heroku_shn7149c")
     const collection = db.collection("student_answers")
-    const { pin, user, answers } = req.body
+    const { pin, email, answers, _id } = req.body
+    const point = getResult(answers)
 
-    collection.findOneAndUpdate({ pin }, {$set:{ [user]: answers}}, { returnOriginal: false }, function(error, result) {
-      res.send(error || result.value)
-      client.close()
-    })
+    const user = await collection.findOne({ email, pin })
+    if (user) {
+      collection.updateOne(
+        { pin, email },
+        { $set: { answers, point } },
+        { returnOriginal: false },
+        function(error, result) {
+          res.send(error || { point })
+          return client.close()
+        }
+      )
+    } else {
+      collection.insertOne(
+        { pin, email, answers, userId: _id, point },
+        (err, result) => {
+          res.send(err || { point })
+          return client.close()
+        }
+      )
+    }
   })
 })
