@@ -24,6 +24,7 @@ api.get("/get-pin", (req, res) => {
     const collection = db.collection("quiz")
 
     collection.find().toArray(function(error, result) {
+      result = result.sort((a, b) => b.pin - a.pin)
       const pin = result[result.length - 1].pin + Math.floor(Math.random() * 10)
       res.send(error || { pin })
       client.close()
