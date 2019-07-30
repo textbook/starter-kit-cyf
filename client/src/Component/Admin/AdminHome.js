@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import CreateSession from "./CreateSession";
 import "./index.css";
 import TableRow from "./TableRow";
+import BarChart from "./BarChart";
+import BarChart1 from "./BarChart1";
+import BarChart2 from "./BarChart2";
 import StudentTableRow from "./StudentTableRow";
 import {
   TabContent,
@@ -115,13 +118,18 @@ class AdminHome extends Component {
                   })}
             </tbody>
           </Table>
+          {students &&
+            students.sort((a, b) => {
+              return (a.name).toLowerCase() > (b.name).toLowerCase() ? 1 : -1
+            }) && <BarChart2 students={students} />}
         </div>
-
         <div className="mainAdmin-row sessionBox">
           <Nav tabs className="navBox">
             <NavItem className="navItem">
               <NavLink
-                className={classnames({ active: this.state.activeTab === "1" })}
+                className={classnames({
+                  active: this.state.activeTab === "1"
+                })}
                 id="navLink"
                 onClick={() => {
                   this.toggle("1");
@@ -133,7 +141,9 @@ class AdminHome extends Component {
 
             <NavItem className="navItem">
               <NavLink
-                className={classnames({ active: this.state.activeTab === "2" })}
+                className={classnames({
+                  active: this.state.activeTab === "2"
+                })}
                 id="navLink"
                 onClick={() => {
                   this.toggle("2");
@@ -144,7 +154,9 @@ class AdminHome extends Component {
             </NavItem>
             <NavItem className="navItem">
               <NavLink
-                className={classnames({ active: this.state.activeTab === "3" })}
+                className={classnames({
+                  active: this.state.activeTab === "3"
+                })}
                 id="navLink"
                 onClick={() => {
                   this.toggle("3");
@@ -172,7 +184,9 @@ class AdminHome extends Component {
                       {sessions &&
                         sessions
                           .sort((a, b) => {
-                            return new Date(a.date) > new Date(b.date) ? -1 : 1;
+                            return new Date(a.date) > new Date(b.date)
+                              ? -1
+                              : 1;
                           })
                           .map(session => {
                             //console.log(session)
@@ -180,6 +194,7 @@ class AdminHome extends Component {
                           })}
                     </tbody>
                   </Table>
+                  {sessions && <BarChart1 sessions={sessions} />}
                 </Col>
               </Row>
             </TabPane>
@@ -229,6 +244,7 @@ class AdminHome extends Component {
                         })}
                     </tbody>
                   </Table>
+                  {modules && <BarChart modules={modules} />}
                 </Col>
               </Row>
             </TabPane>
