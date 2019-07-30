@@ -44,7 +44,9 @@ class TakeQuiz extends Component {
               title: `Your point: ${res.data.point}`,
               text: "Sorry, practice more and try again.",
               icon: "success"
-            }).then(() => this.props.history.replace("/results"))
+            }).then(() =>
+              this.props.history.replace(`/result?${this.props.pin}`)
+            )
           }
         } else {
           return swal({

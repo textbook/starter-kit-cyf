@@ -8,7 +8,7 @@ export default function CreateQuestion(props) {
       <div className="Background-design" />
 
       <div className="Paper-two">
-        <Paper style={{ backgroundColor: "#d3d3d3" }}>
+        <Paper style={{ border: "1px dotted black" }}>
           <Typography variant="h6" component="h6">
             <div className="Questions">
               <p>Question {index + 1}</p>
