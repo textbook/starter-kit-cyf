@@ -61,7 +61,9 @@ class CreateQuiz extends Component {
   handleClick = () => {
     axios.post("/api/quiz", this.state).then(res => {
       return swal({
+
         title: `Quiz pin: ${this.state.pin}`,
+
         text: "Quiz has been created.",
         icon: "success"
       })
