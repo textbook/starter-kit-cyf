@@ -34,6 +34,7 @@ export default class Question extends Component {
                   >
                     {answer.answer}
                   </Button>
+                  &nbsp;&nbsp;
                 </Fragment>
               )
             })}

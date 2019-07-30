@@ -143,16 +143,16 @@ class CreateQuiz extends Component {
           </div>
         </div>
         <div className="Add">
+          <Button variant="outlined" color="default" onClick={this.handleClick}>
+            Create Quiz
+          </Button>
+        </div>
+        <div className="Add">
           <Link className="" to="/results">
             <Button variant="outlined" color="default">
               Results
             </Button>
           </Link>
-        </div>
-        <div className="Add">
-          <Button variant="outlined" color="default" onClick={this.handleClick}>
-            Create Quiz
-          </Button>
         </div>
       </div>
     )
