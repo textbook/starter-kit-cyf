@@ -55,7 +55,7 @@ export class TableRow extends Component {
               <p>Percentage : {attendanceRate} %</p>
               <p>
                 {attendingStudents.map(student => (
-                  <p key={student._id}>{student.name}</p>
+                  <p key={student._id}>{student.name} ({student.timeOfArrival})</p>
                 ))}
               </p>
             </td>
