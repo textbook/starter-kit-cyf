@@ -67,7 +67,7 @@ class MentorHome extends Component {
     return (
       <main className="main">
         <section className="register_Info">
-          <h1>Attendance Register</h1>
+          <h1><span className="appName">Regi</span><span className="appNameBack">Swift</span></h1>
           <p>Today : {today}</p>
           {session ? (
             <p>
@@ -124,8 +124,8 @@ class MentorHome extends Component {
             </p>
           </div>
         ) : (
-          <p>There is no results for today!, please select another date</p>
-        )}
+            <p className="extra-text">There is no results for today, please select another date !</p>
+          )}
       </main>
     );
   }

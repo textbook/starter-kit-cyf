@@ -28,7 +28,7 @@ export class ModuleTableRow extends Component {
         {this.state.isViewDisplayed && attendance && (
           <tr className="studentAttendance">
             <td colspan="2">
-              <h4 className="attendance">Attendance</h4>
+              <h4 className="attendanceList">Attendance</h4>
 
               <div>
                 {attendance.map(student => (

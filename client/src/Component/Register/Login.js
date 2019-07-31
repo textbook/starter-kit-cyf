@@ -231,7 +231,12 @@ class login extends Component {
       // <Container className="App">
       <Fragment>
         <Form className="form">
-          <h2 className="registerTitle">Sign In</h2>
+          <div className="appNameBox">
+            {/* <img src={} /> */}
+            <h2><span className="appName">Regi</span><span className="appNameBack">Swift</span></h2>
+            <h2 className="registerTitle">Sign In</h2>
+          </div>
+
 
           <div className="formGroupBlock">
             <FormGroup className="formGroup">
@@ -308,12 +313,12 @@ class login extends Component {
           </h5> */}
 
           {status.toLowerCase() == "student" &&
-          isPositionConfirmed != "notChecked" &&
-          !isPositionConfirmed ? (
-            <p>Check your location , you are not at the class yet, hurry up!</p>
-          ) : isPositionConfirmed === "confirmed" ? (
-            <p>Your position is confirmed, enjoy the class!</p>
-          ) : null}
+            isPositionConfirmed != "notChecked" &&
+            !isPositionConfirmed ? (
+              <p>Check your location , you are not at the class yet, hurry up!</p>
+            ) : isPositionConfirmed === "confirmed" ? (
+              <p>Your position is confirmed, enjoy the class!</p>
+            ) : null}
         </Form>
         {/* </Container> */}
       </Fragment>

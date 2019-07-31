@@ -50,7 +50,7 @@ export class TableRow extends Component {
         {this.state.isViewDisplayed && totalAttendingStudents && (
           <tr className="studentAttendance">
             <td colspan="2">
-              <h4 className="attendance">Students in Class</h4>
+              <h4 className="attendanceList">Students in Class</h4>
               <p>Total : {totalAttendingStudents}</p>
               <p>Percentage : {attendanceRate} %</p>
               <p>
