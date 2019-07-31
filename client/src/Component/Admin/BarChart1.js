@@ -31,11 +31,11 @@ export default class Example extends PureComponent {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" angle={-45} textAnchor="end" interval={0} />
-        <YAxis />
-        <Tooltip />
+        <XAxis dataKey="name" angle={-45} textAnchor="end" interval={0} stroke="#dcebdc" />
+        <YAxis stroke="#dcebdc" />
+        <Tooltip contentStyle={{ backgroundColor: '#4A4A4A', color: '#dcebdc' }} />
         {/* <Legend verticalAlign="right" /> */}
-        <Bar dataKey="%" fill="#8884d8" barSize={30} />
+        <Bar dataKey="%" fill="#dcebdc" barSize={30} />
         {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
       </BarChart>
     );

@@ -98,7 +98,12 @@ class SignUp extends Component {
       <Fragment>
 
         <Form className="form">
-          <h2 className="registerTitle">SignUp</h2>
+          <div className="appNameBox">
+            {/* <img src={} /> */}
+            <h2><span className="appName">Regi</span><span className="appNameBack">Swift</span></h2>
+            <h2 className="registerTitle">SignUp</h2>
+          </div>
+
 
           <div className="formGroupBlock">
             <FormGroup className="formGroup">

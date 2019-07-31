@@ -4,18 +4,24 @@
   box-sizing: border-box;
 }
 
-/* .App {
-  text-align: left;
-  border: 2px solid #d3d3d3;
-  border-radius: .5em;
-} */
-
-/* .form{
-  /* padding: 0 4rem; */
-
-
+.appNameBox{
+ text-align: center;
+}
 .registerTitle{
   margin: auto;
+}
+
+.btn{
+   border: none;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.322);}
+  
+.appName{
+font-family: 'Chonburi', cursive;
+  color: #CC2F36;
+  font-weight: bold;
+}
+.appNameBack{
+font-family: 'Cinzel', serif;
 }
 
 .labelTag{
@@ -34,26 +40,9 @@
 }
 
 .admin{
-  background: red;
+  background: #CC2F36;
   color: white;
 }
-/* 
-h5 {
-  padding-top:10px;
-  position: relative;
-  font-family: sans-serif;
-  text-transform: uppercase;
-  font-size: 1em;
-  letter-spacing: 4px;
-  overflow: hidden;
-  background: linear-gradient(90deg, #000, #000);
-  background-repeat: no-repeat;
-  background-size: 80%;
-  animation: animate 20s linear infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(15, 14, 14, 0);
-} */
-
 
 /* Extra small devices (phones, 768px and down) */
 @media only screen and (max-width: 768px) {
@@ -136,10 +125,15 @@ h5 {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
    .form{
-    min-height: 85vh;
+    min-height: 75vh;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 6vh;
     padding-top: 3rem;
-   
-  
+   /* border: 2px solid; */
+   box-shadow: 5px 5px 20px;
+   border-radius: 2%;
+  background: transparent;
   }
   .formGroup{
     /* padding: 0 1rem; */
@@ -147,22 +141,23 @@ h5 {
     display: flex;
     flex-direction: column;
     margin: 3vh auto;
-
   }
 
-  h2{
+  .attendance h2{
     text-align: center;
    padding: 2vh;
+   color: black;
   }
+  
   .formGroupBlock{
     /* margin: 3rem 0 2rem 0; */
-     margin-top: 15vh;
+     margin-top: 5vh;
   }
+
   .button-group{
     height: auto;
     max-width: 50%;
-    margin: 5vh auto; 
-    
+    margin: 3vh auto; 
   }
 
 .student:hover, .admin:hover, .mentor:hover{
@@ -170,7 +165,7 @@ h5 {
 }
 
   .button-group .student, .button-group .admin, .button-group .mentor{
-    width: 20%;
+    min-width: 6vw;
     margin: auto;
   }
 } 

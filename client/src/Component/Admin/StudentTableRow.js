@@ -18,7 +18,7 @@ export default class StudentTableRow extends Component {
 
   render() {
     const { student } = this.props;
-        console.log({student});
+    console.log({ student });
     return (
       <Fragment>
         <tr
@@ -35,7 +35,7 @@ export default class StudentTableRow extends Component {
           <Fragment>
             <tr className="studentAttendance">
               <td colspan="2">
-                <h4 className="attendance">Attendance : </h4>
+                <h4 className="attendanceList">Attendance : </h4>
                 {/* <h4>Total : {student.attendance.length}</h4> */}
                 <div>
                   {student.attendance.map(session => {

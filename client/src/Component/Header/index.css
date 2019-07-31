@@ -1,13 +1,14 @@
 .navbar {
-  background-color: white;
+  background-color: transparent;
 }
 
 .logo {
   width: 25vw;
 }
 
-.separateBar{
-  color: red;
+
+.ml-auto .navItem .navLink:hover{
+color: #CC2F36;
 }
 
   

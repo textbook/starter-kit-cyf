@@ -25,19 +25,19 @@ class Header extends Component {
           <Nav className="ml-auto">
             {!loggedIn() && (
               <Fragment>
-                <NavItem>
-                  <Nav.Link href="/#" >Login</Nav.Link>
+                <NavItem className="navItem">
+                  <Nav.Link href="/#" className="navLink">Login</Nav.Link>
                 </NavItem>
 
-                <NavItem>
-                  <Nav.Link href="/#/signUp" >Sign Up</Nav.Link>
+                <NavItem className="navItem">
+                  <Nav.Link href="/#/signUp" className="navLink">Sign Up</Nav.Link>
                 </NavItem>
               </Fragment>
             )}
             {loggedIn() && (
 
-              <NavItem>
-                <Nav.Link href="/#" onClick={this.onLogOut} >Logout</Nav.Link>
+              <NavItem className="navItem">
+                <Nav.Link href="/#" onClick={this.onLogOut} className="navLink">Logout</Nav.Link>
               </NavItem>
             )}
 

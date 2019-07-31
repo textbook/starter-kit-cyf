@@ -1,35 +1,77 @@
 .mainAttendance{
-  text-align: center;
    display: flex;
-   flex-direction: column;
-  justify-content: space-between;
+   flex-direction: column; 
+   
+}
+.attendance h2{
+   color: black;
 }
 
+.signImg{
+  width: 90%;
+  color: red;
+}
 
 /* Extra small devices (phones, 768px and down) */
 @media only screen and (max-width: 768px) {
   .mainAttendance{
   padding: 10vh 0;
-  border-top: 2px solid;
-  border-left: 2px solid;
-  border-right: 2px solid;
-  min-height: 85vh;
+  min-height: 75vh;
+  margin-bottom: 10vh;
+  background: transparent;
+ 
+}
+.attendance{
+  /* border: 2px solid; */
+  margin-top: 0;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.322);
+}
+.attendance h2{
+   color: black;
+}
+.registerTitle{
+  margin-top: 2vh;
+  min-height: 30vh;
+}
+.appNameBox img{
+  margin-top: 5vh;
 }
 } 
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 992px){
   .mainAttendance{
-  padding: 15vh 0;
-  min-height: 85vh;
+  padding: 10vh 0;
+  min-height: 75vh;
+  margin-bottom: 10vh;
+  background: transparent;
+}
+.registerTitle{
+  margin-top: 2vh;
+  min-height: 30vh;
+}
+.appNameBox img{
+  margin-top: 5vh;
 }
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     .mainAttendance{
-  padding: 20vh 0;
   min-height: 80vh;
+  background: transparent;
+}
+
+.registerTitle{
+  margin-top: 10vh;
+}
+.attendance{
+  text-align: center;
+  margin-bottom: 10vh;
+  min-height: 30vh;
+}
+.signImg{
+  margin-top: 5vh;
 }
 } 
 
