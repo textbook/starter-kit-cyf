@@ -192,7 +192,7 @@ class AdminHome extends Component {
                                 : 1;
                             })
                             .map(session => {
-                              //console.log(session)
+                              // console.log({session})
                               return <TableRow session={session} />;
                             })}
                       </tbody>

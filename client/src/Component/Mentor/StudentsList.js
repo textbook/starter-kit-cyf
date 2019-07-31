@@ -3,7 +3,10 @@ import React from "react";
 import "./index.css"
 
 function StudentsList(props) {
-  // console.log(props.students);
+  console.log(props.students.sort((a,b)=>{
+    return a.timeOfArrival.localeCompare(b.timeOfArrival)
+  }));
+  
   return (
     <div>
       <table className="blueTable">
