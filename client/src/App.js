@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 
 import { getMessage } from "./service";
-import logo from "./logo.svg";
+
 import "./App.css";
+
+import HomePage from './components/HomePage/homepage.component'
 
 export class App extends Component {
 
@@ -16,8 +18,13 @@ export class App extends Component {
 		const { message } = this.state;
 		return (
 			<div>
-				<img className="logo" data-qa="logo" src={logo} alt="Just the React logo" />
+				
+
+				
 				<p className="message" data-qa="message">{message}</p>
+
+<HomePage />
+
 			</div>
 		);
 	}

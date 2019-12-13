@@ -1,0 +1,25 @@
+
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+.logo{
+ margin-right: auto;
+}
+
+.ul-bar{
+    display: flex;
+    justify-content: flex-end;
+      flex-wrap: wrap;
+
+   align-items: center;
+}
+
+.ul-bar, a, li{
+  list-style: none;
+  text-decoration: none;
+}
+
