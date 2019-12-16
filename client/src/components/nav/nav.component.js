@@ -4,7 +4,7 @@ import Logo from "./Logo/cyf-logo.png";
 
 import './nav.style.css'
 
-import Search from '../Search/search.component'
+
 
 
 const NavBar = () => (
@@ -16,7 +16,7 @@ const NavBar = () => (
         src={Logo}
         alt="logo"
       />
-      <Search />
+      
       <ul className="ul-bar">
         <li>
           <a href="#">WHO WE ARE</a>

@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
-import http from "http";
+//import http from "http";
+const http = require("http");
+import app from "./app.js";
 
-import app from "./app";
-
-const port = parseInt(process.env.PORT || "3000");
+const port = parseInt(process.env.PORT || "5000");
 
 app.use((err, req, res, next) => {
 	if (res.headersSent) {

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import Footer from '../footer/footer.component'
-import Map from '../map/map.component'
+import MapIt from '../map/map.component'
 
 import NavBar from '../nav/nav.component'
+import Search from '../Search/search.component'
 
 class HomePage extends Component{
     render(){
@@ -10,7 +11,8 @@ class HomePage extends Component{
             <div>
 
 <NavBar />
-<Map />
+                <Search />
+<MapIt />
 <Footer />
             </div>
         )
