@@ -1,15 +1,16 @@
-import React from 'react'
+import React from "react";
 
-import './search.style.css'
+import "./search.style.css";
 
 
 const Search = () => (
-  <input
-    className="search"
-    type="search"
-  placeholder='search'
-  
-  />
+
+	<input
+		className="search"
+		type="search"
+		placeholder='search'
+	/>
+
 );
 
-export default Search
+export default Search;
