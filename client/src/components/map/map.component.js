@@ -20,7 +20,7 @@ Leaflet.Icon.Default.mergeOptions({
 export default class MapIt extends Component {
   state = {
     lat: 25.257017,
-    lng: 29.077524,
+    lng: 30.077524,
     zoom: 2,
   }
 
