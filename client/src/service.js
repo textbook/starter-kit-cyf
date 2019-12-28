@@ -1,6 +1,12 @@
 import axios from "axios";
 
 export const getMessage = async () => {
-	const response = await axios.get("/api");
-	return response.data.message;
-};
+	try{
+const response = await axios.get("http://localhost:3100/countries");
+return response;
+	 } catch (error) {
+    console.log("error", error);
+  }
+}
+
+

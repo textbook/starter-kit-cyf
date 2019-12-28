@@ -1,24 +1,27 @@
-/* eslint-disable no-console */
-//import http from "http";
-const http = require("http");
-import app from "./app.js";
+require("dotenv").config();
+var cors = require("cors");
+const express = require("express");
+const app = express();
 
-const port = parseInt(process.env.PORT || "5000");
 
-app.use((err, req, res, next) => {
-	if (res.headersSent) {
-		return next(err);
-	}
-	console.error(err);
-	res.sendStatus(500);
-});
+app.use(cors());
+
+var http = require("http");
+
+const router = require("./router");
+
+var bodyParser = require("body-parser");
 
 const server = http.createServer(app);
 
-server.listen(port);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-server.on("listening", () => {
-	const addr = server.address();
-	const bind = typeof addr === "string" ? `pipe ${addr}` : `port ${addr.port}`;
-	console.log(`Listening on ${bind}`);
+var routes = require("./api-home/routes/countries.route"); //importing routes
+routes(app); //register the routes
+
+app.use(router);
+
+server.listen(process.env.PORT, () => {
+  console.log("listening on *:3100");
 });

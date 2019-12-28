@@ -1,6 +1,5 @@
-import { MongoClient } from "mongodb";
+const pgp = require("pg-promise")(/*options*/);
+require("dotenv").config();
 
-const dbUrl = process.env.MONGODB_URI || "mongodb://localhost:27017/cyf";
-const configuration = { useNewUrlParser: true };
-
-export const getClient = () => new MongoClient(dbUrl, configuration);
+const db = pgp(process.env.connectionString); // database instance;
+module.exports = db;
