@@ -1,19 +1,12 @@
 import { Router } from "express";
+const db = require('../server/db')
 
-import { getClient } from "./db";
 
 const api = new Router();
 
 api.get("/", (_, res, next) => {
-	const client = getClient();
-
-	client.connect((err) => {
-		if (err) {
-			return next(err);
-		}
-		res.json({ message: "Hello, Heroku!" });
-		client.close();
-	});
+	const data = db.any('select Country from countries')
+	console.table(data)
 });
 
 export default api;
