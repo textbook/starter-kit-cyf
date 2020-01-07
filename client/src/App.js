@@ -22,7 +22,7 @@ export class App extends Component {
 	
 		return (
 			<div>
-{/* 'countries' is holding the data coming from the serve. so try to map or filter etc on countries. You can view the console.log on you react developer tools to see the data coming. look up at componentDidMount life cycle, i did console.log there for easy understaing */}
+{/* 'countries' is holding the data coming from the server. so try to map or filter etc on countries. You can view the console.log on you react developer tools to see the data coming. look up at componentDidMount life cycle, i did console.log there for easy understaing */}
 	<HomePage />
 	</div>
 		);
