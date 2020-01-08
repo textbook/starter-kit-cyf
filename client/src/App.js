@@ -1,31 +1,71 @@
 import React, { Component } from "react";
-
-import { getMessage } from "./service";
-
 import "./App.css";
+import { Route } from "react-router-dom";
 
+//Components
+import Search from "./components/Search/search.component";
+import NavBar from "./components/nav/nav.component";
 import HomePage from "./components/HomePage/homepage.component";
+import About from "./components/pages/About";
+import Home from './components/pages/Home';
+import Ourwork from "./components/pages/Ourwork";
 
 
 
 
-export class App extends Component {
+class App extends Component {
+         constructor(props) {
+           super(props);
+           this.state = {
+             countries: [],
+             searchField: ""
+           };
+         }
 
-	state = { countries: [] };
+         componentDidMount() {
+           fetch("http://localhost:3100/countries")
+             .then(result => result.json())
+             .then(countries => this.setState({ countries }));
+         }
 
-	componentDidMount() {
-		getMessage().then((country) => this.setState({ countries:country }));
-	console.log(this.state.countries)
-	}
+         handleChange = e => {
+           this.setState({
+             searchField: e.target.value
+           });
+         };
 
-	render() {
-	
-		return (
-			<div>
-{/* 'countries' is holding the data coming from the serve. so try to map or filter etc on countries. You can view the console.log on you react developer tools to see the data coming. look up at componentDidMount life cycle, i did console.log there for easy understaing */}
-	<HomePage />
-	</div>
-		);
-	}
-}
+         render() {
+          //  console.log to see the data coming from the database.
+           console.log(this.state.countries);
+
+           const { searchField, countries } = this.state;
+
+           const filterredSearch = countries.filter(
+             ({ Country, City }) =>(Country.toLowerCase().includes(searchField.toLowerCase()) ||
+               City.toLowerCase().includes(searchField.toLowerCase()))
+           );
+           return (
+             <>
+         
+               <Route exact path="/" />
+               <Route exact path="/home" component={Home} />
+               <Route exact path="/ourwork" component={Ourwork} />
+               <Route path="/about" component={About} />
+           
+
+              <NavBar />
+
+               <Search
+                 handleChange={this.handleChange}
+                 searchInfo={filterredSearch}
+               />
+               <HomePage />
+               </>
+           );
+         }
+       }
+
+
+            
+
 export default App;
