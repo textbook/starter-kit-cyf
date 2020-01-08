@@ -3,44 +3,57 @@ import Leaflet from 'leaflet';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import "./map.css";
+import { iconCyf } from './icon';
+
 
 Leaflet.Icon.Default.imagePath =
   '../node_modules/leaflet'
 
 delete Leaflet.Icon.Default.prototype._getIconUrl;
 
-Leaflet.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-  iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png')
-});
-
 
 
 export default class MapIt extends Component {
-  state = {
+  constructor(props) {
+    super(props);
+  this.state = {
     lat: 25.257017,
     lng: 30.077524,
     zoom: 2,
+    position:
+      [41.90121, 12.50379]
+     
+}
+    this.onClick = this.addNationalMarkers.bind(this);
+}
+
+  
+  addNationalMarkers = () => {
+    console.log("add national level");
+    console.log(this.state.position);
+    this.setState({
+      position: [21.90121, 52.50379]
+});
   }
-
-
+  
   render() {
-    const position = [this.state.lat, this.state.lng]
-    const markerPosition = [41.90121, 12.50379]
+  
+    const visual = [this.state.lat, this.state.lng]
     return (
-      <Map className="map" center={position} zoom={this.state.zoom} style={{ height: '500px' }}>
+      <div>
+      <Map className="map" center={visual} zoom={this.state.zoom} style={{ height: '500px' }}>
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={markerPosition}>
+          <Marker position={this.state.position} icon={iconCyf}>
           <Popup>
             The Extraordinary Ones
-           
         </Popup>
         </Marker>
       </Map>
+        <button className="btn btn-primary" onClick={this.addNationalMarkers}>Show national level</button>
+      </div>
     )
   }
 }
