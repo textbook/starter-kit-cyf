@@ -15,18 +15,17 @@ delete Leaflet.Icon.Default.prototype._getIconUrl;
 
 
 export default class MapIt extends Component {
-  constructor(props) {
-    super(props);
-  this.state = {
-    lat: 25.257017,
-    lng: 30.077524,
-    zoom: 2,
-    position: [markers.latitude, markers.longitude]
-}
-    
-}
+                 constructor(props) {
+                   super(props);
+                   this.state = {
+                     lat: 25.257017,
+                     lng: 30.077524,
+                     zoom: 2,
+                     position: [markers.latitude, markers.longitude]
+                   };
+                 }
 
-  /*
+                 /*
   addNationalMarkers = () => {
     console.log("add national level");
     return markers.map(
@@ -37,6 +36,7 @@ export default class MapIt extends Component {
   }
   this.onClick = this.addNationalMarkers.bind(this);
 */
+                 /*
   renderMarkers = (marker) => {
     console.log("I am here");
     //console.log(markers)
@@ -45,21 +45,30 @@ export default class MapIt extends Component {
     });
     return <Marker key={`${marker.City}`} position={[marker.latitude, marker.longitude]} icon={iconCyf}></Marker>
   }
-    
-  render() {
-  
-    const visual = [this.state.lat, this.state.lng]
-    return (
-      <div>
-      <Map className="map" center={visual} zoom={this.state.zoom} style={{ height: '500px' }}>
-        <TileLayer
-          attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-          {this.renderMarkers()}
-      </Map>
-        <button className="btn btn-primary" onClick={this.addNationalMarkers}>Show national level</button>
-      </div>
-    )
-  }
-}
+   {this.renderMarkers()}
+    */
+                 render() {
+                   const visual = [this.state.lat, this.state.lng];
+                   return (
+                     <div>
+                       <Map
+                         className="map"
+                         center={visual}
+                         zoom={this.state.zoom}
+                         style={{ height: "500px" }}
+                       >
+                         <TileLayer
+                           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                         />
+                       </Map>
+                       <button
+                         className="btn btn-primary"
+                         onClick={this.addNationalMarkers}
+                       >
+                         Show national level
+                       </button>
+                     </div>
+                   );
+                 }
+               }
