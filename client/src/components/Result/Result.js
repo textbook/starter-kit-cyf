@@ -1,32 +1,25 @@
-import React, { Component } from "react";
+import React from "react";
 
 import "./result.css";
 
-
-class Result extends Component {
-	render () {
-		return(
-
-			<div className="row">
-				<div className="main col-lg-6">
-					<div className="jumbotron">
-						<h1
-							style={{
-								backgroundColor: "white",
-								height: 100,
-								boxSizing: "border-box",
-								weight: 100,
-							}}
-						>
-								Result Box
-
-						</h1>
-					</div>
-				</div>
-			</div>
-
-		);
-	}
-}
+const Result = ({ country, city, address, phone, fax }) => (
+  <div>
+    <div className="country">
+      <label>Country: {country}</label>
+      <div className="city">
+        <label>City: {city}</label>
+        <div className="address">
+          <label>Address: {address}</label>
+          <h5 className="phone">
+            <label>Phone: {phone}</label>
+            <span className="fax">
+              <label>Fax: {fax}</label>
+            </span>
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 export default Result;
