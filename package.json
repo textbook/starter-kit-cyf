@@ -74,6 +74,7 @@
     "morgan": "^1.9.1",
     "pg": "^7.15.2",
     "pg-promise": "^10.3.2",
-    "react-leaflet": "^2.6.1"
+    "react-leaflet": "^2.6.1",
+    "react-router-dom": "^5.1.2"
   }
 }

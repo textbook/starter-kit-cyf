@@ -14,7 +14,7 @@ var bodyParser = require("body-parser");
 
 const server = http.createServer(app);
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 var routes = require("./api-home/routes/countries.route"); //importing routes
