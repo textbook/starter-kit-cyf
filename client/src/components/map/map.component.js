@@ -5,7 +5,8 @@ import 'leaflet/dist/leaflet.css';
 import "./map.css";
 import { iconCyf } from './icon';
 import markers from "./data/coord.json";
-import DrawlineReg from "./drawLineReg";
+//import DrawlineReg from "./drawLineReg"; <DrawlineReg />
+import DrawlineGlo from "./drawLineGlo";
 
 
 Leaflet.Icon.Default.imagePath =
@@ -67,7 +68,8 @@ export default class MapIt extends Component {
                            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                          />
-                         <DrawlineReg />
+                         
+                         <DrawlineGlo />
                          {this.addOneMarker()}
                          
                        </Map>
@@ -83,6 +85,12 @@ export default class MapIt extends Component {
 
                        >
                          Show regional level
+                       </button>
+                       <button
+                         className="btn btn-primary pt-10"
+
+                       >
+                         Show global level
                        </button>
                      </div>
                    );
