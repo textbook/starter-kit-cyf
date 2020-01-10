@@ -1,0 +1,1664 @@
+[
+  {
+    "Country": "Angola",
+    "Organisation": "Caritas de Angola",
+    "Region": "Africa",
+    "City": "Luanda",
+    "from_lat": -8.8156605,
+    "from_long": 13.2328796,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Benin",
+    "Organisation": "Caritas Benin",
+    "Region": "Africa",
+    "City": "Cotonou",
+    "from_lat": 6.3726602,
+    "from_long": 2.4254,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Botswana",
+    "Organisation": "Tirisanyo Catholic Commission - Caritas Botswana",
+    "Region": "Africa",
+    "City": "Gaborone",
+    "from_lat": -24.6552696,
+    "from_long": 25.9190407,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Burkina Faso",
+    "Organisation": "OCADES - Caritas Burkina Faso",
+    "Region": "Africa",
+    "City": "Ouagadougou 01",
+    "from_lat": 12.2854481,
+    "from_long": -1.744179,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Burundi",
+    "Organisation": "CED - Caritas Burundi",
+    "Region": "Africa",
+    "City": "Bujumbura",
+    "from_lat": -3.3601799,
+    "from_long": 29.3690891,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Cameroon",
+    "Organisation": "BASC - Bureau des Activités Socio-Caritatives - Caritas Cameroun",
+    "Region": "Africa",
+    "City": "Yaoundé",
+    "from_lat": 3.8468399,
+    "from_long": 11.5204496,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Cape Verde",
+    "Organisation": "Caritas Caboverdeana",
+    "Region": "Africa",
+    "City": "Praia, Santiago",
+    "from_lat": 14.9155102,
+    "from_long": -23.5095406,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Central African Republic",
+    "Organisation": "Caritas Centrafrique",
+    "Region": "Africa",
+    "City": "Bangui",
+    "from_lat": 4.3966899,
+    "from_long": 18.5585995,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Chad",
+    "Organisation": "UNAD - Caritas Tchad",
+    "Region": "Africa",
+    "City": "N'Djaména",
+    "from_lat": 12.1131496,
+    "from_long": 15.0491199,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Comoros",
+    "Organisation": "Caritas Comores",
+    "Region": "Africa",
+    "City": "Moroni",
+    "from_lat": -11.6922398,
+    "from_long": 43.2591896,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Congo Democratic Republic",
+    "Organisation": "Caritas Congo ASBL",
+    "Region": "Africa",
+    "City": "Kinshasa-Gombe",
+    "from_lat": -4.3030601,
+    "from_long": 15.3033304,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Congo Republic",
+    "Organisation": "Caritas République du Congo",
+    "Region": "Africa",
+    "City": "Brazzaville",
+    "from_lat": -4.2793398,
+    "from_long": 15.2603903,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Equatorial Guinea",
+    "Organisation": "Caritas Guinea Ecuatorial",
+    "Region": "Africa",
+    "City": "Malabo-Bioko Norte",
+    "from_lat": 3.6800001,
+    "from_long": 8.7799997,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Eritrea",
+    "Organisation": "Eritrean Catholic Secretariat",
+    "Region": "Africa",
+    "City": "Asmara",
+    "from_lat": 15.33638,
+    "from_long": 38.9369202,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Ethiopia",
+    "Organisation": "Ethiopian Catholic Secretariat",
+    "Region": "Africa",
+    "City": "Addis Ababa",
+    "from_lat": 9.0136003,
+    "from_long": 38.7628288,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Gabon",
+    "Organisation": "Caritas Gabon",
+    "Region": "Africa",
+    "City": "Libreville",
+    "from_lat": 0.39324,
+    "from_long": 9.4463301,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Gambia",
+    "Organisation": "Catholic Development Office - Caritas Gambia",
+    "Region": "Africa",
+    "City": "Serrekunda",
+    "from_lat": 13.4648104,
+    "from_long": -16.6877308,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Ghana",
+    "Organisation": "Caritas Ghana - National Catholic Secretariat",
+    "Region": "Africa",
+    "City": "Accra",
+    "from_lat": 5.5810699,
+    "from_long": -0.19897,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Guinea",
+    "Organisation": "OCPH - Organisation Catholique pour la Promotion Humaine - Caritas Rép. de Guinée",
+    "Region": "Africa",
+    "City": "Conakry",
+    "from_lat": 9.5119801,
+    "from_long": -13.7053804,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Guinea-Bissau",
+    "Organisation": "Caritas Guinée-Bissau",
+    "Region": "Africa",
+    "City": "Bissau CODEX",
+    "from_lat": 12.0376902,
+    "from_long": -14.9580021,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Ivory Coast",
+    "Organisation": "Caritas Côte d'Ivoire",
+    "Region": "Africa",
+    "City": "Abidjan 01",
+    "from_lat": 7.6228418,
+    "from_long": -5.5525599,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Kenya",
+    "Organisation": "Caritas Kenya",
+    "Region": "Africa",
+    "City": "Nairobi",
+    "from_lat": 0.537028,
+    "from_long": 37.8567772,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Lesotho",
+    "Organisation": "Department of Development - Caritas Lesotho",
+    "Region": "Africa",
+    "City": "Maseru",
+    "from_lat": -29.3184204,
+    "from_long": 27.4887791,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Liberia",
+    "Organisation": "Caritas Liberia",
+    "Region": "Africa",
+    "City": "Monrovia 10",
+    "from_lat": 6.4475222,
+    "from_long": -9.3111792,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Madagascar",
+    "Organisation": "Caritas Madagascar",
+    "Region": "Africa",
+    "City": "Antananarivo",
+    "from_lat": -18.9100304,
+    "from_long": 47.527359,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Malawi",
+    "Organisation": "CADECOM - Catholic Development Commission in Malawi - Caritas Malawi",
+    "Region": "Africa",
+    "City": "Lilongwe 3",
+    "from_lat": -13.3602753,
+    "from_long": 34.293045,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Mali",
+    "Organisation": "Commission Nationale de Pastorale Sociale - Caritas Mali",
+    "Region": "Africa",
+    "City": "Bamako",
+    "from_lat": 12.6503897,
+    "from_long": -8.0000401,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Mauritania",
+    "Organisation": "Caritas Mauritanie",
+    "Region": "Africa",
+    "City": "Nouakchott",
+    "from_lat": 18.0919304,
+    "from_long": -15.9724798,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Mauritius",
+    "Organisation": "Caritas Ile Maurice",
+    "Region": "Africa",
+    "City": "Port-Louis",
+    "from_lat": -20.1654396,
+    "from_long": 57.5149117,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Mozambique",
+    "Organisation": "Caritas Moçambicana",
+    "Region": "Africa",
+    "City": "Maputo",
+    "from_lat": -25.95788,
+    "from_long": 32.58189,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Namibia",
+    "Organisation": "NCBC - Namibian Catholic Bishops' Conference",
+    "Region": "Africa",
+    "City": "Windhoek",
+    "from_lat": -22.5715904,
+    "from_long": 17.0907402,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Niger",
+    "Organisation": "CADEV - Caritas Développement Niger",
+    "Region": "Africa",
+    "City": "CTN Niamey",
+    "from_lat": 13.5163202,
+    "from_long": 2.1162701,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Nigeria",
+    "Organisation": "Caritas Nigeria",
+    "Region": "Africa",
+    "City": "Lagos",
+    "from_lat": 6.49635,
+    "from_long": 3.35468,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Rwanda",
+    "Organisation": "Caritas Rwanda",
+    "Region": "Africa",
+    "City": "Kigali",
+    "from_lat": -1.96292,
+    "from_long": 30.12391,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Sao Tome & Principe",
+    "Organisation": "Caritas Sao Tome & Principe",
+    "Region": "Africa",
+    "City": "Via Portugal",
+    "from_lat": 0.239311,
+    "from_long": 6.6020598,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Senegal",
+    "Organisation": "Caritas Senegal",
+    "Region": "Africa",
+    "City": "Dakar",
+    "from_lat": 14.6692696,
+    "from_long": -17.4366093,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Seychelles",
+    "Organisation": "Caritas Seychelles",
+    "Region": "Africa",
+    "City": "Victoria-Mahé",
+    "from_lat": -4.6227498,
+    "from_long": 55.4522705,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Sierra Leone",
+    "Organisation": "Caritas Sierra Leone",
+    "Region": "Africa",
+    "City": "Kenema",
+    "from_lat": 7.8624601,
+    "from_long": -11.1949701,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "South Africa",
+    "Organisation": "Caritas South Africa",
+    "Region": "Africa",
+    "City": "Pretoria",
+    "from_lat": -25.7458096,
+    "from_long": 28.1883793,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "South Sudan",
+    "Organisation": "Caritas South Sudan",
+    "Region": "Africa",
+    "City": "Juba",
+    "from_lat": 4.8397498,
+    "from_long": 31.59758,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Sudan",
+    "Organisation": "SUDANAID - Caritas Sudan",
+    "Region": "Africa",
+    "City": "Khartoum",
+    "from_lat": 15.5866098,
+    "from_long": 32.523201,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Swaziland",
+    "Organisation": "Caritas Swaziland",
+    "Region": "Africa",
+    "City": "Manzini",
+    "from_lat": -26.59631,
+    "from_long": 30.91653,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Tanzania",
+    "Organisation": "Caritas Tanzania",
+    "Region": "Africa",
+    "City": "Dar-es-Salaam",
+    "from_lat": -6.7831998,
+    "from_long": 39.2676697,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Togo",
+    "Organisation": "OCDI - Organisation de la Charité pour un Développement Intégral - Caritas Togo",
+    "Region": "Africa",
+    "City": "Lomé-Aviation",
+    "from_lat": 8.5307598,
+    "from_long": 0.976809,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Uganda",
+    "Organisation": "Uganda Catholic Secretariat - Caritas Uganda",
+    "Region": "Africa",
+    "City": "Kampala",
+    "from_lat": 0.31426,
+    "from_long": 32.5755692,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Zambia",
+    "Organisation": "Catholic Commission for Development (CCD)",
+    "Region": "Africa",
+    "City": "Lusaka",
+    "from_lat": -15.4256096,
+    "from_long": 28.2787495,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Zimbabwe",
+    "Organisation": "Catholic Development Commission - Caritas Zimbabwe",
+    "Region": "Africa",
+    "City": "Harare",
+    "from_lat": -17.8243904,
+    "from_long": 31.0499496,
+    "to_lat": 6.149261,
+    "to_long": 1.218761
+  },
+  {
+    "Country": "Aotearoa New Zealand",
+    "Organisation": "Caritas Aotearoa - New Zealand",
+    "Region": "Oceania",
+    "City": "Wellington",
+    "from_lat": -35.63339,
+    "from_long": 174.52873,
+    "to_lat": -36.9674,
+    "to_long": 174.859
+  },
+  {
+    "Country": "Australia",
+    "Organisation": "Caritas Australia",
+    "Region": "Oceania",
+    "City": "Alexandria NSW",
+    "from_lat": -33.91022,
+    "from_long": 151.19907,
+    "to_lat": -36.9674,
+    "to_long": 174.859
+  },
+  {
+    "Country": "East Timor",
+    "Organisation": "Caritas Timor Leste",
+    "Region": "Oceania",
+    "City": "Dili",
+    "from_lat": -8.5618496,
+    "from_long": 125.5844193,
+    "to_lat": -36.9674,
+    "to_long": 174.859
+  },
+  {
+    "Country": "Fiji",
+    "Organisation": "Caritas Fiji",
+    "Region": "Oceania",
+    "City": "Suva",
+    "from_lat": -18.1412601,
+    "from_long": 178.4232483,
+    "to_lat": -36.9674,
+    "to_long": 174.859
+  },
+  {
+    "Country": "Pacific Islands",
+    "Organisation": "CEPAC-CCJD  Cath. Comm. For Justice & Development",
+    "Region": "Oceania",
+    "City": "Suva1",
+    "from_lat": -18.1412601,
+    "from_long": 178.4232483,
+    "to_lat": -36.9674,
+    "to_long": 174.859
+  },
+  {
+    "Country": "Papua New Guinea",
+    "Organisation": "Caritas Papua New Guinea",
+    "Region": "Oceania",
+    "City": "Port Moresby",
+    "from_lat": -9.4194403,
+    "from_long": 147.1838837,
+    "to_lat": -36.9674,
+    "to_long": 174.859
+  },
+  {
+    "Country": "Samoa",
+    "Organisation": "Caritas Samoa",
+    "Region": "Oceania",
+    "City": "Apia",
+    "from_lat": -13.8368797,
+    "from_long": 171.7567291,
+    "to_lat": -36.9674,
+    "to_long": 174.859
+  },
+  {
+    "Country": "Tonga",
+    "Organisation": "Caritas Tonga (CCJD)",
+    "Region": "Oceania",
+    "City": "Nuku'alofa",
+    "from_lat": -21.1335106,
+    "from_long": 175.2034454,
+    "to_lat": -36.9674,
+    "to_long": 174.859
+  },
+  
+  {
+    "Country": "Algeria",
+    "Organisation": "Caritas Algérie",
+    "Region": "Mona",
+    "City": "El Biar",
+    "from_lat": 36.7665215,
+    "from_long": 3.0302801,
+    "to_lat": 33.89784,
+    "to_long": 35.57605
+  },
+  {
+    "Country": "Djibouti",
+    "Organisation": "Caritas Somalia",
+    "Region": "Mona",
+    "City": "Rep. of Djibouti",
+    "from_lat": 11.5880699,
+    "from_long": 43.14492,
+    "to_lat": 33.89784,
+    "to_long": 35.57605
+  },
+  {
+    "Country": "Djibouti",
+    "Organisation": "Caritas Djibouti",
+    "Region": "Mona",
+    "City": "Djibouti",
+    "from_lat": 11.5880699,
+    "from_long": 43.14492,
+    "to_lat": 33.89784,
+    "to_long": 35.57605
+  },
+  {
+    "Country": "Egypt",
+    "Organisation": "Caritas Egypt",
+    "Region": "Mona",
+    "City": "Cairo",
+    "from_lat": 30.0499191,
+    "from_long": 31.2486,
+    "to_lat": 33.89784,
+    "to_long": 35.57605
+  },
+  {
+    "Country": "Iran",
+    "Organisation": "Caritas Iran",
+    "Region": "Mona",
+    "City": "Tehran",
+    "from_lat": 35.6887703,
+    "from_long": 51.4150314,
+    "to_lat": 33.89784,
+    "to_long": 35.57605
+  },
+  {
+    "Country": "Iraq",
+    "Organisation": "Caritas Iraq",
+    "Region": "Mona",
+    "City": "Baghdad",
+    "from_lat": 33.3421288,
+    "from_long": 44.3930893,
+    "to_lat": 33.89784,
+    "to_long": 35.57605
+  },
+  {
+    "Country": "Israele",
+    "Organisation": "Caritas Jerusalem",
+    "Region": "Mona",
+    "City": "Jerusalem",
+    "from_lat": 31.7683,
+    "from_long": 35.2137,
+    "to_lat": 33.89784,
+    "to_long": 35.57605
+  },
+  {
+    "Country": "Jordan",
+    "Organisation": "Caritas Jordan",
+    "Region": "Mona",
+    "City": "Amman",
+    "from_lat": 31.9520912,
+    "from_long": 35.9218559,
+    "to_lat": 33.89784,
+    "to_long": 35.57605
+  },
+  {
+    "Country": "Lebanon",
+    "Organisation": "Caritas Lebanon",
+    "Region": "Mona",
+    "City": "Beyrouth",
+    "from_lat": 33.88146,
+    "from_long": 35.51526,
+    "to_lat": 33.89784,
+    "to_long": 35.57605
+  },
+  {
+    "Country": "Libya",
+    "Organisation": "Caritas Libie",
+    "Region": "Mona",
+    "City": "Dahara - Tripoli",
+    "from_lat": 32.89534,
+    "from_long": 13.1810503,
+    "to_lat": 33.89784,
+    "to_long": 35.57605
+  },
+  {
+    "Country": "Morocco",
+    "Organisation": "Caritas Maroc",
+    "Region": "Mona",
+    "City": "Rabat",
+    "from_lat": 34.0179405,
+    "from_long": -6.83605,
+    "to_lat": 33.89784,
+    "to_long": 35.57605
+  },
+  {
+    "Country": "Syria",
+    "Organisation": "Caritas Syrie - Commission Commune de Bienfaisance - C.C.B. Syrie",
+    "Region": "Mona",
+    "City": "Damascus",
+    "from_lat": 33.5165596,
+    "from_long": 36.3170815,
+    "to_lat": 33.89784,
+    "to_long": 35.57605
+  },
+  {
+    "Country": "Tunisia",
+    "Organisation": "Caritas Tunisie",
+    "Region": "Mona",
+    "City": "Tunis RP",
+    "from_lat": 34.1144638,
+    "from_long": 9.5719872,
+    "to_lat": 33.89784,
+    "to_long": 35.57605
+  },
+  {
+    "Country": "Antilles",
+    "Organisation": "Antilles Episcopal Conference - Caritas Antilles",
+    "Region": "Latin",
+    "City": "Castries, Saint Lucia, West Indies",
+    "from_lat": 14.0117702,
+    "from_long": -60.9896317,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Argentina",
+    "Organisation": "Caritas Argentina",
+    "Region": "Latin",
+    "City": "Capital Federal",
+    "from_lat": -34.60849,
+    "from_long": -58.3734398,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Bolivia",
+    "Organisation": "Pastoral Social - Caritas Boliviana",
+    "Region": "Latin",
+    "City": "La Paz",
+    "from_lat": -16.4990807,
+    "from_long": -68.1337814,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Brazil",
+    "Organisation": "Caritas Brasileira",
+    "Region": "Latin",
+    "City": "Brasilia DF",
+    "from_lat": -15.79886,
+    "from_long": -47.89871,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Chile",
+    "Organisation": "Caritas Chile",
+    "Region": "Latin",
+    "City": "Santiago de Chile",
+    "from_lat": -33.45162,
+    "from_long": -70.66633,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Colombia",
+    "Organisation": "SNPS - Secretariado Nacional de Pastoral Social - Caritas Colombia",
+    "Region": "Latin",
+    "City": "Santafé de Bogotá",
+    "from_lat": 4.6149602,
+    "from_long": -74.0694122,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Costa Rica",
+    "Organisation": "Pastoral Social Caritas Costa Rica",
+    "Region": "Latin",
+    "City": "San José",
+    "from_lat": 9.9297504,
+    "from_long": -84.0856934,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Cuba",
+    "Organisation": "Caritas Cuba",
+    "Region": "Latin",
+    "City": "La Habana",
+    "from_lat": 23.1321106,
+    "from_long": -82.3674927,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Dominican Republic",
+    "Organisation": "Caritas Dominicana",
+    "Region": "Latin",
+    "City": "Santo Domingo",
+    "from_lat": 18.4718494,
+    "from_long": -69.8913879,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Ecuador",
+    "Organisation": "SENAPS  - Secretariado Nacional de Pastoral Social - Caritas Ecuador",
+    "Region": "Latin",
+    "City": "Quito",
+    "from_lat": -0.20562,
+    "from_long": -78.5087967,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "El Salvador",
+    "Organisation": "Caritas El Salvador",
+    "Region": "Latin",
+    "City": "San Salvador, C.A.",
+    "from_lat": 13.7330055,
+    "from_long": -88.8665009,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Guatemala",
+    "Organisation": "Caritas de Guatemala",
+    "Region": "Latin",
+    "City": "Guatemala, C. A.",
+    "from_lat": 14.6487999,
+    "from_long": -90.5807114,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Haiti",
+    "Organisation": "Caritas Haőti",
+    "Region": "Latin",
+    "City": "Port-au-Prince",
+    "from_lat": 18.5449791,
+    "from_long": -72.3356018,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Honduras",
+    "Organisation": "Caritas de Honduras",
+    "Region": "Latin",
+    "City": "Tegucigalpa",
+    "from_lat": 14.0819197,
+    "from_long": -87.205513,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Mexico",
+    "Organisation": "CEPS - Caritas Mexicana",
+    "Region": "Latin",
+    "City": "D.F. Mexico",
+    "from_lat": 19.38331,
+    "from_long": -99.18199,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Nicaragua",
+    "Organisation": "Caritas Nicaragua",
+    "Region": "Latin",
+    "City": "Managua",
+    "from_lat": 12.1171999,
+    "from_long": -86.2407913,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Panama",
+    "Organisation": "Pastoral Social - Caritas Panamá",
+    "Region": "Latin",
+    "City": "Panama City",
+    "from_lat": 8.9523897,
+    "from_long": -79.5354004,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Paraguay",
+    "Organisation": "Pastoral Social Nacional - Caritas Paraguay",
+    "Region": "Latin",
+    "City": "Asunción",
+    "from_lat": -25.2859177,
+    "from_long": -57.6390236,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Peru",
+    "Organisation": "Caritas del Perú",
+    "Region": "Latin",
+    "City": "Callao 3",
+    "from_lat": -12.0489644,
+    "from_long": -77.0857164,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Puerto Rico",
+    "Organisation": "Caritas Puerto Rico",
+    "Region": "Latin",
+    "City": "San Juan",
+    "from_lat": 18.4515228,
+    "from_long": -66.0694809,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Uruguay",
+    "Organisation": "Cáritas Uruguaya",
+    "Region": "Latin",
+    "City": "Montevideo",
+    "from_lat": -34.90718,
+    "from_long": -56.18417,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Venezuela",
+    "Organisation": "Caritas de Venezuela",
+    "Region": "Latin",
+    "City": "Caracas",
+    "from_lat": 10.48801,
+    "from_long": -66.87919,
+    "to_lat": 9.90958,
+    "to_long": -84.05406
+  },
+  {
+    "Country": "Albania",
+    "Organisation": "Caritas Albania",
+    "Region": "Europe",
+    "City": "Tirana",
+    "from_lat": 41.33477,
+    "from_long": 19.80604,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Andorra",
+    "Organisation": "Caritas Andorrana",
+    "Region": "Europe",
+    "City": "Andorra la Vella",
+    "from_lat": 42.50682,
+    "from_long": 1.53296,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Armenia",
+    "Organisation": "Caritas Armenia",
+    "Region": "Europe",
+    "City": "Gyumri",
+    "from_lat": 40.7934608,
+    "from_long": 43.8464203,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Austria",
+    "Organisation": "Oesterreichische Caritaszentrale",
+    "Region": "Europe",
+    "City": "Wien",
+    "from_lat": 48.22047,
+    "from_long": 16.31602,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Azerbaijan",
+    "Organisation": "Caritas Azerbaijan (Corresponding Member)",
+    "Region": "Europe",
+    "City": "Baku",
+    "from_lat": 40.4106598,
+    "from_long": 49.8722191,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Belarus",
+    "Organisation": "Caritas Belarus",
+    "Region": "Europe",
+    "City": "Minsk",
+    "from_lat": 53.9065,
+    "from_long": 27.551,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Belgium",
+    "Organisation": "Caritas en Communauté Française et Germanophone",
+    "Region": "Europe",
+    "City": "Brussels1",
+    "from_lat": 50.84765,
+    "from_long": 4.37055,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Belgium",
+    "Organisation": "Caritas International Belgique",
+    "Region": "Europe",
+    "City": "Brussels2",
+    "from_lat": 50.84765,
+    "from_long": 4.37055,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Belgium",
+    "Organisation": "Caritas Vlaanderen - Belgium",
+    "Region": "Europe",
+    "City": "Brussels3",
+    "from_lat": 50.84765,
+    "from_long": 4.37055,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Bosnia-Herzegovina",
+    "Organisation": "Caritas Bosnia-Herzegovina",
+    "Region": "Europe",
+    "City": "Sarajevo",
+    "from_lat": 43.86083,
+    "from_long": 18.41437,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Bulgaria",
+    "Organisation": "Caritas Bulgaria",
+    "Region": "Europe",
+    "City": "Sofia",
+    "from_lat": 42.6954379,
+    "from_long": 23.3369201,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Croatia",
+    "Organisation": "Caritas Croatia",
+    "Region": "Europe",
+    "City": "Zagreb",
+    "from_lat": 45.83842,
+    "from_long": 15.97776,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Cyprus",
+    "Organisation": "Koinonia Caritas",
+    "Region": "Europe",
+    "City": "Nicosia",
+    "from_lat": 35.1273117,
+    "from_long": 33.3280792,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Czech Republic",
+    "Organisation": "Charita Ceská republika - Caritas Czech republic",
+    "Region": "Europe",
+    "City": "Prague 1",
+    "from_lat": 50.08032,
+    "from_long": 14.42135,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Denmark",
+    "Organisation": "Caritas Danmark",
+    "Region": "Europe",
+    "City": "Copenhagen V",
+    "from_lat": 56.2622757,
+    "from_long": 9.3363562,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "England & Wales",
+    "Organisation": "CAFOD - Catholic Fund for Overseas Development - Caritas England & Wales",
+    "Region": "Europe",
+    "City": "London",
+    "from_lat": 51.49824,
+    "from_long": -0.10802,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Estonia",
+    "Organisation": "Caritas Estonia",
+    "Region": "Europe",
+    "City": "Tallinn",
+    "from_lat": 59.46744,
+    "from_long": 24.83601,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Finland",
+    "Organisation": "Caritas Finland",
+    "Region": "Europe",
+    "City": "Helsinki",
+    "from_lat": 60.17311,
+    "from_long": 24.95968,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "France",
+    "Organisation": "Secours Catholique - Caritas France",
+    "Region": "Europe",
+    "City": "Paris Cedex 07",
+    "from_lat": 48.85341,
+    "from_long": 2.32368,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Georgia",
+    "Organisation": "Caritas Georgia",
+    "Region": "Europe",
+    "City": "Tbilisi",
+    "from_lat": 41.7090797,
+    "from_long": 44.7961197,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Germany",
+    "Organisation": "Deutscher Caritasverband",
+    "Region": "Europe",
+    "City": "Freiburg",
+    "from_lat": 48.00422,
+    "from_long": 7.85668,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Greece",
+    "Organisation": "Caritas Hellas",
+    "Region": "Europe",
+    "City": "Athens",
+    "from_lat": 37.98703,
+    "from_long": 23.72722,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Hungary",
+    "Organisation": "Caritas Hungarica",
+    "Region": "Europe",
+    "City": "Budapest",
+    "from_lat": 47.4997215,
+    "from_long": 19.0550804,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Iceland",
+    "Organisation": "Caritas Island",
+    "Region": "Europe",
+    "City": "Reykjavík",
+    "from_lat": 64.147,
+    "from_long": -21.94874,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Ireland",
+    "Organisation": "TROCAIRE - Caritas Ireland",
+    "Region": "Europe",
+    "City": "Co. Kildare",
+    "from_lat": 53.381691,
+    "from_long": -6.5905199,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Italia",
+    "Organisation": "Caritas Italiana",
+    "Region": "Europe",
+    "City": "Roma",
+    "from_lat": 41.88912,
+    "from_long": 12.40748,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Kosovo",
+    "Organisation": "Caritas Kosovo",
+    "Region": "Europe",
+    "City": "Ferizaj",
+    "from_lat": 42.3690605,
+    "from_long": 21.1535091,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Latvia",
+    "Organisation": "Caritas Latvia",
+    "Region": "Europe",
+    "City": "Riga",
+    "from_lat": 57.03729,
+    "from_long": 24.04205,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Lithuania",
+    "Organisation": "Caritas Lithuania",
+    "Region": "Europe",
+    "City": "Kaunas",
+    "from_lat": 54.89789,
+    "from_long": 23.88452,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Luxembourg",
+    "Organisation": "Confédération Caritas Luxembourg asbl",
+    "Region": "Europe",
+    "City": "Luxembourg",
+    "from_lat": 49.60392,
+    "from_long": 6.12661,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Macedonia",
+    "Organisation": "Caritas Macedonia",
+    "Region": "Europe",
+    "City": "Skopje",
+    "from_lat": 41.99588,
+    "from_long": 21.4169,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Malta",
+    "Organisation": "Caritas Malta",
+    "Region": "Europe",
+    "City": "Floriana",
+    "from_lat": 35.892231,
+    "from_long": 14.5074301,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Moldova",
+    "Organisation": "Caritas Moldova",
+    "Region": "Europe",
+    "City": "Chisinau",
+    "from_lat": 47.0364,
+    "from_long": 28.82572,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Monaco",
+    "Organisation": "Caritas Monaco",
+    "Region": "Europe",
+    "City": "Monaco",
+    "from_lat": 43.73706,
+    "from_long": 7.42147,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Montenegro",
+    "Organisation": "Caritas Montenegro",
+    "Region": "Europe",
+    "City": "Bar",
+    "from_lat": 42.0957,
+    "from_long": 19.11276,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Netherlands",
+    "Organisation": "CORDAID",
+    "Region": "Europe",
+    "City": "The Hague",
+    "from_lat": 52.0672989,
+    "from_long": 4.28899,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Norway",
+    "Organisation": "Caritas Norge",
+    "Region": "Europe",
+    "City": "Oslo",
+    "from_lat": 59.91301,
+    "from_long": 10.76086,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Poland",
+    "Organisation": "Caritas Polska",
+    "Region": "Europe",
+    "City": "Warszawa",
+    "from_lat": 52.24797,
+    "from_long": 20.9785,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Portugal",
+    "Organisation": "Caritas Portuguesa",
+    "Region": "Europe",
+    "City": "Lisbon",
+    "from_lat": 38.741,
+    "from_long": -9.13596,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Romania",
+    "Organisation": "Confederatia Caritas Romania",
+    "Region": "Europe",
+    "City": "Bucuresti",
+    "from_lat": 44.45575,
+    "from_long": 26.095,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Russia",
+    "Organisation": "Federal Caritas of Russia",
+    "Region": "Europe",
+    "City": "St Petersburg",
+    "from_lat": 60.09126,
+    "from_long": 29.97721,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Russia",
+    "Organisation": "Diocesan Caritas of the Mother of God Moscow",
+    "Region": "Europe",
+    "City": "Moscow",
+    "from_lat": 55.813,
+    "from_long": 37.57698,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Scotland",
+    "Organisation": "SCIAF - Scottish Catholic International Aid Fund - Caritas Scotland",
+    "Region": "Europe",
+    "City": "Glasgow",
+    "from_lat": 55.869305,
+    "from_long": -4.2799119,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Serbia",
+    "Organisation": "Caritas Serbia",
+    "Region": "Europe",
+    "City": "Belgrade",
+    "from_lat": 44.78133,
+    "from_long": 20.47155,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Slovakia",
+    "Organisation": "Slovenska Katolicka Charita - Caritas Slovakia",
+    "Region": "Europe",
+    "City": "Bratislava",
+    "from_lat": 48.14312,
+    "from_long": 17.10509,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Slovenia",
+    "Organisation": "Slovenska Karitas",
+    "Region": "Europe",
+    "City": "Lubljana",
+    "from_lat": 46.0501,
+    "from_long": 14.51089,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Spain",
+    "Organisation": "Caritas Espanola",
+    "Region": "Europe",
+    "City": "Madrid",
+    "from_lat": 40.39624,
+    "from_long": -3.69635,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Sweden",
+    "Organisation": "Caritas Sverige",
+    "Region": "Europe",
+    "City": "Stockholm",
+    "from_lat": 59.3246498,
+    "from_long": 18.075346,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Switzerland",
+    "Organisation": "Caritas Schweiz",
+    "Region": "Europe",
+    "City": "Lucerne",
+    "from_lat": 47.05623,
+    "from_long": 8.31499,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Turkey",
+    "Organisation": "Caritas Turquie",
+    "Region": "Europe",
+    "City": "Elmadag - Istanbul",
+    "from_lat": 41.04456,
+    "from_long": 28.98487,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Ukraine",
+    "Organisation": "Caritas Ukraine",
+    "Region": "Europe",
+    "City": "Lviv",
+    "from_lat": 49.83869,
+    "from_long": 24.01125,
+    "to_lat": 50.84765,
+    "to_long": 4.37055
+  },
+  {
+    "Country": "Bangladesh",
+    "Organisation": "Caritas Bangladesh",
+    "Region": "Asia",
+    "City": "Dhaka",
+    "from_lat": 23.7132301,
+    "from_long": 90.3995667,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Cambodia",
+    "Organisation": "Caritas Cambodia",
+    "Region": "Asia",
+    "City": "Phnom Penh",
+    "from_lat": 11.5525303,
+    "from_long": 104.8789368,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Hong Kong",
+    "Organisation": "Caritas Hong Kong",
+    "Region": "Asia",
+    "City": "Hong Kong",
+    "from_lat": 22.2760205,
+    "from_long": 114.1592516,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "India",
+    "Organisation": "Caritas India",
+    "Region": "Asia",
+    "City": "New Delhi",
+    "from_lat": 28.6309509,
+    "from_long": 77.2172775,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Indonesia",
+    "Organisation": "Caritas Indonesia (Karina KWI)",
+    "Region": "Asia",
+    "City": "Jakarta Timur",
+    "from_lat": -6.20203,
+    "from_long": 106.8536,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Japan",
+    "Organisation": "Caritas Japan",
+    "Region": "Asia",
+    "City": "Tokyo",
+    "from_lat": 35.6840782,
+    "from_long": 139.8088531,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Kazakhstan",
+    "Organisation": "Caritas Kazakhstan",
+    "Region": "Asia",
+    "City": "Karaganda City",
+    "from_lat": 49.8241005,
+    "from_long": 73.093689,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Korea",
+    "Organisation": "Caritas Korea",
+    "Region": "Asia",
+    "City": "Seoul",
+    "from_lat": 37.560225,
+    "from_long": 127.078875,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Kyrgyzstan",
+    "Organisation": "Caritas Kyrsyzstan",
+    "Region": "Asia",
+    "City": "Bishkek",
+    "from_lat": 42.8843384,
+    "from_long": 74.6035385,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Macau",
+    "Organisation": "Caritas Macau",
+    "Region": "Asia",
+    "City": "Macau",
+    "from_lat": 22.1896806,
+    "from_long": 113.5433851,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Malaysia",
+    "Organisation": "NOHD - National Office for Human Development (Malaysia)",
+    "Region": "Asia",
+    "City": "Kuala Lumpur",
+    "from_lat": 3.15076,
+    "from_long": 101.6988,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Mongolia",
+    "Organisation": "Caritas Mongolia",
+    "Region": "Asia",
+    "City": "Ulaanbaatar",
+    "from_lat": 47.9221497,
+    "from_long": 106.9176712,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Myanmar",
+    "Organisation": "Caritas Myanmar (KMSS)",
+    "Region": "Asia",
+    "City": "Yangon",
+    "from_lat": 16.8821106,
+    "from_long": 96.1326294,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Nepal",
+    "Organisation": "Caritas Nepal",
+    "Region": "Asia",
+    "City": "Kathmandu",
+    "from_lat": 27.6933498,
+    "from_long": 85.322319,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Pakistan",
+    "Organisation": "Caritas Pakistan",
+    "Region": "Asia",
+    "City": "Lahore",
+    "from_lat": 31.5394497,
+    "from_long": 74.3034821,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Philippines",
+    "Organisation": "NASSA - Caritas Philippines",
+    "Region": "Asia",
+    "City": "Manila",
+    "from_lat": 14.58998,
+    "from_long": 120.97453,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Singapore",
+    "Organisation": "CHARIS - Singapore",
+    "Region": "Asia",
+    "City": "Singapore",
+    "from_lat": 1.29836,
+    "from_long": 103.85144,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Sri Lanka",
+    "Organisation": "SEDEC - Social Economic Development Centre (Sri Lanka)",
+    "Region": "Asia",
+    "City": "Colombo 8",
+    "from_lat": 7.641645,
+    "from_long": 80.6919785,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Taiwan-R.O.C.",
+    "Organisation": "Caritas Taiwan",
+    "Region": "Asia",
+    "City": "Taipei",
+    "from_lat": 25.04604,
+    "from_long": 121.51946,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Tajikistan",
+    "Organisation": "Caritas Tajikistan (Corresponding Member)",
+    "Region": "Asia",
+    "City": "Dushanbe",
+    "from_lat": 38.5680504,
+    "from_long": 68.7715836,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Thailand",
+    "Organisation": "Caritas Thailand",
+    "Region": "Asia",
+    "City": "Bangkok",
+    "from_lat": 13.69149,
+    "from_long": 100.5389,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Uzbekistan",
+    "Organisation": "Caritas Uzbekistan",
+    "Region": "Asia",
+    "City": "Tashkent",
+    "from_lat": 41.3207588,
+    "from_long": 69.3063812,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+  {
+    "Country": "Vietnam",
+    "Organisation": "Caritas Vietnam",
+    "Region": "Asia",
+    "City": "Ho Chi Minh City",
+    "from_lat": 10.8378255,
+    "from_long": 106.7141382,
+    "to_lat": 13.881591,
+    "to_long": 100.644533
+  },
+
+{
+  "Country": "Canada",
+  "Organisation": "Développement et Paix / Development and Peace - Caritas Canada",
+  "Region": "NordAm",
+  "City": "Montréal - Québec",
+  "from_lat": 45.49521,
+  "from_long": -73.5743,
+  "to_lat": 38.80262,
+  "to_long": -77.06384
+},
+{
+  "Country": "United States of America",
+  "Organisation": "Catholic Relief Services - Caritas USA",
+  "Region": "NordAm",
+  "City": "Baltimore, Maryland",
+  "from_lat": 39.291909,
+  "from_long": -76.61914,
+  "to_lat": 38.80262,
+  "to_long": -77.06384
+}
+]

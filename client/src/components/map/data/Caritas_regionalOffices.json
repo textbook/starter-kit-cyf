@@ -1,0 +1,51 @@
+[
+  {
+    "Region": "Africa",
+    "Organisation": "Caritas Africa",
+    "City": "Lome",
+    "lat": 6.149261,
+    "lng": 1.218761
+  },
+  {
+    "Region": "Asia",
+    "Organisation": "Caritas Asia",
+    "City": "Bangkok",
+    "lat": 13.881591,
+    "lng": 100.644533
+  },
+  {
+    "Region": "Europe",
+    "Organisation": "Caritas Europa",
+    "City": "Brussels",
+    "lat": 50.84765,
+    "lng": 4.37055
+  },
+  {
+    "Region": "Oceania",
+    "Organisation": "Caritas Oceania",
+    "City": "Auckland",
+    "lat": -36.9674,
+    "lng": 174.859
+  },
+  {
+    "Region": "Mona",
+    "Organisation": "Caritas Mona",
+    "City": "Beirut",
+    "lat": 33.89784,
+    "lng": 35.57605
+  },
+  {
+    "Region": "Latin",
+    "Organisation": "Caritas Latin America",
+    "City": "SanJose",
+    "lat": 9.90958,
+    "lng": -84.05406
+  },
+  {
+    "Region": "AmNor",
+    "Organisation": "Caritas North America",
+    "City": "Alexandria",
+    "lat": 38.80262,
+    "lng": -77.06384
+  }
+]

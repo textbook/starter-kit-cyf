@@ -4,8 +4,8 @@ import "./icon.css";
 const iconCyf = new L.Icon({
     iconUrl: require("./img/Ez_icon.png"),
     iconRetinaUrl: require('./img/Ez_icon.png'),
-    iconAnchor: null,
-    popupAnchor: null,
+    iconAnchor: [15, 37],
+    popupAnchor: [1, -34],
     shadowUrl: null,
     shadowSize: null,
     shadowAnchor: null,

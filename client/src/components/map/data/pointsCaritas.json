@@ -1,0 +1,1330 @@
+[
+  {
+    "Angola": "Benin",
+    "Caritas de Angola": "Caritas Benin",
+    "Africa": "Africa",
+    "Luanda": "Cotonou",
+    "-8.8156605": 6.3726602,
+    "13.2328796": 2.4254
+  },
+  {
+    "Angola": "Botswana",
+    "Caritas de Angola": "Tirisanyo Catholic Commission - Caritas Botswana",
+    "Africa": "Africa",
+    "Luanda": "Gaborone",
+    "-8.8156605": -24.6552696,
+    "13.2328796": 25.9190407
+  },
+  {
+    "Angola": "Burkina Faso",
+    "Caritas de Angola": "OCADES - Caritas Burkina Faso",
+    "Africa": "Africa",
+    "Luanda": "Ouagadougou 01",
+    "-8.8156605": 12.2854481,
+    "13.2328796": -1.744179
+  },
+  {
+    "Angola": "Burundi",
+    "Caritas de Angola": "CED - Caritas Burundi",
+    "Africa": "Africa",
+    "Luanda": "Bujumbura",
+    "-8.8156605": -3.3601799,
+    "13.2328796": 29.3690891
+  },
+  {
+    "Angola": "Cameroon",
+    "Caritas de Angola": "BASC - Bureau des Activités Socio-Caritatives - Caritas Cameroun",
+    "Africa": "Africa",
+    "Luanda": "Yaoundé",
+    "-8.8156605": 3.8468399,
+    "13.2328796": 11.5204496
+  },
+  {
+    "Angola": "Cape Verde",
+    "Caritas de Angola": "Caritas Caboverdeana",
+    "Africa": "Africa",
+    "Luanda": "Praia, Santiago",
+    "-8.8156605": 14.9155102,
+    "13.2328796": -23.5095406
+  },
+  {
+    "Angola": "Central African Republic",
+    "Caritas de Angola": "Caritas Centrafrique",
+    "Africa": "Africa",
+    "Luanda": "Bangui",
+    "-8.8156605": 4.3966899,
+    "13.2328796": 18.5585995
+  },
+  {
+    "Angola": "Chad",
+    "Caritas de Angola": "UNAD - Caritas Tchad",
+    "Africa": "Africa",
+    "Luanda": "N'Djaména",
+    "-8.8156605": 12.1131496,
+    "13.2328796": 15.0491199
+  },
+  {
+    "Angola": "Comoros",
+    "Caritas de Angola": "Caritas Comores",
+    "Africa": "Africa",
+    "Luanda": "Moroni",
+    "-8.8156605": -11.6922398,
+    "13.2328796": 43.2591896
+  },
+  {
+    "Angola": "Congo Democratic Republic",
+    "Caritas de Angola": "Caritas Congo ASBL",
+    "Africa": "Africa",
+    "Luanda": "Kinshasa-Gombe",
+    "-8.8156605": -4.3030601,
+    "13.2328796": 15.3033304
+  },
+  {
+    "Angola": "Congo Republic",
+    "Caritas de Angola": "Caritas République du Congo",
+    "Africa": "Africa",
+    "Luanda": "Brazzaville",
+    "-8.8156605": -4.2793398,
+    "13.2328796": 15.2603903
+  },
+  {
+    "Angola": "Equatorial Guinea",
+    "Caritas de Angola": "Caritas Guinea Ecuatorial",
+    "Africa": "Africa",
+    "Luanda": "Malabo-Bioko Norte",
+    "-8.8156605": 3.6800001,
+    "13.2328796": 8.7799997
+  },
+  {
+    "Angola": "Eritrea",
+    "Caritas de Angola": "Eritrean Catholic Secretariat",
+    "Africa": "Africa",
+    "Luanda": "Asmara",
+    "-8.8156605": 15.33638,
+    "13.2328796": 38.9369202
+  },
+  {
+    "Angola": "Ethiopia",
+    "Caritas de Angola": "Ethiopian Catholic Secretariat",
+    "Africa": "Africa",
+    "Luanda": "Addis Ababa",
+    "-8.8156605": 9.0136003,
+    "13.2328796": 38.7628288
+  },
+  {
+    "Angola": "Gabon",
+    "Caritas de Angola": "Caritas Gabon",
+    "Africa": "Africa",
+    "Luanda": "Libreville",
+    "-8.8156605": 0.39324,
+    "13.2328796": 9.4463301
+  },
+  {
+    "Angola": "Gambia",
+    "Caritas de Angola": "Catholic Development Office - Caritas Gambia",
+    "Africa": "Africa",
+    "Luanda": "Serrekunda",
+    "-8.8156605": 13.4648104,
+    "13.2328796": -16.6877308
+  },
+  {
+    "Angola": "Ghana",
+    "Caritas de Angola": "Caritas Ghana - National Catholic Secretariat",
+    "Africa": "Africa",
+    "Luanda": "Accra",
+    "-8.8156605": 5.5810699,
+    "13.2328796": -0.19897
+  },
+  {
+    "Angola": "Guinea",
+    "Caritas de Angola": "OCPH - Organisation Catholique pour la Promotion Humaine - Caritas Rép. de Guinée",
+    "Africa": "Africa",
+    "Luanda": "Conakry",
+    "-8.8156605": 9.5119801,
+    "13.2328796": -13.7053804
+  },
+  {
+    "Angola": "Guinea-Bissau",
+    "Caritas de Angola": "Caritas Guinée-Bissau",
+    "Africa": "Africa",
+    "Luanda": "Bissau CODEX",
+    "-8.8156605": 12.0376902,
+    "13.2328796": -14.9580021
+  },
+  {
+    "Angola": "Ivory Coast",
+    "Caritas de Angola": "Caritas Côte d'Ivoire",
+    "Africa": "Africa",
+    "Luanda": "Abidjan 01",
+    "-8.8156605": 7.6228418,
+    "13.2328796": -5.5525599
+  },
+  {
+    "Angola": "Kenya",
+    "Caritas de Angola": "Caritas Kenya",
+    "Africa": "Africa",
+    "Luanda": "Nairobi",
+    "-8.8156605": 0.537028,
+    "13.2328796": 37.8567772
+  },
+  {
+    "Angola": "Lesotho",
+    "Caritas de Angola": "Department of Development - Caritas Lesotho",
+    "Africa": "Africa",
+    "Luanda": "Maseru",
+    "-8.8156605": -29.3184204,
+    "13.2328796": 27.4887791
+  },
+  {
+    "Angola": "Liberia",
+    "Caritas de Angola": "Caritas Liberia",
+    "Africa": "Africa",
+    "Luanda": "Monrovia 10",
+    "-8.8156605": 6.4475222,
+    "13.2328796": -9.3111792
+  },
+  {
+    "Angola": "Madagascar",
+    "Caritas de Angola": "Caritas Madagascar",
+    "Africa": "Africa",
+    "Luanda": "Antananarivo",
+    "-8.8156605": -18.9100304,
+    "13.2328796": 47.527359
+  },
+  {
+    "Angola": "Malawi",
+    "Caritas de Angola": "CADECOM - Catholic Development Commission in Malawi - Caritas Malawi",
+    "Africa": "Africa",
+    "Luanda": "Lilongwe 3",
+    "-8.8156605": -13.3602753,
+    "13.2328796": 34.293045
+  },
+  {
+    "Angola": "Mali",
+    "Caritas de Angola": "Commission Nationale de Pastorale Sociale - Caritas Mali",
+    "Africa": "Africa",
+    "Luanda": "Bamako",
+    "-8.8156605": 12.6503897,
+    "13.2328796": -8.0000401
+  },
+  {
+    "Angola": "Mauritania",
+    "Caritas de Angola": "Caritas Mauritanie",
+    "Africa": "Africa",
+    "Luanda": "Nouakchott",
+    "-8.8156605": 18.0919304,
+    "13.2328796": -15.9724798
+  },
+  {
+    "Angola": "Mauritius",
+    "Caritas de Angola": "Caritas Ile Maurice",
+    "Africa": "Africa",
+    "Luanda": "Port-Louis",
+    "-8.8156605": -20.1654396,
+    "13.2328796": 57.5149117
+  },
+  {
+    "Angola": "Mozambique",
+    "Caritas de Angola": "Caritas Moçambicana",
+    "Africa": "Africa",
+    "Luanda": "Maputo",
+    "-8.8156605": -25.95788,
+    "13.2328796": 32.58189
+  },
+  {
+    "Angola": "Namibia",
+    "Caritas de Angola": "NCBC - Namibian Catholic Bishops' Conference",
+    "Africa": "Africa",
+    "Luanda": "Windhoek",
+    "-8.8156605": -22.5715904,
+    "13.2328796": 17.0907402
+  },
+  {
+    "Angola": "Niger",
+    "Caritas de Angola": "CADEV - Caritas Développement Niger",
+    "Africa": "Africa",
+    "Luanda": "CTN Niamey",
+    "-8.8156605": 13.5163202,
+    "13.2328796": 2.1162701
+  },
+  {
+    "Angola": "Nigeria",
+    "Caritas de Angola": "Caritas Nigeria",
+    "Africa": "Africa",
+    "Luanda": "Lagos",
+    "-8.8156605": 6.49635,
+    "13.2328796": 3.35468
+  },
+  {
+    "Angola": "Rwanda",
+    "Caritas de Angola": "Caritas Rwanda",
+    "Africa": "Africa",
+    "Luanda": "Kigali",
+    "-8.8156605": -1.96292,
+    "13.2328796": 30.12391
+  },
+  {
+    "Angola": "Sao Tome & Principe",
+    "Caritas de Angola": "Caritas Sao Tome & Principe",
+    "Africa": "Africa",
+    "Luanda": "Via Portugal",
+    "-8.8156605": 0.239311,
+    "13.2328796": 6.6020598
+  },
+  {
+    "Angola": "Senegal",
+    "Caritas de Angola": "Caritas Senegal",
+    "Africa": "Africa",
+    "Luanda": "Dakar",
+    "-8.8156605": 14.6692696,
+    "13.2328796": -17.4366093
+  },
+  {
+    "Angola": "Seychelles",
+    "Caritas de Angola": "Caritas Seychelles",
+    "Africa": "Africa",
+    "Luanda": "Victoria-Mahé",
+    "-8.8156605": -4.6227498,
+    "13.2328796": "55.4522705,"
+  },
+  {
+    "Angola": "Sierra Leone",
+    "Caritas de Angola": "Caritas Sierra Leone",
+    "Africa": "Africa",
+    "Luanda": "Kenema",
+    "-8.8156605": 7.8624601,
+    "13.2328796": -11.1949701
+  },
+  {
+    "Angola": "South Africa",
+    "Caritas de Angola": "Caritas South Africa",
+    "Africa": "Africa",
+    "Luanda": "Pretoria",
+    "-8.8156605": -25.7458096,
+    "13.2328796": 28.1883793
+  },
+  {
+    "Angola": "South Sudan",
+    "Caritas de Angola": "Caritas South Sudan",
+    "Africa": "Africa",
+    "Luanda": "Juba",
+    "-8.8156605": 4.8397498,
+    "13.2328796": 31.59758
+  },
+  {
+    "Angola": "Sudan",
+    "Caritas de Angola": "SUDANAID - Caritas Sudan",
+    "Africa": "Africa",
+    "Luanda": "Khartoum",
+    "-8.8156605": 15.5866098,
+    "13.2328796": 32.523201
+  },
+  {
+    "Angola": "Swaziland",
+    "Caritas de Angola": "Caritas Swaziland",
+    "Africa": "Africa",
+    "Luanda": "Manzini",
+    "-8.8156605": -26.59631,
+    "13.2328796": 30.91653
+  },
+  {
+    "Angola": "Tanzania",
+    "Caritas de Angola": "Caritas Tanzania",
+    "Africa": "Africa",
+    "Luanda": "Dar-es-Salaam",
+    "-8.8156605": -6.7831998,
+    "13.2328796": 39.2676697
+  },
+  {
+    "Angola": "Togo",
+    "Caritas de Angola": "OCDI - Organisation de la Charité pour un Développement Intégral - Caritas Togo",
+    "Africa": "Africa",
+    "Luanda": "Lomé-Aviation",
+    "-8.8156605": 8.5307598,
+    "13.2328796": 0.976809
+  },
+  {
+    "Angola": "Uganda",
+    "Caritas de Angola": "Uganda Catholic Secretariat - Caritas Uganda",
+    "Africa": "Africa",
+    "Luanda": "Kampala",
+    "-8.8156605": 0.31426,
+    "13.2328796": 32.5755692
+  },
+  {
+    "Angola": "Zambia",
+    "Caritas de Angola": "Catholic Commission for Development (CCD)",
+    "Africa": "Africa",
+    "Luanda": "Lusaka",
+    "-8.8156605": -15.4256096,
+    "13.2328796": "28.2787495,"
+  },
+  {
+    "Angola": "Zimbabwe",
+    "Caritas de Angola": "Catholic Development Commission - Caritas Zimbabwe",
+    "Africa": "Africa",
+    "Luanda": "Harare",
+    "-8.8156605": -17.8243904,
+    "13.2328796": 31.0499496
+  },
+  {
+    "Angola": "Bangladesh",
+    "Caritas de Angola": "Caritas Bangladesh",
+    "Africa": "Asia",
+    "Luanda": "Dhaka",
+    "-8.8156605": 23.7132301,
+    "13.2328796": 90.3995667
+  },
+  {
+    "Angola": "Cambodia",
+    "Caritas de Angola": "Caritas Cambodia",
+    "Africa": "Asia",
+    "Luanda": "Phnom Penh",
+    "-8.8156605": 11.5525303,
+    "13.2328796": 104.8789368
+  },
+  {
+    "Angola": "Hong Kong",
+    "Caritas de Angola": "Caritas Hong Kong",
+    "Africa": "Asia",
+    "Luanda": "Hong Kong",
+    "-8.8156605": 22.2760205,
+    "13.2328796": 114.1592516
+  },
+  {
+    "Angola": "India",
+    "Caritas de Angola": "Caritas India",
+    "Africa": "Asia",
+    "Luanda": "New Delhi",
+    "-8.8156605": 28.6309509,
+    "13.2328796": 77.2172775
+  },
+  {
+    "Angola": "Indonesia",
+    "Caritas de Angola": "Caritas Indonesia (Karina KWI)",
+    "Africa": "Asia",
+    "Luanda": "Jakarta Timur",
+    "-8.8156605": -6.20203,
+    "13.2328796": 106.8536
+  },
+  {
+    "Angola": "Japan",
+    "Caritas de Angola": "Caritas Japan",
+    "Africa": "Asia",
+    "Luanda": "Tokyo",
+    "-8.8156605": 35.6840782,
+    "13.2328796": 139.8088531
+  },
+  {
+    "Angola": "Kazakhstan",
+    "Caritas de Angola": "Caritas Kazakhstan",
+    "Africa": "Asia",
+    "Luanda": "Karaganda City",
+    "-8.8156605": 49.8241005,
+    "13.2328796": 73.093689
+  },
+  {
+    "Angola": "Korea",
+    "Caritas de Angola": "Caritas Korea",
+    "Africa": "Asia",
+    "Luanda": "Seoul",
+    "-8.8156605": 37.560225,
+    "13.2328796": 127.078875
+  },
+  {
+    "Angola": "Kyrgyzstan",
+    "Caritas de Angola": "Caritas Kyrsyzstan",
+    "Africa": "Asia",
+    "Luanda": "Bishkek",
+    "-8.8156605": 42.8843384,
+    "13.2328796": 74.6035385
+  },
+  {
+    "Angola": "Macau",
+    "Caritas de Angola": "Caritas Macau",
+    "Africa": "Asia",
+    "Luanda": "Macau",
+    "-8.8156605": 22.1896806,
+    "13.2328796": 113.5433851
+  },
+  {
+    "Angola": "Malaysia",
+    "Caritas de Angola": "NOHD - National Office for Human Development (Malaysia)",
+    "Africa": "Asia",
+    "Luanda": "Kuala Lumpur",
+    "-8.8156605": 3.15076,
+    "13.2328796": 101.6988
+  },
+  {
+    "Angola": "Mongolia",
+    "Caritas de Angola": "Caritas Mongolia",
+    "Africa": "Asia",
+    "Luanda": "Ulaanbaatar",
+    "-8.8156605": 47.9221497,
+    "13.2328796": 106.9176712
+  },
+  {
+    "Angola": "Myanmar",
+    "Caritas de Angola": "Caritas Myanmar (KMSS)",
+    "Africa": "Asia",
+    "Luanda": "Yangon",
+    "-8.8156605": 16.8821106,
+    "13.2328796": 96.1326294
+  },
+  {
+    "Angola": "Nepal",
+    "Caritas de Angola": "Caritas Nepal",
+    "Africa": "Asia",
+    "Luanda": "Kathmandu",
+    "-8.8156605": 27.6933498,
+    "13.2328796": 85.322319
+  },
+  {
+    "Angola": "Pakistan",
+    "Caritas de Angola": "Caritas Pakistan",
+    "Africa": "Asia",
+    "Luanda": "Lahore",
+    "-8.8156605": 31.5394497,
+    "13.2328796": 74.3034821
+  },
+  {
+    "Angola": "Philippines",
+    "Caritas de Angola": "NASSA - Caritas Philippines",
+    "Africa": "Asia",
+    "Luanda": "Manila",
+    "-8.8156605": 14.58998,
+    "13.2328796": 120.97453
+  },
+  {
+    "Angola": "Singapore",
+    "Caritas de Angola": "CHARIS - Singapore",
+    "Africa": "Asia",
+    "Luanda": "Singapore",
+    "-8.8156605": 1.29836,
+    "13.2328796": 103.85144
+  },
+  {
+    "Angola": "Sri Lanka",
+    "Caritas de Angola": "SEDEC - Social Economic Development Centre (Sri Lanka)",
+    "Africa": "Asia",
+    "Luanda": "Colombo 8",
+    "-8.8156605": 7.641645,
+    "13.2328796": 80.6919785
+  },
+  {
+    "Angola": "Taiwan-R.O.C.",
+    "Caritas de Angola": "Caritas Taiwan",
+    "Africa": "Asia",
+    "Luanda": "Taipei",
+    "-8.8156605": 25.04604,
+    "13.2328796": 121.51946
+  },
+  {
+    "Angola": "Tajikistan",
+    "Caritas de Angola": "Caritas Tajikistan (Corresponding Member)",
+    "Africa": "Asia",
+    "Luanda": "Dushanbe",
+    "-8.8156605": 38.5680504,
+    "13.2328796": 68.7715836
+  },
+  {
+    "Angola": "Thailand",
+    "Caritas de Angola": "Caritas Thailand",
+    "Africa": "Asia",
+    "Luanda": "Bangkok",
+    "-8.8156605": 13.69149,
+    "13.2328796": 100.5389
+  },
+  {
+    "Angola": "Uzbekistan",
+    "Caritas de Angola": "Caritas Uzbekistan",
+    "Africa": "Asia",
+    "Luanda": "Tashkent",
+    "-8.8156605": 41.3207588,
+    "13.2328796": 69.3063812
+  },
+  {
+    "Angola": "Vietnam",
+    "Caritas de Angola": "Caritas Vietnam",
+    "Africa": "Asia",
+    "Luanda": "Ho Chi Minh City",
+    "-8.8156605": 10.8378255,
+    "13.2328796": 106.7141382
+  },
+  {
+    "Angola": "Albania",
+    "Caritas de Angola": "Caritas Albania",
+    "Africa": "Europe",
+    "Luanda": "Tirana",
+    "-8.8156605": 41.33477,
+    "13.2328796": 19.80604
+  },
+  {
+    "Angola": "Andorra",
+    "Caritas de Angola": "Caritas Andorrana",
+    "Africa": "Europe",
+    "Luanda": "Andorra la Vella",
+    "-8.8156605": 42.50682,
+    "13.2328796": 1.53296
+  },
+  {
+    "Angola": "Armenia",
+    "Caritas de Angola": "Caritas Armenia",
+    "Africa": "Europe",
+    "Luanda": "Gyumri",
+    "-8.8156605": 40.7934608,
+    "13.2328796": 43.8464203
+  },
+  {
+    "Angola": "Austria",
+    "Caritas de Angola": "Oesterreichische Caritaszentrale",
+    "Africa": "Europe",
+    "Luanda": "Wien",
+    "-8.8156605": 48.22047,
+    "13.2328796": 16.31602
+  },
+  {
+    "Angola": "Azerbaijan",
+    "Caritas de Angola": "Caritas Azerbaijan (Corresponding Member)",
+    "Africa": "Europe",
+    "Luanda": "Baku",
+    "-8.8156605": 40.4106598,
+    "13.2328796": 49.8722191
+  },
+  {
+    "Angola": "Belarus",
+    "Caritas de Angola": "Caritas Belarus",
+    "Africa": "Europe",
+    "Luanda": "Minsk",
+    "-8.8156605": 53.9065,
+    "13.2328796": 27.551
+  },
+  {
+    "Angola": "Belgium",
+    "Caritas de Angola": "Caritas en Communauté Française et Germanophone",
+    "Africa": "Europe",
+    "Luanda": "Brussels",
+    "-8.8156605": 50.84765,
+    "13.2328796": 4.37055
+  },
+  {
+    "Angola": "Belgium",
+    "Caritas de Angola": "Caritas International Belgique",
+    "Africa": "Europe",
+    "Luanda": "Brussels",
+    "-8.8156605": 50.84765,
+    "13.2328796": 4.37055
+  },
+  {
+    "Angola": "Belgium",
+    "Caritas de Angola": "Caritas Vlaanderen - Belgium",
+    "Africa": "Europe",
+    "Luanda": "Brussels",
+    "-8.8156605": 50.84765,
+    "13.2328796": 4.37055
+  },
+  {
+    "Angola": "Bosnia-Herzegovina",
+    "Caritas de Angola": "Caritas Bosnia-Herzegovina",
+    "Africa": "Europe",
+    "Luanda": "Sarajevo",
+    "-8.8156605": 43.86083,
+    "13.2328796": 18.41437
+  },
+  {
+    "Angola": "Bulgaria",
+    "Caritas de Angola": "Caritas Bulgaria",
+    "Africa": "Europe",
+    "Luanda": "Sofia",
+    "-8.8156605": 42.6954379,
+    "13.2328796": 23.3369201
+  },
+  {
+    "Angola": "Croatia",
+    "Caritas de Angola": "Caritas Croatia",
+    "Africa": "Europe",
+    "Luanda": "Zagreb",
+    "-8.8156605": 45.83842,
+    "13.2328796": 15.97776
+  },
+  {
+    "Angola": "Cyprus",
+    "Caritas de Angola": "Koinonia Caritas",
+    "Africa": "Europe",
+    "Luanda": "Nicosia",
+    "-8.8156605": 35.1273117,
+    "13.2328796": 33.3280792
+  },
+  {
+    "Angola": "Czech Republic",
+    "Caritas de Angola": "Charita Ceská republika - Caritas Czech republic",
+    "Africa": "Europe",
+    "Luanda": "Prague 1",
+    "-8.8156605": 50.08032,
+    "13.2328796": 14.42135
+  },
+  {
+    "Angola": "Denmark",
+    "Caritas de Angola": "Caritas Danmark",
+    "Africa": "Europe",
+    "Luanda": "Copenhagen V",
+    "-8.8156605": 56.2622757,
+    "13.2328796": 9.3363562
+  },
+  {
+    "Angola": "England & Wales",
+    "Caritas de Angola": "CAFOD - Catholic Fund for Overseas Development - Caritas England & Wales",
+    "Africa": "Europe",
+    "Luanda": "London",
+    "-8.8156605": 51.49824,
+    "13.2328796": -0.10802
+  },
+  {
+    "Angola": "Estonia",
+    "Caritas de Angola": "Caritas Estonia",
+    "Africa": "Europe",
+    "Luanda": "Tallinn",
+    "-8.8156605": 59.46744,
+    "13.2328796": 24.83601
+  },
+  {
+    "Angola": "Finland",
+    "Caritas de Angola": "Caritas Finland",
+    "Africa": "Europe",
+    "Luanda": "Helsinki",
+    "-8.8156605": 60.17311,
+    "13.2328796": 24.95968
+  },
+  {
+    "Angola": "France",
+    "Caritas de Angola": "Secours Catholique - Caritas France",
+    "Africa": "Europe",
+    "Luanda": "Paris Cedex 07",
+    "-8.8156605": 48.85341,
+    "13.2328796": "2.32368,"
+  },
+  {
+    "Angola": "Georgia",
+    "Caritas de Angola": "Caritas Georgia",
+    "Africa": "Europe",
+    "Luanda": "Tbilisi",
+    "-8.8156605": 41.7090797,
+    "13.2328796": 44.7961197
+  },
+  {
+    "Angola": "Germany",
+    "Caritas de Angola": "Deutscher Caritasverband",
+    "Africa": "Europe",
+    "Luanda": "Freiburg",
+    "-8.8156605": 48.00422,
+    "13.2328796": 7.85668
+  },
+  {
+    "Angola": "Greece",
+    "Caritas de Angola": "Caritas Hellas",
+    "Africa": "Europe",
+    "Luanda": "Athens",
+    "-8.8156605": 37.98703,
+    "13.2328796": 23.72722
+  },
+  {
+    "Angola": "Hungary",
+    "Caritas de Angola": "Caritas Hungarica",
+    "Africa": "Europe",
+    "Luanda": "Budapest",
+    "-8.8156605": 47.4997215,
+    "13.2328796": 19.0550804
+  },
+  {
+    "Angola": "Iceland",
+    "Caritas de Angola": "Caritas Island",
+    "Africa": "Europe",
+    "Luanda": "Reykjavík",
+    "-8.8156605": 64.147,
+    "13.2328796": -21.94874
+  },
+  {
+    "Angola": "Ireland",
+    "Caritas de Angola": "TROCAIRE - Caritas Ireland",
+    "Africa": "Europe",
+    "Luanda": "Co. Kildare",
+    "-8.8156605": 53.381691,
+    "13.2328796": -6.5905199
+  },
+  {
+    "Angola": "Italia",
+    "Caritas de Angola": "Caritas Italiana",
+    "Africa": "Europe",
+    "Luanda": "Roma",
+    "-8.8156605": 41.88912,
+    "13.2328796": 12.40748
+  },
+  {
+    "Angola": "Kosovo",
+    "Caritas de Angola": "Caritas Kosovo",
+    "Africa": "Europe",
+    "Luanda": "Ferizaj",
+    "-8.8156605": 42.3690605,
+    "13.2328796": 21.1535091
+  },
+  {
+    "Angola": "Latvia",
+    "Caritas de Angola": "Caritas Latvia",
+    "Africa": "Europe",
+    "Luanda": "Riga",
+    "-8.8156605": 57.03729,
+    "13.2328796": 24.04205
+  },
+  {
+    "Angola": "Lithuania",
+    "Caritas de Angola": "Caritas Lithuania",
+    "Africa": "Europe",
+    "Luanda": "Kaunas",
+    "-8.8156605": 54.89789,
+    "13.2328796": 23.88452
+  },
+  {
+    "Angola": "Luxembourg",
+    "Caritas de Angola": "Confédération Caritas Luxembourg asbl",
+    "Africa": "Europe",
+    "Luanda": "Luxembourg",
+    "-8.8156605": 49.60392,
+    "13.2328796": 6.12661
+  },
+  {
+    "Angola": "Macedonia",
+    "Caritas de Angola": "Caritas Macedonia",
+    "Africa": "Europe",
+    "Luanda": "Skopje",
+    "-8.8156605": 41.99588,
+    "13.2328796": 21.4169
+  },
+  {
+    "Angola": "Malta",
+    "Caritas de Angola": "Caritas Malta",
+    "Africa": "Europe",
+    "Luanda": "Floriana",
+    "-8.8156605": 35.892231,
+    "13.2328796": 14.5074301
+  },
+  {
+    "Angola": "Moldova",
+    "Caritas de Angola": "Caritas Moldova",
+    "Africa": "Europe",
+    "Luanda": "Chisinau",
+    "-8.8156605": 47.0364,
+    "13.2328796": 28.82572
+  },
+  {
+    "Angola": "Monaco",
+    "Caritas de Angola": "Caritas Monaco",
+    "Africa": "Europe",
+    "Luanda": "Monaco",
+    "-8.8156605": 43.73706,
+    "13.2328796": 7.42147
+  },
+  {
+    "Angola": "Montenegro",
+    "Caritas de Angola": "Caritas Montenegro",
+    "Africa": "Europe",
+    "Luanda": "Bar",
+    "-8.8156605": 42.0957,
+    "13.2328796": 19.11276
+  },
+  {
+    "Angola": "Netherlands",
+    "Caritas de Angola": "CORDAID",
+    "Africa": "Europe",
+    "Luanda": "The Hague",
+    "-8.8156605": 52.0672989,
+    "13.2328796": 4.28899
+  },
+  {
+    "Angola": "Norway",
+    "Caritas de Angola": "Caritas Norge",
+    "Africa": "Europe",
+    "Luanda": "Oslo",
+    "-8.8156605": 59.91301,
+    "13.2328796": 10.76086
+  },
+  {
+    "Angola": "Poland",
+    "Caritas de Angola": "Caritas Polska",
+    "Africa": "Europe",
+    "Luanda": "Warszawa",
+    "-8.8156605": 52.24797,
+    "13.2328796": 20.9785
+  },
+  {
+    "Angola": "Portugal",
+    "Caritas de Angola": "Caritas Portuguesa",
+    "Africa": "Europe",
+    "Luanda": "Lisbon",
+    "-8.8156605": 38.741,
+    "13.2328796": -9.13596
+  },
+  {
+    "Angola": "Romania",
+    "Caritas de Angola": "Confederatia Caritas Romania",
+    "Africa": "Europe",
+    "Luanda": "Bucuresti",
+    "-8.8156605": 44.45575,
+    "13.2328796": 26.095
+  },
+  {
+    "Angola": "Russia",
+    "Caritas de Angola": "Federal Caritas of Russia",
+    "Africa": "Europe",
+    "Luanda": "St Petersburg",
+    "-8.8156605": 60.09126,
+    "13.2328796": 29.97721
+  },
+  {
+    "Angola": "Russia",
+    "Caritas de Angola": "Diocesan Caritas of the Mother of God Moscow",
+    "Africa": "Europe",
+    "Luanda": "Moscow",
+    "-8.8156605": 55.813,
+    "13.2328796": 37.57698
+  },
+  {
+    "Angola": "Scotland",
+    "Caritas de Angola": "SCIAF - Scottish Catholic International Aid Fund - Caritas Scotland",
+    "Africa": "Europe",
+    "Luanda": "Glasgow",
+    "-8.8156605": 55.869305,
+    "13.2328796": -4.2799119
+  },
+  {
+    "Angola": "Serbia",
+    "Caritas de Angola": "Caritas Serbia",
+    "Africa": "Europe",
+    "Luanda": "Belgrade",
+    "-8.8156605": 44.78133,
+    "13.2328796": 20.47155
+  },
+  {
+    "Angola": "Slovakia",
+    "Caritas de Angola": "Slovenska Katolicka Charita - Caritas Slovakia",
+    "Africa": "Europe",
+    "Luanda": "Bratislava",
+    "-8.8156605": 48.14312,
+    "13.2328796": 17.10509
+  },
+  {
+    "Angola": "Slovenia",
+    "Caritas de Angola": "Slovenska Karitas",
+    "Africa": "Europe",
+    "Luanda": "Lubljana",
+    "-8.8156605": 46.0501,
+    "13.2328796": 14.51089
+  },
+  {
+    "Angola": "Spain",
+    "Caritas de Angola": "Caritas Espanola",
+    "Africa": "Europe",
+    "Luanda": "Madrid",
+    "-8.8156605": 40.39624,
+    "13.2328796": -3.69635
+  },
+  {
+    "Angola": "Sweden",
+    "Caritas de Angola": "Caritas Sverige",
+    "Africa": "Europe",
+    "Luanda": "Stockholm",
+    "-8.8156605": 59.3246498,
+    "13.2328796": 18.075346
+  },
+  {
+    "Angola": "Switzerland",
+    "Caritas de Angola": "Caritas Schweiz",
+    "Africa": "Europe",
+    "Luanda": "Lucerne",
+    "-8.8156605": 47.05623,
+    "13.2328796": 8.31499
+  },
+  {
+    "Angola": "Turkey",
+    "Caritas de Angola": "Caritas Turquie",
+    "Africa": "Europe",
+    "Luanda": "Elmadag - Istanbul",
+    "-8.8156605": 41.04456,
+    "13.2328796": 28.98487
+  },
+  {
+    "Angola": "Ukraine",
+    "Caritas de Angola": "Caritas Ukraine",
+    "Africa": "Europe",
+    "Luanda": "Lviv",
+    "-8.8156605": 49.83869,
+    "13.2328796": 24.01125
+  },
+  {
+    "Angola": "Antilles",
+    "Caritas de Angola": "Antilles Episcopal Conference - Caritas Antilles",
+    "Africa": "Latin",
+    "Luanda": "Castries, Saint Lucia, West Indies",
+    "-8.8156605": 14.0117702,
+    "13.2328796": -60.9896317
+  },
+  {
+    "Angola": "Argentina",
+    "Caritas de Angola": "Caritas Argentina",
+    "Africa": "Latin",
+    "Luanda": "Capital Federal",
+    "-8.8156605": -34.60849,
+    "13.2328796": -58.3734398
+  },
+  {
+    "Angola": "Bolivia",
+    "Caritas de Angola": "Pastoral Social - Caritas Boliviana",
+    "Africa": "Latin",
+    "Luanda": "La Paz",
+    "-8.8156605": -16.4990807,
+    "13.2328796": -68.1337814
+  },
+  {
+    "Angola": "Brazil",
+    "Caritas de Angola": "Caritas Brasileira",
+    "Africa": "Latin",
+    "Luanda": "Brasilia DF",
+    "-8.8156605": -15.79886,
+    "13.2328796": -47.89871
+  },
+  {
+    "Angola": "Chile",
+    "Caritas de Angola": "Caritas Chile",
+    "Africa": "Latin",
+    "Luanda": "Santiago de Chile",
+    "-8.8156605": -33.45162,
+    "13.2328796": -70.66633
+  },
+  {
+    "Angola": "Colombia",
+    "Caritas de Angola": "SNPS - Secretariado Nacional de Pastoral Social - Caritas Colombia",
+    "Africa": "Latin",
+    "Luanda": "Santafé de Bogotá",
+    "-8.8156605": 4.6149602,
+    "13.2328796": -74.0694122
+  },
+  {
+    "Angola": "Costa Rica",
+    "Caritas de Angola": "Pastoral Social Caritas Costa Rica",
+    "Africa": "Latin",
+    "Luanda": "San José",
+    "-8.8156605": 9.9297504,
+    "13.2328796": -84.0856934
+  },
+  {
+    "Angola": "Cuba",
+    "Caritas de Angola": "Caritas Cuba",
+    "Africa": "Latin",
+    "Luanda": "La Habana",
+    "-8.8156605": 23.1321106,
+    "13.2328796": -82.3674927
+  },
+  {
+    "Angola": "Dominican Republic",
+    "Caritas de Angola": "Caritas Dominicana",
+    "Africa": "Latin",
+    "Luanda": "Santo Domingo",
+    "-8.8156605": 18.4718494,
+    "13.2328796": -69.8913879
+  },
+  {
+    "Angola": "Ecuador",
+    "Caritas de Angola": "SENAPS  - Secretariado Nacional de Pastoral Social - Caritas Ecuador",
+    "Africa": "Latin",
+    "Luanda": "Quito",
+    "-8.8156605": -0.20562,
+    "13.2328796": -78.5087967
+  },
+  {
+    "Angola": "El Salvador",
+    "Caritas de Angola": "Caritas El Salvador",
+    "Africa": "Latin",
+    "Luanda": "San Salvador, C.A.",
+    "-8.8156605": 13.7330055,
+    "13.2328796": -88.8665009
+  },
+  {
+    "Angola": "Guatemala",
+    "Caritas de Angola": "Caritas de Guatemala",
+    "Africa": "Latin",
+    "Luanda": "Guatemala, C. A.",
+    "-8.8156605": 14.6487999,
+    "13.2328796": -90.5807114
+  },
+  {
+    "Angola": "Haiti",
+    "Caritas de Angola": "Caritas Haőti",
+    "Africa": "Latin",
+    "Luanda": "Port-au-Prince",
+    "-8.8156605": 18.5449791,
+    "13.2328796": -72.3356018
+  },
+  {
+    "Angola": "Honduras",
+    "Caritas de Angola": "Caritas de Honduras",
+    "Africa": "Latin",
+    "Luanda": "Tegucigalpa",
+    "-8.8156605": 14.0819197,
+    "13.2328796": -87.205513
+  },
+  {
+    "Angola": "Mexico",
+    "Caritas de Angola": "CEPS - Caritas Mexicana",
+    "Africa": "Latin",
+    "Luanda": "D.F. Mexico",
+    "-8.8156605": 19.38331,
+    "13.2328796": -99.18199
+  },
+  {
+    "Angola": "Nicaragua",
+    "Caritas de Angola": "Caritas Nicaragua",
+    "Africa": "Latin",
+    "Luanda": "Managua",
+    "-8.8156605": 12.1171999,
+    "13.2328796": -86.2407913
+  },
+  {
+    "Angola": "Panama",
+    "Caritas de Angola": "Pastoral Social - Caritas Panamá",
+    "Africa": "Latin",
+    "Luanda": "Panama City",
+    "-8.8156605": 8.9523897,
+    "13.2328796": -79.5354004
+  },
+  {
+    "Angola": "Paraguay",
+    "Caritas de Angola": "Pastoral Social Nacional - Caritas Paraguay",
+    "Africa": "Latin",
+    "Luanda": "Asunción",
+    "-8.8156605": -25.2859177,
+    "13.2328796": -57.6390236
+  },
+  {
+    "Angola": "Peru",
+    "Caritas de Angola": "Caritas del Perú",
+    "Africa": "Latin",
+    "Luanda": "Callao 3",
+    "-8.8156605": -12.0489644,
+    "13.2328796": -77.0857164
+  },
+  {
+    "Angola": "Puerto Rico",
+    "Caritas de Angola": "Caritas Puerto Rico",
+    "Africa": "Latin",
+    "Luanda": "San Juan",
+    "-8.8156605": 18.4515228,
+    "13.2328796": -66.0694809
+  },
+  {
+    "Angola": "Uruguay",
+    "Caritas de Angola": "Cáritas Uruguaya",
+    "Africa": "Latin",
+    "Luanda": "Montevideo",
+    "-8.8156605": -34.90718,
+    "13.2328796": -56.18417
+  },
+  {
+    "Angola": "Venezuela",
+    "Caritas de Angola": "Caritas de Venezuela",
+    "Africa": "Latin",
+    "Luanda": "Caracas",
+    "-8.8156605": 35.6887703,
+    "13.2328796": 51.4150314
+  },
+  {
+    "Angola": "Algeria",
+    "Caritas de Angola": "Caritas Algérie",
+    "Africa": "Mona",
+    "Luanda": "El Biar",
+    "-8.8156605": 36.7665215,
+    "13.2328796": 3.0302801
+  },
+  {
+    "Angola": "Djibouti",
+    "Caritas de Angola": "Caritas Somalia",
+    "Africa": "Mona",
+    "Luanda": "Rep. of Djibouti",
+    "-8.8156605": 11.5880699,
+    "13.2328796": 43.14492
+  },
+  {
+    "Angola": "Djibouti",
+    "Caritas de Angola": "Caritas Djibouti",
+    "Africa": "Mona",
+    "Luanda": "Djibouti",
+    "-8.8156605": 11.5880699,
+    "13.2328796": 43.14492
+  },
+  {
+    "Angola": "Egypt",
+    "Caritas de Angola": "Caritas Egypt",
+    "Africa": "Mona",
+    "Luanda": "Cairo",
+    "-8.8156605": 30.0499191,
+    "13.2328796": 31.2486
+  },
+  {
+    "Angola": "Iran",
+    "Caritas de Angola": "Caritas Iran",
+    "Africa": "Mona",
+    "Luanda": "Tehran",
+    "-8.8156605": 35.6887703,
+    "13.2328796": 51.4150314
+  },
+  {
+    "Angola": "Iraq",
+    "Caritas de Angola": "Caritas Iraq",
+    "Africa": "Mona",
+    "Luanda": "Baghdad",
+    "-8.8156605": 33.3421288,
+    "13.2328796": 44.3930893
+  },
+  {
+    "Angola": "Israele",
+    "Caritas de Angola": "Caritas Jerusalem",
+    "Africa": "Mona",
+    "Luanda": "Jerusalem",
+    "-8.8156605": 34.2564697,
+    "13.2328796": -118.6008072
+  },
+  {
+    "Angola": "Jordan",
+    "Caritas de Angola": "Caritas Jordan",
+    "Africa": "Mona",
+    "Luanda": "Amman",
+    "-8.8156605": 31.9520912,
+    "13.2328796": 35.9218559
+  },
+  {
+    "Angola": "Lebanon",
+    "Caritas de Angola": "Caritas Lebanon",
+    "Africa": "Mona",
+    "Luanda": "Beyrouth",
+    "-8.8156605": 33.88146,
+    "13.2328796": 35.51526
+  },
+  {
+    "Angola": "Libya",
+    "Caritas de Angola": "Caritas Libie",
+    "Africa": "Mona",
+    "Luanda": "Dahara - Tripoli",
+    "-8.8156605": 32.89534,
+    "13.2328796": 13.1810503
+  },
+  {
+    "Angola": "Morocco",
+    "Caritas de Angola": "Caritas Maroc",
+    "Africa": "Mona",
+    "Luanda": "Rabat",
+    "-8.8156605": 34.0179405,
+    "13.2328796": -6.83605
+  },
+  {
+    "Angola": "Syria",
+    "Caritas de Angola": "Caritas Syrie - Commission Commune de Bienfaisance - C.C.B. Syrie",
+    "Africa": "Mona",
+    "Luanda": "Damascus",
+    "-8.8156605": 33.5165596,
+    "13.2328796": 36.3170815
+  },
+  {
+    "Angola": "Tunisia",
+    "Caritas de Angola": "Caritas Tunisie",
+    "Africa": "Mona",
+    "Luanda": "Tunis RP",
+    "-8.8156605": 34.1144638,
+    "13.2328796": 9.5719872
+  },
+  {
+    "Angola": "Canada",
+    "Caritas de Angola": "Développement et Paix / Development and Peace - Caritas Canada",
+    "Africa": "NordAm",
+    "Luanda": "Montréal - Québec",
+    "-8.8156605": 45.49521,
+    "13.2328796": 73.5743
+  },
+  {
+    "Angola": "United States of America",
+    "Caritas de Angola": "Catholic Relief Services - Caritas USA",
+    "Africa": "NordAm",
+    "Luanda": "Baltimore, Maryland",
+    "-8.8156605": 39.291909,
+    "13.2328796": -76.61914
+  },
+  {
+    "Angola": "Aotearoa New Zealand",
+    "Caritas de Angola": "Caritas Aotearoa - New Zealand",
+    "Africa": "Oceania",
+    "Luanda": "Wellington",
+    "-8.8156605": -35.63339,
+    "13.2328796": 174.52873
+  },
+  {
+    "Angola": "Australia",
+    "Caritas de Angola": "Caritas Australia",
+    "Africa": "Oceania",
+    "Luanda": "Alexandria NSW",
+    "-8.8156605": -33.91022,
+    "13.2328796": 151.19907
+  },
+  {
+    "Angola": "East Timor",
+    "Caritas de Angola": "Caritas Timor Leste",
+    "Africa": "Oceania",
+    "Luanda": "Dili",
+    "-8.8156605": -8.5618496,
+    "13.2328796": 125.5844193
+  },
+  {
+    "Angola": "Fiji",
+    "Caritas de Angola": "Caritas Fiji",
+    "Africa": "Oceania",
+    "Luanda": "Suva",
+    "-8.8156605": -18.1412601,
+    "13.2328796": 178.4232483
+  },
+  {
+    "Angola": "Pacific Islands",
+    "Caritas de Angola": "CEPAC-CCJD  Cath. Comm. For Justice & Development",
+    "Africa": "Oceania",
+    "Luanda": "Suva",
+    "-8.8156605": -18.1412601,
+    "13.2328796": 178.4232483
+  },
+  {
+    "Angola": "Papua New Guinea",
+    "Caritas de Angola": "Caritas Papua New Guinea",
+    "Africa": "Oceania",
+    "Luanda": "Port Moresby",
+    "-8.8156605": -9.4194403,
+    "13.2328796": 147.1838837
+  },
+  {
+    "Angola": "Samoa",
+    "Caritas de Angola": "Caritas Samoa",
+    "Africa": "Oceania",
+    "Luanda": "Apia",
+    "-8.8156605": -13.8368797,
+    "13.2328796": -171.7567291
+  },
+  {
+    "Angola": "Tonga",
+    "Caritas de Angola": "Caritas Tonga (CCJD)",
+    "Africa": "Oceania",
+    "Luanda": "Nuku'alofa",
+    "-8.8156605": -21.1335106,
+    "13.2328796": -175.2034454
+  },
+  {
+    "Angola": "Country",
+    "Caritas de Angola": "Organisation",
+    "Africa": "Region",
+    "Luanda": "City",
+    "-8.8156605": "from_lat",
+    "13.2328796": "from_long"
+  }
+]
