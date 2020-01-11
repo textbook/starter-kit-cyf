@@ -7,24 +7,24 @@ import Map from "../map/map.component";
 
 const HomePage = ()=>{
 	return (
-    <div>
-    
-      <Map />
-      <Footer />
-    </div>
-  );
-	
-				
-			
-				
+		<div>
 
-			
-				
-		
-		
-}
+			<Map />
+			<Footer />
+		</div>
+	);
 
-	
+
+
+
+
+
+
+
+
+};
+
+
 
 
 export default HomePage;
