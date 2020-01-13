@@ -4,7 +4,7 @@ import Logo from "./Logo/cyf-logo.png";
 import { NavLink } from "react-router-dom";
 
 import "./nav.style.css";
-import Language from "../Language/Language";
+
 
 
 
@@ -25,7 +25,7 @@ const NavBar = () => (
 		<NavLink className="nav" to="/about">
       About
 		</NavLink>
-		<Language />
+		
 	</>
 );
 

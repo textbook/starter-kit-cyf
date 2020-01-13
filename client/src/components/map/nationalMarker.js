@@ -60,3 +60,16 @@ export default class MapIt extends Component {
         );
     }
 }
+
+
+
+
+maxZoom={20}
+                         attributionControl={true}
+                         zoomControl={true}
+                         doubleClickZoom={true}
+                         scrollWheelZoom={true}
+                         dragging={true}
+                         animate={true}
+                         easeLinearity={0.35}
+                         onclick={this.handleClick}
